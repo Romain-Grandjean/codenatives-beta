@@ -11,6 +11,7 @@ import Header from './components/Header';
 import Page from './components/Page';
 import Home from './components/Home';
 import Practice from './components/Practice';
+import Test from './components/Test';
 import Footer from './components/Footer.jsx';
 import { Route, Switch} from 'react-router-dom';
 
@@ -29,6 +30,7 @@ class App extends React.Component {
                             <Switch>
                                   <Route path='/' exact component={Home}/>
                                   <Route path='/practice' exact component={Practice}/>
+                                  <Route path='/test' exact component={Test}/>
                             </Switch>
                         <Footer />
                  </React.Fragment>

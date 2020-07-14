@@ -238,3 +238,79 @@
 #A2 {
     color: black;
 }
+
+
+.score-practice {
+    grid-column: 37/38;
+    grid-row: 5/20;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    & span {
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 16px;
+        color: #d8d8d882;
+
+    &:hover {
+        color: black;
+    }
+    &:active {
+        transform: scale(1.1);
+    }
+    &::after{
+
+    }
+}
+}
+
+#title-level {
+    font-size: 12px;
+    color: black;
+}
+
+#title-time-score {
+    font-size: 12px;
+    color: black;
+}
+
+
+
+
+.player-test {
+    width: 150px;
+    height: auto;
+    grid-column: 18/22;
+    grid-row: 17/21;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#question-number-test {
+    width: auto; 
+    font-size: 16px;
+    font-weight: 500;
+    justify-self: center;
+    align-self: center;
+    color: black;
+}
+
+.stop-btn-test {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:center;
+    align-items: center;
+    margin-top: 12px;
+    & span { font-size: 14px;
+    color: #D8D8D8;
+    margin-left: 12px;
+    }
+    &:hover {
+        transform: scale(1.4)
+    }
+}

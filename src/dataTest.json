@@ -1,1 +1,46 @@
-
+[
+    {
+        "id": 0,
+        "level": 0,
+        "question": "Thanks to hoisting:",
+        "solutionA": "Variables are set to undefined in the creation phase.",
+        "solutionB": "Variables are set to null in the execution phase phase.",
+        "solutionC": "Variables are set to their actual value in the in the creation phase.",
+        "solutionD": "Variables are not hoisted.",
+        "answer": 1,
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 1,
+        "level": 0,
+        "question": "What is NOT true about anonymous functions?",
+        "solutionA": "They create a new scope.",
+        "solutionB": "Closures are not formed with anonymous functions.",
+        "solutionC": "They are usually not accessible after initial creation.",
+        "solutionD": "They are usually declared without any named identifier referring to them.",
+        "answer": 2,
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 2,
+        "level": 0,
+        "question": "Function A declares variable X and function B. Can function B access variable X?",
+        "solutionA": "Yes, because of the scope chain",
+        "solutionB": "No, because of the prototype chain",
+        "solutionC": "Yes, because of closures.",
+        "solutionD": "No, because functions are not suppose to access outer variables.",
+        "answer": 1,
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 3,
+        "level": 0,
+        "question": "In JavaScript, scopes are created by:",
+        "solutionA": "If/Else statements.",
+        "solutionB": "For loops and functions",
+        "solutionC": "Functions.",
+        "solutionD": "If/else statements and functions.",
+        "answer": 3,
+        "explanations": "This is an explanation"
+    }
+]

@@ -20,7 +20,7 @@ class Home extends React.Component {
                     </div>
                     <div className="central-buttons">
                     <Link to="/practice" className="button-practice"><div>Practice</div></Link>
-                        <div className="button-test">Start test</div>
+                    <Link to="/test"  className="button-test"><div>Start test</div></Link>
                     </div>
 
 
