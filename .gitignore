@@ -1,7 +1,7 @@
 # Project 
 
-/design/
-/node_modules/
+design/
+node_modules/
 
 # General
 .DS_Store
