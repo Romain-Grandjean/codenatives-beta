@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="23px" viewBox="0 0 148 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>logo small B&amp;W</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Code-fluent-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-page---version-2" transform="translate(-72.000000, -918.000000)">
+            <g id="Footer" transform="translate(-1.000000, 862.000000)">
+                <g id="logo-small-B&amp;W" transform="translate(73.000000, 55.000000)">
+                    <text id="CODENATIVES" font-family="GTAmericaMonoTrial-Bd, GT America Mono Trial" font-size="19.6416" font-weight="bold" letter-spacing="-0.360000005" fill="#FFFFFF">
+                        <tspan x="0" y="22.88">CODE</tspan>
+                        <tspan x="47.271168" y="22.88" letter-spacing="-0.720000011">N</tspan>
+                        <tspan x="58.72896" y="22.88" letter-spacing="-1.44000002">A</tspan>
+                        <tspan x="69.4667519" y="22.88" letter-spacing="-0.720000011">TI</tspan>
+                        <tspan x="92.3823359" y="22.88" letter-spacing="-0.409200007">VES</tspan>
+                    </text>
+                    <g id="Beta" transform="translate(129.960000, 0.000000)">
+                        <rect id="Rectangle" x="0" y="1" width="18.72" height="7.2"></rect>
+                        <text id="BETA" font-family="GTAmericaMonoTrial-Bd, GT America Mono Trial" font-size="7.2" font-weight="bold" letter-spacing="-0.049523402" fill="#FFFFFF">
+                            <tspan x="0" y="7">BETA</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

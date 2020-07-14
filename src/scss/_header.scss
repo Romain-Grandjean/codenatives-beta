@@ -1,0 +1,102 @@
+.header {
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 72px 29.236% 1fr 72px;
+    grid-template-rows: 1fr;
+}
+
+.line-header {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    background-color: hsla(300, 4%, 89%, 0.080);
+}
+
+#logo-header {
+    width: 228px;
+    height: auto;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 28px;
+}
+
+.navigation {
+    position: absolute;
+    width: auto;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-self: end;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.nav1 {
+    width: auto;
+    height: auto;
+    position: relative;
+    top: 29px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    & span{
+        font-size: 16px;
+        font-weight: 400;
+        margin-right: 36px;
+        &:hover {
+            padding-top: 2px;
+            border-bottom: 2px black solid;
+        }
+    }   
+    
+}
+
+.line-nav {
+    width: 2px;
+    height: 40px;
+    background-color: hsla(300, 4%, 89%, 0.080);
+}
+
+.nav2 {
+    width: auto;
+    height: auto;
+    position: relative;
+    top: 29px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    & span {
+        font-size: 16px;
+        font-weight: 400; 
+        margin-left: 36px;
+        &:hover {
+            padding-top: 2px;
+            border-bottom: 2px black solid;
+        }
+    }
+}
+
+.button-signup {
+    width: 120px;
+    height: 40px;
+    border: 2px black solid;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 36px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        background-color:#000000;
+        color: white;
+        border: 2px rgb(255, 255, 255) solid;
+    }
+}

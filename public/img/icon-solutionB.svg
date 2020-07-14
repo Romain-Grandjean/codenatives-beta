@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="55px" height="108px" viewBox="0 0 55 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Code-fluent-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Practice-page---version-2" transform="translate(-360.000000, -270.000000)">
+            <g id="Page" transform="translate(6.000000, -2.000000)">
+                <g id="Central-question" transform="translate(351.000000, 171.000000)">
+                    <g id="Solution-A" transform="translate(3.000000, 101.000000)">
+                        <g id="Group">
+                            <rect id="Rectangle" fill="#FFEF29" x="0" y="0" width="55" height="108" rx="8"></rect>
+                            <rect id="Rectangle-Copy" fill="#FFEF29" x="42" y="0" width="13" height="108"></rect>
+                            <text id="B" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="28" font-weight="bold" letter-spacing="-0.192591" fill="#FFFFFF" fill-opacity="0.99">
+                                <tspan x="18.516591" y="60">B</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
