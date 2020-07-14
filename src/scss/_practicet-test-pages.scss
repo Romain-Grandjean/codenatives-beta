@@ -11,7 +11,7 @@
 
 .question-practice {
     grid-column: 9/ 30;
-    grid-row: 5/6;
+    grid-row: 5/8;
     width: 776px;
     height: 28px;
     font-size: 24px;
@@ -24,7 +24,7 @@
 
 .solutionA-practice {
     grid-column: 9/ 30;
-    grid-row: 9/10;
+    grid-row: 11/12;
     width: 776px;
     height: 84px;
     border-radius: 8px;
@@ -54,7 +54,7 @@
 
 .solutionB-practice {
     grid-column: 9/ 30;
-    grid-row: 11/12;
+    grid-row: 13/14;
     width: 776px;
     height: 84px;
     border-radius: 8px;
@@ -85,7 +85,7 @@
 
 .solutionC-practice {
     grid-column: 9/ 30;
-    grid-row: 13/14;
+    grid-row: 15/16;
     width: 776px;
     height: 84px;
     border-radius: 8px;
@@ -115,7 +115,7 @@
 
 .solutionD-practice {
     grid-column: 9/ 30;
-    grid-row: 15/16;
+    grid-row: 17/18;
     width: 776px;
     height: 84px;
     border-radius: 8px;
@@ -147,7 +147,7 @@
     width: 150px;
     height: auto;
     grid-column: 18/22;
-    grid-row: 17/21;
+    grid-row: 20/21;
     justify-self: center;
     display: flex;
     flex-direction: column;
@@ -194,7 +194,7 @@
     flex-flow: row nowrap;
     justify-content:center;
     align-items: center;
-    margin-top: 12px;
+    margin-top: 6px;
     & span { font-size: 14px;
     color: #D8D8D8;
     margin-left: 12px;
@@ -235,7 +235,7 @@
     font-size: 24px;
 }
 
-#A2 {
+#A1 {
     color: black;
 }
 
@@ -283,7 +283,7 @@
     width: 150px;
     height: auto;
     grid-column: 18/22;
-    grid-row: 17/21;
+    grid-row: 19/21;
     justify-self: center;
     display: flex;
     flex-direction: column;

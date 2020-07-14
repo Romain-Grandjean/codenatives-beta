@@ -8,7 +8,7 @@ import DataPractice from './dataPractice.json';
 
 // components
 import Header from './components/Header';
-import Page from './components/Page';
+// import Page from './components/Page';
 import Home from './components/Home';
 import Practice from './components/Practice';
 import Test from './components/Test';
