@@ -14,6 +14,17 @@ export default class Practice extends React.Component {
         <> 
         <div className="practice-page">
             <div className="question-practice">{this.state.data[this.state.page].question}</div>
+            <div className="level-practice">
+                  <span id="native">Native</span>
+                  <span id="C2">C2</span>
+                  <span id="C1">C1</span>
+                  <span id="B2">B2</span>
+                  <span id="B1">B1</span>
+                  <span id="A2">A2</span>
+                  <span id="A1">A1</span>
+            </div>
+           
+           
             <div className="solutionA-practice">
               <img src={process.env.PUBLIC_URL + "/img/icon-solutionA.svg"} alt="logo"/>
               <span>{this.state.data[this.state.page].solutionA}</span>
@@ -40,7 +51,7 @@ export default class Practice extends React.Component {
                     <img id="arrow-right-page" src={process.env.PUBLIC_URL + "/img/icon-stop.svg"} alt="arrow"/>
                     <span>Stop</span>
                     </div>
-          
+
 
             </div>
         </div>  

@@ -203,3 +203,38 @@
         transform: scale(1.4)
     }
 }
+
+.level-practice {
+    grid-column: 2/4;
+    grid-row: 5/20;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    & span {
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 16px;
+        color: #d8d8d882;
+
+    &:hover {
+        color: black;
+    }
+    &:active {
+        transform: scale(1.1);
+    }
+    &::after{
+
+    }
+}
+}
+#native {
+    justify-self: start;
+    align-self: start;
+    font-size: 24px;
+}
+
+#A2 {
+    color: black;
+}
