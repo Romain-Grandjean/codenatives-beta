@@ -24,7 +24,7 @@ export default class Practice extends React.Component {
       this.setState({...this.state, page: lastPage })
       console.log("PREVIOUS / this is last page", lastPage);
     }
-    
+  
     testSolution = (id) => {
     let newCount = this.state.count + 1;
     // Correct Answer
@@ -79,6 +79,7 @@ export default class Practice extends React.Component {
         <SolutionMulti data={this.state.data} solution={this.solution} testSolution={this.testSolution}/>
 
             <div className="level-practice">
+            <span id="title-level">Level</span>
                   <span id="native">Native</span>
                   <span id="C2">C2</span>
                   <span id="C1">C1</span>

@@ -5,9 +5,58 @@ import SolutionMulti from './SolutionMulti';
 export default class Test extends React.Component {
     state = {
       page: 1, 
-      data: DataTest
+      data: DataTest,
+      level: 0,
+      score: 0,
+      globalscore: 0,
+      count: 0,
+      globaltime: 0,
+      questiontime: 0
     } 
+
+    testSolution = (id) => {
+      let newCount = this.state.count + 1;
+      // Correct Answer
+      if (id + 1 === this.data.answer) {
       
+        // TO DO : Div turn to green  
+  
+      let newScore = this.state.score + 10; 
+      this.setState({...this.state, score: newScore}) 
+      this.setState({...this.state, globalscore: newScore})
+      this.setState({...this.state, count: newCount}) 
+      // TO DO : Timer
+      let newPage = this.state.page + 1;
+      this.setState({...this.state, page: newPage}) 
+      } 
+      // Wrong Answer
+      if (id + 1 !== this.data.answer) {
+  
+        // TO DO : Div turn to red + answer turn to green 
+  
+      this.setState({...this.state, count: newCount}) 
+            // TO DO : Timer
+      let newPage = this.state.page + 1;
+      this.setState({...this.state, page: newPage}) 
+      }
+      // Level up
+      if (this.state.score >= 20 && this.state.count === 2) {
+       this.setState({...this.state, score: 0})  
+       let newLevelUp = this.state.level + 1;
+       this.setState({...this.state, level: newLevelUp})   
+      // TO DO : update level div
+      }
+       // Level down
+      if (this.state.score < 20 && this.state.count === 2 && this.state.level > 0) {
+        this.setState({...this.state, score: 0}) 
+        let newLevelDown = this.state.level - 1;
+        this.setState({...this.state, level: newLevelDown})  
+      // TO DO : update level div
+      }
+      }
+        
+
+
       render() {
 
         return (
@@ -35,8 +84,8 @@ export default class Test extends React.Component {
                   <span id="global-time-score">-257.28</span>
                   <span id="round-time-score">-7.15</span>
                   <span id="title-time-score">Score</span>
-                  <span id="points-score-more">+10</span>
-                  <span id="points-score">00128</span>
+                  <span id="points-score">{this.state.globalscore}</span>
+                  {/* <span id="points-score-more">+10</span> */}
             </div>
            
             <div className="player-test">
