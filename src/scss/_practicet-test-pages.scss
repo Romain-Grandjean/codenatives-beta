@@ -62,6 +62,33 @@
     }
 }
 
+.practice-solution1r{
+    width: 776px;
+    height: 84px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    background-color:#7CF4BD;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px  hsla(300, 4%, 89%, 0.150) solid;
+    & img {
+        display: none;
+
+    }
+    & span {
+        margin-left: 18px;
+        font-size: 20px;
+        width: 668px;
+    }
+    &:hover {
+        transform: scale(1.02);
+
+    }
+}
+
+
 .practice-solution2 {
     width: 776px;
     height: 84px;

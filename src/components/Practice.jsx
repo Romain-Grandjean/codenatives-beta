@@ -11,6 +11,7 @@ export default class Practice extends React.Component {
       level: 0,
       score: 0,
       count: 0,
+      // color: "w",
     } 
   }
     next = () => {
@@ -76,7 +77,7 @@ export default class Practice extends React.Component {
 
         <div className="question-practice">{this.state.data[this.state.page].question}</div>
 
-        <SolutionMulti data={this.state.data} solution={this.solution} testSolution={this.testSolution}/>
+        <SolutionMulti data={this.state.data} solution={this.solution} color={this.state.color} testSolution={this.testSolution}/>
 
             <div className="level-practice">
             <span id="title-level">Level</span>
@@ -88,10 +89,6 @@ export default class Practice extends React.Component {
                   <span id="A2">A2</span>
                   <span id="A1">A1</span>
             </div>
-           
-           
-
-
 
             <div className="player-practice">
                <div className="player-arrow">

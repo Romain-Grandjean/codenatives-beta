@@ -1,7 +1,7 @@
 import React from "react";
 
 const Solution = (props) => {
-    const { id, level, question, solutions, answer, explanations } = props.info;
+    const { id, level, question, solutions, answer, explanations, color } = props.info;
 
     return (
         <div key="id" className={"practice-solution"+ props.id} onClick={() => props.testSolution(id)}>
