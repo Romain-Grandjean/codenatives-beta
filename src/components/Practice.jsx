@@ -11,13 +11,16 @@ export default class Practice extends React.Component {
     } 
 
     next = () => {
+      // The next function launches a new random page & check if it hasn't been already played
+      // Then it's stored in an array to be omitted for the next calls
+
       let pages = this.state.data.length;
       let randomPage = Math.floor(Math.random() * Math.floor(pages + 1)); 
       let pageDisplay = this.state.pageviewed.find(item => item !== randomPage);
       
-      console.log("this is data.length:", pages);
-      console.log("this random number:", randomPage);
-      console.log("this is value available:", pageDisplay);
+      console.log("Next function / this is data.length:", pages);
+      console.log("Next function / this random number:", randomPage);
+      console.log("Next function / this is value available:", pageDisplay);
 
       if (pageDisplay !== undefined) {
         this.setState({...this.state, page: randomPage});
@@ -26,16 +29,33 @@ export default class Practice extends React.Component {
         this.setState({...this.state, pageviewed: [] });
         this.setState({...this.state, page: 0 });
       }
-      console.log(this.state.pageviewed);
-      console.log(this.state.page);
+      console.log("Next function / page already displayed:",this.state.pageviewed);
+      console.log("Next function / the new random page proposed:",this.state.page);
     }
       
+     // The previous function target the last item of already played page
+
     previous = () => {
       let pageviewedLength = this.state.pageviewed.length;
       let lastPage = this.state.pageviewed.slice(pageviewedLength -2, pageviewedLength -1);
       this.setState({...this.state, page: lastPage })
+
+      console.log("Previous function / number of pages already displayed:",this.state.pageviewed.length);
+      console.log("Previous function / last page displayed:",lastPage);
     }
-      
+    
+    // The solution function target the solution clicked by the user
+    // If the user solution equals to the object solution the targetted div changes to green (and the others fade)
+    // If the user solution doesn't equal to the object solution the targetted div changes to red anchorNode
+    //  the div with the corectsolution changes to green (and the other fade) 
+
+      solution = (e) => {
+      let userSolution = e.target.getAttribute("value");
+      console.log("Solution function / Seclection utilisateur:", userSolution);
+    }
+
+
+
       render() {
 
         return (
@@ -53,19 +73,19 @@ export default class Practice extends React.Component {
             </div>
            
            
-            <div className="solutionA-practice">
+            <div className="solutionA-practice" value="solutionA-practice" onClick={() => this.solution()}>
               <img src={process.env.PUBLIC_URL + "/img/icon-solutionA.svg"} alt="solution 1"/>
               <span>{this.state.data[this.state.page].solutionA}</span>
             </div>
-            <div className="solutionB-practice">
+            <div className="solutionB-practice" value="solutionB-practice" onClick={() => this.solution()}>
               <img src={process.env.PUBLIC_URL + "/img/icon-solutionB.svg"} alt="solution 2"/>
               <span>{this.state.data[this.state.page].solutionB}</span>
             </div>
-            <div className="solutionC-practice">
+            <div className="solutionC-practice" value="solutionC-practice" onClick={() => this.solution()}>
               <img src={process.env.PUBLIC_URL + "/img/icon-solutionC.svg"} alt="solution 3"/>
               <span>{this.state.data[this.state.page].solutionC}</span>
             </div>
-            <div className="solutionD-practice">
+            <div className="solutionD-practice" value="solutionD-practice" onClick={() => this.solution()}>
               <img src={process.env.PUBLIC_URL + "/img/icon-solutionD.svg"} alt="solution 4"/>
               <span>{this.state.data[this.state.page].solutionD}</span>
             </div>
