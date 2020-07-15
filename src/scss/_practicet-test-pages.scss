@@ -11,14 +11,15 @@
 
 .question-practice {
     grid-column: 9/ 30;
-    grid-row: 3/4;
+    grid-row: 3/5;
     width: 776px;
     height: 28px;
     font-size: 24px;
     font-weight: 500;
     font-style: italic;
     justify-self: start;
-    align-self: start;
+    align-self: center;
+    transform: translateY(2px)
 }
 
 .practice-solutions {
@@ -30,8 +31,6 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
-
-
 }
 
 .practice-solution1 {
@@ -91,7 +90,6 @@
 
     }
 }
-
 
 .practice-solution3 {
     width: 776px;
@@ -214,7 +212,7 @@
 
 .level-practice {
     grid-column: 2/4;
-    grid-row: 3/20;
+    grid-row: 4/17;
     align-self: start;
     display: flex;
     flex-direction: column;
@@ -250,7 +248,7 @@
 
 .score-practice {
     grid-column: 37/38;
-    grid-row: 5/20;
+    grid-row: 4/15;
     align-self: start;
     display: flex;
     flex-direction: column;
@@ -291,7 +289,7 @@
     width: 150px;
     height: auto;
     grid-column: 18/22;
-    grid-row: 19/21;
+    grid-row: 20/22;
     justify-self: center;
     display: flex;
     flex-direction: column;

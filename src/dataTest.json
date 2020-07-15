@@ -3,209 +3,246 @@
         "id": 0,
         "level": 1,
         "question": "Thanks to hoisting:",
-        "solutionA": "Variables are set to undefined in the creation phase.",
-        "solutionB": "Variables are set to null in the execution phase phase.",
-        "solutionC": "Variables are set to their actual value in the in the creation phase.",
-        "solutionD": "Variables are not hoisted.",
-        "answer": "solutionA",
+        "solutions": [
+            "Variables are set to undefined in the creation phase.",
+            "Variables are set to null in the execution phase phase.",
+            "Variables are set to their actual value in the in the creation phase.",
+            "Variables are not hoisted."],
+        "answer": 0,
         "explanations": "This is an explanation"
     },
     {
         "id": 1,
         "level": 1,
         "question": "What is NOT true about anonymous functions?",
-        "solutionA": "They create a new scope.",
-        "solutionB": "Closures are not formed with anonymous functions.",
-        "solutionC": "They are usually not accessible after initial creation.",
-        "solutionD": "They are usually declared without any named identifier referring to them.",
-        "answer": "solutionB",
+        "solutions": [
+            "They create a new scope.",
+            "Closures are not formed with anonymous functions.",
+            "They are usually not accessible after initial creation.",
+            "They are usually declared without any named identifier referring to them."
+        ],
+        "answer": 1,
         "explanations": "This is an explanation"
     },
     {
         "id": 2,
         "level": 0,
         "question": "Function A declares variable X and function B. Can function B access variable X?",
-        "solutionA": "Yes, because of the scope chain",
-        "solutionB": "No, because of the prototype chain",
-        "solutionC": "Yes, because of closures.",
-        "solutionD": "No, because functions are not suppose to access outer variables.",
-        "answer": "solutionA",
+        "solutions": [
+            "Yes, because of the scope chain",
+            "No, because of the prototype chain",
+            "Yes, because of closures.",
+            "No, because functions are not suppose to access outer variables."
+        ],
+        "answer": 0,
         "explanations": "This is an explanation"
     },
     {
         "id": 3,
         "level": 1,
         "question": "In JavaScript, scopes are created by:",
-        "solutionA": "If/Else statements.",
-        "solutionB": "For loops and functions",
-        "solutionC": "Functions.",
-        "solutionD": "If/else statements and functions.",
-        "answer": "solutionC",
+        "solutions": [
+            "If/Else statements.",
+            "For loops and functions",
+            "Functions.",
+            "If/else statements and functions."
+        ],
+        "answer": 2,
         "explanations": "This is an explanation"
     },
     {
         "id": 4,
         "level": 1,
         "question": "Which of the following statements about the 'this' keyword is NOT correct?",
-        "solutionA": "It is a primitive JavaScript data type that all functions get when they are called.",
-        "solutionB": "It is created for each execution context",
-        "solutionC": "In a method call, the 'this' keyword points to the object that it's attached to.",
-        "solutionD": "In a method call, the ‘this’ keyword is only defined as soon as the method gets called.",
-        "answer": "solutionA",
+        "solutions": [
+            "It is a primitive JavaScript data type that all functions get when they are called.",
+            "It is created for each execution context",
+            "In a method call, the 'this' keyword points to the object that it's attached to.",
+            "In a method call, the ‘this’ keyword is only defined as soon as the method gets called."
+        ],
+        "answer": 0,
         "explanations": "This is an explanation"
     },
     {
         "id": 5,
         "level": 1,
         "question": "DOM events are processed when:",
-        "solutionA": "The scope chain is empty.",
-        "solutionB": "The execution stack is empty",
-        "solutionC": "There are no other events.",
-        "solutionD": "There are no active closure.",
-        "answer": "solutionB",
+        "solutions": [
+            "The scope chain is empty.",
+            "The execution stack is empty",
+            "There are no other events.",
+            "There are no active closure."
+        ],
+        "answer": 1,
         "explanations": "This is an explanation"
     },
     {
         "id": 6,
         "level": 1,
         "question": "Why do we need the event object for handling keyboard events?",
-        "solutionA": "Because it carries the keycode property.",
-        "solutionB": "Because it carries the target element",
-        "solutionC": "Because it allows event bubbling to happen.",
-        "solutionD": "Because it allows us to use event delegation.",
-        "answer": "solutionA",
+        "solutions": [
+            "Because it carries the keycode property.",
+            "Because it carries the target element",
+            "Because it allows event bubbling to happen.",
+            "Because it allows us to use event delegation."
+        ],
+        "answer": 1,
         "explanations": "This is an explanation"
     },
     {
         "id": 7,
         "level": 1,
         "question": "What does the ‘new’ operator NOT do?",
-        "solutionA": "Creating a new empty object.",
-        "solutionB": "Calling a function",
-        "solutionC": "Making the 'this' variable of the called function point to the newly created object.",
-        "solutionD": "Returning an execution context.",
-        "answer": "solutionD",
+        "solutions": [
+            "Creating a new empty object.",
+            "Calling a function",
+            "Making the 'this' variable of the called function point to the newly created object.",
+            "Returning an execution context."
+        ],
+        "answer": 3,
         "explanations": "This is an explanation"
     },
     {
         "id": 8,
         "level": 1,
         "question": "What do the expressions 1 == true and 1 === true return?",
-        "solutionA": "True and false, because == performs type coercion and === does not.",
-        "solutionB": "False and true, because == performs type coercion and === does not.",
-        "solutionC": "True and false, because === performs type coercion and == does not.",
-        "solutionD": "False and true, because === performs type coercion and == does not.",
-        "answer": "solutionD",
+        "solutions": [
+            "True and false, because == performs type coercion and === does not.",
+            "False and true, because == performs type coercion and === does not.",
+            "True and false, because === performs type coercion and == does not.",
+            "False and true, because === performs type coercion and == does not."
+        ],
+        "answer": 3,
         "explanations": "This is an explanation"
     },
     {
         "id": 9,
         "level": 1,
         "question": "Suppose we create a new array. Why can the array use the map method?",
-        "solutionA": "Because of the scope chain.",
-        "solutionB": "Because that method is in a closure of all arrays.",
-        "solutionC": "Because of the 'this' keyword.",
-        "solutionD": "Because of the protoype chain.",
-        "answer": "solutionD",
+        "solutions": [
+            "Because of the scope chain.",
+            "Because that method is in a closure of all arrays.",
+            "Because of the 'this' keyword.",
+            "Because of the protoype chain."
+        ],
+        "answer": 3,
         "explanations": "This is an explanation"
     },
     {
         "id": 10,
         "level": 0,
         "question": "What is a callback function?",
-        "solutionA": "A function with a closure.",
-        "solutionB": "A function that is passed to another function as an argument.",
-        "solutionC": "A function within the prototype chain.",
-        "solutionD": "A function that inherits methods from the callback object.",
-        "answer": "solutionB",
+        "solutions": [
+            "A function with a closure.",
+            "A function that is passed to another function as an argument.",
+            "A function within the prototype chain.",
+            "A function that inherits methods from the callback object."
+        ],
+        "answer": 1,
         "explanations": "This is an explanation"
     },
     {
         "id": 11,
         "level": 1,
         "question": "An Immediately Invoked Function Expression:",
-        "solutionA": "Is called only once.",
-        "solutionB": "Makes functions accessible to the outside scope.",
-        "solutionC": "Can't accept arguments.",
-        "solutionD": "Makes use of the bind method.",
-        "answer": "solutionA",
+        "solutions": [
+            "Is called only once.",
+            "Makes functions accessible to the outside scope.",
+            "Can't accept arguments.",
+            "Makes use of the bind method."
+        ],
+        "answer": 0,
         "explanations": "This is an explanation"
     },
     {
         "id": 12,
         "level": 1,
         "question": "Which of the following methods creates a new function with preset arguments?",
-        "solutionA": "Function.apply()",
-        "solutionB": "Function.pre()",
-        "solutionC": "Function.call()",
-        "solutionD": "Function.bind().",
-        "answer": "solutionD",
+        "solutions": [
+            "Function.apply()",
+            "Function.pre()",
+            "Function.call()",
+            "Function.bind()."
+        ],
+        "answer": 3,
         "explanations": "This is an explanation"
     },
     {
         "id": 13,
         "level": 0,
         "question": "Which of the following is NOT a primitive JavaScript data type?",
-        "solutionA": "Number",
-        "solutionB": "Boolean",
-        "solutionC": "Text",
-        "solutionD": "Undefined",
-        "answer": "solutionC",
+        "solutions": [
+            "Number",
+            "Boolean",
+            "Text",
+            "Undefined"
+        ],
+        "answer": 2,
         "explanations": "This is an explanation"
     },
     {
         "id": 14,
         "level": 0,
         "question": "A JavaScript operator is similar to a:",
-        "solutionA": "Variable",
-        "solutionB": "Function",
-        "solutionC": "Array",
-        "solutionD": "Closure",
-        "answer": "solutionB",
+        "solutions": [
+            "Variable",
+            "Function",
+            "Array",
+            "Closure"
+        ],
+        "answer": 1,
         "explanations": "This is an explanation"
     },
     {
         "id": 15,
         "level": 0,
         "question": "True AND False results in:",
-        "solutionA": "True",
-        "solutionB": "Undefined",
-        "solutionC": "False",
-        "solutionD": "Null",
-        "answer": "solutionC",
+        "solutions": [
+            "True",
+            "Undefined",
+            "False",
+            "Null"
+        ],
+        "answer": 2,
         "explanations": "This is an explanation"
     },
     {
         "id": 16,
         "level": 0,
         "question": "In JavaScript, functions attached to objects are called:",
-        "solutionA": "Methods",
-        "solutionB": "Closures",
-        "solutionC": "Properties",
-        "solutionD": "Executables",
-        "answer": "solutionA",
+        "solutions": [
+            "Methods",
+            "Closures",
+            "Properties",
+            "Executables"
+        ],
+        "answer": 0,
         "explanations": "This is an explanation"
     },
     {
         "id": 17,
         "level": 0,
         "question": "In the browser, the global execution context is:",
-        "solutionA": "Document",
-        "solutionB": "Null",
-        "solutionC": "Browser",
-        "solutionD": "Window",
-        "answer": "solutionD",
+        "solutions": [
+            "Document",
+            "Null",
+            "Browser",
+            "Window"
+        ],
+        "answer": 3,
         "explanations": "This is an explanation"
     },
     {
         "id": 18,
         "level": 0,
         "question": "In the browser, the global execution context is:",
-        "solutionA": "Document",
-        "solutionB": "Null",
-        "solutionC": "Browser",
-        "solutionD": "Window",
-        "answer": "solutionD",
+        "solutions":[
+            "Document",
+            "Null",
+            "Browser",
+            "Window"
+        ],
+        "answer": 3,
         "explanations": "This is an explanation"
     }
 ]

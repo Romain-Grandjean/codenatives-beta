@@ -1,5 +1,6 @@
 import React from 'react';
 import DataTest from '../dataTest.json';
+import SolutionMulti from './SolutionMulti';
 
 export default class Test extends React.Component {
     state = {
@@ -7,14 +8,15 @@ export default class Test extends React.Component {
       data: DataTest
     } 
       
-      
       render() {
 
         return (
         <> 
         <div className="practice-page">
-            <div className="question-practice">{this.state.data[this.state.page].question}</div>
-            <div className="level-practice">
+        
+        <div className="question-practice">{this.state.data[this.state.page].question}</div>
+  
+        <div className="level-practice">
                   <span id="title-level">Level</span>
                   <span id="native">Native</span>
                   <span id="C2">C2</span>
@@ -25,6 +27,9 @@ export default class Test extends React.Component {
                   <span id="A1">A1</span>
             </div>
 
+            <SolutionMulti data={this.state.data} solution={this.solution} testSolution={this.testSolution}/>
+
+
             <div className="score-practice">
                   <span id="title-time-score">Timing</span>
                   <span id="global-time-score">-257.28</span>
@@ -34,22 +39,6 @@ export default class Test extends React.Component {
                   <span id="points-score">00128</span>
             </div>
            
-            <div className="solutionA-practice">
-              <img src={process.env.PUBLIC_URL + "/img/icon-solutionA.svg"} alt="logo"/>
-              <span>{this.state.data[this.state.page].solutionA}</span>
-            </div>
-            <div className="solutionB-practice">
-              <img src={process.env.PUBLIC_URL + "/img/icon-solutionB.svg"} alt="logo"/>
-              <span>{this.state.data[this.state.page].solutionB}</span>
-            </div>
-            <div className="solutionC-practice">
-              <img src={process.env.PUBLIC_URL + "/img/icon-solutionC.svg"} alt="logo"/>
-              <span>{this.state.data[this.state.page].solutionC}</span>
-            </div>
-            <div className="solutionD-practice">
-              <img src={process.env.PUBLIC_URL + "/img/icon-solutionD.svg"} alt="logo"/>
-              <span>{this.state.data[this.state.page].solutionD}</span>
-            </div>
             <div className="player-test">
                     <span id="question-number-test">Question 2/30</span>
                     <div className="stop-btn-test">

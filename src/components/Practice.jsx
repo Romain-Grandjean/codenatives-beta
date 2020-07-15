@@ -7,57 +7,66 @@ export default class Practice extends React.Component {
     super(props);  
     this.state = {
       page: 1, 
-      pageviewed: [0, 1],
       data: DataPractice,
-      level: [0,1,2,3,4,5,6],
-      score: 0
+      level: 0,
+      score: 0,
+      count: 0,
     } 
   }
     next = () => {
-      // The next function launches a new random page & check if it hasn't been already played
-      // Then it's stored in an array to be omitted for the next calls
-
-      let pages = this.state.data.length;
-      let randomPage = Math.floor(Math.random() * Math.floor(pages + 1)); 
-      let pageDisplay = this.state.pageviewed.find(item => item !== randomPage);
-      
-      console.log("Next function / this is data.length:", pages);
-      console.log("Next function / this random number:", randomPage);
-      console.log("Next function / this is value available:", pageDisplay);
-
-      if (pageDisplay !== undefined) {
-        this.setState({...this.state, page: randomPage});
-        this.state.pageviewed.push(pageDisplay);
-      } else {
-        this.setState({...this.state, pageviewed: [] });
-        this.setState({...this.state, page: 0 });
-      }
-      console.log("Next function / page already displayed:",this.state.pageviewed);
-      console.log("Next function / the new random page proposed:",this.state.page);
+      let newPage = this.state.page + 1
+      this.setState({...this.state, page: newPage});    
+      console.log("NEXT / this is new page", this.state.page); 
     }
       
-     // The previous function target the last item of already played page
-
     previous = () => {
-      let pageviewedLength = this.state.pageviewed.length;
-      let lastPage = this.state.pageviewed.slice(pageviewedLength -2, pageviewedLength -1);
+      let lastPage = this.state.page - 1;
       this.setState({...this.state, page: lastPage })
-
-      console.log("Previous function / number of pages already displayed:",this.state.pageviewed.length);
-      console.log("Previous function / last page displayed:",lastPage);
+      console.log("PREVIOUS / this is last page", lastPage);
     }
     
-    // The solution function target the solution clicked by the user
-    // If the user solution equals to the object solution the targetted div changes to green (and the others fade)
-    // If the user solution doesn't equal to the object solution the targetted div changes to red anchorNode
-    //  the div with the corectsolution changes to green (and the other fade) 
+    testSolution = (id) => {
+    let newCount = this.state.count + 1;
+    // Correct Answer
+    if (id + 1 === this.data.answer) {
+    
+      // TO DO : Div turn to green  
 
-      solution = (id) => {
-      let userSolution = id;
-      console.log("Solution function / User selection:", userSolution);
+    let newScore = this.state.score + 10; 
+    this.setState({...this.state, score: newScore})  
+    this.setState({...this.state, count: newCount})  
+    } 
+    // Wrong Answer
+    if (id + 1 !== this.data.answer) {
+
+      // TO DO : Div turn to red + answer turn to green 
+
+    this.setState({...this.state, count: newCount})   
     }
-
-
+    // Level up
+    if (this.state.score >= 20 && this.state.count === 2) {
+     this.setState({...this.state, score: 0})  
+     let newLevelUp = this.state.level + 1;
+     this.setState({...this.state, level: newLevelUp})   
+    // TO DO : update level div
+    }
+     // Level down
+    if (this.state.score < 20 && this.state.count === 2 && this.state.level > 0) {
+      this.setState({...this.state, score: 0}) 
+      let newLevelDown = this.state.level - 1;
+      this.setState({...this.state, level: newLevelDown})  
+    // TO DO : update level div
+    }
+    }
+    showSolution = () => {
+    
+    // TO DO : Correct answer turn to green 
+    
+    let newCount = this.state.count + 1;
+    this.setState({...this.state, count: newCount})  
+    let newScore = this.state.score + 10; 
+    this.setState({...this.state, score: newScore})  
+    }
 
       render() {
 
@@ -67,7 +76,7 @@ export default class Practice extends React.Component {
 
         <div className="question-practice">{this.state.data[this.state.page].question}</div>
 
-        <SolutionMulti data={this.state.data} solution={this.solution}/>
+        <SolutionMulti data={this.state.data} solution={this.solution} testSolution={this.testSolution}/>
 
             <div className="level-practice">
                   <span id="native">Native</span>
@@ -101,8 +110,6 @@ export default class Practice extends React.Component {
         </div>  
         </>
         )
-
         
     }
-
   }
