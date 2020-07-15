@@ -10,7 +10,6 @@ export default class Practice extends React.Component {
       score: 0
     } 
 
- 
     next = () => {
       let pages = this.state.data.length;
       let randomPage = Math.floor(Math.random() * Math.floor(pages + 1)); 
@@ -21,7 +20,7 @@ export default class Practice extends React.Component {
       console.log("this is value available:", pageDisplay);
 
       if (pageDisplay !== undefined) {
-        this.setState({...this.state, page: pageDisplay});
+        this.setState({...this.state, page: randomPage});
         this.state.pageviewed.push(pageDisplay);
       } else {
         this.setState({...this.state, pageviewed: [] });
@@ -73,14 +72,16 @@ export default class Practice extends React.Component {
             <div className="player-practice">
                <div className="player-arrow">
                   <img id="arrow-left-page" onClick={() => this.previous()} src={process.env.PUBLIC_URL + "/img/arrow-left-page.svg"} alt="arrow"/>
-                      <span id="practice-solution">Show solution</span>
+                          <div>
+                            <span id="practice-solution">Show Solution</span>
+                            <div className="stop-btn">
+                                  <img id="icon-stop" src={process.env.PUBLIC_URL + "/img/icon-stop.svg"} alt="arrow"/>
+                                  <span>Stop</span>
+                            </div>
+                          </div>  
                       <img id="arrow-right-page" onClick={() => this.next()} src={process.env.PUBLIC_URL + "/img/arrow-right-page.svg"} alt="arrow"/>
+                      
                   </div>
-                    <div className="stop-btn">
-                    <img id="arrow-right-page" src={process.env.PUBLIC_URL + "/img/icon-stop.svg"} alt="arrow"/>
-                    <span>Stop</span>
-                    </div>
-
 
             </div>
         </div>  
