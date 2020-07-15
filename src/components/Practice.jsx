@@ -1,15 +1,18 @@
 import React from 'react';
 import DataPractice from '../dataPractice.json';
+import SolutionMulti from './SolutionMulti';
 
 export default class Practice extends React.Component {
-    state = {
+    constructor(props) {
+    super(props);  
+    this.state = {
       page: 1, 
-      pageviewed: [1],
+      pageviewed: [0, 1],
       data: DataPractice,
       level: [0,1,2,3,4,5,6],
       score: 0
     } 
-
+  }
     next = () => {
       // The next function launches a new random page & check if it hasn't been already played
       // Then it's stored in an array to be omitted for the next calls
@@ -49,9 +52,9 @@ export default class Practice extends React.Component {
     // If the user solution doesn't equal to the object solution the targetted div changes to red anchorNode
     //  the div with the corectsolution changes to green (and the other fade) 
 
-      solution = (e) => {
-      let userSolution = e.target.getAttribute("value");
-      console.log("Solution function / Seclection utilisateur:", userSolution);
+      solution = (id) => {
+      let userSolution = id;
+      console.log("Solution function / User selection:", userSolution);
     }
 
 
@@ -61,7 +64,11 @@ export default class Practice extends React.Component {
         return (
         <> 
         <div className="practice-page">
-            <div className="question-practice">{this.state.data[this.state.page].question}</div>
+
+        <div className="question-practice">{this.state.data[this.state.page].question}</div>
+
+        <SolutionMulti data={this.state.data} solution={this.solution}/>
+
             <div className="level-practice">
                   <span id="native">Native</span>
                   <span id="C2">C2</span>
@@ -73,22 +80,9 @@ export default class Practice extends React.Component {
             </div>
            
            
-            <div className="solutionA-practice" value="solutionA-practice" onClick={() => this.solution()}>
-              <img src={process.env.PUBLIC_URL + "/img/icon-solutionA.svg"} alt="solution 1"/>
-              <span>{this.state.data[this.state.page].solutionA}</span>
-            </div>
-            <div className="solutionB-practice" value="solutionB-practice" onClick={() => this.solution()}>
-              <img src={process.env.PUBLIC_URL + "/img/icon-solutionB.svg"} alt="solution 2"/>
-              <span>{this.state.data[this.state.page].solutionB}</span>
-            </div>
-            <div className="solutionC-practice" value="solutionC-practice" onClick={() => this.solution()}>
-              <img src={process.env.PUBLIC_URL + "/img/icon-solutionC.svg"} alt="solution 3"/>
-              <span>{this.state.data[this.state.page].solutionC}</span>
-            </div>
-            <div className="solutionD-practice" value="solutionD-practice" onClick={() => this.solution()}>
-              <img src={process.env.PUBLIC_URL + "/img/icon-solutionD.svg"} alt="solution 4"/>
-              <span>{this.state.data[this.state.page].solutionD}</span>
-            </div>
+
+
+
             <div className="player-practice">
                <div className="player-arrow">
                   <img id="arrow-left-page" onClick={() => this.previous()} src={process.env.PUBLIC_URL + "/img/arrow-left-page.svg"} alt="arrow"/>

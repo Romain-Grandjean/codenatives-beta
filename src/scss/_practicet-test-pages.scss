@@ -11,7 +11,7 @@
 
 .question-practice {
     grid-column: 9/ 30;
-    grid-row: 5/8;
+    grid-row: 3/4;
     width: 776px;
     height: 28px;
     font-size: 24px;
@@ -21,12 +21,23 @@
     align-self: start;
 }
 
-
-.solutionA-practice {
+.practice-solutions {
     grid-column: 9/ 30;
-    grid-row: 11/12;
+    grid-row: 6/18;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+
+}
+
+.practice-solution1 {
     width: 776px;
     height: 84px;
+    margin-bottom: 18px;
     border-radius: 8px;
     background-color: white;
     display: flex;
@@ -52,11 +63,10 @@
     }
 }
 
-.solutionB-practice {
-    grid-column: 9/ 30;
-    grid-row: 13/14;
+.practice-solution2 {
     width: 776px;
     height: 84px;
+    margin-bottom: 18px;
     border-radius: 8px;
     background-color: white;
     display: flex;
@@ -83,11 +93,10 @@
 }
 
 
-.solutionC-practice {
-    grid-column: 9/ 30;
-    grid-row: 15/16;
+.practice-solution3 {
     width: 776px;
     height: 84px;
+    margin-bottom: 18px;
     border-radius: 8px;
     background-color: white;
     display: flex;
@@ -113,11 +122,10 @@
     }
 }
 
-.solutionD-practice {
-    grid-column: 9/ 30;
-    grid-row: 17/18;
+.practice-solution4 {
     width: 776px;
     height: 84px;
+    margin-bottom: 18px;
     border-radius: 8px;
     background-color: white;
     display: flex;
@@ -147,7 +155,7 @@
     width: 150px;
     height: auto;
     grid-column: 18/22;
-    grid-row: 20/21;
+    grid-row: 19/21;
     justify-self: center;
     display: flex;
     flex-direction: column;
@@ -206,7 +214,7 @@
 
 .level-practice {
     grid-column: 2/4;
-    grid-row: 5/20;
+    grid-row: 3/20;
     align-self: start;
     display: flex;
     flex-direction: column;
