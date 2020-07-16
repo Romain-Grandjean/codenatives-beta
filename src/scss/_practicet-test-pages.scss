@@ -62,29 +62,36 @@
     }
 }
 
+.practice-solution{
+    @include solution;
+
+}
+
+
 .practice-solution11{
     @include solution;
-    background-color: white;
+
 }
+
 
 .practice-solution12{
     @include solution;
-    background-color: #70F4BF;
+
 }
 
 .practice-solution13{
     @include solution;
-    background-color: #ED4837;
+
 }
 
 .practice-solution21{
     @include solution;
-    background-color: white;
+
 }
 
 .practice-solution22{
     @include solution;
-    background-color: #70F4BF;
+
 }
 
 .practice-solution23{
@@ -213,9 +220,9 @@
     font-size: 24px;
 }
 
-#A1 {
-    color: black;
-}
+// #A1 {
+//     color: black;
+// }
 
 
 .score-practice {
