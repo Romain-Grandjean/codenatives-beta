@@ -11,7 +11,7 @@
 
 .question-practice {
     grid-column: 9/ 30;
-    grid-row: 3/5;
+    grid-row: 2/5;
     width: 776px;
     height: 28px;
     font-size: 24px;
@@ -62,118 +62,63 @@
     }
 }
 
-.practice-solution1r{
-    width: 776px;
-    height: 84px;
-    margin-bottom: 18px;
-    border-radius: 8px;
-    background-color:#7CF4BD;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    border: 1px  hsla(300, 4%, 89%, 0.150) solid;
-    & img {
-        display: none;
-
-    }
-    & span {
-        margin-left: 18px;
-        font-size: 20px;
-        width: 668px;
-    }
-    &:hover {
-        transform: scale(1.02);
-
-    }
+.practice-solution11{
+    @include solution;
+    background-color: white;
 }
 
-
-.practice-solution2 {
-    width: 776px;
-    height: 84px;
-    margin-bottom: 18px;
-    border-radius: 8px;
-    background-color: white;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    border: 1px  hsla(300, 4%, 89%, 0.150) solid;
-    & img {
-        width: 55px;
-        height: 84px;
-        margin-right: 18px;
-        justify-self: start;
-        transform: translateX(-8px);
-    }
-    & span {
-        margin-left: 18px;
-        font-size: 20px;
-        width: 668px;
-    }
-    &:hover {
-        transform: scale(1.02);
-
-    }
+.practice-solution12{
+    @include solution;
+    background-color: #70F4BF;
 }
 
-.practice-solution3 {
-    width: 776px;
-    height: 84px;
-    margin-bottom: 18px;
-    border-radius: 8px;
-    background-color: white;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    border: 1px  hsla(300, 4%, 89%, 0.150) solid;
-    & img {
-        width: 55px;
-        height: 84px;
-        margin-right: 18px;
-        justify-self: start;
-        transform: translateX(-8px);
-    }
-    & span {
-        margin-left: 18px;
-        font-size: 20px;
-        width: 668px;
-    }
-    &:hover {
-        transform: scale(1.02);
-
-    }
+.practice-solution13{
+    @include solution;
+    background-color: #ED4837;
 }
 
-.practice-solution4 {
-    width: 776px;
-    height: 84px;
-    margin-bottom: 18px;
-    border-radius: 8px;
+.practice-solution21{
+    @include solution;
     background-color: white;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    border: 1px  #e4e2e426 solid;
-    & img {
-        width: 55px;
-        height: 84px;
-        margin-right: 18px;
-        justify-self: start;
-        transform: translateX(-8px);
-    }
-    & span {
-        margin-left: 18px;
-        font-size: 20px;
-        width: 668px;
-    }
-    &:hover {
-        transform: scale(1.02);
+}
 
-    }
+.practice-solution22{
+    @include solution;
+    background-color: #70F4BF;
+}
+
+.practice-solution23{
+    @include solution;
+    background-color: #ED4837;
+}
+
+.practice-solution31{
+    @include solution;
+    background-color: white;
+}
+
+.practice-solution32{
+    @include solution;
+    background-color: #70F4BF;
+}
+
+.practice-solution33{
+    @include solution;
+    background-color: #ED4837;
+}
+.practice-solution41{
+    @include solution;
+    background-color: white;
+}
+
+.practice-solution42{
+    @include solution;
+    background-color: #70F4BF;
+}
+
+.practice-solution43{
+    @include solution;
+    background-color: #ED4837;
 }
 
 .player-practice {

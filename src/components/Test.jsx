@@ -16,11 +16,10 @@ export default class Test extends React.Component {
 
     testSolution = (id) => {
       let newCount = this.state.count + 1;
+    
       // Correct Answer
       if (id + 1 === this.data.answer) {
-      
-        // TO DO : Div turn to green  
-  
+      // TO DO : Div turn to green    
       let newScore = this.state.score + 10; 
       this.setState({...this.state, score: newScore}) 
       this.setState({...this.state, globalscore: newScore})
@@ -28,35 +27,34 @@ export default class Test extends React.Component {
       // TO DO : Timer
       let newPage = this.state.page + 1;
       this.setState({...this.state, page: newPage}) 
-      } 
+  } 
       // Wrong Answer
       if (id + 1 !== this.data.answer) {
-  
-        // TO DO : Div turn to red + answer turn to green 
-  
+      
+      // TO DO : Div turn to red + answer turn to green 
       this.setState({...this.state, count: newCount}) 
-            // TO DO : Timer
+      // TO DO : Timer
       let newPage = this.state.page + 1;
       this.setState({...this.state, page: newPage}) 
-      }
-      // Level up
+    }
+    
+    // Level up
       if (this.state.score >= 20 && this.state.count === 2) {
-       this.setState({...this.state, score: 0})  
-       let newLevelUp = this.state.level + 1;
-       this.setState({...this.state, level: newLevelUp})   
+      this.setState({...this.state, score: 0})  
+      let newLevelUp = this.state.level + 1;
+      this.setState({...this.state, level: newLevelUp})   
       // TO DO : update level div
-      }
-       // Level down
+    }
+
+    // Level down
       if (this.state.score < 20 && this.state.count === 2 && this.state.level > 0) {
-        this.setState({...this.state, score: 0}) 
-        let newLevelDown = this.state.level - 1;
-        this.setState({...this.state, level: newLevelDown})  
-      // TO DO : update level div
-      }
-      }
+      this.setState({...this.state, score: 0}) 
+      let newLevelDown = this.state.level - 1;
+      this.setState({...this.state, level: newLevelDown})  
+    // TO DO : update level div
+    }
+  }
         
-
-
       render() {
 
         return (
@@ -76,8 +74,7 @@ export default class Test extends React.Component {
                   <span id="A1">A1</span>
             </div>
 
-            <SolutionMulti data={this.state.data} solution={this.solution} testSolution={this.testSolution}/>
-
+            <SolutionMulti data={this.state.data} solution={this.solution} page={this.state.page} testSolution={this.testSolution}/>
 
             <div className="score-practice">
                   <span id="title-time-score">Timing</span>
@@ -94,7 +91,6 @@ export default class Test extends React.Component {
                     <img id="arrow-right-page" src={process.env.PUBLIC_URL + "/img/icon-stop.svg"} alt="arrow"/>
                     <span>Stop</span>
                     </div>
-
 
             </div>
         </div>  

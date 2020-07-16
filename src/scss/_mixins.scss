@@ -1,0 +1,28 @@
+@mixin solution {
+    width: 776px;
+    height: 84px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px  hsla(300, 4%, 89%, 0.150) solid;
+    & img {
+        width: 55px;
+        height: 84px;
+        margin-right: 18px;
+        justify-self: start;
+        transform: translateX(-8px);
+    }
+    & span {
+        margin-left: 18px;
+        font-size: 20px;
+        width: 668px;
+    }
+    &:hover {
+        transform: scale(1.02);
+
+    }
+}
+

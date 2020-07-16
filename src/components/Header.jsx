@@ -1,4 +1,3 @@
-// modules
 import React from 'react';
 import {Link} from 'react-router-dom';
 
@@ -19,12 +18,8 @@ class Header extends React.Component {
                         <div className="button-signup">Sign Up</div>
                     </div>
                 </div>
-
                 <div className="line-header"></div>
-
             </div>
-
-
     };
 };
 

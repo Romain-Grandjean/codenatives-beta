@@ -1,6 +1,6 @@
 // modules
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 class Home extends React.Component {
     render() {
@@ -22,8 +22,6 @@ class Home extends React.Component {
                     <Link to="/practice" className="button-practice"><div>Practice</div></Link>
                     <Link to="/test"  className="button-test"><div>Start test</div></Link>
                     </div>
-
-
                 </div>
                 <img id="arrow-right-home" src={process.env.PUBLIC_URL + "/img/arrow-right-home.png"} alt=""/> 
 

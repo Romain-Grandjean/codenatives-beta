@@ -11,63 +11,70 @@ export default class Practice extends React.Component {
       level: 0,
       score: 0,
       count: 0,
-      // color: "w",
+      color: 1,
     } 
   }
+
     next = () => {
-      let newPage = this.state.page + 1
+      let actualPage = this.state.page;
+      let newPage = this.state.page + 1;
+      if (!isNaN(actualPage)) {
       this.setState({...this.state, page: newPage});    
-      console.log("NEXT / this is new page", this.state.page); 
-    }
-      
+      }
+    }  
+
     previous = () => {
       let lastPage = this.state.page - 1;
-      this.setState({...this.state, page: lastPage })
-      console.log("PREVIOUS / this is last page", lastPage);
+      let actualPage = this.state.page;
+      if (actualPage > 0) {
+      this.setState({...this.state, page: lastPage });
+      }
     }
-  
+
     testSolution = (id) => {
-    let newCount = this.state.count + 1;
-    // Correct Answer
-    if (id + 1 === this.data.answer) {
-    
-      // TO DO : Div turn to green  
+      let newCount = this.state.count + 1;
+      // Correct Answer
+      if (id + 1 === this.state.data[this.state.page].answer) {
 
-    let newScore = this.state.score + 10; 
-    this.setState({...this.state, score: newScore})  
-    this.setState({...this.state, count: newCount})  
+      let newScore = this.state.score + 10; 
+      this.setState({...this.state, color: 2})
+      this.setState({...this.state, score: newScore})  
+      this.setState({...this.state, count: newCount})  
     } 
-    // Wrong Answer
-    if (id + 1 !== this.data.answer) {
 
-      // TO DO : Div turn to red + answer turn to green 
+      // Wrong Answer
+      if (id + 1 !== this.state.data[this.state.page].answer) {
+        this.setState({...this.state, color: 3})
+      this.setState({...this.state, count: newCount})   
+    }
 
-    this.setState({...this.state, count: newCount})   
+      // Level up
+      if (this.state.score >= 20 && this.state.count === 2) {
+      this.setState({...this.state, score: 0})  
+      let newLevelUp = this.state.level + 1;
+      this.setState({...this.state, level: newLevelUp})   
+      // TO DO : update level div
     }
-    // Level up
-    if (this.state.score >= 20 && this.state.count === 2) {
-     this.setState({...this.state, score: 0})  
-     let newLevelUp = this.state.level + 1;
-     this.setState({...this.state, level: newLevelUp})   
-    // TO DO : update level div
-    }
-     // Level down
+
+      // Level down
     if (this.state.score < 20 && this.state.count === 2 && this.state.level > 0) {
       this.setState({...this.state, score: 0}) 
       let newLevelDown = this.state.level - 1;
       this.setState({...this.state, level: newLevelDown})  
-    // TO DO : update level div
+      // TO DO : update level div
     }
-    }
+    console.log("this is score:", this.state.score,"this is count:", this.state.count);
+  }
+
     showSolution = () => {
     
     // TO DO : Correct answer turn to green 
     
-    let newCount = this.state.count + 1;
-    this.setState({...this.state, count: newCount})  
-    let newScore = this.state.score + 10; 
-    this.setState({...this.state, score: newScore})  
-    }
+      let newCount = this.state.count + 1;
+      this.setState({...this.state, count: newCount})  
+      let newScore = this.state.score + 10; 
+      this.setState({...this.state, score: newScore})  
+  }
 
       render() {
 
@@ -77,7 +84,7 @@ export default class Practice extends React.Component {
 
         <div className="question-practice">{this.state.data[this.state.page].question}</div>
 
-        <SolutionMulti data={this.state.data} solution={this.solution} color={this.state.color} testSolution={this.testSolution}/>
+        <SolutionMulti data={this.state.data} solution={this.solution} color={this.state.color} page={this.state.page} testSolution={this.testSolution}/>
 
             <div className="level-practice">
             <span id="title-level">Level</span>
