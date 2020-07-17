@@ -1,7 +1,6 @@
 import React from 'react';
 import DataTest from '../dataTest.json';
 import SolutionMulti from './SolutionMulti';
-import Windowstart from './Windowstart';
 import Timerglobal from './Timerglobal';
 import Timerquestion from './Timerquestion';
 
@@ -13,15 +12,15 @@ export default class Test extends React.Component {
       score: 0,
       questionsettime: 10,
       globaltime: 0,
-      questiontime: 0
+      questiontime: 0,
+      style: "none"
     } 
+    
       // Launch Test 
-
-
       launchtest = () => {
 
         // let windowStart = document.querySelector(".start-mode .start-window");
-        // windowStart.style.display = "none";
+        // windowStart.style.opacity = "0";
 
         let globaltime = (this.state.data.length -1) * this.state.questionsettime;
         let timeGlobal = <Timerglobal />;
@@ -68,12 +67,12 @@ export default class Test extends React.Component {
       }
         
       render() {
-
         let score = this.state.score;
         let questionNumber = this.state.data.length;
+
         return (
         <> 
-        <Windowstart launchtest={this.launchtest}/>
+
         <div className="practice-page">
         
         <div className="question-practice">{this.state.data[this.state.page].question}</div>
@@ -110,6 +109,17 @@ export default class Test extends React.Component {
             </div>
         </div>  
         
+        <div className="start-mode"></div>
+                    <div key="id" className="start-window">
+                        <h1>Ready for the test?</h1> 
+                        <span>questions</span> 
+                        <span>10 secs per question</span>
+                        <span>Test duration secs</span>
+                        <span>2 right answers one level up</span>
+                        <span>2 wrong one level down</span>
+                        <div key="id" className="btn-start" onClick={() => this.launchtest()}>Start test</div>             
+                    </div>
+
 
         </>
         )
