@@ -50,7 +50,7 @@ export default class Practice extends React.Component {
 
         window.setTimeout(() => {
           document.getElementById(this.state.data[this.state.page].answer).style.background = "#7CF4BD";
-          }, 1500);  
+          }, 1200);  
           // TO DO : Show Correct answer 
     }
     
@@ -61,13 +61,13 @@ export default class Practice extends React.Component {
       for (let i= 0; i < allSolutions.length ; i++) {
         allSolutions[i].style.background = "white";
       }
-      }, 3000);  
+      }, 2000);  
 
     window.setTimeout(() => {
       let actualPage = this.state.page;
       let newPage = this.state.page + 1;
       this.setState({...this.state, page: newPage});
-      }, 4200);  
+      }, 2200);  
       
 
     }

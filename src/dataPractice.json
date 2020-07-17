@@ -47,7 +47,7 @@
             "Functions.",
             "If/else statements and functions."
         ],
-        "answer": "solution3",
+        "answer": "solution2",
         "explanations": "This is an explanation"
     },
     {
@@ -86,7 +86,7 @@
             "Because it allows event bubbling to happen.",
             "Because it allows us to use event delegation."
         ],
-        "answer": "solution3",
+        "answer": "solution1",
         "explanations": "This is an explanation"
     },
     {
@@ -112,7 +112,7 @@
             "True and false, because === performs type coercion and == does not.",
             "False and true, because === performs type coercion and == does not."
         ],
-        "answer": "solution4",
+        "answer": "solution3",
         "explanations": "This is an explanation"
     },
     {
@@ -151,7 +151,7 @@
             "Can't accept arguments.",
             "Makes use of the bind method."
         ],
-        "answer": "solution2",
+        "answer": "solution1",
         "explanations": "This is an explanation"
     },
     {
@@ -164,7 +164,7 @@
             "Function.call()",
             "Function.bind()."
         ],
-        "answer": "solution4",
+        "answer": "solution2",
         "explanations": "This is an explanation"
     },
     {
