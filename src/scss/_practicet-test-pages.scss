@@ -33,100 +33,11 @@
     align-items: start;
 }
 
-.practice-solution1 {
-    width: 776px;
-    height: 84px;
-    margin-bottom: 18px;
-    border-radius: 8px;
-    background-color: white;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    border: 1px  hsla(300, 4%, 89%, 0.150) solid;
-    & img {
-        width: 55px;
-        height: 84px;
-        margin-right: 18px;
-        justify-self: start;
-        transform: translateX(-8px);
-    }
-    & span {
-        margin-left: 18px;
-        font-size: 20px;
-        width: 668px;
-    }
-    &:hover {
-        transform: scale(1.02);
-
-    }
-}
 
 .practice-solution{
     @include solution;
-
 }
 
-
-.practice-solution11{
-    @include solution;
-
-}
-
-
-.practice-solution12{
-    @include solution;
-
-}
-
-.practice-solution13{
-    @include solution;
-
-}
-
-.practice-solution21{
-    @include solution;
-
-}
-
-.practice-solution22{
-    @include solution;
-
-}
-
-.practice-solution23{
-    @include solution;
-    background-color: #ED4837;
-}
-
-.practice-solution31{
-    @include solution;
-    background-color: white;
-}
-
-.practice-solution32{
-    @include solution;
-    background-color: #70F4BF;
-}
-
-.practice-solution33{
-    @include solution;
-    background-color: #ED4837;
-}
-.practice-solution41{
-    @include solution;
-    background-color: white;
-}
-
-.practice-solution42{
-    @include solution;
-    background-color: #70F4BF;
-}
-
-.practice-solution43{
-    @include solution;
-    background-color: #ED4837;
-}
 
 .player-practice {
     width: 150px;

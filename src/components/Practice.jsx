@@ -8,9 +8,7 @@ export default class Practice extends React.Component {
     this.state = {
       page: 1, 
       data: DataPractice,
-      score: 0,
-      color: 1,
-      id: null
+      score: 0
     } 
   }
 
@@ -19,18 +17,9 @@ export default class Practice extends React.Component {
       let newPage = this.state.page + 1;
       if (!isNaN(actualPage)) {
       this.setState({...this.state, page: newPage});  
-      }
-      if (this.state.id){
-        document.getElementById(this.state.id + this.state.page).style.background = "white"
-
-      }
-
-    }  
-    componentDidMount(){  if (this.state.id){
-      document.getElementById(this.state.id + this.state.page).style.background = "white"
-
+      }  
     }
-}
+
     previous = () => {
       let lastPage = this.state.page - 1;
       let actualPage = this.state.page;
@@ -39,47 +28,56 @@ export default class Practice extends React.Component {
       }
     }
 
-    testSolution = (ele, id) => {
+    testSolution = (id) => {
       let newScore = this.state.score + 10; 
-      let targetEle = document.getElementById(ele + this.state.page);
-      this.setState({...this.state, id: ele})
-      targetEle.style.background = "white"   
-      console.log("this is ID", id);
-      console.log("this the ele", ele);
-      console.log("thus targetEle", targetEle)
-      console.log("this is answer", this.state.data[this.state.page].answer)
-      console.log("this is condition", id == this.state.data[this.state.page].answer)
-      if (id  == this.state.data[this.state.page].answer) {
-        targetEle.style.background = "#7CF4BD"  
-      this.setState({...this.state, score: newScore});  
+ 
+      console.log("this is ID:", id);
+      console.log("this is type of id", typeof(id));
+      console.log("this is type of this.state.data.answer", this.state.data[this.state.page].answer);
+    // Correct Answer
+      if (id  == this.state.data[this.state.page].answer) { 
+        document.getElementById(id).style.background = "#7CF4BD";
+        this.setState({...this.state, score: newScore }); 
+
     } 
 
-      // Wrong Answer
+    // Wrong Answer
       if (id !== this.state.data[this.state.page].answer) {
-        targetEle.style.background = "#EE654B"   
+
+        window.setTimeout(() => {
+          document.getElementById(id).style.background = "#EE654B";
+          }, 1000);  
+
+        window.setTimeout(() => {
+          document.getElementById(this.state.data[this.state.page].answer).style.background = "#7CF4BD";
+          }, 1500);  
+          // TO DO : Show Correct answer 
+    }
+    
+    // Transition to next question
+
+    window.setTimeout(() => {
+      let allSolutions = document.querySelectorAll(".practice-solutions div");
+      for (let i= 0; i < allSolutions.length ; i++) {
+        allSolutions[i].style.background = "white";
+      }
+      }, 3000);  
+
+    window.setTimeout(() => {
+      let actualPage = this.state.page;
+      let newPage = this.state.page + 1;
+      this.setState({...this.state, page: newPage});
+      }, 4200);  
+      
+
     }
 
-    console.log("this is score:", this.state.score,"this is count:", this.state.count);
-    // window.setTimeout(() => {
-    //   let actualPage = this.state.page;
-    //   let newPage = this.state.page + 1;
-    //   this.setState({...this.state, page: newPage});
-    //     }, 3000);
-      // targetEle.style.background = "white"   
+    
 
-      
-  }
 
     showSolution = () => {
-    
     // TO DO : Correct answer turn to green 
-    
-      let newCount = this.state.count + 1;
-      this.setState({...this.state, count: newCount})  
-      let newScore = this.state.score + 10; 
-      this.setState({...this.state, score: newScore})  
   }
- 
 
       render() {
         let score = this.state.score;
@@ -90,16 +88,16 @@ export default class Practice extends React.Component {
 
         <div className="question-practice">{this.state.data[this.state.page].question}</div>
 
-        <SolutionMulti data={this.state.data} solution={this.solution} color={this.state.color} page={this.state.page} testSolution={this.testSolution}/>
+        <SolutionMulti data={this.state.data} solution={this.solution} picture={this.picture} page={this.state.page} testSolution={this.testSolution}/>
 
             <div className="level-practice">
             <span id="title-level">Level</span>
-                  <span id="native">Native</span>
-                  <span id="C2" style={{color:score>=120?'black':'#d8d8d882'}}>C2</span>
-                  <span id="C1" style={{color:score>=100?'black':'#d8d8d882'}}>C1</span>
-                  <span id="B2" style={{color:score>=60?'black':'#d8d8d882'}}>B2</span>
-                  <span id="B1" style={{color:score>=40?'black':'#d8d8d882'}}>B1</span>
-                  <span id="A2" style={{color:score>=20?'black':'#d8d8d882'}}>A2</span>
+                  <span id="native" style={{color:score>= 120?'black':'#d8d8d882'}}>Native</span>
+                  <span id="C2" style={{color:(score>= 100 && score<120)?'black':'#d8d8d882'}}>C2</span>
+                  <span id="C1" style={{color:(score>= 80 && score<100)?'black':'#d8d8d882'}}>C1</span>
+                  <span id="B2" style={{color:(score>= 60 && score<80)?'black':'#d8d8d882'}}>B2</span>
+                  <span id="B1" style={{color:(score>= 40 && score<60)?'black':'#d8d8d882'}}>B1</span>
+                  <span id="A2" style={{color:(score>= 20 && score<40)?'black':'#d8d8d882'}}>A2</span>
                   <span id="A1" style={{color:score<20?'black':'#d8d8d882'}}>A1</span>
                   
             </div>

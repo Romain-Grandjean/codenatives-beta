@@ -8,7 +8,7 @@
             "Variables are set to null in the execution phase phase.",
             "Variables are set to their actual value in the in the creation phase.",
             "Variables are not hoisted."],
-        "answer": 0,
+        "answer": "solution1",
         "explanations": "This is an explanation"
     },
     {
@@ -21,7 +21,7 @@
             "They are usually not accessible after initial creation.",
             "They are usually declared without any named identifier referring to them."
         ],
-        "answer": 1,
+        "answer": "solution2",
         "explanations": "This is an explanation"
     },
     {
@@ -34,7 +34,7 @@
             "Yes, because of closures.",
             "No, because functions are not suppose to access outer variables."
         ],
-        "answer": 0,
+        "answer": "solution1",
         "explanations": "This is an explanation"
     },
     {
@@ -47,7 +47,7 @@
             "Functions.",
             "If/else statements and functions."
         ],
-        "answer": 2,
+        "answer": "solution3",
         "explanations": "This is an explanation"
     },
     {
@@ -60,7 +60,7 @@
             "In a method call, the 'this' keyword points to the object that it's attached to.",
             "In a method call, the ‘this’ keyword is only defined as soon as the method gets called."
         ],
-        "answer": 0,
+        "answer": "solution1",
         "explanations": "This is an explanation"
     },
     {
@@ -73,7 +73,7 @@
             "There are no other events.",
             "There are no active closure."
         ],
-        "answer": 1,
+        "answer": "solution2",
         "explanations": "This is an explanation"
     },
     {
@@ -86,7 +86,7 @@
             "Because it allows event bubbling to happen.",
             "Because it allows us to use event delegation."
         ],
-        "answer": 1,
+        "answer": "solution3",
         "explanations": "This is an explanation"
     },
     {
@@ -99,7 +99,7 @@
             "Making the 'this' variable of the called function point to the newly created object.",
             "Returning an execution context."
         ],
-        "answer": 3,
+        "answer": "solution4",
         "explanations": "This is an explanation"
     },
     {
@@ -112,7 +112,7 @@
             "True and false, because === performs type coercion and == does not.",
             "False and true, because === performs type coercion and == does not."
         ],
-        "answer": 3,
+        "answer": "solution4",
         "explanations": "This is an explanation"
     },
     {
@@ -125,7 +125,7 @@
             "Because of the 'this' keyword.",
             "Because of the protoype chain."
         ],
-        "answer": 3,
+        "answer": "solution4",
         "explanations": "This is an explanation"
     },
     {
@@ -138,7 +138,7 @@
             "A function within the prototype chain.",
             "A function that inherits methods from the callback object."
         ],
-        "answer": 1,
+        "answer": "solution2",
         "explanations": "This is an explanation"
     },
     {
@@ -151,7 +151,7 @@
             "Can't accept arguments.",
             "Makes use of the bind method."
         ],
-        "answer": 0,
+        "answer": "solution2",
         "explanations": "This is an explanation"
     },
     {
@@ -164,7 +164,7 @@
             "Function.call()",
             "Function.bind()."
         ],
-        "answer": 3,
+        "answer": "solution4",
         "explanations": "This is an explanation"
     },
     {
@@ -177,7 +177,7 @@
             "Text",
             "Undefined"
         ],
-        "answer": 2,
+        "answer": "solution3",
         "explanations": "This is an explanation"
     },
     {
@@ -190,7 +190,7 @@
             "Array",
             "Closure"
         ],
-        "answer": 1,
+        "answer": "solution2",
         "explanations": "This is an explanation"
     },
     {
@@ -203,7 +203,7 @@
             "False",
             "Null"
         ],
-        "answer": 2,
+        "answer": "solution3",
         "explanations": "This is an explanation"
     },
     {
@@ -216,7 +216,7 @@
             "Properties",
             "Executables"
         ],
-        "answer": 0,
+        "answer": "solution1",
         "explanations": "This is an explanation"
     },
     {
@@ -229,7 +229,7 @@
             "Browser",
             "Window"
         ],
-        "answer": 3,
+        "answer": "solution4",
         "explanations": "This is an explanation"
     },
     {
@@ -242,7 +242,7 @@
             "Browser",
             "Window"
         ],
-        "answer": 3,
+        "answer": "solution4",
         "explanations": "This is an explanation"
     }
 ]
