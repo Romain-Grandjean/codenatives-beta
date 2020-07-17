@@ -2,12 +2,8 @@
     {
         "id": 0,
         "level": 1,
-        "question": "Thanks to hoisting:",
-        "solutions": [
-            "Variables are set to undefined in the creation phase.",
-            "Variables are set to null in the execution phase phase.",
-            "Variables are set to their actual value in the in the creation phase.",
-            "Variables are not hoisted."],
+        "question": "",
+        "solutions": [],
         "answer": "solution1",
         "explanations": "This is an explanation"
     },

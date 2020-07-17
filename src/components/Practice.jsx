@@ -44,23 +44,23 @@ export default class Practice extends React.Component {
       let newScore = this.state.score + 10; 
       let newScoreError = this.state.score - 5; 
 
-      // Correct Answer
-      if (id  == this.state.data[this.state.page].answer) { 
-        document.getElementById(id).style.background = "#7CF4BD";
-        this.setState({...this.state, score: newScore }); 
+        // Correct Answer
+        if (id  == this.state.data[this.state.page].answer) { 
+          document.getElementById(id).style.background = "#7CF4BD";
+          this.setState({...this.state, score: newScore }); 
+      } 
 
-    } 
+        // Wrong Answer
+        if (id !== this.state.data[this.state.page].answer) {
+          this.setState({...this.state, score: newScoreError }); 
+         
+         window.setTimeout(() => {
+            document.getElementById(id).style.background = "#EE654B";
+            }, 500);  
 
-      // Wrong Answer
-      if (id !== this.state.data[this.state.page].answer) {
-        this.setState({...this.state, score: newScoreError }); 
-        window.setTimeout(() => {
-          document.getElementById(id).style.background = "#EE654B";
-          }, 500);  
-
-        window.setTimeout(() => {
-          document.getElementById(this.state.data[this.state.page].answer).style.background = "#7CF4BD";
-          }, 700);  
+          window.setTimeout(() => {
+            document.getElementById(this.state.data[this.state.page].answer).style.background = "#7CF4BD";
+            }, 700);  
     }
     
     // Transition to next question
@@ -102,8 +102,7 @@ export default class Practice extends React.Component {
                   <span id="B2" style={{color:(score>= 60 && score<80)?'black':'#d8d8d882'}}>B2</span>
                   <span id="B1" style={{color:(score>= 40 && score<60)?'black':'#d8d8d882'}}>B1</span>
                   <span id="A2" style={{color:(score>= 20 && score<40)?'black':'#d8d8d882'}}>A2</span>
-                  <span id="A1" style={{color:score<20?'black':'#d8d8d882'}}>A1</span>
-                  
+                  <span id="A1" style={{color:score<20?'black':'#d8d8d882'}}>A1</span>      
             </div>
 
             <div className="player-practice">
