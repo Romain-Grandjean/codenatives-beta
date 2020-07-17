@@ -1,6 +1,7 @@
 import React from 'react';
 import DataPractice from '../dataPractice.json';
 import SolutionMulti from './SolutionMulti';
+import {Link} from 'react-router-dom';
 
 export default class Practice extends React.Component {
     constructor(props) {
@@ -15,7 +16,13 @@ export default class Practice extends React.Component {
     next = () => {
       let actualPage = this.state.page;
       let newPage = this.state.page + 1;
+      let allSolutions = document.querySelectorAll(".practice-solutions div");
       if (!isNaN(actualPage)) {
+      
+      for (let i= 0; i < allSolutions.length ; i++) {
+          allSolutions[i].style.background = "white";
+      }
+      
       this.setState({...this.state, page: newPage});  
       }  
     }
@@ -23,17 +30,20 @@ export default class Practice extends React.Component {
     previous = () => {
       let lastPage = this.state.page - 1;
       let actualPage = this.state.page;
+      let allSolutions = document.querySelectorAll(".practice-solutions div");
+
       if (actualPage > 0) {
+      for (let i= 0; i < allSolutions.length ; i++) {
+      allSolutions[i].style.background = "white";
+      }
       this.setState({...this.state, page: lastPage });
       }
     }
 
     testSolution = (id) => {
       let newScore = this.state.score + 10; 
- 
-      console.log("this is ID:", id);
-      console.log("this is type of id", typeof(id));
-      console.log("this is type of this.state.data.answer", this.state.data[this.state.page].answer);
+      let newScoreError = this.state.score - 5; 
+
     // Correct Answer
       if (id  == this.state.data[this.state.page].answer) { 
         document.getElementById(id).style.background = "#7CF4BD";
@@ -43,14 +53,14 @@ export default class Practice extends React.Component {
 
     // Wrong Answer
       if (id !== this.state.data[this.state.page].answer) {
-
+        this.setState({...this.state, score: newScoreError }); 
         window.setTimeout(() => {
           document.getElementById(id).style.background = "#EE654B";
-          }, 1000);  
+          }, 500);  
 
         window.setTimeout(() => {
           document.getElementById(this.state.data[this.state.page].answer).style.background = "#7CF4BD";
-          }, 1200);  
+          }, 700);  
           // TO DO : Show Correct answer 
     }
     
@@ -61,22 +71,19 @@ export default class Practice extends React.Component {
       for (let i= 0; i < allSolutions.length ; i++) {
         allSolutions[i].style.background = "white";
       }
-      }, 2000);  
+      }, 1500);  
 
     window.setTimeout(() => {
       let actualPage = this.state.page;
       let newPage = this.state.page + 1;
       this.setState({...this.state, page: newPage});
-      }, 2200);  
+      }, 1600);  
       
 
     }
 
-    
-
-
     showSolution = () => {
-    // TO DO : Correct answer turn to green 
+      document.getElementById(this.state.data[this.state.page].answer).style.background = "#7CF4BD";
   }
 
       render() {
@@ -106,11 +113,11 @@ export default class Practice extends React.Component {
                <div className="player-arrow">
                   <img id="arrow-left-page" onClick={() => this.previous()} src={process.env.PUBLIC_URL + "/img/arrow-left-page.svg"} alt="arrow"/>
                           <div>
-                            <span id="practice-solution">Show Solution</span>
-                            <div className="stop-btn">
+                            <span id="practice-solution" onClick={() => this.showSolution()}>Show Solution</span>
+                            <Link to="/" className="stop-btn" >
                                   <img id="icon-stop" src={process.env.PUBLIC_URL + "/img/icon-stop.svg"} alt="arrow"/>
                                   <span>Stop</span>
-                            </div>
+                            </Link>
                           </div>  
                       <img id="arrow-right-page" onClick={() => this.next()} src={process.env.PUBLIC_URL + "/img/arrow-right-page.svg"} alt="arrow"/>
                       

@@ -7,6 +7,7 @@
     display: grid;
     grid-template-columns: 72px repeat(36, 1fr) 72px;
     grid-template-rows: 90px repeat(18, 1fr) 66px;
+    z-index: -1;
 }
 
 .question-practice {
@@ -91,6 +92,8 @@
     justify-content:center;
     align-items: center;
     margin-top: 6px;
+    color: inherit;
+    text-decoration: inherit;
     & span { font-size: 14px;
     color: #D8D8D8;
     margin-left: 8px;
@@ -202,6 +205,8 @@
     justify-content:center;
     align-items: center;
     margin-top: 12px;
+    color: inherit;
+    text-decoration: inherit;
     & span { font-size: 14px;
     color: #D8D8D8;
     margin-left: 12px;
