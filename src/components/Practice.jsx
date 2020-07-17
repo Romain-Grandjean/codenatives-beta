@@ -56,11 +56,11 @@ export default class Practice extends React.Component {
          
          window.setTimeout(() => {
             document.getElementById(id).style.background = "#EE654B";
-            }, 500);  
+            }, 300);  
 
           window.setTimeout(() => {
             document.getElementById(this.state.data[this.state.page].answer).style.background = "#7CF4BD";
-            }, 700);  
+            }, 400);  
     }
     
     // Transition to next question
@@ -69,13 +69,13 @@ export default class Practice extends React.Component {
       for (let i= 0; i < allSolutions.length ; i++) {
         allSolutions[i].style.background = "white";
       }
-      }, 1500);  
+      }, 2500);  
 
     window.setTimeout(() => {
       let actualPage = this.state.page;
       let newPage = this.state.page + 1;
       this.setState({...this.state, page: newPage});
-      }, 1600);  
+      }, 2600);  
     }
 
     // Show solution to question

@@ -1,8 +1,10 @@
 import React from 'react';
 import DataTest from '../dataTest.json';
 import SolutionMulti from './SolutionMulti';
+import Windowstart from './Windowstart';
 import Timerglobal from './Timerglobal';
 import Timerquestion from './Timerquestion';
+
 
 export default class Test extends React.Component {
     state = {
@@ -15,15 +17,18 @@ export default class Test extends React.Component {
     } 
       // Launch Test 
 
+
       launchtest = () => {
-        // document.getElementByClassName("start-mode start-window").style.display = "none";
+
+        // let windowStart = document.querySelector(".start-mode .start-window");
+        // windowStart.style.display = "none";
+
         let globaltime = (this.state.data.length -1) * this.state.questionsettime;
         let timeGlobal = <Timerglobal />;
         let questionTime = <Timerquestion />;
 
         this.setState({...this.state, page: 1, globaltime: timeGlobal, questiontime: questionTime});
 
-        // for (let i = 0; i < this.state.data.length; i++) {
 
         this.myInterval = setInterval(() => {
         
@@ -35,6 +40,9 @@ export default class Test extends React.Component {
             }, 10000)
 
       }
+
+
+
        
       // Submit answer
       testSolution = (id) => {
@@ -65,6 +73,7 @@ export default class Test extends React.Component {
         let questionNumber = this.state.data.length;
         return (
         <> 
+        <Windowstart launchtest={this.launchtest}/>
         <div className="practice-page">
         
         <div className="question-practice">{this.state.data[this.state.page].question}</div>
@@ -100,16 +109,7 @@ export default class Test extends React.Component {
 
             </div>
         </div>  
-            <div className="start-mode"></div>
-            <div className="start-window">
-                <h1>Ready for the test?</h1> 
-                <span>{questionNumber} questions</span> 
-                <span>10 secs per question</span>
-                <span>Test duration {questionNumber * 10} secs</span>
-                <span>2 right answers one level up</span>
-                <span>2 wrong one level down</span>
-                <div className="btn-start" onClick={() => this.launchtest()} >Start test</div>             
-            </div>
+        
 
         </>
         )
