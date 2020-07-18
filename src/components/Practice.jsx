@@ -123,6 +123,5 @@ export default class Practice extends React.Component {
         </div>  
         </>
         )
-        
     }
   }

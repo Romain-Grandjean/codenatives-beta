@@ -1,28 +1,31 @@
 import React from 'react';
 import DataTest from '../dataTest.json';
 import SolutionMulti from './SolutionMulti';
+import Popupwindow from './Popupwindow';
 import Timerglobal from './Timerglobal';
 import Timerquestion from './Timerquestion';
 
 
 export default class Test extends React.Component {
-    state = {
+  constructor(props) {
+  super(props);   
+  this.state = {
       page: 0, 
       data: DataTest,
       score: 0,
-      questionsettime: 10,
+      numberofquestions: 0,
       globaltime: 0,
+      questionsettime: 10,
       questiontime: 0,
-      style: "none"
+      style: "block"
     } 
-    
+  }  
       // Launch Test 
       launchtest = () => {
 
-        // let windowStart = document.querySelector(".start-mode .start-window");
-        // windowStart.style.opacity = "0";
+        // this.setState({style: "display = "block"})
 
-        let globaltime = (this.state.data.length -1) * this.state.questionsettime;
+        // let globaltime = (this.state.data.length -1) * this.state.questionsettime;
         let timeGlobal = <Timerglobal />;
         let questionTime = <Timerquestion />;
 
@@ -72,7 +75,14 @@ export default class Test extends React.Component {
 
         return (
         <> 
-
+        <Popupwindow
+          launchtest={this.launchtest}
+          globaltime={this.state.data.length * this.state.questionsettime}
+          numberofquestions={this.state.data.length} 
+          questionsettime={this.state.questionsettime}
+          page={this.state.page}
+  
+          />
         <div className="practice-page">
         
         <div className="question-practice">{this.state.data[this.state.page].question}</div>
@@ -88,7 +98,12 @@ export default class Test extends React.Component {
                   <span id="A1" style={{color:score<20?'black':'#d8d8d882'}}>A1</span>
             </div>
 
-            <SolutionMulti data={this.state.data} solution={this.solution} page={this.state.page} testSolution={this.testSolution}/>
+            <SolutionMulti
+            data={this.state.data}
+            solution={this.solution}
+            page={this.state.page}
+            testSolution={this.testSolution}
+            />
 
             <div className="score-test">
                   <span id="title-time-score">Timing</span>
@@ -108,23 +123,8 @@ export default class Test extends React.Component {
 
             </div>
         </div>  
-        
-        <div className="start-mode"></div>
-                    <div key="id" className="start-window">
-                        <h1>Ready for the test?</h1> 
-                        <span>questions</span> 
-                        <span>10 secs per question</span>
-                        <span>Test duration secs</span>
-                        <span>2 right answers one level up</span>
-                        <span>2 wrong one level down</span>
-                        <div key="id" className="btn-start" onClick={() => this.launchtest()}>Start test</div>             
-                    </div>
-
 
         </>
-        )
-
-        
+        )     
     }
-
   }
