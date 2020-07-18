@@ -40,6 +40,16 @@
     @include solution;
 }
 
+.practice-solution-red{
+    @include solution;
+    background-color: red;
+}
+
+.practice-solution-green{
+    @include solution;
+    background-color: green;
+}
+
 
 .player-practice {
     width: 150px;
