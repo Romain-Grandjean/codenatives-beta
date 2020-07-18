@@ -11,10 +11,14 @@ export default class Popupwindow extends React.Component {
       info="element"
       launchtest={this.props.launchtest}
       page={this.props.page}
+      display={this.props.display}
+      style={{display:(this.props.display == "active")?'flex':'none'}}
+      globaltime = {this.props.questionsettime * this.props.numberofquestions}
+      className="start-window"
       />; 
  
 
-      return    <div className="practice-solutions">
+      return    <div>
                     <div>{window}</div>;
                 </div>
     }

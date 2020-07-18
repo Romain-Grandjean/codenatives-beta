@@ -15,21 +15,21 @@ export default class Test extends React.Component {
       score: 0,
       numberofquestions: 0,
       globaltime: 0,
-      questionsettime: 10,
+      questionsettime: 15,
       questiontime: 0,
-      style: "block"
+      display: "active"
     } 
   }  
       // Launch Test 
       launchtest = () => {
 
-        // this.setState({style: "display = "block"})
 
+   
         // let globaltime = (this.state.data.length -1) * this.state.questionsettime;
         let timeGlobal = <Timerglobal />;
         let questionTime = <Timerquestion />;
 
-        this.setState({...this.state, page: 1, globaltime: timeGlobal, questiontime: questionTime});
+        this.setState({...this.state, page: 1, globaltime: timeGlobal, questiontime: questionTime, display: "nonactive"});
 
 
         this.myInterval = setInterval(() => {
@@ -49,7 +49,7 @@ export default class Test extends React.Component {
       // Submit answer
       testSolution = (id) => {
         let newScore = this.state.score + 10; 
-        let newScoreError = this.state.score - 5; 
+        let newScoreError = this.state.score - 10; 
   
             // Correct Answer
             if (id  == this.state.data[this.state.page].answer) { 
@@ -72,6 +72,7 @@ export default class Test extends React.Component {
       render() {
         let score = this.state.score;
         let questionNumber = this.state.data.length;
+        let displayState = this.state.display;
 
         return (
         <> 
@@ -81,7 +82,8 @@ export default class Test extends React.Component {
           numberofquestions={this.state.data.length} 
           questionsettime={this.state.questionsettime}
           page={this.state.page}
-  
+          display={this.state.display}
+          globaltime = {this.globaltime}
           />
         <div className="practice-page">
         
@@ -109,7 +111,7 @@ export default class Test extends React.Component {
                   <span id="title-time-score">Timing</span>
                   <span id="global-time-score">{this.state.globaltime}</span>
                   <span id="round-time-score">{this.state.questiontime}</span>
-                  <span id="title-time-score">Score</span>
+                  <span id="title-time-score">{this.state.score}</span>
                   <span id="points-score">{this.state.globalscore}</span>
                   {/* <span id="points-score-more">+10</span> */}
             </div>
