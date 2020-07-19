@@ -3,13 +3,14 @@ import React, { Component } from 'react'
 export default class Timerquestion extends Component {
     state = {
         millisecs: 0,
-        seconds: 10,
+        seconds: 20,
         questions: 0
     }
 
     componentDidMount() {
-                this.myInterval = setInterval(() => {
-                const { millisecs, seconds, questions } = this.state;
+       
+            this.myInterval = setInterval(() => {
+                const { millisecs, seconds } = this.state;
 
                 if (millisecs> 0) {
                     this.setState(({ millisecs }) => ({
@@ -17,8 +18,10 @@ export default class Timerquestion extends Component {
                     }))
                 }
                 if (millisecs === 0) {
-                    if (seconds === 0 && questions === 19) {
-                        clearInterval(this.myInterval)
+                    if (seconds === 0) {
+                        this.setState(({ seconds }) => ({
+                            seconds: 20,
+                        }))
                     } else {
                         this.setState(({ seconds }) => ({
                             seconds: seconds - 1,

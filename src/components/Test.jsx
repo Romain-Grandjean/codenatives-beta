@@ -15,12 +15,12 @@ export default class Test extends React.Component {
       score: 0,
       numberofquestions: 0,
       globaltime: 0,
-      questionsettime: 15,
+      questionsettime: 20,
       questiontime: 0,
       display: "active",
+      status: 0,
     } 
   }  
-
 
   testSolution = (id) => {
  
@@ -37,16 +37,18 @@ export default class Test extends React.Component {
           }, 300);  
 
           window.setTimeout(() => {
+
             for (let i= 0; i < allSolutions.length ; i++) {
             allSolutions[i].style.background = "white";
             }
-            this.setState({...this.state, score: newScore, page: newPage}); 
+            let newPage = this.state.page + 1;
+            this.setState({...this.state, score: newScore, page: newPage, status: 1}); 
           }, 2500);  
         }
      
         // Wrong Answer
         if (id !== this.state.data[this.state.page].answer) {
-   
+ 
           window.setTimeout(() => {
             document.getElementById(id).style.background = "#EE654B";}, 300); 
 
@@ -56,10 +58,10 @@ export default class Test extends React.Component {
             window.setTimeout(() => {
           for (let i= 0; i < allSolutions.length ; i++) {
           allSolutions[i].style.background = "white";}
-          this.setState({...this.state, score: newScoreError, page: newPage }) }, 2500);  
+
+          this.setState({...this.state, score: newScoreError, status: 1, page: newPage}) }, 2500);  
           }          
       }
-
 
       // Launch Test 
       launchtest = (id) => {
@@ -73,24 +75,22 @@ export default class Test extends React.Component {
               let newScoreError = this.state.score - 10;
 
 
-        this.myInterval = setInterval(() => {
+        // this.myInterval = setInterval(() => {
         
+        // let actualPage = this.state.page;
+        // let newPage = this.state.page + 1;
+        // let allSolutions = document.querySelectorAll(".practice-solutions div");
+        // for (let i= 0; i < allSolutions.length ; i++) {
+        //   allSolutions[i].style.background = "white";
+        // }          
+        //     }, 20000)
+        //     if (this.state.status === 1) {
+        //       let newPage = this.state.page + 1;
+        //       this.setState({...this.state, page: newPage, status: 0});  
+        //     }
 
-        let actualPage = this.state.page;
-        let newPage = this.state.page + 1;
-        let allSolutions = document.querySelectorAll(".practice-solutions div");
-        for (let i= 0; i < allSolutions.length ; i++) {
-          allSolutions[i].style.background = "white";
-        }
-        this.setState({...this.state, page: newPage});  
-          
-            }, 10000)
       }
-
-
-
-      
-        
+ 
       render() {
         let score = this.state.score;
         let questionNumber = this.state.data.length;
@@ -136,7 +136,7 @@ export default class Test extends React.Component {
             <div className="score-test">
                   <span id="title-time-score">Timing</span>
                   <span id="global-time-score">{this.state.globaltime}</span>
-                  <span id="round-time-score">{this.state.questiontime}</span>
+                  {/* <span id="round-time-score">{this.state.questiontime}</span> */}
                   <span id="title-time-score">Score</span>
                   <span id="points-score">{this.state.score}</span>
                   {/* <span id="points-score-more">+10</span> */}
