@@ -17,6 +17,8 @@ export default class Practice extends React.Component {
       let actualPage = this.state.page;
       let newPage = this.state.page + 1;
       let allSolutions = document.querySelectorAll(".practice-solutions div");
+    
+    
       if (!isNaN(actualPage)) {
       for (let i= 0; i < allSolutions.length ; i++) {
           allSolutions[i].style.background = "white";
@@ -26,6 +28,7 @@ export default class Practice extends React.Component {
     }
 
     // Previous question
+   
     previous = () => {
       let lastPage = this.state.page - 1;
       let actualPage = this.state.page;
@@ -43,32 +46,35 @@ export default class Practice extends React.Component {
     testSolution = (id) => {
       let newScore = this.state.score + 10; 
       let newScoreError = this.state.score - 5; 
+ 
 
         // Correct Answer
         if (id  == this.state.data[this.state.page].answer) { 
           document.getElementById(id).style.background = "#7CF4BD";
           this.setState({...this.state, score: newScore }); 
-      } 
+        } 
 
         // Wrong Answer
         if (id !== this.state.data[this.state.page].answer) {
           this.setState({...this.state, score: newScoreError }); 
          
-         window.setTimeout(() => {
+          this.timeout = setTimeout(() => {
             document.getElementById(id).style.background = "#EE654B";
             }, 300);  
 
-          window.setTimeout(() => {
+           this.timeout = setTimeout(() => {
             document.getElementById(this.state.data[this.state.page].answer).style.background = "#7CF4BD";
             }, 400);  
+
+          // clearTimeout(this.timeout);
+          
     }
     
     // Transition to next question
     window.setTimeout(() => {
       let allSolutions = document.querySelectorAll(".practice-solutions div");
       for (let i= 0; i < allSolutions.length ; i++) {
-        allSolutions[i].style.background = "white";
-      }
+        allSolutions[i].style.background = "white";}
       }, 2500);  
 
     window.setTimeout(() => {
@@ -76,7 +82,7 @@ export default class Practice extends React.Component {
       let newPage = this.state.page + 1;
       this.setState({...this.state, page: newPage});
       }, 2600);  
-    }
+  }
 
     // Show solution to question
     showSolution = () => {

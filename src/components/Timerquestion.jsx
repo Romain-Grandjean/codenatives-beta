@@ -8,12 +8,8 @@ export default class Timerquestion extends Component {
     }
 
     componentDidMount() {
-       
-
-            this.myInterval = setInterval(() => {
-                const { millisecs, seconds } = this.state;
-
-
+                this.myInterval = setInterval(() => {
+                const { millisecs, seconds, questions } = this.state;
 
                 if (millisecs> 0) {
                     this.setState(({ millisecs }) => ({
@@ -21,7 +17,7 @@ export default class Timerquestion extends Component {
                     }))
                 }
                 if (millisecs === 0) {
-                    if (seconds === 0) {
+                    if (seconds === 0 && questions === 19) {
                         clearInterval(this.myInterval)
                     } else {
                         this.setState(({ seconds }) => ({

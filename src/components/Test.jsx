@@ -18,11 +18,6 @@ export default class Test extends React.Component {
       questionsettime: 15,
       questiontime: 0,
       display: "active",
-      background: "active",
-      background1: "active",
-      background2: "inactive",
-      background3: "active",
-      background4: "active",
     } 
   }  
 
@@ -37,26 +32,33 @@ export default class Test extends React.Component {
 
         // Correct Answer
         if (id  == this.state.data[this.state.page].answer) { 
-          window.setTimeout(() => {document.getElementById(id).style.background = "#EE654B";}, 500);  
+          window.setTimeout(() => {
+            document.getElementById(id).style.background = "#EE654B";
+          }, 300);  
 
-          window.setTimeout(() => {for (let i= 0; i < allSolutions.length ; i++) {
+          window.setTimeout(() => {
+            for (let i= 0; i < allSolutions.length ; i++) {
             allSolutions[i].style.background = "white";
-         }
-         this.setState({...this.state, score: newScore, page: newPage }); }, 2000);  
-         }
+            }
+            this.setState({...this.state, score: newScore, page: newPage}); 
+          }, 2500);  
+        }
      
         // Wrong Answer
         if (id !== this.state.data[this.state.page].answer) {
    
-          window.setTimeout(() => {document.getElementById(id).style.background = "#EE654B";}, 500);  
-          window.setTimeout(() => {document.getElementById(this.state.data[this.state.page].answer).style.background = "#7CF4BD";}, 500);  
-          window.setTimeout(() => {for (let i= 0; i < allSolutions.length ; i++) {
-            allSolutions[i].style.background = "white";
-         }
-        this.setState({...this.state, score: newScoreError, page: newPage });}, 2000);  
-          
+          window.setTimeout(() => {
+            document.getElementById(id).style.background = "#EE654B";}, 300); 
+
+          window.setTimeout(() => {
+            document.getElementById(this.state.data[this.state.page].answer).style.background = "#7CF4BD";}, 600);  
+         
+            window.setTimeout(() => {
+          for (let i= 0; i < allSolutions.length ; i++) {
+          allSolutions[i].style.background = "white";}
+          this.setState({...this.state, score: newScoreError, page: newPage }) }, 2500);  
+          }          
       }
-  }
 
 
       // Launch Test 
@@ -83,10 +85,11 @@ export default class Test extends React.Component {
         this.setState({...this.state, page: newPage});  
           
             }, 10000)
-
-
       }
 
+
+
+      
         
       render() {
         let score = this.state.score;
@@ -140,7 +143,7 @@ export default class Test extends React.Component {
             </div>
            
             <div className="player-test">
-                    <span id="question-number-test">Question {this.state.page}/30</span>
+                    <span id="question-number-test">Question {this.state.page}/{this.state.data.length}</span>
                     <div className="stop-btn-test">
                     <img id="arrow-right-page" src={process.env.PUBLIC_URL + "/img/icon-stop.svg"} alt="arrow"/>
                     <span>Stop</span>
