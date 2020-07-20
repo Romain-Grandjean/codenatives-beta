@@ -75,19 +75,16 @@ export default class Test extends React.Component {
               let newScoreError = this.state.score - 10;
 
 
-        // this.myInterval = setInterval(() => {
+        this.myInterval = setInterval(() => {
         
-        // let actualPage = this.state.page;
-        // let newPage = this.state.page + 1;
-        // let allSolutions = document.querySelectorAll(".practice-solutions div");
-        // for (let i= 0; i < allSolutions.length ; i++) {
-        //   allSolutions[i].style.background = "white";
-        // }          
-        //     }, 20000)
-        //     if (this.state.status === 1) {
-        //       let newPage = this.state.page + 1;
-        //       this.setState({...this.state, page: newPage, status: 0});  
-        //     }
+        let actualPage = this.state.page;
+        let newPage = this.state.page + 1;
+        let allSolutions = document.querySelectorAll(".practice-solutions div");
+        for (let i= 0; i < allSolutions.length ; i++) {
+          allSolutions[i].style.background = "white";
+        }          
+            }, 380000)
+
 
       }
  
@@ -106,6 +103,7 @@ export default class Test extends React.Component {
           page={this.state.page}
           display={this.state.display}
           globaltime = {this.globaltime}
+          score = {this.state.score}
           />
         <div className="practice-page">
         
