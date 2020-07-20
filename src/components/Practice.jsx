@@ -18,7 +18,6 @@ export default class Practice extends React.Component {
       let newPage = this.state.page + 1;
       let allSolutions = document.querySelectorAll(".practice-solutions div");
     
-    
       if (!isNaN(actualPage)) {
       for (let i= 0; i < allSolutions.length ; i++) {
           allSolutions[i].style.background = "white";
@@ -27,8 +26,9 @@ export default class Practice extends React.Component {
       }  
     }
 
+
+
     // Previous question
-   
     previous = () => {
       let lastPage = this.state.page - 1;
       let actualPage = this.state.page;
@@ -87,7 +87,8 @@ export default class Practice extends React.Component {
     // Show solution to question
     showSolution = () => {
       document.getElementById(this.state.data[this.state.page].answer).style.background = "#7CF4BD";
-  }
+    }
+
 
       render() {
         let score = this.state.score;

@@ -5,7 +5,6 @@ import Popupwindow from './Popupwindow';
 import Timerglobal from './Timerglobal';
 import Timerquestion from './Timerquestion';
 
-
 export default class Test extends React.Component {
   constructor(props) {
   super(props);   
@@ -63,6 +62,15 @@ export default class Test extends React.Component {
           }          
       }
 
+      stop = () => {
+        if (this.state.page < 2) {
+
+        } else {
+         this.setState({...this.state, page: 0, display: "active"});
+       }
+     }
+
+
       // Launch Test 
       launchtest = (id) => {
 
@@ -84,10 +92,8 @@ export default class Test extends React.Component {
           allSolutions[i].style.background = "white";
         }          
             }, 380000)
-
-
       }
- 
+       
       render() {
         let score = this.state.score;
         let questionNumber = this.state.data.length;
@@ -125,10 +131,6 @@ export default class Test extends React.Component {
             solution={this.solution}
             page={this.state.page}
             testSolution={this.testSolution}
-            // background1 = {this.state.background1}
-            // background2 = {this.state.background2}
-            // background3 = {this.state.background3}
-            // background4 = {this.state.background4}
             />
 
             <div className="score-test">
@@ -142,7 +144,7 @@ export default class Test extends React.Component {
            
             <div className="player-test">
                     <span id="question-number-test">Question {this.state.page}/{this.state.data.length}</span>
-                    <div className="stop-btn-test">
+                    <div className ="stop-btn-test" onClick={() => this.stop()}>
                     <img id="arrow-right-page" src={process.env.PUBLIC_URL + "/img/icon-stop.svg"} alt="arrow"/>
                     <span>Stop</span>
                     </div>

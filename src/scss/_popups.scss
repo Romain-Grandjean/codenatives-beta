@@ -9,7 +9,7 @@
     display: block;
     transform: translate(-50%, -50%);    
     width: 388px;
-    height: 420px;
+    height: auto;
     background-color: white;
     border: 1px  hsla(300, 4%, 89%, 0.080) solid;
     border-radius: 8px;
@@ -39,7 +39,9 @@
 .btn-start {
     width: 120px;
     height: 40px;
+    
     margin-top: 24px;
+    margin-bottom: 42px;
     background-color: #FFEF29;
     border: 2px #FFEF29 solid;
     color: black;
