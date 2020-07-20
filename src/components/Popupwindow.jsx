@@ -30,7 +30,7 @@ export default class Popupwindow extends React.Component {
       className="start-window"
       />; 
 
-      if (this.props.page < 2) {
+      if (this.props.page <= 1) {
         return <div><div>{window}</div>;</div>;      
       } else {
         return <div><div>{scorewindow}</div>;</div>;      

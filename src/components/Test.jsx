@@ -18,8 +18,23 @@ export default class Test extends React.Component {
       questiontime: 0,
       display: "active",
       status: 0,
+      level: "A1"
     } 
   }  
+
+  stop = () => {
+    if (this.state.page <= 1) {
+
+    } else {
+      let allSolutions = document.querySelectorAll(".practice-solutions div");
+
+      for (let i= 0; i < allSolutions.length ; i++) {
+      allSolutions[i].style.background = "white";}
+      
+      this.setState({...this.state, page: 0, display: "active", timeGlobal: 0});
+   }
+ }
+
 
   testSolution = (id) => {
  
@@ -32,7 +47,7 @@ export default class Test extends React.Component {
         // Correct Answer
         if (id  == this.state.data[this.state.page].answer) { 
           window.setTimeout(() => {
-            document.getElementById(id).style.background = "#EE654B";
+            document.getElementById(id).style.background = "#7CF4BD";
           }, 300);  
 
           window.setTimeout(() => {
@@ -62,36 +77,31 @@ export default class Test extends React.Component {
           }          
       }
 
-      stop = () => {
-        if (this.state.page < 2) {
 
-        } else {
-         this.setState({...this.state, page: 0, display: "active"});
-       }
-     }
 
 
       // Launch Test 
-      launchtest = (id) => {
+      launchtest = () => {
 
         // let globaltime = (this.state.data.length -1) * this.state.questionsettime;
         let timeGlobal = <Timerglobal />;
         let questionTime = <Timerquestion />;
+        let allSolutions = document.querySelectorAll(".practice-solutions div");
 
         this.setState({...this.state, page: 1, globaltime: timeGlobal, questiontime: questionTime, display: "nonactive"});
-              let newScore = this.state.score + 10; 
-              let newScoreError = this.state.score - 10;
 
 
         this.myInterval = setInterval(() => {
-        
-        let actualPage = this.state.page;
-        let newPage = this.state.page + 1;
+
+          for (let i= 0; i < allSolutions.length ; i++) {
+            allSolutions[i].style.background = "white";
+          }          
+          this.setState({...this.state, page: 0, display: "active", timeGlobal: 0});
+
         let allSolutions = document.querySelectorAll(".practice-solutions div");
-        for (let i= 0; i < allSolutions.length ; i++) {
-          allSolutions[i].style.background = "white";
-        }          
+
             }, 380000)
+
       }
        
       render() {
