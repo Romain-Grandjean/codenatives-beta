@@ -1,7 +1,7 @@
 import React from "react";
 
 const Startwindow = (props) => {
-    const { id, page, score, globaltime, questionsettime, questiontime, numberofquestions, display, style, } = props.info;
+    const { id, page, score, globaltime, questionsettime, questiontime, numberofquestions, display, style, statustest } = props.info;
 
     return (
         <div key={props.id} info={props.info} className="popup-start" >

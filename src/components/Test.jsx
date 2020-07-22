@@ -17,21 +17,23 @@ export default class Test extends React.Component {
       questionsettime: 20,
       questiontime: 0,
       display: "active",
+      statustest: 0,
       status: 0,
       level: "A1"
     } 
   }  
 
   stop = () => {
-    if (this.state.page <= 1) {
-
+    if (this.state.statustest === 0) {
+      console.log("test not launched");
     } else {
-      let allSolutions = document.querySelectorAll(".practice-solutions div");
 
+      let allSolutions = document.querySelectorAll(".practice-solutions div");
       for (let i= 0; i < allSolutions.length ; i++) {
       allSolutions[i].style.background = "white";}
-      
+
       this.setState({...this.state, page: 0, display: "active", timeGlobal: 0});
+
    }
  }
 
@@ -43,6 +45,15 @@ export default class Test extends React.Component {
     let actualPage = this.state.page;
     let newPage = this.state.page + 1;
     let allSolutions = document.querySelectorAll(".practice-solutions div");
+
+    // Is question final one ??
+    if ((this.state.page + 2) === this.state.data.length) {
+
+      for (let i= 0; i < allSolutions.length ; i++) {
+        allSolutions[i].style.background = "white";
+        this.setState({...this.state, page: 0, display: "active", timeGlobal: 0, statustest: 1});
+      }
+    } else {
 
         // Correct Answer
         if (id  == this.state.data[this.state.page].answer) { 
@@ -57,7 +68,7 @@ export default class Test extends React.Component {
             }
             let newPage = this.state.page + 1;
             this.setState({...this.state, score: newScore, page: newPage, status: 1}); 
-          }, 2500);  
+          }, 1500);  
         }
      
         // Wrong Answer
@@ -73,33 +84,32 @@ export default class Test extends React.Component {
           for (let i= 0; i < allSolutions.length ; i++) {
           allSolutions[i].style.background = "white";}
 
-          this.setState({...this.state, score: newScoreError, status: 1, page: newPage}) }, 2500);  
+          this.setState({...this.state, score: newScoreError, status: 1, page: newPage})
+      
+        
+        }, 1500);  
           }          
       }
 
-
-
+}
 
       // Launch Test 
       launchtest = () => {
 
         // let globaltime = (this.state.data.length -1) * this.state.questionsettime;
-        let timeGlobal = <Timerglobal />;
+        let importTimeGlobal = <Timerglobal />;
         let questionTime = <Timerquestion />;
         let allSolutions = document.querySelectorAll(".practice-solutions div");
 
-        this.setState({...this.state, page: 1, globaltime: timeGlobal, questiontime: questionTime, display: "nonactive"});
-
+        this.setState({...this.state, page: 1, globaltime: importTimeGlobal, questiontime: questionTime, display: "nonactive", statustest: 1});
 
         this.myInterval = setInterval(() => {
 
+          let allSolutions = document.querySelectorAll(".practice-solutions div");
           for (let i= 0; i < allSolutions.length ; i++) {
             allSolutions[i].style.background = "white";
+            this.setState({...this.state, page: 0, display: "active", timeGlobal: 0, statustest: 1});
           }          
-          this.setState({...this.state, page: 0, display: "active", timeGlobal: 0});
-
-        let allSolutions = document.querySelectorAll(".practice-solutions div");
-
             }, 380000)
 
       }
@@ -120,6 +130,7 @@ export default class Test extends React.Component {
           display={this.state.display}
           globaltime = {this.globaltime}
           score = {this.state.score}
+          statustest= {this.state.statustest}
           />
         <div className="practice-page">
         

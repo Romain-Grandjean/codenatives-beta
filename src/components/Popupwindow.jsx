@@ -15,8 +15,9 @@ export default class Popupwindow extends React.Component {
       page={this.props.page}
       display={this.props.display}
       style={{display:(this.props.display == "active")?'flex':'none'}}
-      globaltime = {this.props.questionsettime * this.props.numberofquestions}
+      globaltime = {this.props.globaltime}
       className="start-window"
+      statustest= {this.props.statustest}
       />; 
       const scorewindow = 
       <Scorewindow 
@@ -26,14 +27,16 @@ export default class Popupwindow extends React.Component {
       display={this.props.display}
       score={this.props.score}
       style={{display:(this.props.display == "active")?'flex':'none'}}
-      globaltime = {this.props.questionsettime * this.props.numberofquestions}
+      globaltime = {this.props.globaltime}
       className="start-window"
+      level= {this.props.level}
+      statustest= {this.props.statustest}
       />; 
 
-      if (this.props.page <= 1) {
-        return <div><div>{window}</div>;</div>;      
+      if (this.props.statustest === 1) {
+        return <div><div>{scorewindow}</div>;</div>;     
       } else {
-        return <div><div>{scorewindow}</div>;</div>;      
+        return <div><div>{window}</div>;</div>;   
       }
     }
   }
