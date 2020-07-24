@@ -119,7 +119,7 @@ export default class Test extends React.Component {
                   
             for (let i= 0; i < allSolutions.length ; i++) {
                 allSolutions[i].style.background = "white";
-                this.setState({...this.state, page: 0, display: "active", timeGlobal: 0, statustest: 1, level: resultFinalLevel});
+                this.setState({...this.state, page: 0, display: "active", globaltime: 0, statustest: 1, level: resultFinalLevel});
               }            
           } 
     
@@ -152,9 +152,9 @@ export default class Test extends React.Component {
                   :  (finalscore>= 120) ? "Native"
                   : "A1";
 
-            this.setState({...this.state, page: 0, display: "active", timeGlobal: 0, statustest: 1, level: resultFinalLevel});
+            this.setState({...this.state, page: 0, display: "active", globaltime: 0, statustest: 1, level: resultFinalLevel});
           }          
-            }, 100000)
+            }, 18000)
 
       }
        

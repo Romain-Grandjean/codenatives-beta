@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Timerglobal extends Component {
     state = {
         millisecs: 0,
-        seconds: 285
+        seconds: 18
     }
 
     componentDidMount() {

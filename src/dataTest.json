@@ -9,162 +9,6 @@
     },
     {
         "id": 1,
-        "level": 1,
-        "question": "What is NOT true about anonymous functions?",
-        "solutions": [
-            "They create a new scope.",
-            "Closures are not formed with anonymous functions.",
-            "They are usually not accessible after initial creation.",
-            "They are usually declared without any named identifier referring to them."
-        ],
-        "answer": "solution2",
-        "explanations": "This is an explanation"
-    },
-    {
-        "id": 2,
-        "level": 0,
-        "question": "Function A declares variable X and function B. Can function B access variable X?",
-        "solutions": [
-            "Yes, because of the scope chain",
-            "No, because of the prototype chain",
-            "Yes, because of closures.",
-            "No, because functions are not suppose to access outer variables."
-        ],
-        "answer": "solution1",
-        "explanations": "This is an explanation"
-    },
-    {
-        "id": 3,
-        "level": 1,
-        "question": "In JavaScript, scopes are created by:",
-        "solutions": [
-            "If/Else statements.",
-            "For loops and functions",
-            "Functions.",
-            "If/else statements and functions."
-        ],
-        "answer": "solution2",
-        "explanations": "This is an explanation"
-    },
-    {
-        "id": 4,
-        "level": 1,
-        "question": "Which of the following statements about the 'this' keyword is NOT correct?",
-        "solutions": [
-            "It is a primitive JavaScript data type that all functions get when they are called.",
-            "It is created for each execution context",
-            "In a method call, the 'this' keyword points to the object that it's attached to.",
-            "In a method call, the ‘this’ keyword is only defined as soon as the method gets called."
-        ],
-        "answer": "solution1",
-        "explanations": "This is an explanation"
-    },
-    {
-        "id": 5,
-        "level": 1,
-        "question": "DOM events are processed when:",
-        "solutions": [
-            "The scope chain is empty.",
-            "The execution stack is empty",
-            "There are no other events.",
-            "There are no active closure."
-        ],
-        "answer": "solution2",
-        "explanations": "This is an explanation"
-    },
-    {
-        "id": 6,
-        "level": 1,
-        "question": "Why do we need the event object for handling keyboard events?",
-        "solutions": [
-            "Because it carries the keycode property.",
-            "Because it carries the target element",
-            "Because it allows event bubbling to happen.",
-            "Because it allows us to use event delegation."
-        ],
-        "answer": "solution1",
-        "explanations": "This is an explanation"
-    },
-    {
-        "id": 7,
-        "level": 1,
-        "question": "What does the ‘new’ operator NOT do?",
-        "solutions": [
-            "Creating a new empty object.",
-            "Calling a function",
-            "Making the 'this' variable of the called function point to the newly created object.",
-            "Returning an execution context."
-        ],
-        "answer": "solution4",
-        "explanations": "This is an explanation"
-    },
-    {
-        "id": 8,
-        "level": 1,
-        "question": "What do the expressions 1 == true and 1 === true return?",
-        "solutions": [
-            "True and false, because == performs type coercion and === does not.",
-            "False and true, because == performs type coercion and === does not.",
-            "True and false, because === performs type coercion and == does not.",
-            "False and true, because === performs type coercion and == does not."
-        ],
-        "answer": "solution3",
-        "explanations": "This is an explanation"
-    },
-    {
-        "id": 9,
-        "level": 1,
-        "question": "Suppose we create a new array. Why can the array use the map method?",
-        "solutions": [
-            "Because of the scope chain.",
-            "Because that method is in a closure of all arrays.",
-            "Because of the 'this' keyword.",
-            "Because of the protoype chain."
-        ],
-        "answer": "solution4",
-        "explanations": "This is an explanation"
-    },
-    {
-        "id": 10,
-        "level": 0,
-        "question": "What is a callback function?",
-        "solutions": [
-            "A function with a closure.",
-            "A function that is passed to another function as an argument.",
-            "A function within the prototype chain.",
-            "A function that inherits methods from the callback object."
-        ],
-        "answer": "solution2",
-        "explanations": "This is an explanation"
-    },
-    {
-        "id": 11,
-        "level": 1,
-        "question": "An Immediately Invoked Function Expression:",
-        "solutions": [
-            "Is called only once.",
-            "Makes functions accessible to the outside scope.",
-            "Can't accept arguments.",
-            "Makes use of the bind method."
-        ],
-        "answer": "solution1",
-        "explanations": "This is an explanation"
-    },
-    {
-        "id": 12,
-        "level": 1,
-        "question": "Which of the following methods creates a new function with preset arguments?",
-        "solutions": [
-            "Function.apply()",
-            "Function.pre()",
-            "Function.call()",
-            "Function.bind()."
-        ],
-        "answer": "solution2",
-        "explanations": "This is an explanation"
-    },
-    {
-        "id": 13,
         "level": 0,
         "question": "Which of the following is NOT a primitive JavaScript data type?",
         "solutions": [
@@ -177,7 +21,7 @@
         "explanations": "This is an explanation"
     },
     {
-        "id": 14,
+        "id": 2,
         "level": 0,
         "question": "A JavaScript operator is similar to a:",
         "solutions": [
@@ -190,7 +34,7 @@
         "explanations": "This is an explanation"
     },
     {
-        "id": 15,
+        "id": 3,
         "level": 0,
         "question": "True AND False results in:",
         "solutions": [
@@ -203,7 +47,7 @@
         "explanations": "This is an explanation"
     },
     {
-        "id": 16,
+        "id": 4,
         "level": 0,
         "question": "In JavaScript, functions attached to objects are called:",
         "solutions": [
@@ -216,20 +60,20 @@
         "explanations": "This is an explanation"
     },
     {
-        "id": 17,
-        "level": 0,
-        "question": "In the browser, the global execution context is:",
+        "id": 5,
+        "level": 1,
+        "question": "What is NOT true about anonymous functions?",
         "solutions": [
-            "Document",
-            "Null",
-            "Browser",
-            "Window"
+            "They create a new scope.",
+            "Closures are not formed with anonymous functions.",
+            "They are usually not accessible after initial creation.",
+            "They are usually declared without any named identifier referring to them."
         ],
-        "answer": "solution4",
+        "answer": "solution2",
         "explanations": "This is an explanation"
     },
     {
-        "id": 18,
+        "id": 6,
         "level": 0,
         "question": "In the browser, the global execution context is:",
         "solutions":[
@@ -239,6 +83,149 @@
             "Window"
         ],
         "answer": "solution4",
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 7,
+        "level": 1,
+        "question": "In JavaScript, scopes are created by:",
+        "solutions": [
+            "If/Else statements.",
+            "For loops and functions",
+            "Functions.",
+            "If/else statements and functions."
+        ],
+        "answer": "solution2",
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 8,
+        "level": 0,
+        "question": "Function A declares variable X and function B. Can function B access variable X?",
+        "solutions": [
+            "Yes, because of the scope chain",
+            "No, because of the prototype chain",
+            "Yes, because of closures.",
+            "No, because functions are not suppose to access outer variables."
+        ],
+        "answer": "solution1",
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 9,
+        "level": 1,
+        "question": "DOM events are processed when:",
+        "solutions": [
+            "The scope chain is empty.",
+            "The execution stack is empty",
+            "There are no other events.",
+            "There are no active closure."
+        ],
+        "answer": "solution2",
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 10,
+        "level": 1,
+        "question": "Why do we need the event object for handling keyboard events?",
+        "solutions": [
+            "Because it carries the keycode property.",
+            "Because it carries the target element",
+            "Because it allows event bubbling to happen.",
+            "Because it allows us to use event delegation."
+        ],
+        "answer": "solution1",
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 11,
+        "level": 1,
+        "question": "What does the ‘new’ operator NOT do?",
+        "solutions": [
+            "Creating a new empty object.",
+            "Calling a function",
+            "Making the 'this' variable of the called function point to the newly created object.",
+            "Returning an execution context."
+        ],
+        "answer": "solution4",
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 12,
+        "level": 1,
+        "question": "What do the expressions 1 == true and 1 === true return?",
+        "solutions": [
+            "True and false, because == performs type coercion and === does not.",
+            "False and true, because == performs type coercion and === does not.",
+            "True and false, because === performs type coercion and == does not.",
+            "False and true, because === performs type coercion and == does not."
+        ],
+        "answer": "solution3",
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 13,
+        "level": 1,
+        "question": "Suppose we create a new array. Why can the array use the map method?",
+        "solutions": [
+            "Because of the scope chain.",
+            "Because that method is in a closure of all arrays.",
+            "Because of the 'this' keyword.",
+            "Because of the protoype chain."
+        ],
+        "answer": "solution4",
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 14,
+        "level": 0,
+        "question": "What is a callback function?",
+        "solutions": [
+            "A function with a closure.",
+            "A function that is passed to another function as an argument.",
+            "A function within the prototype chain.",
+            "A function that inherits methods from the callback object."
+        ],
+        "answer": "solution2",
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 15,
+        "level": 1,
+        "question": "An Immediately Invoked Function Expression:",
+        "solutions": [
+            "Is called only once.",
+            "Makes functions accessible to the outside scope.",
+            "Can't accept arguments.",
+            "Makes use of the bind method."
+        ],
+        "answer": "solution1",
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 16,
+        "level": 1,
+        "question": "Which of the following methods creates a new function with preset arguments?",
+        "solutions": [
+            "Function.apply()",
+            "Function.pre()",
+            "Function.call()",
+            "Function.bind()."
+        ],
+        "answer": "solution2",
+        "explanations": "This is an explanation"
+    },
+    {
+        "id": 17,
+        "level": 1,
+        "question": "Which of the following statements about the 'this' keyword is NOT correct?",
+        "solutions": [
+            "It is a primitive JavaScript data type that all functions get when they are called.",
+            "It is created for each execution context",
+            "In a method call, the 'this' keyword points to the object that it's attached to.",
+            "In a method call, the ‘this’ keyword is only defined as soon as the method gets called."
+        ],
+        "answer": "solution1",
         "explanations": "This is an explanation"
     }
 ]
