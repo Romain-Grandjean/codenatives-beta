@@ -15,7 +15,6 @@ export default class Test extends React.Component {
       numberofquestions: 0,
       globaltime: 0,
       questionsettime: 20,
-      questiontime: 0,
       display: "active",
       statustest: 0,
       status: 0,
@@ -29,14 +28,26 @@ export default class Test extends React.Component {
     } else {
 
       let allSolutions = document.querySelectorAll(".practice-solutions div");
+      let finalscore = this.state.score;
       for (let i= 0; i < allSolutions.length ; i++) {
-      allSolutions[i].style.background = "white";}
+      allSolutions[i].style.background = "white";
+      }
 
-      this.setState({...this.state, page: 0, display: "active", timeGlobal: 0});
+      const finalLevel = (finalscore) => {
+        return (finalscore>= 20 && finalscore<40) ? "A2"
+            :  (finalscore>= 40 && finalscore<60) ? "B1"
+            :  (finalscore>= 60 && finalscore<80) ? "B2"
+            :  (finalscore>= 80 && finalscore<100) ? "C1"
+            :  (finalscore>= 100 && finalscore<120) ? "C2"
+            :  (finalscore>= 120) ? "Native"
+            : "A1"
+      }
 
+      let resultFinalLevel = finalLevel(finalscore);
+
+      this.setState({...this.state, page: 0, display: "active", globaltime: 0, level: resultFinalLevel});
    }
  }
-
 
   testSolution = (id) => {
  
@@ -45,15 +56,6 @@ export default class Test extends React.Component {
     let actualPage = this.state.page;
     let newPage = this.state.page + 1;
     let allSolutions = document.querySelectorAll(".practice-solutions div");
-
-    // Is question final one ??
-    if ((this.state.page + 2) === this.state.data.length) {
-
-      for (let i= 0; i < allSolutions.length ; i++) {
-        allSolutions[i].style.background = "white";
-        this.setState({...this.state, page: 0, display: "active", timeGlobal: 0, statustest: 1});
-      }
-    } else {
 
         // Correct Answer
         if (id  == this.state.data[this.state.page].answer) { 
@@ -67,9 +69,15 @@ export default class Test extends React.Component {
             allSolutions[i].style.background = "white";
             }
             let newPage = this.state.page + 1;
-            this.setState({...this.state, score: newScore, page: newPage, status: 1}); 
-          }, 1500);  
-        }
+
+                if ((this.state.page) === this.state.data.length) {
+                  this.setState({...this.state, score: newScore})
+                  this.scoretest();
+                } else {
+                  this.setState({...this.state, score: newScore, page: newPage, status: 1})
+                }
+                }, 1500); 
+            } 
      
         // Wrong Answer
         if (id !== this.state.data[this.state.page].answer) {
@@ -84,33 +92,69 @@ export default class Test extends React.Component {
           for (let i= 0; i < allSolutions.length ; i++) {
           allSolutions[i].style.background = "white";}
 
-          this.setState({...this.state, score: newScoreError, status: 1, page: newPage})
-      
-        
-        }, 1500);  
-          }          
-      }
 
+          if ((this.state.page) === this.state.data.length) {
+            this.setState({...this.state, score: newScoreError})
+            this.scoretest();
+          } else {
+            this.setState({...this.state, score: newScoreError, page: newPage, status: 1})
+          }
+          }, 1500); 
+          }          
 }
+      scoretest = () => {
+
+         // Is question final one ??
+
+         let allSolutions = document.querySelectorAll(".practice-solutions div");
+         let finalscore = this.state.score;
+
+        let resultFinalLevel = (finalscore>= 20 && finalscore<40) ? "A2"
+                  :  (finalscore>= 40 && finalscore<60) ? "B1"
+                  :  (finalscore>= 60 && finalscore<80) ? "B2"
+                  :  (finalscore>= 80 && finalscore<100) ? "C1"
+                  :  (finalscore>= 100 && finalscore<120) ? "C2"
+                  :  (finalscore>= 120) ? "Native"
+                  : "A1";
+                  
+            for (let i= 0; i < allSolutions.length ; i++) {
+                allSolutions[i].style.background = "white";
+                this.setState({...this.state, page: 0, display: "active", timeGlobal: 0, statustest: 1, level: resultFinalLevel});
+              }            
+          } 
+    
+
+
 
       // Launch Test 
       launchtest = () => {
 
         // let globaltime = (this.state.data.length -1) * this.state.questionsettime;
         let importTimeGlobal = <Timerglobal />;
-        let questionTime = <Timerquestion />;
+
+
         let allSolutions = document.querySelectorAll(".practice-solutions div");
 
-        this.setState({...this.state, page: 1, globaltime: importTimeGlobal, questiontime: questionTime, display: "nonactive", statustest: 1});
+        this.setState({...this.state, page: 1, globaltime: importTimeGlobal, score: 0, display: "nonactive", statustest: 1});
 
         this.myInterval = setInterval(() => {
 
           let allSolutions = document.querySelectorAll(".practice-solutions div");
           for (let i= 0; i < allSolutions.length ; i++) {
             allSolutions[i].style.background = "white";
-            this.setState({...this.state, page: 0, display: "active", timeGlobal: 0, statustest: 1});
+
+            let finalscore = this.state.score;
+            let resultFinalLevel = (finalscore>= 20 && finalscore<40) ? "A2"
+                  :  (finalscore>= 40 && finalscore<60) ? "B1"
+                  :  (finalscore>= 60 && finalscore<80) ? "B2"
+                  :  (finalscore>= 80 && finalscore<100) ? "C1"
+                  :  (finalscore>= 100 && finalscore<120) ? "C2"
+                  :  (finalscore>= 120) ? "Native"
+                  : "A1";
+
+            this.setState({...this.state, page: 0, display: "active", timeGlobal: 0, statustest: 1, level: resultFinalLevel});
           }          
-            }, 380000)
+            }, 100000)
 
       }
        
@@ -131,6 +175,7 @@ export default class Test extends React.Component {
           globaltime = {this.globaltime}
           score = {this.state.score}
           statustest= {this.state.statustest}
+          level= {this.state.level}
           />
         <div className="practice-page">
         
