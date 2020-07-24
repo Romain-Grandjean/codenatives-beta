@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/code-natives/static/css/main.a0bc7eca.chunk.css",
+    "main.js": "/code-natives/static/js/main.fff7d635.chunk.js",
+    "main.js.map": "/code-natives/static/js/main.fff7d635.chunk.js.map",
+    "runtime-main.js": "/code-natives/static/js/runtime-main.204ed712.js",
+    "runtime-main.js.map": "/code-natives/static/js/runtime-main.204ed712.js.map",
+    "static/js/2.33d57399.chunk.js": "/code-natives/static/js/2.33d57399.chunk.js",
+    "static/js/2.33d57399.chunk.js.map": "/code-natives/static/js/2.33d57399.chunk.js.map",
+    "index.html": "/code-natives/index.html",
+    "precache-manifest.f04980cfd90dfe346db1419dc967a81e.js": "/code-natives/precache-manifest.f04980cfd90dfe346db1419dc967a81e.js",
+    "service-worker.js": "/code-natives/service-worker.js",
+    "static/css/main.a0bc7eca.chunk.css.map": "/code-natives/static/css/main.a0bc7eca.chunk.css.map",
+    "static/js/2.33d57399.chunk.js.LICENSE.txt": "/code-natives/static/js/2.33d57399.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.204ed712.js",
+    "static/js/2.33d57399.chunk.js",
+    "static/css/main.a0bc7eca.chunk.css",
+    "static/js/main.fff7d635.chunk.js"
+  ]
+}
