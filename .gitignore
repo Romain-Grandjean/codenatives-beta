@@ -3,6 +3,10 @@
 node_modules/
 design/
 
+# Tool extensions
+
+.vscode
+
 # General
 .DS_Store
 .AppleDouble

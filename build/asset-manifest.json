@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/codenatives-beta/static/css/main.a0bc7eca.chunk.css",
+    "main.js": "/codenatives-beta/static/js/main.0da66d90.chunk.js",
+    "main.js.map": "/codenatives-beta/static/js/main.0da66d90.chunk.js.map",
+    "runtime-main.js": "/codenatives-beta/static/js/runtime-main.89343d86.js",
+    "runtime-main.js.map": "/codenatives-beta/static/js/runtime-main.89343d86.js.map",
+    "static/js/2.f942d9c4.chunk.js": "/codenatives-beta/static/js/2.f942d9c4.chunk.js",
+    "static/js/2.f942d9c4.chunk.js.map": "/codenatives-beta/static/js/2.f942d9c4.chunk.js.map",
+    "index.html": "/codenatives-beta/index.html",
+    "precache-manifest.06dbf8771484197ff5cc9a5b2e9e1cf1.js": "/codenatives-beta/precache-manifest.06dbf8771484197ff5cc9a5b2e9e1cf1.js",
+    "service-worker.js": "/codenatives-beta/service-worker.js",
+    "static/css/main.a0bc7eca.chunk.css.map": "/codenatives-beta/static/css/main.a0bc7eca.chunk.css.map",
+    "static/js/2.f942d9c4.chunk.js.LICENSE.txt": "/codenatives-beta/static/js/2.f942d9c4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.89343d86.js",
+    "static/js/2.f942d9c4.chunk.js",
+    "static/css/main.a0bc7eca.chunk.css",
+    "static/js/main.0da66d90.chunk.js"
+  ]
+}
