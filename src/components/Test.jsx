@@ -154,7 +154,7 @@ export default class Test extends React.Component {
 
             this.setState({...this.state, page: 0, display: "active", globaltime: 0, statustest: 1, level: resultFinalLevel});
           }          
-            }, 18000)
+            }, 180000)
 
       }
        
