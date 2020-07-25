@@ -1,0 +1,156 @@
+
+#central-window {
+    width: 520px;
+    height: auto;
+    margin-right: 48px;
+    box-shadow:
+    0 2.7px 2.2px rgba(0, 0, 0, 0.017),
+    0 6.4px 5.3px rgba(0, 0, 0, 0.024),
+    0 12px 10px rgba(0, 0, 0, 0.03),
+    0 21.4px 17.9px rgba(0, 0, 0, 0.036),
+    0 40.1px 33.4px rgba(0, 0, 0, 0.043),
+    0 96px 80px rgba(0, 0, 0, 0.06)
+  ;
+}
+
+#central-catchphrase {
+    width: 480px;
+    height: 360px;
+    grid-column: 20/36;
+    grid-row: 3/4;
+  & h1 {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -1.2px;
+  }
+  & h2 {
+    font-size: 23px;
+    font-weight: 300;
+    margin-top: 24px;
+}
+}
+
+.central-language-selection {
+    width: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    align-items: start;
+    margin-top: 72px;
+    & span {
+        font-size: 18px;
+        font-weight: 400;
+        margin-right: 12px;
+    }
+
+}
+
+.btn-language { 
+    width: 87px;
+    height: 22px;    
+    transform: translateY(2px);
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: 2px black solid;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 0;
+    &:hover, :active {
+        border-bottom: none;
+        img {
+            transform: rotate(90deg);
+        }
+    }
+    &:hover .language-selection {
+        display: flex;
+    }
+    div:last-child {
+        color: black;
+    }
+}
+
+
+.language-selection {
+    position: relative;
+    top: 294px;
+    left: 12px;
+    background-color: rgb(255, 255, 255);
+    display: none;
+    flex-flow: column;
+    z-index: 99;
+
+    & span { 
+        width: 120px;
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 16px;
+
+        color: rgba(0, 0, 0, 0.604);
+    &:hover {
+
+        span {
+            display: flex;
+            color: black;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 28px;
+            margin-left: 12px;
+        }
+    }
+
+    }
+}
+
+
+
+.central-buttons {
+    width: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    align-items: start;
+    margin-top: 36px;
+}
+
+
+.button-practice {
+    width: 120px;
+    height: 40px;
+    border: 2px black solid;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 18px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+    text-decoration: inherit;
+    &:hover{
+        background-color: black;
+        color: white;
+        border: 2px rgb(255, 255, 255) solid;
+    }
+}
+
+.button-test {
+    width: 120px;
+    height: 40px;
+    background-color: #FFEF29;
+    border: 2px #FFEF29 solid;
+    color: black;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: inherit;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        background-color: black;
+        color: white;
+        border: 2px rgb(255, 255, 255) solid;
+    }
+}
