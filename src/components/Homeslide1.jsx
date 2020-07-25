@@ -10,9 +10,9 @@ const Homeslide1 = () => {
               <h1>How well do you 'speak' code?</h1>
               <h2>30 questions, 300 seconds to find out !!</h2>
               <div className="central-language-selection">
-                <span className="language-selector">Choose your language</span>
+                <span id="language-catchphrase">Choose your language</span>
                 <div className="btn-language">
-                  <img id="arrow-left-home" src={process.env.PUBLIC_URL + "/img/arrow-btn-selector.svg"} alt=""/>
+                  <img id="language-arrow" src={process.env.PUBLIC_URL + "/img/arrow-btn-selector.svg"} alt=""/>
                   <div className="language-selection">
                     <span>Javascript</span>
                     <span>HTML/CSS</span>

@@ -27,7 +27,7 @@
     font-size: 23px;
     font-weight: 300;
     margin-top: 24px;
-}
+    }
 }
 
 .central-language-selection {
@@ -37,68 +37,77 @@
     justify-content: left;
     align-items: start;
     margin-top: 72px;
-    & span {
-        font-size: 18px;
-        font-weight: 400;
-        margin-right: 12px;
-    }
+}
 
+#language-catchphrase {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 16px;
 }
 
 .btn-language { 
     width: 87px;
-    height: 22px;    
+    height: 22px;
+    margin-left: 12px;    
     transform: translateY(2px);
     display: flex;
     flex-flow: row nowrap;
-    border-bottom: 2px black solid;
+    border-bottom: 2px hsla(300, 4%, 89%, 0.80) solid;
     justify-content: space-between;
     align-items: flex-end;
     z-index: 0;
-    &:hover, :active {
+    img { 
+        width: 8px;
+        height: auto;
+        margin-bottom: 4px;
+        z-index: -1;
+    }
+    &:hover {
         border-bottom: none;
-        img {
+        height: auto;
+        z-index: -1;
+        &img:hover {
             transform: rotate(90deg);
+            width: 8px;
         }
-    }
-    &:hover .language-selection {
-        display: flex;
-    }
-    div:last-child {
-        color: black;
     }
 }
 
-
 .language-selection {
-    position: relative;
-    top: 294px;
-    left: 12px;
-    background-color: rgb(255, 255, 255);
-    display: none;
-    flex-flow: column;
-    z-index: 99;
-
-    & span { 
-        width: 120px;
-        font-size: 18px;
-        font-weight: 400;
-        margin-bottom: 16px;
-
-        color: rgba(0, 0, 0, 0.604);
-    &:hover {
-
-        span {
-            display: flex;
-            color: black;
-            font-size: 16px;
-            font-weight: 400;
-            margin-bottom: 28px;
-            margin-left: 12px;
-        }
+    display: flex;
+    color: black;
+    font-weight: 800;
+    position: fixed;
+    top: 0px;
+    left: 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1;
+    
+    & span {
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 6px;
+    margin-bottom: 16px;
     }
-
+    &:hover, :active{
+    display: flex;
+    color: black;
+    font-weight: 800;
+    position: fixed;
+    top: 0px;
+    left: 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: -1;
     }
+}
+
+.language-selection :first-child {
+    display: block;
+    color: black;
 }
 
 
