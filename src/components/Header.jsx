@@ -6,10 +6,7 @@ class Header extends React.Component {
     return (
       <div className="header">
         <Link to="" id="logo-header">
-          <img
-            src={process.env.PUBLIC_URL + "/img/logo_header.svg"}
-            alt="logo"
-          />
+          <img src={process.env.PUBLIC_URL + "/img/logo_header.svg"} alt="logo"/>
         </Link>
 
         <div className="navigation">

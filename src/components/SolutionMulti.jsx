@@ -13,7 +13,6 @@ export default class SolutionMulti extends React.Component {
           page={this.props.page}
           solution={this.props.solution}
           answer={this.props.answer}
-          // style={{background:((this.props.background[element.id]) === "active")?'black':'red'}}
           testSolution={this.props.testSolution}
         />
       )

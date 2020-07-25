@@ -6,27 +6,15 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-page">
-        <img
-          id="arrow-left-home"
-          src={process.env.PUBLIC_URL + "/img/arrow-left-home.png"}
-          alt=""
-        />
-        <img
-          id="central-window"
-          src={process.env.PUBLIC_URL + "/img/central-window.png"}
-          alt=""
-        />
+        <img id="arrow-left-home" src={process.env.PUBLIC_URL + "/img/arrow-left-home.png"} alt=""/>
+        <img id="central-window" src={process.env.PUBLIC_URL + "/img/central-window.png"} alt=""/>
         <div id="central-catchphrase">
           <h1>How well do you 'speak' code?</h1>
           <h2>30 questions, 300 seconds to find out !!</h2>
           <div className="central-language-selection">
             <span className="language-selector">Choose your language</span>
             <div className="btn-language">
-              <img
-                id="arrow-left-home"
-                src={process.env.PUBLIC_URL + "/img/arrow-btn-selector.svg"}
-                alt=""
-              />
+              <img id="arrow-left-home" src={process.env.PUBLIC_URL + "/img/arrow-btn-selector.svg"} alt=""/>
               <span>Javascript</span>
             </div>
           </div>

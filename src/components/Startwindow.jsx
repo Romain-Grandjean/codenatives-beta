@@ -16,14 +16,8 @@ const Startwindow = (props) => {
 
   return (
     <div key={props.id} info={props.info} className="popup-start">
-      <div
-        className="start-mode"
-        style={{ display: props.display === "active" ? "block" : "none" }}
-      ></div>
-      <div
-        className="start-window"
-        style={{ display: props.display === "active" ? "flex" : "none" }}
-      >
+      <div className="start-mode" style={{ display: props.display === "active" ? "block" : "none" }}></div>
+      <div className="start-window" style={{ display: props.display === "active" ? "flex" : "none" }}>
         <h1>Ready for the test?</h1>
         <span>
           17 questions

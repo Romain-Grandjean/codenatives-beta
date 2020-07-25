@@ -17,14 +17,8 @@ const Scorewindow = (props) => {
 
   return (
     <div key={props.id} info={props.info} className="popup-start">
-      <div
-        className="start-mode"
-        style={{ display: props.display === "active" ? "block" : "none" }}
-      ></div>
-      <div
-        className="start-window"
-        style={{ display: props.display === "active" ? "flex" : "none" }}
-      >
+      <div className="start-mode" style={{ display: props.display === "active" ? "block" : "none" }}></div>
+      <div className="start-window" style={{ display: props.display === "active" ? "flex" : "none" }}>
         <h1>Your test results</h1>
         <span>Level reached: {props.level}</span>
         <span>Your score: {props.score}</span>
