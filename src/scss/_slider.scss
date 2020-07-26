@@ -52,62 +52,71 @@
     transform: translateY(2px);
     display: flex;
     flex-flow: row nowrap;
-    border-bottom: 2px hsla(300, 4%, 89%, 0.80) solid;
+    border-bottom: 2px rgba(0, 0, 0, 0.8) solid;
     justify-content: space-between;
     align-items: flex-end;
-    z-index: 0;
+    z-index: 99;
     img { 
         width: 8px;
         height: auto;
         margin-bottom: 4px;
-        z-index: -1;
+        z-index: 99;
     }
     &:hover {
         border-bottom: none;
         height: auto;
-        z-index: -1;
-        &img:hover {
+        z-index: 99;
+        & img {
             transform: rotate(90deg);
             width: 8px;
+            margin-top: 4px;
         }
     }
 }
 
 .language-selection {
+    width: 120px;
     display: flex;
-    color: black;
-    font-weight: 800;
+    color: hsla(300, 4%, 89%, 0.80) ;
     position: fixed;
     top: 0px;
-    left: 6px;
+    left: 12px;
     display: flex;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 1;
+    background-color: none;
+    z-index: 99;
     
     & span {
-    font-size: 14px;
+    display: none;
+    font-size: 15px;
     font-weight: 400;
     margin-left: 6px;
     margin-bottom: 16px;
+    z-index: 99;
+    &:hover {
+        font-weight: 500;
     }
-    &:hover, :active{
+    }
+    &:hover, :active  {
     display: flex;
     color: black;
-    font-weight: 800;
     position: fixed;
     top: 0px;
-    left: 6px;
-    display: flex;
+    left: 12px;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.9);
-    z-index: -1;
+    z-index: 99;
+    & span { 
+        display: flex;
+
+    }
     }
 }
 
 .language-selection :first-child {
     display: block;
     color: black;
+    background-color: none;
 }
 
 
