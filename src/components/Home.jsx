@@ -9,7 +9,9 @@ class Home extends React.Component {
     return (
       <div className="home-page">
 
-       <Homeslider/>
+       <Homeslider
+       nextSlide
+       />
 
 
           <div className="dots-selectors">
