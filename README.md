@@ -1,3 +1,3 @@
 # codenatives-beta
 
-DCi Exercise - Create a react app
+DCi Exercise - React app
