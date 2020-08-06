@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9ae997d7346c19f429e2727291de7979",
+    "revision": "30d568cc5a64cf58667db750bbae30ad",
     "url": "/codenatives-beta/index.html"
   },
   {
-    "revision": "4679ad2a206c8d8b4784",
-    "url": "/codenatives-beta/static/css/main.10e0383d.chunk.css"
+    "revision": "70a0ea1e7286fa91bc94",
+    "url": "/codenatives-beta/static/css/main.e568c0dd.chunk.css"
   },
   {
     "revision": "9dd76e15c9830408b273",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codenatives-beta/static/js/2.407bf550.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4679ad2a206c8d8b4784",
+    "revision": "70a0ea1e7286fa91bc94",
     "url": "/codenatives-beta/static/js/main.a1c021ee.chunk.js"
   },
   {
