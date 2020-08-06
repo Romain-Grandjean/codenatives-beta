@@ -1,3 +1,16 @@
+.slide {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    @include responsive(tablet){
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 
 #central-window {
     width: 520px;
@@ -11,6 +24,9 @@
     0 40.1px 33.4px rgba(0, 0, 0, 0.043),
     0 96px 80px rgba(0, 0, 0, 0.06)
   ;
+    @include responsive(tablet){
+        width: 50%;
+    }
 }
 
 #central-catchphrase {
@@ -22,11 +38,18 @@
     font-size: 36px;
     font-weight: 600;
     letter-spacing: -1.2px;
+    @include responsive(tablet){
+        font-size: 28px;
+    }
   }
   & h2 {
     font-size: 23px;
     font-weight: 300;
     margin-top: 24px;
+    @include responsive(tablet){
+        font-size: 19px;
+    }
+
     }
 }
 

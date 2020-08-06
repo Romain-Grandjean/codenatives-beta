@@ -24,16 +24,28 @@
     grid-column: 2/3;
     grid-row: 1/2;
     margin-top: 28px;
+    @include responsive(tablet){
+        width: 114px;
+        height: auto;
+    }
 }
 
 .navigation {
     position: absolute;
     width: auto;
     grid-column: 3/4;
-    grid-row: 1/2;
+    grid-row: 1/5;
     justify-self: end;
     display: flex;
     flex-flow: row nowrap;
+    @include responsive(tablet){
+        flex-flow: column;
+        background-color: white;
+        z-index: 1;
+        justify-self: start;
+        align-items: flex-start;
+        display: none;
+    }
 }
 
 .nav1 {
@@ -44,6 +56,10 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    
+    @include responsive(tablet){
+        flex-flow: column;
+    }
 
     & span{
         font-size: 16px;
@@ -71,6 +87,9 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    @include responsive(tablet){
+        flex-flow: column;
+    }
     & span {
         font-size: 16px;
         font-weight: 400; 

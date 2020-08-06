@@ -33,6 +33,11 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+
+    @include responsive(tablet){
+        flex-flow: column;
+    
+    }
 }
 
 #arrow-left-home {
