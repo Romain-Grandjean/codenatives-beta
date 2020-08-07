@@ -7,6 +7,9 @@
     display: grid;
     grid-template-columns: 72px 29.236% 1fr 72px;
     grid-template-rows: 1fr;
+    @include responsive(tablet){
+        height: 72px;
+    }
 }
 
 .line-header {
@@ -16,6 +19,9 @@
     top: 90px;
     left: 0;
     background-color: hsla(300, 4%, 89%, 0.080);
+    @include responsive(tablet){
+        top: 72px;
+    }
 }
 
 #logo-header {
@@ -24,9 +30,12 @@
     grid-column: 2/3;
     grid-row: 1/2;
     margin-top: 28px;
+    & img {
+
     @include responsive(tablet){
-        width: 114px;
+        width: 200px;
         height: auto;
+    }
     }
 }
 

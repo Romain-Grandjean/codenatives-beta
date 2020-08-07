@@ -6,8 +6,9 @@
 
     @include responsive(tablet){
         flex-flow: column;
-        justify-content: center;
+        justify-items: center;
         align-items: center;
+        
     }
 }
 
@@ -25,15 +26,23 @@
     0 96px 80px rgba(0, 0, 0, 0.06)
   ;
     @include responsive(tablet){
-        width: 50%;
+        width: 440px;
+        margin-bottom: 36px;
+        margin-right: 0px;
     }
 }
 
 #central-catchphrase {
     width: 480px;
     height: 360px;
-    grid-column: 20/36;
-    grid-row: 3/4;
+    @include responsive(tablet){
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        height: 160px;
+    }
+
   & h1 {
     font-size: 36px;
     font-weight: 600;
@@ -48,6 +57,7 @@
     margin-top: 24px;
     @include responsive(tablet){
         font-size: 19px;
+        margin-top: 12px;
     }
 
     }
@@ -57,15 +67,21 @@
     width: auto;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: center;
     align-items: start;
     margin-top: 72px;
+    @include responsive(tablet){
+        margin-top: 12px;
+    }
 }
 
 #language-catchphrase {
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 16px;
+    @include responsive(tablet){
+        margin-bottom: 12px;
+    }
 }
 
 .btn-language { 
@@ -116,6 +132,10 @@
     margin-left: 6px;
     margin-bottom: 17px;
     z-index: 99;
+    @include responsive(tablet){
+        margin-bottom: 12px;
+    }
+    
     &:hover {
         font-weight: 500;
     }
@@ -150,6 +170,9 @@
     justify-content: left;
     align-items: start;
     margin-top: 36px;
+    @include responsive(tablet){
+        margin-top: 12px;
+    }
 }
 
 
