@@ -15,6 +15,21 @@ class Home extends React.Component {
     };
   }
 
+  componentDidMount() {
+    setInterval(() => {
+      let valueNext;
+      switch (this.state.value) {
+        case 1: this.setState({ ...this.state, value: 2, activeScreen: <Homeslide2/>});
+        break;
+        case 2: this.setState({ ...this.state, value: 3, activeScreen: <Homeslide3/> });
+        break;
+        case 3: this.setState({ ...this.state, value: 1, activeScreen: <Homeslide1/> });
+        break;
+      }
+    }, 5000);
+  }
+
+
   // Slide left
   slideLeft = () => {
     let activeScreen = this.state.value;
@@ -56,8 +71,10 @@ class Home extends React.Component {
     }
   }
 
- 
+
+
   render() {
+
     return (
       <div className="home-page">
         <div className="slider-content">
