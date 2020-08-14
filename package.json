@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "CODENATIVES",
   "main": "index.js",
-  "homepage": "http://Romain-Grandjean.github.io/codenatives-beta/",
+  "homepage": "http://in-roma.github.io/codenatives-beta/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
