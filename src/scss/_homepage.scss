@@ -10,16 +10,26 @@
     justify-self: center;
     align-items: center;
     z-index: -1;
+    @include responsive(600){
+        grid-template-columns: 36px 29.236% 1fr 36px;
+    }
 }
 
 
 .slider-content {
     grid-column: 2/38;
-    grid-row: 3/32;
+    grid-row: 2/32;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    @include responsive(1100){
+        grid-row: 1/32;
+    }
+    @include responsive(600){
+        margin-right: 36px;
+    }
+
 }
 
 .sliding {
@@ -27,8 +37,6 @@
     display: block;
     width: 100%;
 }
-
-
 
 #arrow-left-home {
     width: 12px;
@@ -62,7 +70,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;   
-    @include responsive(tablet){
+    @include responsive(1100){
         grid-row: 35/36;
     }
 }

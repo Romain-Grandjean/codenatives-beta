@@ -4,9 +4,9 @@
     justify-content: center;
     align-items: center;
 
-    @include responsive(tablet){
+    @include responsive(1100){
         flex-flow: column;
-        justify-items: center;
+        justify-content: center;
         align-items: center;
         
     }
@@ -25,9 +25,22 @@
     0 40.1px 33.4px rgba(0, 0, 0, 0.043),
     0 96px 80px rgba(0, 0, 0, 0.06)
   ;
-    @include responsive(tablet){
+    @include responsive(1300){
+        width: 460px;
+    }
+    @include responsive(1200){
+        width: 440px;
+    }
+    @include responsive(1100){
+        width: 420px;
+        margin-top: 72px;
+        margin-bottom: 12px;
+        margin-right: 0px;
+    }
+    @include responsive(700){
         width: 380px;
-        margin-bottom: 36px;
+        margin-top: 72px;
+        margin-bottom: 12px;
         margin-right: 0px;
     }
 }
@@ -35,29 +48,41 @@
 #central-catchphrase {
     width: 480px;
     height: 360px;
-    @include responsive(tablet){
+    @include responsive(1100){
         display: flex;
         flex-flow: column;
         justify-content: center;
         align-items: center;
         height: 160px;
+        margin-top: 24px;
     }
 
   & h1 {
     font-size: 36px;
     font-weight: 600;
     letter-spacing: -1.2px;
-    @include responsive(tablet){
+    @include responsive(1300){
+        font-size: 30px;
+    }
+    @include responsive(1200){
         font-size: 28px;
+    }
+    @include responsive(1100){
+        font-size: 26px;
+        margin-top: 48px;
     }
   }
   & h2 {
     font-size: 23px;
     font-weight: 300;
     margin-top: 24px;
-    @include responsive(tablet){
+    @include responsive(1300){
+        font-size: 22px;
+    }
+
+    @include responsive(1100){
         font-size: 19px;
-        margin-top: 12px;
+        margin-top: 0;
     }
 
     }
@@ -67,11 +92,11 @@
     width: auto;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: start;
     align-items: start;
     margin-top: 72px;
-    @include responsive(tablet){
-        margin-top: 12px;
+    @include responsive(1100){
+        margin-top: 36px;
     }
 }
 
@@ -79,7 +104,8 @@
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 16px;
-    @include responsive(tablet){
+    @include responsive(1100){
+        
         margin-bottom: 12px;
     }
 }
@@ -132,7 +158,7 @@
     margin-left: 6px;
     margin-bottom: 17px;
     z-index: 99;
-    @include responsive(tablet){
+    @include responsive(1100){
         margin-bottom: 12px;
     }
     
@@ -170,7 +196,7 @@
     justify-content: left;
     align-items: start;
     margin-top: 36px;
-    @include responsive(tablet){
+    @include responsive(1100){
         margin-top: 12px;
     }
 }

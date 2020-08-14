@@ -7,8 +7,11 @@
     display: grid;
     grid-template-columns: 72px 29.236% 1fr 72px;
     grid-template-rows: 1fr;
-    @include responsive(tablet){
+    @include responsive(1100){
         height: 72px;
+    }
+    @include responsive(600){
+        grid-template-columns: 36px 29.236% 1fr 36px;
     }
 }
 
@@ -19,7 +22,7 @@
     top: 90px;
     left: 0;
     background-color: hsla(300, 4%, 89%, 0.080);
-    @include responsive(tablet){
+    @include responsive(1100){
         top: 72px;
     }
 }
@@ -31,9 +34,12 @@
     grid-row: 1/2;
     margin-top: 28px;
     & img {
-
-    @include responsive(tablet){
+    @include responsive(1100){
         width: 200px;
+        height: auto;
+    }
+    @include responsive(600){
+        width: 150px;
         height: auto;
     }
     }
@@ -47,7 +53,7 @@
     justify-self: end;
     display: flex;
     flex-flow: row nowrap;
-    @include responsive(tablet){
+    @include responsive(1100){
         flex-flow: column;
         background-color: white;
         z-index: 1;
@@ -96,7 +102,7 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    @include responsive(tablet){
+    @include responsive(1100){
         flex-flow: column;
     }
     & span {

@@ -2,8 +2,29 @@
 
 @mixin responsive($breakpoint) {
 
-    @if $breakpoint == tablet {
-      @media (max-width: 900px) {
+    @if $breakpoint == 1300 {
+      @media (max-width: 1300px) {
+        @content;
+      }
+    }
+    @if $breakpoint == 1200 {
+      @media (max-width: 1300px) {
+        @content;
+      }
+    }
+
+    @if $breakpoint == 1100 {
+      @media (max-width: 1150px) {
+        @content;
+      }
+    }
+    @if $breakpoint == 700 {
+      @media (max-width: 700px) {
+        @content;
+      }
+    }
+    @if $breakpoint == 600 {
+      @media (max-width: 600px) {
         @content;
       }
     }
