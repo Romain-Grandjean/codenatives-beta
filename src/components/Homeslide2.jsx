@@ -7,7 +7,7 @@ const Homeslide2 = () => {
     <div className="slide">
         <img id="central-window" src={process.env.PUBLIC_URL + "/img/central-window.png"} alt=""/>
         <div id="central-catchphrase">
-              <h1>Become a code native</h1>
+              <h1>Become a code native 2</h1>
               <h2>And get exclusive job offers</h2>
               <div className="central-language-selection">
                 <span id="language-catchphrase">Choose your language</span>
