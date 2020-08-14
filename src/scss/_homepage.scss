@@ -67,18 +67,13 @@
     }
 }
 
-#dot1, #dot3 {
+#dot1, #dot2, #dot3 {
     width: 8px;
     height: 8px;
     border: 1px black solid;
     border-radius: 50%;
+    background-color: none;
 }
 
-#dot2 {
-    width: 8px;
-    height: 8px;
-    // border: 1px black solid;
-    border-radius: 50%;
-    background-color: black;
-}
+
 

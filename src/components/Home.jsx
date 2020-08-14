@@ -47,15 +47,16 @@ class Home extends React.Component {
 
   activateDot = (id) => {
     switch (id) {
-      case "dot1": this.setState({ ...this.state, activeScreen: <Homeslide1/> });
+      case "d01": this.setState({ ...this.state, activeScreen: <Homeslide1/>, value: 1 });
       break;
-      case "dot2": this.setState({ ...this.state, activeScreen: <Homeslide2/> });
+      case "d02": this.setState({ ...this.state, activeScreen: <Homeslide2/>, value: 2 });
       break;
-      case "dot3": this.setState({ ...this.state, activeScreen: <Homeslide3/> });
+      case "d03": this.setState({ ...this.state, activeScreen: <Homeslide3/>, value: 3 });
       break;
     }
   }
 
+ 
   render() {
     return (
       <div className="home-page">
@@ -66,9 +67,10 @@ class Home extends React.Component {
           
         </div>
           <div className="dots-selectors">
-            <div id="dot1" onClick={() => this.activateDot()} style={{backgroundColor: this.state.activeScreen === <Homeslide1/> ? "black" : "white"}}></div>
-            <div id="dot2" onClick={() => this.activateDot()} style={{backgroundColor: this.state.activeScreen === <Homeslide2/> ? "black" : "white"}}></div>
-            <div id="dot3" onClick={() => this.activateDot()} style={{backgroundColor: this.state.activeScreen === <Homeslide3/> ? "black" : "white"}}></div>
+
+            <button id="d01" onClick={() => this.activateDot("d01")}><div id="dot1" style={{backgroundColor: this.state.value === 1 ? "black" : "white"}}></div></button>
+            <button id="d02" onClick={() => this.activateDot("d02")}><div id="dot2" style={{backgroundColor: this.state.value === 2 ? "black" : "white"}}></div></button>
+            <button id="d03" onClick={() => this.activateDot("d03")}><div id="dot3" style={{backgroundColor: this.state.value === 3 ? "black" : "white"}}></div></button>
           </div>
       </div>
     );
