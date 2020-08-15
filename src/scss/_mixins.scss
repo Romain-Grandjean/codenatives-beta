@@ -14,7 +14,12 @@
     }
 
     @if $breakpoint == 1100 {
-      @media (max-width: 1150px) {
+      @media (max-width: 1100px) {
+        @content;
+      }
+    }
+    @if $breakpoint == 900 {
+      @media (max-width: 900px) {
         @content;
       }
     }
@@ -28,7 +33,13 @@
         @content;
       }
     }
-    @if $breakpoint == mobile {
+    @if $breakpoint == 500 {
+      @media (max-width: 500px) {
+        @content;
+      }
+    }
+
+    @if $breakpoint == 375 {
         @media (max-width: 375px) {
           @content;
         }

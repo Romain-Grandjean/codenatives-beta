@@ -4,14 +4,13 @@
     justify-content: center;
     align-items: center;
 
-    @include responsive(1100){
+    @include responsive(900){
         flex-flow: column;
         justify-content: center;
         align-items: center;
         
     }
 }
-
 
 #central-window {
     width: 520px;
@@ -32,6 +31,9 @@
         width: 440px;
     }
     @include responsive(1100){
+        width: 380px;
+    }
+    @include responsive(900){
         width: 420px;
         margin-top: 72px;
         margin-bottom: 12px;
@@ -43,12 +45,35 @@
         margin-bottom: 12px;
         margin-right: 0px;
     }
+    @include responsive(600){
+        width: 340px;
+        margin-top: 72px;
+        margin-bottom: 12px;
+        margin-right: 0px;
+    }
+    @include responsive(500){
+        width: 280px;
+        margin-top: 72px;
+        margin-bottom: 12px;
+        margin-right: 0px;
+    }
 }
 
 #central-catchphrase {
     width: 480px;
     height: 360px;
+    @include responsive(1200){
+    width: 360px;
+    height: 320px;
+    }
     @include responsive(1100){
+        width: 280px;
+        height: 420px;
+        margin-top: 72px;
+        }
+
+    @include responsive(900){
+        width: 380px;
         display: flex;
         flex-flow: column;
         justify-content: center;
@@ -62,10 +87,10 @@
     font-weight: 600;
     letter-spacing: -1.2px;
     @include responsive(1300){
-        font-size: 30px;
+        font-size: 34px;
     }
     @include responsive(1200){
-        font-size: 28px;
+        font-size: 32px;
     }
     @include responsive(1100){
         font-size: 26px;
@@ -77,11 +102,13 @@
     font-weight: 300;
     margin-top: 24px;
     @include responsive(1300){
+        font-size: 23px;
+    }
+    @include responsive(1200){
         font-size: 22px;
     }
-
     @include responsive(1100){
-        font-size: 19px;
+        font-size: 18px;
         margin-top: 0;
     }
 
