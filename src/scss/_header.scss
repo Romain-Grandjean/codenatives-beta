@@ -13,6 +13,9 @@
     @include responsive(600){
         grid-template-columns: 36px 29.236% 1fr 36px;
     }
+    @include responsive(500){
+        grid-template-columns: 18px repeat(36, 1fr) 18px;
+    }
 }
 
 .line-header {
@@ -44,6 +47,10 @@
     }
     @include responsive(600){
         width: 150px;
+        height: auto;
+    }
+    @include responsive(320){
+        width: 120px;
         height: auto;
     }
     }

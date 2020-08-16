@@ -13,6 +13,9 @@
     @include responsive(600){
         grid-template-columns: 36px 29.236% 1fr 36px;
     }
+    @include responsive(500){
+        grid-template-columns: 18px 29.236% 1fr 18px;
+    }
 }
 
 .line-footer {

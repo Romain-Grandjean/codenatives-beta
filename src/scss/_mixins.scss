@@ -45,6 +45,12 @@
         }
       }
 
+    @if $breakpoint == 320 {
+        @media (max-width: 320px) {
+          @content;
+        }
+      }
+
   }
 
 @mixin solution {

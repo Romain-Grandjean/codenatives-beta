@@ -9,7 +9,6 @@
         flex-flow: column;
         justify-content: center;
         align-items: center;
-        
     }
 }
 
@@ -35,34 +34,40 @@
         width: 380px;
     }
     @include responsive(900){
-        width: 420px;
-        margin-top: 72px;
+        width: 380px;
+        margin-top: 36px;
         margin-bottom: 12px;
         margin-right: 0px;
     }
     @include responsive(700){
         width: 380px;
-        margin-top: 72px;
-        margin-bottom: 12px;
+        margin-top: 36px;
+        margin-bottom: 24px;
         margin-right: 0px;
     }
     @include responsive(600){
         width: 340px;
-        margin-top: 72px;
+        margin-top: 36px;
         margin-bottom: 12px;
         margin-right: 0px;
     }
     @include responsive(500){
-        width: 280px;
-        margin-top: 72px;
-        margin-bottom: 12px;
+        width: 260px;
+        margin-top: 24px;
+        margin-bottom: 48px;
         margin-right: 0px;
     }
     @include responsive(375){
         width: 240px;
-        margin-top: 72px;
-        margin-bottom: 12px;
-        margin-right: 0px;
+        margin-top: 12px;
+        margin-bottom: 36px;
+
+    }
+    @include responsive(320){
+        width: 220px;
+        margin-top: 0px;
+        margin-bottom: 24px;
+
     }
 }
 
@@ -77,8 +82,7 @@
         width: 280px;
         height: 420px;
         margin-top: 72px;
-        }
-
+    }
     @include responsive(900){
         width: 380px;
         height: 120px;
@@ -86,8 +90,16 @@
         flex-flow: column;
         justify-content: center;
         align-items: center;
-
         margin-top: 24px;
+    }
+    @include responsive(500){
+        width: 280px;
+        height: 80px;
+        margin-top: 12px;
+    }
+    @include responsive(320){
+        width: 220px;
+        height: 80px;
     }
 
   & h1 {
@@ -106,12 +118,14 @@
         margin-top: 48px;
     }
     @include responsive(900){
-        margin-top: 128px;
+        margin-top: 72px;
     }
     @include responsive(700){
-        margin-top: 128px;
+        margin-top: 72px;
     }
-
+    @include responsive(500){
+        margin-top: 72px;
+    }
     @include responsive(375){
         font-size: 22px;
         margin-top: 72px;
@@ -149,14 +163,32 @@
     @include responsive(1100){
         margin-top: 72px;
     }
+    @include responsive(900){
+        margin-top: 24px;
+    }
+    @include responsive(700){
+        margin-top: 24px;
+    }
+    @include responsive(500){
+        margin-top: 24px;
+    }
+    @include responsive(320){
+        margin-top: 36px;
+    }
 }
 
 #language-catchphrase {
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 16px;
+    white-space: nowrap;
+
     @include responsive(1100){
         font-size: 14px;
+        margin-bottom: 12px;
+    }
+    @include responsive(320){
+        font-size: 12px;
         margin-bottom: 12px;
     }
 }
@@ -174,7 +206,10 @@
     z-index: 99;
     @include responsive(1100){
         font-size: 14px;
-
+    }
+    @include responsive(320){
+        font-size: 12px;
+        width: 74px;
     }
     img { 
         width: 8px;
@@ -216,6 +251,9 @@
     @include responsive(1100){
         margin-bottom: 12px;
     }
+    @include responsive(320){
+        font-size: 12px;
+    }
     
     &:hover {
         font-weight: 500;
@@ -254,6 +292,9 @@
     @include responsive(1100){
         margin-top: 12px;
     }
+    @include responsive(320){
+        font-size: 12px;
+    }
 }
 
 
@@ -273,6 +314,11 @@
     text-decoration: inherit;
     @include responsive(1100){
         font-size: 14px;
+    }
+    @include responsive(320){
+        font-size: 12px;
+        width: 90px;
+        height: 30px;
     }
     &:hover{
         background-color: black;
@@ -297,6 +343,12 @@
     align-items: center;
     @include responsive(1100){
         font-size: 14px;
+
+    }
+    @include responsive(320){
+        font-size: 12px;
+        width: 90px;
+        height: 30px;
     }
     &:hover{
         background-color: black;
