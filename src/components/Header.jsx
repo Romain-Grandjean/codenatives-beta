@@ -9,10 +9,10 @@ class Header extends React.Component {
           <img src={process.env.PUBLIC_URL + "/img/logo_header.png"} alt="logo"/>
         </Link>
 
-        <div className="navigation">
+        <nav className="navigation">
           <input type="checkbox" id="menu-btn"/>
-            <a className="line1"></a>
-            <a className="line2"></a>
+          <div className="line1"></div>
+          <div className="line2"></div>
           <div className="nav1">
             <a className="nav1-elements">Concept</a>
             <a className="nav1-elements">Contribute</a>
@@ -23,7 +23,7 @@ class Header extends React.Component {
             <a className="nav2-elements">Login</a>
             <div className="button-signup">Sign Up</div>
           </div>
-        </div>
+        </nav>
         <div className="line-header"></div>
       </div>
     );
