@@ -10,14 +10,17 @@ class Header extends React.Component {
         </Link>
 
         <div className="navigation">
+          <input type="checkbox" id="menu-btn"/>
+            <a className="line1"></a>
+            <a className="line2"></a>
           <div className="nav1">
-            <span className="nav1-elements">Concept</span>
-            <span className="nav1-elements">Contribute</span>
-            <span className="nav1-elements">For Schools & Recruiters</span>
+            <a className="nav1-elements">Concept</a>
+            <a className="nav1-elements">Contribute</a>
+            <a className="nav1-elements">For Schools & Recruiters</a>
             <div className="line-nav"></div>
           </div>
           <div className="nav2">
-            <span className="nav2-elements">Login</span>
+            <a className="nav2-elements">Login</a>
             <div className="button-signup">Sign Up</div>
           </div>
         </div>

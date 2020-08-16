@@ -68,14 +68,53 @@
     grid-row: 1/2;
     }
     @include responsive(900){
+        top: 72px;
         flex-flow: column;
         background-color: white;
+        opacity: .9;
         z-index: 1;
-        justify-self: start;
-        align-items: flex-start;
-        display: none;
+        justify-self: end;
+        align-self: start;
+        width: auto;
+        height: auto;
+        border: 1px  hsla(300, 4%, 89%, 0.080) solid;
     }
 }
+
+#menu-btn {
+}
+
+
+.line1 {
+    width: 3px;
+    height: 28px;
+    background-color: black;
+    z-index: -1;
+    top: -56px;
+    right: 0px;
+    position: absolute;
+    transform: rotate(90deg);
+}
+.navigation .line1 input:checked{
+    top: -46px;
+    transform: rotate(45deg);
+    }
+
+.line2 {
+    width: 3px;
+    height: 28px;
+    background-color: black;
+    z-index: -1;
+    top: -46px;
+    right: 0px;
+    position: absolute;
+    transform: rotate(90deg);
+}
+.navigation .line2 input:checked{
+    top: -46px;
+    transform: rotate(45deg);
+}
+
 
 .nav1 {
     width: auto;
@@ -91,9 +130,12 @@
     
     @include responsive(900){
         flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        top: 12px;
     }
 
-    & span{
+    & a {
         font-size: 16px;
         font-weight: 400;
         margin-right: 36px;
@@ -105,6 +147,14 @@
         @include responsive(1100){
             font-size: 14px;
         }
+        @include responsive(900){
+            font-size: 18px;
+            margin-bottom: 12px;
+            margin-right: 0;
+            width: auto;
+            height: auto;
+            white-space: nowrap;
+        }
     }   
     
 }
@@ -113,6 +163,14 @@
     width: 2px;
     height: 40px;
     background-color: hsla(300, 4%, 89%, 0.080);
+    @include responsive(900){
+        display: none;
+        width: 2px;
+        height: 0;
+        z-index: -1;
+        transform: rotate(90deg);
+        background-color:hsla(300, 4%, 89%, 0.20);
+    }
 }
 
 .nav2 {
@@ -126,7 +184,7 @@
     @include responsive(900){
         flex-flow: column;
     }
-    & span {
+    & a {
         font-size: 16px;
         font-weight: 400; 
         margin-left: 36px;
@@ -136,6 +194,16 @@
         }
         @include responsive(1100){
             font-size: 14px;
+        }
+        @include responsive(900){
+            font-size: 18px;
+            margin-bottom: 12px;
+            width: auto;
+            height: auto;
+            white-space: normal;
+            margin-top: 0;
+            margin-left: 0;
+
         }
     }
 }
@@ -155,9 +223,25 @@
     @include responsive(1100){
         font-size: 14px;
     }
+    @include responsive(900){
+        font-size: 18px;
+        margin-bottom: 0;
+        margin-left: 0;
+        width: 100px;
+        height: auto;
+        white-space: normal;
+        border: none;
+    }
     &:hover{
         background-color:#000000;
         color: white;
         border: 2px rgb(255, 255, 255) solid;
+        @include responsive(900){  
+        background-color: white; 
+        color: black;     
+        padding-top: 2px;
+        border-bottom: 2px black solid;
+        border-radius: 0;
+        }
     }
 }

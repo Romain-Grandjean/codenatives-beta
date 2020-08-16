@@ -34,19 +34,19 @@
         width: 380px;
     }
     @include responsive(900){
-        width: 380px;
+        width: 460px;
         margin-top: 36px;
         margin-bottom: 12px;
         margin-right: 0px;
     }
     @include responsive(700){
-        width: 380px;
+        width: 420px;
         margin-top: 36px;
         margin-bottom: 24px;
         margin-right: 0px;
     }
     @include responsive(600){
-        width: 340px;
+        width: 380px;
         margin-top: 36px;
         margin-bottom: 12px;
         margin-right: 0px;
