@@ -1,4 +1,5 @@
 .slide {
+    height: auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -80,11 +81,12 @@
 
     @include responsive(900){
         width: 380px;
+        height: 120px;
         display: flex;
         flex-flow: column;
         justify-content: center;
         align-items: center;
-        height: 160px;
+
         margin-top: 24px;
     }
 
@@ -92,6 +94,7 @@
     font-size: 36px;
     font-weight: 600;
     letter-spacing: -1.2px;
+    white-space: nowrap;
     @include responsive(1300){
         font-size: 34px;
     }
@@ -102,15 +105,23 @@
         font-size: 26px;
         margin-top: 48px;
     }
+    @include responsive(900){
+        margin-top: 128px;
+    }
+    @include responsive(700){
+        margin-top: 128px;
+    }
+
     @include responsive(375){
         font-size: 22px;
-        margin-top: 48px;
+        margin-top: 72px;
     }
   }
   & h2 {
     font-size: 23px;
     font-weight: 300;
     margin-top: 24px;
+    white-space: nowrap;
     @include responsive(1300){
         font-size: 23px;
     }
@@ -136,7 +147,7 @@
     align-items: start;
     margin-top: 72px;
     @include responsive(1100){
-        margin-top: 36px;
+        margin-top: 72px;
     }
 }
 
@@ -145,7 +156,7 @@
     font-weight: 400;
     margin-bottom: 16px;
     @include responsive(1100){
-        
+        font-size: 14px;
         margin-bottom: 12px;
     }
 }
@@ -161,6 +172,10 @@
     justify-content: space-between;
     align-items: flex-end;
     z-index: 99;
+    @include responsive(1100){
+        font-size: 14px;
+
+    }
     img { 
         width: 8px;
         height: auto;
@@ -256,6 +271,9 @@
     align-items: center;
     color: inherit;
     text-decoration: inherit;
+    @include responsive(1100){
+        font-size: 14px;
+    }
     &:hover{
         background-color: black;
         color: white;
@@ -277,6 +295,9 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    @include responsive(1100){
+        font-size: 14px;
+    }
     &:hover{
         background-color: black;
         color: white;

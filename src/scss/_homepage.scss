@@ -10,8 +10,8 @@
     justify-self: center;
     align-items: center;
     z-index: -1;
-    @include responsive(600){
-        grid-template-columns: 36px 29.236% 1fr 36px;
+    @include responsive(700){
+        grid-template-columns: 36px repeat(36, 1fr) 36px;
     }
 }
 
@@ -24,10 +24,13 @@
     justify-content: space-between;
     align-items: center;
     @include responsive(1100){
-        grid-row: 1/32;
+        grid-row: 1/38;
     }
-    @include responsive(600){
-        margin-right: 36px;
+    @include responsive(900){
+        grid-row: 2/28;
+    }
+    @include responsive(700){
+
     }
 
 }
@@ -71,7 +74,13 @@
     justify-content: space-between;
     align-items: center;   
     @include responsive(1100){
-        grid-row: 35/36;
+    }
+    @include responsive(900){
+        grid-row: 35/38;
+
+    }
+    @include responsive(700){
+
     }
 }
 
