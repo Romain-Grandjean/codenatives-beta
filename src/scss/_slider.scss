@@ -57,6 +57,12 @@
         margin-bottom: 12px;
         margin-right: 0px;
     }
+    @include responsive(375){
+        width: 240px;
+        margin-top: 72px;
+        margin-bottom: 12px;
+        margin-right: 0px;
+    }
 }
 
 #central-catchphrase {
@@ -96,6 +102,10 @@
         font-size: 26px;
         margin-top: 48px;
     }
+    @include responsive(375){
+        font-size: 22px;
+        margin-top: 48px;
+    }
   }
   & h2 {
     font-size: 23px;
@@ -110,6 +120,9 @@
     @include responsive(1100){
         font-size: 18px;
         margin-top: 0;
+    }
+    @include responsive(375){
+        font-size: 16px;
     }
 
     }

@@ -10,6 +10,9 @@
     grid-template-columns: 72px 1fr 1fr 72px;
     grid-template-rows: 1fr;
     align-items: center;
+    @include responsive(600){
+        grid-template-columns: 36px 29.236% 1fr 36px;
+    }
 }
 
 .line-footer {
@@ -35,6 +38,10 @@
     height: auto;
     grid-column: 2/3;
     grid-row: 1/2;
+    @include responsive(600){
+        width: 100px;
+        height: auto;
+    }
 }
 
 .socialsNetwork-icons {
@@ -49,6 +56,10 @@
         margin-left: 36px;
         width: auto;
         height: 16px;
+        @include responsive(600){
+            margin-left: 28px;
+            height: 10px;
+        }
     }
 }
 

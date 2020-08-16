@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 72px 29.236% 1fr 72px;
     grid-template-rows: 1fr;
-    @include responsive(1100){
+    @include responsive(900){
         height: 72px;
     }
     @include responsive(600){
@@ -22,7 +22,7 @@
     top: 90px;
     left: 0;
     background-color: hsla(300, 4%, 89%, 0.080);
-    @include responsive(1100){
+    @include responsive(900){
         top: 72px;
     }
 }
@@ -38,6 +38,10 @@
         width: 200px;
         height: auto;
     }
+    @include responsive(900){
+        width: 180px;
+        height: auto;
+    }
     @include responsive(600){
         width: 150px;
         height: auto;
@@ -49,11 +53,14 @@
     position: absolute;
     width: auto;
     grid-column: 3/4;
-    grid-row: 1/5;
+    grid-row: 1/2;
     justify-self: end;
     display: flex;
     flex-flow: row nowrap;
     @include responsive(1100){
+    grid-row: 1/2;
+    }
+    @include responsive(900){
         flex-flow: column;
         background-color: white;
         z-index: 1;
@@ -71,8 +78,11 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    @include responsive(1100){
+
+    }
     
-    @include responsive(tablet){
+    @include responsive(900){
         flex-flow: column;
     }
 
@@ -80,9 +90,13 @@
         font-size: 16px;
         font-weight: 400;
         margin-right: 36px;
+        white-space: nowrap;
         &:hover {
             padding-top: 2px;
             border-bottom: 2px black solid;
+        }
+        @include responsive(1100){
+            font-size: 14px;
         }
     }   
     
@@ -102,7 +116,7 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    @include responsive(1100){
+    @include responsive(900){
         flex-flow: column;
     }
     & span {
@@ -112,6 +126,9 @@
         &:hover {
             padding-top: 2px;
             border-bottom: 2px black solid;
+        }
+        @include responsive(1100){
+            font-size: 14px;
         }
     }
 }
@@ -128,6 +145,9 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    @include responsive(1100){
+        font-size: 14px;
+    }
     &:hover{
         background-color:#000000;
         color: white;
