@@ -8,10 +8,11 @@
 	grid-template-columns: 72px 29.236% 1fr 72px;
 	grid-template-rows: 1fr;
 	@include responsive(900) {
-		height: 72px;
+        height: 72px;
+        grid-template-columns: 72px repeat(36, 1fr)  72px;
 	}
 	@include responsive(600) {
-		grid-template-columns: 36px 29.236% 1fr 36px;
+		grid-template-columns: 36px repeat(36, 1fr)  36px;
 	}
 	@include responsive(500) {
 		grid-template-columns: 18px repeat(36, 1fr) 18px;
@@ -72,10 +73,19 @@
         display: flex;
         flex-flow: column;
         justify-self: end;
-		align-self: center;
+        align-self: center; 
+        grid-column: 36/37;
+    }
+    @include responsive(700) {
+        grid-column: 36/37;
+    }
+    @include responsive(600) {
+        grid-column: 36/37;
+    }
+    @include responsive(500) {
+        grid-column: 36/37;
 
-
-	}
+    }
 }
 
 .navigation input {
