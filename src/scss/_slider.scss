@@ -1,358 +1,346 @@
 .slide {
-    height: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+	height: auto;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
 
-    @include responsive(900){
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-    }
+	@include responsive(900) {
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 #central-window {
-    width: 520px;
-    height: auto;
-    margin-right: 48px;
-    box-shadow:
-    0 2.7px 2.2px rgba(0, 0, 0, 0.017),
-    0 6.4px 5.3px rgba(0, 0, 0, 0.024),
-    0 12px 10px rgba(0, 0, 0, 0.03),
-    0 21.4px 17.9px rgba(0, 0, 0, 0.036),
-    0 40.1px 33.4px rgba(0, 0, 0, 0.043),
-    0 96px 80px rgba(0, 0, 0, 0.06)
-  ;
-    @include responsive(1300){
-        width: 460px;
-    }
-    @include responsive(1200){
-        width: 440px;
-    }
-    @include responsive(1100){
-        width: 380px;
-    }
-    @include responsive(900){
-        width: 460px;
-        margin-top: 36px;
-        margin-bottom: 12px;
-        margin-right: 0px;
-    }
-    @include responsive(700){
-        width: 420px;
-        margin-top: 36px;
-        margin-bottom: 24px;
-        margin-right: 0px;
-    }
-    @include responsive(600){
-        width: 380px;
-        margin-top: 36px;
-        margin-bottom: 12px;
-        margin-right: 0px;
-    }
-    @include responsive(500){
-        width: 260px;
-        margin-top: 24px;
-        margin-bottom: 48px;
-        margin-right: 0px;
-    }
-    @include responsive(375){
-        width: 240px;
-        margin-top: 12px;
-        margin-bottom: 36px;
-
-    }
-    @include responsive(320){
-        width: 220px;
-        margin-top: 0px;
-        margin-bottom: 24px;
-
-    }
+	width: 520px;
+	height: auto;
+	margin-right: 48px;
+	box-shadow: 0 2.7px 2.2px rgba(0, 0, 0, 0.017), 0 6.4px 5.3px rgba(0, 0, 0, 0.024), 0 12px 10px rgba(0, 0, 0, 0.03),
+		0 21.4px 17.9px rgba(0, 0, 0, 0.036), 0 40.1px 33.4px rgba(0, 0, 0, 0.043), 0 96px 80px rgba(0, 0, 0, 0.06);
+	@include responsive(1300) {
+		width: 460px;
+	}
+	@include responsive(1200) {
+		width: 440px;
+	}
+	@include responsive(1100) {
+		width: 380px;
+	}
+	@include responsive(900) {
+		width: 460px;
+		margin-top: 36px;
+		margin-bottom: 12px;
+		margin-right: 0px;
+	}
+	@include responsive(700) {
+		width: 420px;
+		margin-top: 36px;
+		margin-bottom: 24px;
+		margin-right: 0px;
+	}
+	@include responsive(600) {
+		width: 380px;
+		margin-top: 36px;
+		margin-bottom: 12px;
+		margin-right: 0px;
+	}
+	@include responsive(500) {
+		width: 260px;
+		margin-top: 24px;
+		margin-bottom: 48px;
+		margin-right: 0px;
+	}
+	@include responsive(375) {
+		width: 240px;
+		margin-top: 12px;
+		margin-bottom: 36px;
+	}
+	@include responsive(320) {
+		width: 220px;
+		margin-top: 0px;
+		margin-bottom: 24px;
+	}
 }
 
 #central-catchphrase {
-    width: 480px;
-    height: 360px;
-    @include responsive(1200){
-    width: 360px;
-    height: 320px;
-    }
-    @include responsive(1100){
-        width: 280px;
-        height: 420px;
-        margin-top: 72px;
-    }
-    @include responsive(900){
-        width: 380px;
-        height: 120px;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 24px;
-    }
-    @include responsive(500){
-        width: 280px;
-        height: 80px;
-        margin-top: 12px;
-    }
-    @include responsive(320){
-        width: 220px;
-        height: 80px;
-    }
+	width: 480px;
+	height: 360px;
+	@include responsive(1200) {
+		width: 360px;
+		height: 320px;
+	}
+	@include responsive(1100) {
+		width: 280px;
+		height: 420px;
+		margin-top: 72px;
+	}
+	@include responsive(900) {
+		width: 380px;
+		height: 120px;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 24px;
+	}
+	@include responsive(500) {
+		width: 280px;
+		height: 80px;
+		margin-top: 12px;
+	}
+	@include responsive(320) {
+		width: 220px;
+		height: 80px;
+	}
 
-  & h1 {
-    font-size: 36px;
-    font-weight: 600;
-    letter-spacing: -1.2px;
-    white-space: nowrap;
-    @include responsive(1300){
-        font-size: 34px;
-    }
-    @include responsive(1200){
-        font-size: 32px;
-    }
-    @include responsive(1100){
-        font-size: 26px;
-        margin-top: 48px;
-    }
-    @include responsive(900){
-        margin-top: 72px;
-    }
-    @include responsive(700){
-        margin-top: 72px;
-    }
-    @include responsive(500){
-        margin-top: 72px;
-    }
-    @include responsive(375){
-        font-size: 22px;
-        margin-top: 72px;
-    }
-  }
-  & h2 {
-    font-size: 23px;
-    font-weight: 300;
-    margin-top: 24px;
-    white-space: nowrap;
-    @include responsive(1300){
-        font-size: 23px;
-    }
-    @include responsive(1200){
-        font-size: 22px;
-    }
-    @include responsive(1100){
-        font-size: 18px;
-        margin-top: 0;
-    }
-    @include responsive(375){
-        font-size: 16px;
-    }
-
-    }
+	& h1 {
+		font-size: 36px;
+		font-weight: 600;
+		letter-spacing: -1.2px;
+		white-space: nowrap;
+		@include responsive(1300) {
+			font-size: 34px;
+		}
+		@include responsive(1200) {
+			font-size: 32px;
+		}
+		@include responsive(1100) {
+			font-size: 26px;
+			margin-top: 48px;
+		}
+		@include responsive(900) {
+			margin-top: 72px;
+		}
+		@include responsive(700) {
+			margin-top: 72px;
+		}
+		@include responsive(500) {
+			margin-top: 72px;
+		}
+		@include responsive(375) {
+			font-size: 22px;
+			margin-top: 72px;
+		}
+	}
+	& h2 {
+		font-size: 23px;
+		font-weight: 300;
+		margin-top: 24px;
+		white-space: nowrap;
+		@include responsive(1300) {
+			font-size: 23px;
+		}
+		@include responsive(1200) {
+			font-size: 22px;
+		}
+		@include responsive(1100) {
+			font-size: 18px;
+			margin-top: 0;
+		}
+		@include responsive(375) {
+			font-size: 16px;
+		}
+	}
 }
 
 .central-language-selection {
-    width: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: start;
-    align-items: start;
-    margin-top: 72px;
-    @include responsive(1100){
-        margin-top: 72px;
-    }
-    @include responsive(900){
-        margin-top: 24px;
-    }
-    @include responsive(700){
-        margin-top: 24px;
-    }
-    @include responsive(500){
-        margin-top: 24px;
-    }
-    @include responsive(320){
-        margin-top: 36px;
-    }
+	width: auto;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: start;
+	align-items: start;
+	margin-top: 72px;
+	@include responsive(1100) {
+		margin-top: 72px;
+	}
+	@include responsive(900) {
+		margin-top: 24px;
+	}
+	@include responsive(700) {
+		margin-top: 24px;
+	}
+	@include responsive(500) {
+		margin-top: 24px;
+	}
+	@include responsive(320) {
+		margin-top: 36px;
+	}
 }
 
 #language-catchphrase {
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 16px;
-    white-space: nowrap;
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 16px;
+	white-space: nowrap;
 
-    @include responsive(1100){
-        font-size: 14px;
-        margin-bottom: 12px;
-    }
-    @include responsive(320){
-        font-size: 12px;
-        margin-bottom: 12px;
-    }
+	@include responsive(1100) {
+		font-size: 14px;
+		margin-bottom: 12px;
+	}
+	@include responsive(320) {
+		font-size: 12px;
+		margin-bottom: 12px;
+	}
 }
 
-.btn-language { 
-    width: 87px;
-    height: 22px;
-    margin-left: 12px;    
-    transform: translateY(2px);
-    display: flex;
-    flex-flow: row nowrap;
-    border-bottom: 2px rgba(0, 0, 0, 0.8) solid;
-    justify-content: space-between;
-    align-items: flex-end;
-    z-index: 99;
-    @include responsive(1100){
-        font-size: 14px;
-    }
-    @include responsive(320){
-        font-size: 12px;
-        width: 74px;
-    }
-    img { 
-        width: 8px;
-        height: auto;
-        margin-bottom: 4px;
-        z-index: 99;
-    }
-    &:hover {
-        border-bottom: none;
-        height: auto;
-        z-index: 99;
-        & img {
-            transform: rotate(90deg);
-            width: 8px;
-            margin-top: 4px;
-        }
-    }
+.btn-language {
+	width: 87px;
+	height: 22px;
+	margin-left: 12px;
+	transform: translateY(2px);
+	display: flex;
+	flex-flow: row nowrap;
+	border-bottom: 2px rgba(0, 0, 0, 0.8) solid;
+	justify-content: space-between;
+	align-items: flex-end;
+	z-index: 99;
+	@include responsive(1100) {
+		font-size: 14px;
+	}
+	@include responsive(320) {
+		font-size: 12px;
+		width: 74px;
+	}
+	img {
+		width: 8px;
+		height: auto;
+		margin-bottom: 4px;
+		z-index: 99;
+	}
+	&:hover {
+		border-bottom: none;
+		height: auto;
+		z-index: 99;
+		& img {
+			transform: rotate(90deg);
+			width: 8px;
+			margin-top: 4px;
+		}
+	}
 }
 
 .language-selection {
-    width: 120px;
-    display: flex;
-    color: hsla(300, 4%, 89%, 0.80) ;
-    position: fixed;
-    top: -1px;
-    left: 12px;
-    display: flex;
-    flex-direction: column;
-    background-color: none;
-    z-index: 99;
-    
-    & span {
-    display: none;
-    font-size: 15px;
-    font-weight: 400;
-    margin-left: 6px;
-    margin-bottom: 17px;
-    z-index: 99;
-    @include responsive(1100){
-        margin-bottom: 12px;
-    }
-    @include responsive(320){
-        font-size: 12px;
-    }
-    
-    &:hover {
-        font-weight: 500;
-    }
-    }
-    &:hover, :active  {
-    display: flex;
-    color: black;
-    position: fixed;
-    top: 0px;
-    left: 12px;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 99;
-    & span { 
-        display: flex;
-    }
-    }
+	width: 120px;
+	display: flex;
+	color: hsla(300, 4%, 89%, 0.8);
+	position: fixed;
+	top: -1px;
+	left: 12px;
+	display: flex;
+	flex-direction: column;
+	background-color: none;
+	z-index: 99;
+
+	& span {
+		display: none;
+		font-size: 15px;
+		font-weight: 400;
+		margin-left: 6px;
+		margin-bottom: 17px;
+		z-index: 99;
+		@include responsive(1100) {
+			margin-bottom: 12px;
+		}
+		@include responsive(320) {
+			font-size: 12px;
+		}
+
+		&:hover {
+			font-weight: 500;
+		}
+	}
+	&:hover,
+	:active {
+		display: flex;
+		color: black;
+		position: fixed;
+		top: 0px;
+		left: 12px;
+		flex-direction: column;
+		background-color: rgba(255, 255, 255, 0.9);
+		z-index: 99;
+		& span {
+			display: flex;
+		}
+	}
 }
 
 .language-selection :first-child {
-    display: block;
-    color: black;
-    background-color: none;
+	display: block;
+	color: black;
+	background-color: none;
 }
-
-
 
 .central-buttons {
-    width: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: left;
-    align-items: start;
-    margin-top: 36px;
-    @include responsive(1100){
-        margin-top: 12px;
-    }
-    @include responsive(320){
-        font-size: 12px;
-    }
+	width: auto;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: left;
+	align-items: start;
+	margin-top: 36px;
+	@include responsive(1100) {
+		margin-top: 12px;
+	}
+	@include responsive(320) {
+		font-size: 12px;
+	}
 }
 
-
 .button-practice {
-    width: 120px;
-    height: 40px;
-    border: 2px black solid;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 400;
-    margin-right: 18px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    color: inherit;
-    text-decoration: inherit;
-    @include responsive(1100){
-        font-size: 14px;
-    }
-    @include responsive(320){
-        font-size: 12px;
-        width: 90px;
-        height: 30px;
-    }
-    &:hover{
-        background-color: black;
-        color: white;
-        border: 2px rgb(255, 255, 255) solid;
-    }
+	width: 120px;
+	height: 40px;
+	border: 2px black solid;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 400;
+	margin-right: 18px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	color: inherit;
+	text-decoration: inherit;
+	@include responsive(1100) {
+		font-size: 14px;
+	}
+	@include responsive(320) {
+		font-size: 12px;
+		width: 90px;
+		height: 30px;
+	}
+	&:hover {
+		background-color: black;
+		color: white;
+		border: 2px rgb(255, 255, 255) solid;
+	}
 }
 
 .button-test {
-    width: 120px;
-    height: 40px;
-    background-color: #FFEF29;
-    border: 2px #FFEF29 solid;
-    color: black;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 400;
-    text-decoration: inherit;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    @include responsive(1100){
-        font-size: 14px;
-
-    }
-    @include responsive(320){
-        font-size: 12px;
-        width: 90px;
-        height: 30px;
-    }
-    &:hover{
-        background-color: black;
-        color: white;
-        border: 2px rgb(255, 255, 255) solid;
-    }
+	width: 120px;
+	height: 40px;
+	background-color: #ffef29;
+	border: 2px #ffef29 solid;
+	color: black;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 400;
+	text-decoration: inherit;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	@include responsive(1100) {
+		font-size: 14px;
+	}
+	@include responsive(320) {
+		font-size: 12px;
+		width: 90px;
+		height: 30px;
+	}
+	&:hover {
+		background-color: black;
+		color: white;
+		border: 2px rgb(255, 255, 255) solid;
+	}
 }

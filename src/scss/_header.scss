@@ -8,11 +8,11 @@
 	grid-template-columns: 72px 29.236% 1fr 72px;
 	grid-template-rows: 1fr;
 	@include responsive(900) {
-        height: 72px;
-        grid-template-columns: 72px repeat(36, 1fr)  72px;
+		height: 72px;
+		grid-template-columns: 72px repeat(36, 1fr) 72px;
 	}
 	@include responsive(600) {
-		grid-template-columns: 36px repeat(36, 1fr)  36px;
+		grid-template-columns: 36px repeat(36, 1fr) 36px;
 	}
 	@include responsive(500) {
 		grid-template-columns: 18px repeat(36, 1fr) 18px;
@@ -70,22 +70,21 @@
 	}
 	@include responsive(900) {
 		top: 72px;
-        display: flex;
-        flex-flow: column;
-        justify-self: end;
-        align-self: center; 
-        grid-column: 36/37;
-    }
-    @include responsive(700) {
-        grid-column: 36/37;
-    }
-    @include responsive(600) {
-        grid-column: 36/37;
-    }
-    @include responsive(500) {
-        grid-column: 36/37;
-
-    }
+		display: flex;
+		flex-flow: column;
+		justify-self: end;
+		align-self: center;
+		grid-column: 36/37;
+	}
+	@include responsive(700) {
+		grid-column: 36/37;
+	}
+	@include responsive(600) {
+		grid-column: 36/37;
+	}
+	@include responsive(500) {
+		grid-column: 36/37;
+	}
 }
 
 .navigation input {
@@ -151,8 +150,7 @@
 		white-space: nowrap;
 		&:hover {
 			padding-top: 2px;
-            border-bottom: 2px black solid;
-
+			border-bottom: 2px black solid;
 		}
 		@include responsive(1100) {
 			font-size: 14px;
@@ -173,13 +171,13 @@
 	height: 40px;
 	background-color: hsla(300, 4%, 89%, 0.08);
 	@include responsive(900) {
-        display: block;
-		background-color: hsla(300, 5%, 52%, 0.20);
+		display: block;
+		background-color: hsla(300, 5%, 52%, 0.2);
 		opacity: 0.95;
 		z-index: 99;
 		width: 216px;
 		height: 2px;
-        transform: translateY(12px);
+		transform: translateY(12px);
 	}
 }
 
@@ -223,28 +221,28 @@
 		flex-flow: column;
 		justify-content: center;
 		align-items: center;
-        top: 12px;
+		top: 12px;
 		background-color: white;
 		opacity: 0.95;
 		z-index: 1;
 		width: 216px;
 		height: 130px;
-        transform: translateY(-12px);
+		transform: translateY(-12px);
 	}
 }
 
 .navigation input:checked ~ .nav2 {
 	@include responsive(900) {
 		display: flex;
-        flex-flow: column;
-        justify-content: center;
+		flex-flow: column;
+		justify-content: center;
 		align-items: center;
 		background-color: white;
 		opacity: 0.95;
 		z-index: 1;
 		width: 216px;
-        height: 96px;
-        transform: translateY(-30px);
+		height: 96px;
+		transform: translateY(-30px);
 	}
 }
 
@@ -280,9 +278,9 @@
 			background-color: white;
 			color: black;
 			padding-top: 2px;
-            width: 70px;
-            border-bottom: 2px black solid;
-            
+			width: 70px;
+			border-bottom: 2px black solid;
+
 			border-radius: 0;
 		}
 	}

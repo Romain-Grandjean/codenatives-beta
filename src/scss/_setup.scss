@@ -1,34 +1,34 @@
 * {
-    // margin: 0;
-    // padding: 0;
-    box-sizing: border-box;
+	// margin: 0;
+	// padding: 0;
+	box-sizing: border-box;
 }
 
 :root {
-    font-size: 10px;
-    font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 10px;
+	font-family: 'IBM Plex Sans', sans-serif;
 }
 
-ul, li {
-
-    text-decoration: none;
+ul,
+li {
+	text-decoration: none;
 }
 
 button {
-    background: none;
-    border: 0;
-    color: inherit;
-    /* cursor: default; */
-    font: inherit;
-    line-height: normal;
-    overflow: visible;
-    padding: 0;
-    -webkit-appearance: button; /* for input */
-    -webkit-user-select: none; /* for button */
-       -moz-user-select: none;
-        -ms-user-select: none;
+	background: none;
+	border: 0;
+	color: inherit;
+	/* cursor: default; */
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	padding: 0;
+	-webkit-appearance: button; /* for input */
+	-webkit-user-select: none; /* for button */
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 input {
-    opacity: 1;
+	opacity: 1;
 }
