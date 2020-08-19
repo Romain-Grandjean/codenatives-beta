@@ -9,8 +9,8 @@ class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			activeScreen: <Homeslide1 />,
-			value: 1,
+			activeScreen: <Homeslide2 />,
+			value: 2,
 		};
 	}
 
