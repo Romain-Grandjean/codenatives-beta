@@ -28,7 +28,7 @@ class Home extends React.Component {
 					this.setState({ ...this.state, value: 1, activeScreen: <Homeslide1 /> });
 					break;
 			}
-		}, 5000);
+		}, 10000);
 	}
 
 	// Slide left

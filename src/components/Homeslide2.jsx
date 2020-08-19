@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const Homeslide2 = () => {
 	return (
 		<div className="slide">
-			<img id="central-window" src={process.env.PUBLIC_URL + '/img/central-window.png'} alt="" />
+			<img id="central-window2" src={process.env.PUBLIC_URL + '/img/central-window2.png'} alt="" />
 			<div id="central-catchphrase">
-				<h1>Become a code native 2</h1>
-				<h2>And get exclusive job offers</h2>
+				<h1>Step by Step, track your progress </h1>
+				{/* <h1>And become a native </h1> */}
 				<div className="central-language-selection">
 					<span id="language-catchphrase">Choose your language</span>
 					<div className="btn-language">

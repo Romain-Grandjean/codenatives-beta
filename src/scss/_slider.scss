@@ -63,6 +63,55 @@
 	}
 }
 
+#central-window2 {
+	width: 520px;
+	height: auto;
+	margin-right: 48px;
+	@include responsive(1300) {
+		width: 460px;
+	}
+	@include responsive(1200) {
+		width: 440px;
+	}
+	@include responsive(1100) {
+		width: 380px;
+	}
+	@include responsive(900) {
+		width: 460px;
+		margin-top: 36px;
+		margin-bottom: 12px;
+		margin-right: 0px;
+	}
+	@include responsive(700) {
+		width: 420px;
+		margin-top: 36px;
+		margin-bottom: 24px;
+		margin-right: 0px;
+	}
+	@include responsive(600) {
+		width: 380px;
+		margin-top: 36px;
+		margin-bottom: 12px;
+		margin-right: 0px;
+	}
+	@include responsive(500) {
+		width: 260px;
+		margin-top: 24px;
+		margin-bottom: 48px;
+		margin-right: 0px;
+	}
+	@include responsive(375) {
+		width: 240px;
+		margin-top: 12px;
+		margin-bottom: 36px;
+	}
+	@include responsive(320) {
+		width: 220px;
+		margin-top: 0px;
+		margin-bottom: 24px;
+	}
+}
+
 #central-catchphrase {
 	width: 480px;
 	height: 360px;
