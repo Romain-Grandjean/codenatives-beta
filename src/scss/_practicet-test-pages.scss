@@ -1,6 +1,6 @@
 .practice-page {
-	width: 100%;
-	height: 69.4rem;
+	width: 100vw;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -13,7 +13,7 @@
 .question-practice {
 	grid-column: 9/ 30;
 	grid-row: 2/5;
-	width: 776px;
+	width: 70.45vw;
 	height: 28px;
 	font-size: 24px;
 	font-weight: 500;
@@ -21,10 +21,30 @@
 	justify-self: start;
 	align-self: center;
 	transform: translateY(2px);
+	@include responsive(1100) {
+		font-size: 22px;
+	}
+	@include responsive(900) {
+		font-size: 22px;
+	}
+	@include responsive(900) {
+		font-size: 18px;
+		grid-column: 2/ 38;
+		grid-row: 3/6;
+		width: 80vw;
+		justify-self: center;
+		text-align: center;
+	}
+	@include responsive(500) {
+		font-size: 16px;
+	}
+	@include responsive(320) {
+		font-size: 14px;
+	}
 }
 
 .practice-solutions {
-	grid-column: 9/ 24;
+	grid-column: 9/ 28;
 	grid-row: 6/18;
 	width: auto;
 	height: auto;
@@ -33,6 +53,14 @@
 	justify-content: start;
 	align-items: start;
 	z-index: 1;
+	@include responsive(900) {
+		font-size: 18px;
+		grid-column: 2/ 38;
+		grid-row: 6/17;
+		width: 100%;
+		justify-self: center;
+		align-items: center;
+	}
 }
 
 .practice-solution {
@@ -59,6 +87,10 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	@include responsive(900) {
+		grid-column: 2/37;
+		grid-row: 18/19;
+	}
 }
 
 .player-arrow {
@@ -120,12 +152,27 @@
 	flex-direction: column;
 	justify-content: end;
 	align-items: start;
+	@include responsive(900) {
+		flex-direction: row-reverse;
+		grid-column: 2/38;
+		grid-row: 2/4;
+		align-self: center;
+		justify-self: center;
+	}
 	& span {
 		font-size: 28px;
 		font-weight: 500;
 		margin-bottom: 16px;
 		color: #d8d8d882;
+		@include responsive(900) {
+			font-size: 22px;
+			margin-right: 18px;
+		}
 
+		@include responsive(500) {
+			font-size: 16px;
+			margin-right: 6px;
+		}
 		&:hover {
 			color: black;
 		}
@@ -140,6 +187,9 @@
 	justify-self: start;
 	align-self: start;
 	font-size: 24px;
+	@include responsive(500) {
+		font-size: 16px;
+	}
 }
 
 // #A1 {
@@ -177,6 +227,16 @@
 #title-level {
 	font-size: 12px;
 	color: black;
+	@include responsive(900) {
+		font-size: 16px;
+		order: 2;
+		align-self: center;
+	}
+	@include responsive(500) {
+		font-size: 12px;
+		order: 2;
+		align-self: center;
+	}
 }
 
 #title-time-score {
