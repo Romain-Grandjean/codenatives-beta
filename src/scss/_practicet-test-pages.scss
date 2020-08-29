@@ -8,6 +8,12 @@
 	grid-template-columns: 72px repeat(36, 1fr) 72px;
 	grid-template-rows: 90px repeat(18, 1fr) 66px;
 	z-index: -1;
+	@include responsive(600) {
+		grid-template-columns: 36px repeat(36, 1fr) 36px;
+	}
+	@include responsive(500) {
+		grid-template-columns: 18px repeat(36, 1fr) 18px;
+	}
 }
 
 .question-practice {
@@ -35,11 +41,13 @@
 		justify-self: center;
 		text-align: center;
 	}
-	@include responsive(500) {
+	@include responsive(700) {
 		font-size: 16px;
+		grid-row: 3/6;
 	}
-	@include responsive(320) {
-		font-size: 14px;
+	@include responsive(500) {
+		font-size: 13px;
+		grid-row: 3/5;
 	}
 }
 
@@ -56,7 +64,7 @@
 	@include responsive(900) {
 		font-size: 18px;
 		grid-column: 2/ 38;
-		grid-row: 6/17;
+		grid-row: 6/16;
 		width: 100%;
 		justify-self: center;
 		align-items: center;
@@ -81,13 +89,13 @@
 	width: 150px;
 	height: auto;
 	grid-column: 19/22;
-	grid-row: 20/22;
+	grid-row: 16/18;
 	justify-self: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	@include responsive(900) {
+	@include responsive(500) {
 		grid-column: 2/37;
 		grid-row: 18/19;
 	}
@@ -97,7 +105,7 @@
 	width: 220px;
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 #practice-solution {
@@ -106,8 +114,14 @@
 	font-weight: 500;
 	justify-self: center;
 	align-self: center;
-
 	color: black;
+	@include responsive(700) {
+		font-size: 14px;
+	}
+	@include responsive(370) {
+		font-size: 11px;
+	}
+
 	&:hover {
 		border-bottom: 2px black solid;
 		padding-bottom: 0px;
@@ -115,14 +129,42 @@
 }
 
 #arrow-left-page {
+	margin-right: 24px;
+	@include responsive(700) {
+		transform: scale(0.9);
+	}
+	@include responsive(700) {
+		transform: scale(0.8);
+	}
+	@include responsive(370) {
+		transform: scale(0.7);
+	}
 	&:hover {
 		transform: scale(1.1);
+		@include responsive(370) {
+			transform: scale(0.9);
+		}
 	}
 }
 
 #arrow-right-page {
+	margin-left: 24px;
+	@include responsive(700) {
+		transform: scale(0.9);
+	}
+	@include responsive(700) {
+		transform: scale(0.8);
+	}
+
+	@include responsive(370) {
+		transform: scale(0.7);
+	}
+
 	&:hover {
 		transform: scale(1.1);
+		@include responsive(370) {
+			transform: scale(0.9);
+		}
 	}
 }
 
@@ -134,10 +176,16 @@
 	margin-top: 6px;
 	color: inherit;
 	text-decoration: inherit;
+	@include responsive(370) {
+		margin-top: 8px;
+	}
 	& span {
 		font-size: 14px;
 		color: #d8d8d8;
 		margin-left: 8px;
+		@include responsive(370) {
+			font-size: 12px;
+		}
 	}
 	&:hover {
 		transform: scale(1.4);
@@ -159,6 +207,9 @@
 		align-self: center;
 		justify-self: center;
 	}
+	@include responsive(370) {
+		grid-row: 2/3;
+	}
 	& span {
 		font-size: 28px;
 		font-weight: 500;
@@ -169,8 +220,17 @@
 			margin-right: 18px;
 		}
 
-		@include responsive(500) {
-			font-size: 16px;
+		// @include responsive(500) {
+		// 	font-size: 16px;
+		// 	margin-right: 6px;
+		// }
+		@include responsive(700) {
+			font-size: 15px;
+			margin-right: 6px;
+		}
+
+		@include responsive(370) {
+			font-size: 12px;
 			margin-right: 6px;
 		}
 		&:hover {
@@ -187,9 +247,15 @@
 	justify-self: start;
 	align-self: start;
 	font-size: 24px;
-	@include responsive(500) {
-		font-size: 16px;
+	@include responsive(700) {
+		font-size: 15px;
 	}
+	@include responsive(370) {
+		font-size: 12px;
+	}
+	// @include responsive(320) {
+	// 	font-size: 12px;
+	// }
 }
 
 // #A1 {
@@ -232,7 +298,12 @@
 		order: 2;
 		align-self: center;
 	}
-	@include responsive(500) {
+	@include responsive(700) {
+		font-size: 13px;
+		order: 2;
+		align-self: center;
+	}
+	@include responsive(370) {
 		font-size: 12px;
 		order: 2;
 		align-self: center;

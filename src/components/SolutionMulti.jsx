@@ -18,7 +18,7 @@ export default class SolutionMulti extends React.Component {
 
 		return (
 			<div className="practice-solutions">
-				<div>{items}</div>;
+				<div>{items}</div>
 			</div>
 		);
 	}

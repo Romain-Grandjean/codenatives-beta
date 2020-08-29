@@ -18,6 +18,9 @@
 	@include responsive(500) {
 		grid-template-columns: 18px repeat(36, 1fr) 18px;
 	}
+	@include responsive(320) {
+		height: 60px;
+	}
 }
 
 .line-header {
@@ -30,6 +33,9 @@
 	@include responsive(900) {
 		top: 72px;
 	}
+	@include responsive(320) {
+		top: 60px;
+	}
 }
 
 #logo-header {
@@ -37,7 +43,7 @@
 	height: auto;
 	grid-column: 2/3;
 	grid-row: 1/2;
-	margin-top: 28px;
+	align-self: center;
 	& img {
 		@include responsive(1100) {
 			width: 200px;
@@ -52,7 +58,7 @@
 			height: auto;
 		}
 		@include responsive(320) {
-			width: 120px;
+			width: 110px;
 			height: auto;
 		}
 	}
@@ -73,8 +79,8 @@
 		top: 72px;
 		display: flex;
 		flex-flow: column;
-		justify-self: end;
-		align-self: start;
+		justify-self: center;
+		align-self: center;
 		grid-row: 1/2;
 		grid-column: 34/37;
 	}
@@ -85,6 +91,9 @@
 		grid-column: 37/38;
 	}
 	@include responsive(500) {
+		grid-column: 37/38;
+	}
+	@include responsive(320) {
 		grid-column: 37/38;
 	}
 }
@@ -98,6 +107,12 @@
 	z-index: 2;
 	opacity: 0;
 	cursor: pointer;
+	@include responsive(320) {
+		width: 30px;
+		height: 30px;
+		top: -55px;
+		right: -25px;
+	}
 }
 
 .line1 {
@@ -109,10 +124,14 @@
 
 	position: absolute;
 	transform: rotate(90deg);
+	@include responsive(320) {
+		right: 12px;
+	}
 }
 .navigation input:checked ~ .line1 {
 	top: -50px;
 	transform: rotate(45deg);
+	
 }
 
 .line2 {
@@ -121,13 +140,16 @@
 	background-color: black;
 	z-index: -1;
 	top: -46px;
-
 	position: absolute;
 	transform: rotate(90deg);
+	@include responsive(320) {
+		right: 12px;
+	}
 }
 .navigation input:checked ~ .line2 {
 	top: -50px;
 	transform: rotate(-45deg);
+
 }
 
 .nav1 {
@@ -160,6 +182,14 @@
 		@include responsive(900) {
 			font-size: 18px;
 			margin-bottom: 12px;
+			margin-right: 0;
+			width: auto;
+			height: auto;
+			white-space: nowrap;
+		}
+		@include responsive(320) {
+			font-size: 14px;
+			margin-bottom: 8px;
 			margin-right: 0;
 			width: auto;
 			height: auto;
@@ -214,6 +244,10 @@
 			margin-top: 0;
 			margin-left: 0;
 		}
+		@include responsive(320) {
+			font-size: 14px;
+			margin-bottom: 8px;
+		}
 	}
 }
 
@@ -231,6 +265,9 @@
 		height: 130px;
 		transform: translateY(-12px);
 	}
+	@include responsive(320) {
+		height: 90px;
+	}
 }
 
 .navigation input:checked ~ .nav2 {
@@ -245,6 +282,9 @@
 		width: 216px;
 		height: 96px;
 		transform: translateY(-30px);
+	}
+	@include responsive(320) {
+		height: 48px;
 	}
 }
 
@@ -272,6 +312,11 @@
 		white-space: normal;
 		border: none;
 	}
+	@include responsive(320) {
+		font-size: 14px;
+		width: 60px;
+
+	}
 	&:hover {
 		background-color: #000000;
 		color: white;
@@ -282,8 +327,10 @@
 			padding-top: 2px;
 			width: 70px;
 			border-bottom: 2px black solid;
-
 			border-radius: 0;
+		}
+		@include responsive(320) {
+			width: 60px;
 		}
 	}
 }

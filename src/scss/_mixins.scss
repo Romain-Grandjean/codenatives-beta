@@ -38,8 +38,8 @@
 		}
 	}
 
-	@if $breakpoint == 375 {
-		@media (max-width: 375px) {
+	@if $breakpoint == 370 {
+		@media (max-width: 370px) {
 			@content;
 		}
 	}
@@ -61,12 +61,37 @@
 	justify-content: flex-start;
 	align-items: center;
 	border: 1px hsla(300, 4%, 89%, 0.15) solid;
+	@include responsive(900) {
+		height: 76px;
+		margin-bottom: 14px;
+	}
+	@include responsive(700) {
+		height: 72px;
+		margin-bottom: 9px;
+	}
+	@include responsive(370) {
+		height: 48px;
+		margin-bottom: 9px;
+	}
 	& img {
 		width: 55px;
 		height: 84px;
 		margin-right: 18px;
 		justify-self: start;
 		transform: translateX(-8px);
+		@include responsive(900) {
+			height: 76px;
+			margin-right: 0px;
+		}
+		@include responsive(700) {
+			height: 72px;
+			margin-right: 0px;
+		}
+		@include responsive(370) {
+
+			height: 48px;
+			margin-right: 00px;
+		}
 	}
 	& span {
 		margin-left: 18px;
@@ -81,10 +106,15 @@
 			width: 66.6vw;
 		}
 		@include responsive(500) {
-			font-size: 14px;
+			font-size: 13px;
+		}
+		@include responsive(370) {
+			font-size: 12px;
 		}
 		@include responsive(320) {
-			font-size: 12px;
+			font-size: 11px;
+			// height: 42px;
+			margin-left: 0px;
 		}
 	}
 	&:hover {
@@ -97,7 +127,7 @@
 	@include responsive(600) {
 		font-size: 16px;
 	}
-	@include responsive(500) {
+	@include responsive(370) {
 	}
 	@include responsive(320) {
 	}
