@@ -53,14 +53,15 @@
 
 .practice-solutions {
 	grid-column: 9/ 28;
-	grid-row: 6/18;
+	grid-row: 5/16;
 	width: auto;
 	height: auto;
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
-	align-items: start;
+	justify-content: center;
+	align-items: center;
 	z-index: 1;
+
 	@include responsive(900) {
 		font-size: 18px;
 		grid-column: 2/ 38;
@@ -89,12 +90,16 @@
 	width: 150px;
 	height: auto;
 	grid-column: 19/22;
-	grid-row: 16/18;
+	grid-row: 15/20;
 	justify-self: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	// @include responsive(1100) {
+	// 	grid-column: 2/37;
+	// 	grid-row: 15/20;
+	// }
 	@include responsive(500) {
 		grid-column: 2/37;
 		grid-row: 18/19;
@@ -121,7 +126,6 @@
 	@include responsive(370) {
 		font-size: 11px;
 	}
-
 	&:hover {
 		border-bottom: 2px black solid;
 		padding-bottom: 0px;
@@ -268,6 +272,13 @@
 	align-self: start;
 	display: flex;
 	flex-direction: column;
+	@include responsive(900) {
+		flex-direction: row-reverse;
+		grid-column: 2/38;
+		grid-row: 16/18;
+		align-self: center;
+		justify-self: center;
+	}
 
 	& span {
 		font-size: 28px;
@@ -275,7 +286,12 @@
 		margin-bottom: 16px;
 		color: #d8d8d882;
 		text-align: end;
-
+		@include responsive(900) {
+			width: 40px;
+			margin: 0 12px;
+	
+			align-self: center;
+		}
 		&:hover {
 			color: black;
 		}
@@ -287,6 +303,42 @@
 	}
 	#global-time-score {
 		text-align: end;
+	}
+}
+
+#title-time-score {
+	@include responsive(900) {
+		order: 1;
+	}
+}
+
+#global-time-score {
+	@include responsive(900) {
+		width: 60px;
+	}
+	@include responsive(370) {
+		font-size: 18px;
+	}
+}
+
+#global-time-score {
+	@include responsive(900) {
+		order: 3;
+	}
+}
+
+#points-score {
+	@include responsive(900) {
+		width: 60px;
+	}
+	@include responsive(370) {
+		font-size: 18px;
+	}
+}
+
+#title-time-score {
+	@include responsive(900) {
+		order: 3;
 	}
 }
 
@@ -325,6 +377,10 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
+	@include responsive(900) {
+		grid-row: 18/20;
+	}
 }
 
 #question-number-test {
@@ -334,6 +390,9 @@
 	justify-self: center;
 	align-self: center;
 	color: black;
+	@include responsive(370) {
+		font-size: 11px;
+	}
 }
 
 .stop-btn-test {
@@ -344,10 +403,14 @@
 	margin-top: 12px;
 	color: inherit;
 	text-decoration: inherit;
+	
 	& span {
 		font-size: 14px;
 		color: #d8d8d8;
 		margin-left: 12px;
+		@include responsive(370) {
+			font-size: 11px;
+		}
 	}
 	&:hover {
 		transform: scale(1.4);

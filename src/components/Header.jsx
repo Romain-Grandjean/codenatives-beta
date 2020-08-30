@@ -11,9 +11,10 @@ class Header extends React.Component {
 
 				<nav className="navigation">
 					<input type="checkbox" />
-
-						<div className="line1"></div>
-						<div className="line2"></div>
+					<div className="button-menu">
+					<div className="line1"></div>
+					<div className="line2"></div>
+					</div>
 					<div className="nav1">
 						<a className="nav1-elements">Concept</a>
 						<a className="nav1-elements">Contribute</a>

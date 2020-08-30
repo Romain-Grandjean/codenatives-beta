@@ -165,10 +165,11 @@
 			margin-top: 72px;
 		}
 		@include responsive(500) {
+			font-size: 18px;
 			margin-top: 72px;
 		}
 		@include responsive(375) {
-			font-size: 22px;
+			font-size: 14px;
 			margin-top: 72px;
 		}
 	}
@@ -187,8 +188,11 @@
 			font-size: 18px;
 			margin-top: 0;
 		}
-		@include responsive(375) {
+		@include responsive(500) {
 			font-size: 16px;
+		}
+		@include responsive(375) {
+			font-size: 12px;
 		}
 	}
 }
@@ -247,9 +251,14 @@
 	@include responsive(1100) {
 		font-size: 14px;
 	}
+	@include responsive(500) {
+		font-size: 13px;
+		width: 72px;
+	}
 	@include responsive(320) {
-		font-size: 12px;
-		width: 74px;
+		font-size: 10px;
+		width: 65px;
+		transform: translateY(-2px);
 	}
 	img {
 		width: 8px;
@@ -280,7 +289,14 @@
 	flex-direction: column;
 	background-color: none;
 	z-index: 99;
-
+	@include responsive(500) {
+		font-size: 13px;
+		width: 90px;
+	}
+	@include responsive(320) {
+		font-size: 12px;
+		width: 90px;
+	}
 	& a {
 		display: none;
 	}
@@ -321,20 +337,29 @@
 	color: black;
 	background-color: none;
 	font-size: 15px;
+	@include responsive(500) {
+		font-size: 13px;
+
+	}
+	@include responsive(320) {
+		font-size: 12px;
+	}
 }
 
 .central-buttons {
-	width: auto;
+	width: 260px;
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: left;
+	justify-content: space-between;
 	align-items: start;
 	margin-top: 36px;
 	@include responsive(1100) {
 		margin-top: 12px;
+		width: 250px;
 	}
 	@include responsive(320) {
 		font-size: 12px;
+		width: 240px;
 	}
 }
 
@@ -345,7 +370,7 @@
 	border-radius: 8px;
 	font-size: 16px;
 	font-weight: 400;
-	margin-right: 18px;
+
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
@@ -355,10 +380,15 @@
 	@include responsive(1100) {
 		font-size: 14px;
 	}
+	@include responsive(500) {
+		font-size: 13px;
+		transform: scale(.9);
+
+	}
 	@include responsive(320) {
-		font-size: 12px;
-		width: 90px;
-		height: 30px;
+		font-size: 13px;
+		transform: scale(.8);
+
 	}
 	&:hover {
 		background-color: black;
@@ -384,10 +414,13 @@
 	@include responsive(1100) {
 		font-size: 14px;
 	}
+	@include responsive(500) {
+		font-size: 13px;
+		transform: scale(.9);
+	}
 	@include responsive(320) {
-		font-size: 12px;
-		width: 90px;
-		height: 30px;
+		font-size: 13px;
+		transform: scale(.8);
 	}
 	&:hover {
 		background-color: black;

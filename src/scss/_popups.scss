@@ -17,17 +17,38 @@
 	justify-content: start;
 	align-items: center;
 	z-index: 99;
+	@include responsive(700) {
+		width: 342px;
+	}
+	@include responsive(500) {
+		width: 300px;
+	}
+	@include responsive(370) {
+		width: 272px;
+	}
 	& h1 {
 		margin-top: 42px;
 		margin-bottom: 36px;
 		color: black;
 		font-size: 30px;
 		font-weight: 500;
+		@include responsive(700) {
+			font-size: 24px;
+		}
+		@include responsive(500) {
+			font-size: 22px;
+		}
+		@include responsive(370) {
+			font-size: 18px;
+		}
 	}
 	& span {
 		font-size: 18px;
 		margin-bottom: 18px;
 		font-weight: 300;
+		@include responsive(500) {
+			font-size: 13px;
+		}
 	}
 	&:last-child {
 		font-weight: 500;
@@ -52,6 +73,15 @@
 	justify-content: center;
 	align-items: center;
 	z-index: 99;
+	@include responsive(700) {
+		font-size: 15px;
+	}
+	@include responsive(500) {
+		font-size: 14px;
+	}
+	@include responsive(370) {
+		font-size: 12px;
+	}
 	&:hover {
 		background-color: black;
 		color: white;
