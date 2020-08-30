@@ -96,10 +96,12 @@
 	& span {
 		margin-left: 18px;
 		font-size: 20px;
-		width: 60.72vw;
+		width: 53vw;
 		@include responsive(1100) {
 		}
+
 		@include responsive(900) {
+			width: 66.6vw;
 		}
 		@include responsive(700) {
 			font-size: 16px;

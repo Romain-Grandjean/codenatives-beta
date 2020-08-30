@@ -17,7 +17,7 @@
 }
 
 .question-practice {
-	grid-column: 9/ 30;
+	grid-column: 8/30;
 	grid-row: 2/5;
 	width: 70.45vw;
 	height: 28px;
@@ -52,14 +52,14 @@
 }
 
 .practice-solutions {
-	grid-column: 9/ 28;
-	grid-row: 5/16;
+	grid-column: 8/30;
+	grid-row: 4/18;
 	width: auto;
 	height: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: start;
 	z-index: 1;
 
 	@include responsive(900) {
@@ -90,7 +90,7 @@
 	width: 150px;
 	height: auto;
 	grid-column: 19/22;
-	grid-row: 15/20;
+	grid-row: 16/22;
 	justify-self: center;
 	display: flex;
 	flex-direction: column;
@@ -308,13 +308,15 @@
 
 #title-time-score {
 	@include responsive(900) {
+		padding: 0px 20px;
 		order: 1;
 	}
 }
 
 #global-time-score {
 	@include responsive(900) {
-		width: 60px;
+		width: 80px;
+		padding: 0px 20px;
 	}
 	@include responsive(370) {
 		font-size: 18px;
@@ -324,12 +326,14 @@
 #global-time-score {
 	@include responsive(900) {
 		order: 3;
+		padding: 0px 20px;
 	}
 }
 
 #points-score {
 	@include responsive(900) {
-		width: 60px;
+		width: 80px;
+		padding: 0px 20px;
 	}
 	@include responsive(370) {
 		font-size: 18px;
