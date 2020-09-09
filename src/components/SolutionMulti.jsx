@@ -3,7 +3,9 @@ import Solution from './Solution';
 
 export default class SolutionMulti extends React.Component {
 	render() {
-		const items = this.props.data[this.props.page].solutions.map((element, i) => (
+		const items = this.props.data[
+			this.props.page
+		].solutions.map((element, i) => (
 			<Solution
 				key={i}
 				id={'solution' + (i + 1)}

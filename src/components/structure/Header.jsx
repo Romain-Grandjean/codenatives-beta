@@ -6,7 +6,10 @@ class Header extends React.Component {
 		return (
 			<div className="header">
 				<Link to="" id="logo-header">
-					<img src={process.env.PUBLIC_URL + '/img/logo_header.png'} alt="logo" />
+					<img
+						src={process.env.PUBLIC_URL + '/img/logo_header.png'}
+						alt="logo"
+					/>
 				</Link>
 
 				<nav className="navigation">
@@ -18,7 +21,9 @@ class Header extends React.Component {
 					<div className="nav1">
 						<a className="nav1-elements">Concept</a>
 						<a className="nav1-elements">Contribute</a>
-						<a className="nav1-elements">For Schools & Recruiters</a>
+						<a className="nav1-elements">
+							For Schools & Recruiters
+						</a>
 						<div className="line-nav"></div>
 					</div>
 					<div className="nav2">

@@ -7,11 +7,12 @@ import DataPractice from './dataPractice.json';
 import DataTest from './dataTest.json';
 
 // components
-import Header from './components/Header';
+import Header from './components/structure/Header';
 import Home from './components/Home';
 import Practice from './components/Practice';
 import Test from './components/Test';
-import Footer from './components/Footer.jsx';
+import Footer from './components/structure/Footer';
+import Admin from './components/Admin';
 
 class App extends React.Component {
 	constructor(props) {
@@ -28,6 +29,7 @@ class App extends React.Component {
 					<Route path="/" exact component={Home} />
 					<Route path="/practice" exact component={Practice} />
 					<Route path="/test" exact component={Test} />
+					<Route path="/admin" exact component={Admin} />
 				</Switch>
 				<Footer />
 			</React.Fragment>

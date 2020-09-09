@@ -16,8 +16,10 @@
 	width: 520px;
 	height: auto;
 	margin-right: 48px;
-	box-shadow: 0 2.7px 2.2px rgba(0, 0, 0, 0.017), 0 6.4px 5.3px rgba(0, 0, 0, 0.024), 0 12px 10px rgba(0, 0, 0, 0.03),
-		0 21.4px 17.9px rgba(0, 0, 0, 0.036), 0 40.1px 33.4px rgba(0, 0, 0, 0.043), 0 96px 80px rgba(0, 0, 0, 0.06);
+	box-shadow: 0 2.7px 2.2px rgba(0, 0, 0, 0.017),
+		0 6.4px 5.3px rgba(0, 0, 0, 0.024), 0 12px 10px rgba(0, 0, 0, 0.03),
+		0 21.4px 17.9px rgba(0, 0, 0, 0.036),
+		0 40.1px 33.4px rgba(0, 0, 0, 0.043), 0 96px 80px rgba(0, 0, 0, 0.06);
 	@include responsive(1300) {
 		width: 460px;
 	}
@@ -313,7 +315,9 @@
 			top: 0px;
 			left: 12px;
 		}
-		& a, a:active, a:hover {
+		& a,
+		a:active,
+		a:hover {
 			display: flex;
 			z-index: 99;
 			font-size: 15px;
@@ -340,7 +344,6 @@
 	font-size: 15px;
 	@include responsive(500) {
 		font-size: 13px;
-
 	}
 	@include responsive(320) {
 		font-size: 12px;
@@ -383,13 +386,11 @@
 	}
 	@include responsive(500) {
 		font-size: 13px;
-		transform: scale(.9);
-
+		transform: scale(0.9);
 	}
 	@include responsive(320) {
 		font-size: 13px;
-		transform: scale(.8);
-
+		transform: scale(0.8);
 	}
 	&:hover {
 		background-color: black;
@@ -417,11 +418,11 @@
 	}
 	@include responsive(500) {
 		font-size: 13px;
-		transform: scale(.9);
+		transform: scale(0.9);
 	}
 	@include responsive(320) {
 		font-size: 13px;
-		transform: scale(.8);
+		transform: scale(0.8);
 	}
 	&:hover {
 		background-color: black;

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/codenatives-beta/static/css/main.ccff630e.chunk.css",
+    "main.css": "/codenatives-beta/static/css/main.a15e8e79.chunk.css",
     "main.js": "/codenatives-beta/static/js/main.c086f310.chunk.js",
     "main.js.map": "/codenatives-beta/static/js/main.c086f310.chunk.js.map",
     "runtime-main.js": "/codenatives-beta/static/js/runtime-main.89343d86.js",
@@ -8,15 +8,15 @@
     "static/js/2.7ca0f5bb.chunk.js": "/codenatives-beta/static/js/2.7ca0f5bb.chunk.js",
     "static/js/2.7ca0f5bb.chunk.js.map": "/codenatives-beta/static/js/2.7ca0f5bb.chunk.js.map",
     "index.html": "/codenatives-beta/index.html",
-    "precache-manifest.11844009dcb25df700f5cb14799851c7.js": "/codenatives-beta/precache-manifest.11844009dcb25df700f5cb14799851c7.js",
+    "precache-manifest.faa493128b722ceb54df78d59d0f25c8.js": "/codenatives-beta/precache-manifest.faa493128b722ceb54df78d59d0f25c8.js",
     "service-worker.js": "/codenatives-beta/service-worker.js",
-    "static/css/main.ccff630e.chunk.css.map": "/codenatives-beta/static/css/main.ccff630e.chunk.css.map",
+    "static/css/main.a15e8e79.chunk.css.map": "/codenatives-beta/static/css/main.a15e8e79.chunk.css.map",
     "static/js/2.7ca0f5bb.chunk.js.LICENSE.txt": "/codenatives-beta/static/js/2.7ca0f5bb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.89343d86.js",
     "static/js/2.7ca0f5bb.chunk.js",
-    "static/css/main.ccff630e.chunk.css",
+    "static/css/main.a15e8e79.chunk.css",
     "static/js/main.c086f310.chunk.js"
   ]
 }

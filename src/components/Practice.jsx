@@ -61,13 +61,17 @@ export default class Practice extends React.Component {
 			}, 300);
 
 			this.timeout = setTimeout(() => {
-				document.getElementById(this.state.data[this.state.page].answer).style.background = '#7CF4BD';
+				document.getElementById(
+					this.state.data[this.state.page].answer
+				).style.background = '#7CF4BD';
 			}, 400);
 		}
 
 		// Transition to next question
 		window.setTimeout(() => {
-			let allSolutions = document.querySelectorAll('.practice-solutions div');
+			let allSolutions = document.querySelectorAll(
+				'.practice-solutions div'
+			);
 			for (let i = 0; i < allSolutions.length; i++) {
 				allSolutions[i].style.background = 'white';
 			}
@@ -82,7 +86,9 @@ export default class Practice extends React.Component {
 
 	// Show solution to question
 	showSolution = () => {
-		document.getElementById(this.state.data[this.state.page].answer).style.background = '#7CF4BD';
+		document.getElementById(
+			this.state.data[this.state.page].answer
+		).style.background = '#7CF4BD';
 	};
 
 	render() {
@@ -91,7 +97,9 @@ export default class Practice extends React.Component {
 		return (
 			<>
 				<div className="practice-page">
-					<div className="question-practice">{this.state.data[this.state.page].question}</div>
+					<div className="question-practice">
+						{this.state.data[this.state.page].question}
+					</div>
 
 					<SolutionMulti
 						data={this.state.data}
@@ -103,25 +111,75 @@ export default class Practice extends React.Component {
 
 					<div className="level-practice">
 						<span id="title-level">Level</span>
-						<span id="native" style={{ color: score >= 120 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="native"
+							style={{
+								color: score >= 120 ? 'black' : '#d8d8d882',
+							}}
+						>
 							Native
 						</span>
-						<span id="C2" style={{ color: score >= 100 && score < 120 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="C2"
+							style={{
+								color:
+									score >= 100 && score < 120
+										? 'black'
+										: '#d8d8d882',
+							}}
+						>
 							C2
 						</span>
-						<span id="C1" style={{ color: score >= 80 && score < 100 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="C1"
+							style={{
+								color:
+									score >= 80 && score < 100
+										? 'black'
+										: '#d8d8d882',
+							}}
+						>
 							C1
 						</span>
-						<span id="B2" style={{ color: score >= 60 && score < 80 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="B2"
+							style={{
+								color:
+									score >= 60 && score < 80
+										? 'black'
+										: '#d8d8d882',
+							}}
+						>
 							B2
 						</span>
-						<span id="B1" style={{ color: score >= 40 && score < 60 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="B1"
+							style={{
+								color:
+									score >= 40 && score < 60
+										? 'black'
+										: '#d8d8d882',
+							}}
+						>
 							B1
 						</span>
-						<span id="A2" style={{ color: score >= 20 && score < 40 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="A2"
+							style={{
+								color:
+									score >= 20 && score < 40
+										? 'black'
+										: '#d8d8d882',
+							}}
+						>
 							A2
 						</span>
-						<span id="A1" style={{ color: score < 20 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="A1"
+							style={{
+								color: score < 20 ? 'black' : '#d8d8d882',
+							}}
+						>
 							A1
 						</span>
 					</div>
@@ -131,17 +189,26 @@ export default class Practice extends React.Component {
 							<img
 								id="arrow-left-page"
 								onClick={() => this.previous()}
-								src={process.env.PUBLIC_URL + '/img/arrow-left-page.svg'}
+								src={
+									process.env.PUBLIC_URL +
+									'/img/arrow-left-page.svg'
+								}
 								alt="arrow"
 							/>
 							<div>
-								<span id="practice-solution" onClick={() => this.showSolution()}>
+								<span
+									id="practice-solution"
+									onClick={() => this.showSolution()}
+								>
 									Show Solution
 								</span>
 								<Link to="/" className="stop-btn">
 									<img
 										id="icon-stop"
-										src={process.env.PUBLIC_URL + '/img/icon-stop.svg'}
+										src={
+											process.env.PUBLIC_URL +
+											'/img/icon-stop.svg'
+										}
 										alt="arrow"
 									/>
 									<span>Stop</span>
@@ -150,7 +217,10 @@ export default class Practice extends React.Component {
 							<img
 								id="arrow-right-page"
 								onClick={() => this.next()}
-								src={process.env.PUBLIC_URL + '/img/arrow-right-page.svg'}
+								src={
+									process.env.PUBLIC_URL +
+									'/img/arrow-right-page.svg'
+								}
 								alt="arrow"
 							/>
 						</div>

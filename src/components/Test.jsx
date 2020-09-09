@@ -26,7 +26,9 @@ export default class Test extends React.Component {
 		if (this.state.statustest === 0) {
 			console.log('test not launched');
 		} else {
-			let allSolutions = document.querySelectorAll('.practice-solutions div');
+			let allSolutions = document.querySelectorAll(
+				'.practice-solutions div'
+			);
 			let finalscore = this.state.score;
 			for (let i = 0; i < allSolutions.length; i++) {
 				allSolutions[i].style.background = 'white';
@@ -101,7 +103,9 @@ export default class Test extends React.Component {
 			}, 300);
 
 			window.setTimeout(() => {
-				document.getElementById(this.state.data[this.state.page].answer).style.background = '#7CF4BD';
+				document.getElementById(
+					this.state.data[this.state.page].answer
+				).style.background = '#7CF4BD';
 			}, 600);
 
 			window.setTimeout(() => {
@@ -171,7 +175,9 @@ export default class Test extends React.Component {
 		});
 
 		this.myInterval = setInterval(() => {
-			let allSolutions = document.querySelectorAll('.practice-solutions div');
+			let allSolutions = document.querySelectorAll(
+				'.practice-solutions div'
+			);
 			for (let i = 0; i < allSolutions.length; i++) {
 				allSolutions[i].style.background = 'white';
 
@@ -212,7 +218,9 @@ export default class Test extends React.Component {
 			<>
 				<Popupwindow
 					launchtest={this.launchtest}
-					globaltime={this.state.data.length * this.state.questionsettime}
+					globaltime={
+						this.state.data.length * this.state.questionsettime
+					}
 					numberofquestions={this.state.data.length}
 					questionsettime={this.state.questionsettime}
 					page={this.state.page}
@@ -223,29 +231,81 @@ export default class Test extends React.Component {
 					level={this.state.level}
 				/>
 				<div className="practice-page">
-					<div className="question-practice">{this.state.data[this.state.page].question}</div>
+					<div className="question-practice">
+						{this.state.data[this.state.page].question}
+					</div>
 
 					<div className="level-practice">
 						<span id="title-level">Level</span>
-						<span id="native" style={{ color: score >= 120 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="native"
+							style={{
+								color: score >= 120 ? 'black' : '#d8d8d882',
+							}}
+						>
 							Native
 						</span>
-						<span id="C2" style={{ color: score >= 100 && score < 120 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="C2"
+							style={{
+								color:
+									score >= 100 && score < 120
+										? 'black'
+										: '#d8d8d882',
+							}}
+						>
 							C2
 						</span>
-						<span id="C1" style={{ color: score >= 80 && score < 100 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="C1"
+							style={{
+								color:
+									score >= 80 && score < 100
+										? 'black'
+										: '#d8d8d882',
+							}}
+						>
 							C1
 						</span>
-						<span id="B2" style={{ color: score >= 60 && score < 80 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="B2"
+							style={{
+								color:
+									score >= 60 && score < 80
+										? 'black'
+										: '#d8d8d882',
+							}}
+						>
 							B2
 						</span>
-						<span id="B1" style={{ color: score >= 40 && score < 60 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="B1"
+							style={{
+								color:
+									score >= 40 && score < 60
+										? 'black'
+										: '#d8d8d882',
+							}}
+						>
 							B1
 						</span>
-						<span id="A2" style={{ color: score >= 20 && score < 40 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="A2"
+							style={{
+								color:
+									score >= 20 && score < 40
+										? 'black'
+										: '#d8d8d882',
+							}}
+						>
 							A2
 						</span>
-						<span id="A1" style={{ color: score < 20 ? 'black' : '#d8d8d882' }}>
+						<span
+							id="A1"
+							style={{
+								color: score < 20 ? 'black' : '#d8d8d882',
+							}}
+						>
 							A1
 						</span>
 					</div>
@@ -259,19 +319,28 @@ export default class Test extends React.Component {
 
 					<div className="score-test">
 						<span id="title-time-score">Timing</span>
-						<span id="global-time-score">{this.state.globaltime}</span>
+						<span id="global-time-score">
+							{this.state.globaltime}
+						</span>
 						<span id="title-time-score">Score</span>
 						<span id="points-score">{this.state.score}</span>
 					</div>
 
 					<div className="player-test">
 						<span id="question-number-test">
-							Question {this.state.page}/{this.state.data.length - 1}
+							Question {this.state.page}/
+							{this.state.data.length - 1}
 						</span>
-						<div className="stop-btn-test" onClick={() => this.stop()}>
+						<div
+							className="stop-btn-test"
+							onClick={() => this.stop()}
+						>
 							<img
 								id="arrow-right-page"
-								src={process.env.PUBLIC_URL + '/img/icon-stop.svg'}
+								src={
+									process.env.PUBLIC_URL +
+									'/img/icon-stop.svg'
+								}
 								alt="arrow"
 							/>
 							<span>Stop</span>
