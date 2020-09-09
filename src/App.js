@@ -24,16 +24,16 @@ class App extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Header />
 				<Switch>
-					<Route path="/" exact component={Home} />
+					<Header />
+					<Route path="/" component={Home} />
 					<Route path="/practice" exact component={Practice} />
 					<Route path="/test" exact component={Test} />
 					<Route path="/admin" exact component={Admin} />
 					<Route path="/notFound" component={NotFound}></Route>
 					<Redirect to="/not-found" />
+					<Footer />
 				</Switch>
-				<Footer />
 			</React.Fragment>
 		);
 	}

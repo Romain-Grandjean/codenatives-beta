@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/codenatives-beta/static/css/main.34d6a6d9.chunk.css",
-    "main.js": "/codenatives-beta/static/js/main.fa4a4c06.chunk.js",
-    "main.js.map": "/codenatives-beta/static/js/main.fa4a4c06.chunk.js.map",
+    "main.js": "/codenatives-beta/static/js/main.c5ea12e7.chunk.js",
+    "main.js.map": "/codenatives-beta/static/js/main.c5ea12e7.chunk.js.map",
     "runtime-main.js": "/codenatives-beta/static/js/runtime-main.89343d86.js",
     "runtime-main.js.map": "/codenatives-beta/static/js/runtime-main.89343d86.js.map",
-    "static/js/2.dce1c86a.chunk.js": "/codenatives-beta/static/js/2.dce1c86a.chunk.js",
-    "static/js/2.dce1c86a.chunk.js.map": "/codenatives-beta/static/js/2.dce1c86a.chunk.js.map",
+    "static/js/2.c6ecf964.chunk.js": "/codenatives-beta/static/js/2.c6ecf964.chunk.js",
+    "static/js/2.c6ecf964.chunk.js.map": "/codenatives-beta/static/js/2.c6ecf964.chunk.js.map",
     "index.html": "/codenatives-beta/index.html",
-    "precache-manifest.e96c40d4b3de8a7411eee41a5c4df09b.js": "/codenatives-beta/precache-manifest.e96c40d4b3de8a7411eee41a5c4df09b.js",
+    "precache-manifest.f3679ebaa75b2ed7cc44831343ee5013.js": "/codenatives-beta/precache-manifest.f3679ebaa75b2ed7cc44831343ee5013.js",
     "service-worker.js": "/codenatives-beta/service-worker.js",
     "static/css/main.34d6a6d9.chunk.css.map": "/codenatives-beta/static/css/main.34d6a6d9.chunk.css.map",
-    "static/js/2.dce1c86a.chunk.js.LICENSE.txt": "/codenatives-beta/static/js/2.dce1c86a.chunk.js.LICENSE.txt"
+    "static/js/2.c6ecf964.chunk.js.LICENSE.txt": "/codenatives-beta/static/js/2.c6ecf964.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.89343d86.js",
-    "static/js/2.dce1c86a.chunk.js",
+    "static/js/2.c6ecf964.chunk.js",
     "static/css/main.34d6a6d9.chunk.css",
-    "static/js/main.fa4a4c06.chunk.js"
+    "static/js/main.c5ea12e7.chunk.js"
   ]
 }
