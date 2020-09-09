@@ -8,8 +8,8 @@ import './scss/main.scss';
 import App from './App';
 
 ReactDOM.render(
-	<HashRouter>
+	<BrowserRouter>
 		<App />
-	</HashRouter>,
+	</BrowserRouter>,
 	document.getElementById('app')
 );
