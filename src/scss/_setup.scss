@@ -16,7 +16,7 @@
 
 ul,
 li {
-	text-decoration: none;
+	list-style: none;
 }
 
 button {
@@ -32,6 +32,7 @@ button {
 	-webkit-user-select: none; /* for button */
 	-moz-user-select: none;
 	-ms-user-select: none;
+
 }
 
 input {
