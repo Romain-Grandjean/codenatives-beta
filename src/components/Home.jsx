@@ -123,60 +123,77 @@ class Home extends React.Component {
 
 	render() {
 		return (
-			<div className="home-page">
-				<div className="slider-content">
-					<button onClick={() => this.slideLeft()}>
-						<img
-							id="arrow-left-home"
-							src={
-								process.env.PUBLIC_URL +
-								'/img/arrow-left-home.png'
-							}
-							alt=""
-						/>
-					</button>
-					{this.state.activeScreen}
-					<button onClick={() => this.slideRight()}>
-						<img
-							id="arrow-right-home"
-							src={
-								process.env.PUBLIC_URL +
-								'/img/arrow-right-home.png'
-							}
-							alt=""
-						/>
-					</button>
+			<>
+				<div className="home-page">
+					<div className="slider-content">
+						<button onClick={() => this.slideLeft()}>
+							<img
+								id="arrow-left-home"
+								src={
+									process.env.PUBLIC_URL +
+									'/img/arrow-left-home.png'
+								}
+								alt=""
+							/>
+						</button>
+						{this.state.activeScreen}
+						<button onClick={() => this.slideRight()}>
+							<img
+								id="arrow-right-home"
+								src={
+									process.env.PUBLIC_URL +
+									'/img/arrow-right-home.png'
+								}
+								alt=""
+							/>
+						</button>
+					</div>
+					<div className="dots-selectors">
+						<button
+							id="d01"
+							onClick={() => this.activateDot('d01')}
+						>
+							<div
+								id="dot1"
+								style={{
+									backgroundColor:
+										this.state.value === 1
+											? 'black'
+											: 'white',
+								}}
+							></div>
+						</button>
+						<button
+							id="d02"
+							onClick={() => this.activateDot('d02')}
+						>
+							<div
+								id="dot2"
+								style={{
+									backgroundColor:
+										this.state.value === 2
+											? 'black'
+											: 'white',
+								}}
+							></div>
+						</button>
+						<button
+							id="d03"
+							onClick={() => this.activateDot('d03')}
+						>
+							<div
+								id="dot3"
+								style={{
+									backgroundColor:
+										this.state.value === 3
+											? 'black'
+											: 'white',
+								}}
+							></div>
+						</button>
+					</div>
 				</div>
-				<div className="dots-selectors">
-					<button id="d01" onClick={() => this.activateDot('d01')}>
-						<div
-							id="dot1"
-							style={{
-								backgroundColor:
-									this.state.value === 1 ? 'black' : 'white',
-							}}
-						></div>
-					</button>
-					<button id="d02" onClick={() => this.activateDot('d02')}>
-						<div
-							id="dot2"
-							style={{
-								backgroundColor:
-									this.state.value === 2 ? 'black' : 'white',
-							}}
-						></div>
-					</button>
-					<button id="d03" onClick={() => this.activateDot('d03')}>
-						<div
-							id="dot3"
-							style={{
-								backgroundColor:
-									this.state.value === 3 ? 'black' : 'white',
-							}}
-						></div>
-					</button>
-				</div>
-			</div>
+			</>
 		);
 	}
 }
