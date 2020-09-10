@@ -1,13 +1,13 @@
 .practice-page {
-	width: 100vw;
-	height: 100%;
-	position: absolute;
+	width: 100%;
+	height: 100vh;
+	position: relative;
 	top: 0;
 	left: 0;
 	display: grid;
 	grid-template-columns: 72px repeat(36, 1fr) 72px;
 	grid-template-rows: 90px repeat(18, 1fr) 66px;
-	z-index: -1;
+	z-index: 10;
 	@include responsive(600) {
 		grid-template-columns: 36px repeat(36, 1fr) 36px;
 	}

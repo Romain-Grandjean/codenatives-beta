@@ -10,7 +10,7 @@ import Test from './components/Test';
 import Admin from './components/Admin';
 import NotFound from './components/structure/NotFound';
 import Header from './components/structure/Header';
-import Footer from './components/structure/Footer';
+
 
 class App extends React.Component {
 	render() {
@@ -27,7 +27,7 @@ class App extends React.Component {
 						<Redirect to="/" />
 					</Switch>
 				</main>
-				<Footer />
+
 			</>
 		);
 	}

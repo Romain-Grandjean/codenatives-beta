@@ -8,6 +8,7 @@
 	background-color: white;
 	grid-template-columns: 72px 29.236% 1fr 72px;
 	grid-template-rows: 1fr;
+	z-index: 11 ;
 	@include responsive(900) {
 		height: 72px;
 		grid-template-columns: 72px repeat(36, 1fr) 72px;

@@ -2,6 +2,7 @@ import React from 'react';
 import DataPractice from '../dataPractice.json';
 import SolutionMulti from './SolutionMulti';
 import { Link } from 'react-router-dom';
+import Footer from './structure/Footer';
 
 export default class Practice extends React.Component {
 	constructor(props) {
@@ -226,6 +227,7 @@ export default class Practice extends React.Component {
 						</div>
 					</div>
 				</div>
+				<Footer />
 			</>
 		);
 	}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FilterLevel from './admin/filterLevel';
 import Table from './admin/table';
+import Footer from './structure/Footer';
 
 class Admin extends Component {
 	render() {
@@ -12,9 +13,10 @@ class Admin extends Component {
 						<span>-</span>
 						<a>User Admin</a>
 					</ul>
-                    <FilterLevel/>
-                    <Table />
+					<FilterLevel />
+					<Table />
 				</div>
+				<Footer />
 			</>
 		);
 	}

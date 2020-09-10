@@ -3,6 +3,7 @@ import DataTest from '../dataTest.json';
 import SolutionMulti from './SolutionMulti';
 import Popupwindow from './Popupwindow';
 import Timerglobal from './Timerglobal';
+import Footer from './structure/Footer';
 
 export default class Test extends React.Component {
 	constructor(props) {
@@ -347,6 +348,7 @@ export default class Test extends React.Component {
 						</div>
 					</div>
 				</div>
+				<Footer />
 			</>
 		);
 	}

@@ -2,6 +2,7 @@ import React from 'react';
 import Homeslide1 from './Homeslide1';
 import Homeslide2 from './Homeslide2';
 import Homeslide3 from './Homeslide3';
+import Footer from './structure/Footer';
 
 class Home extends React.Component {
 	constructor(props) {
@@ -193,6 +194,7 @@ class Home extends React.Component {
 						</button>
 					</div>
 				</div>
+				<Footer />
 			</>
 		);
 	}
