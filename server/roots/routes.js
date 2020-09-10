@@ -1,8 +1,7 @@
 const express = require('express');
-const genres = require('../routes/units');
+const unit = require('../routes/unit');
 
 module.exports = function (app) {
 	app.use(express.json());
-	app.use('/api/units', genres);
-
+	app.use('/', unit);
 };
