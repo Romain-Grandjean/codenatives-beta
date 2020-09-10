@@ -1,9 +1,19 @@
 .admin-container {
 	width: 100%;
 	height: 100%;
-
+	display: grid;
+	grid-template-columns: 72px repeat(36, 1fr) 72px;
+	grid-template-rows: 90px repeat(18, 1fr) 66px;
+	@include responsive(600) {
+		grid-template-columns: 36px repeat(36, 1fr) 36px;
+	}
+	@include responsive(500) {
+		grid-template-columns: 18px repeat(36, 1fr) 18px;
+	}
 	&h1 {
 		font-size: 18px;
+		grid-column: 2/37;
+		grid-row: 2/3;
 	}
 	&table {
 		width: 100%;
@@ -13,19 +23,34 @@
 
 .admin-filter {
 	position: relative;
-	top: 48px;
 	width: 100%;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
 	align-items: center;
+	grid-column: 2/37;
+	grid-row: 3/4;
 
 	& li {
-		font-size: 24px;
-		margin: 0 0px;
-		padding: 6px 36px;
+		width: 120px;
+		height: 40px;
+		margin: 24px 12px 42px 12px;
+
 		// border: 1px black solid;
 		border-radius: 2px;
+		border-radius: 8px;
+		font-size: 16px;
+		font-weight: 400;
+		text-decoration: inherit;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		&:hover {
+			background-color: black;
+			color: white;
+			border: 2px rgb(255, 255, 255) solid;
+		}
 	}
 	& button {
 		width: 120px;
@@ -44,6 +69,11 @@
 		justify-content: center;
 		align-items: center;
 		z-index: 99;
+		&:hover {
+			background-color: black;
+			color: white;
+			border: 2px rgb(255, 255, 255) solid;
+		}
 		@include responsive(500) {
 			font-size: 14px;
 		}

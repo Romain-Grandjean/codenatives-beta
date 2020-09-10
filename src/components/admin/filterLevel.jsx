@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Filter extends Component {
+class FilterLevel extends Component {
 	state = {};
 	render() {
 		return (
@@ -19,4 +19,4 @@ class Filter extends Component {
 	}
 }
 
-export default Filter;
+export default FilterLevel;
