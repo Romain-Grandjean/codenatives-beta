@@ -1,5 +1,5 @@
 # Project 
-
+/node_modules/
 client/node_modules/
 client/design/
 server/node_modules/
