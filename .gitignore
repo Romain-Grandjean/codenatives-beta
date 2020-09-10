@@ -1,7 +1,8 @@
 # Project 
 
-node_modules/
-design/
+client/node_modules/
+client/design/
+server/node_modules/
 
 # Tool extensions
 
