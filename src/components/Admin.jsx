@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import FilterLevel from './admin/filterLevel';
+import Table from './admin/table';
 
 class Admin extends Component {
 	render() {
 		return (
 			<>
 				<div className="admin-container">
-					<h1>Questions admin</h1>
+					<ul className="admin-select">
+						<a>Questions Admin</a>
+						<span>-</span>
+						<a>User Admin</a>
+					</ul>
                     <FilterLevel/>
-                    
+                    <Table />
 				</div>
 			</>
 		);

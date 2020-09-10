@@ -1,6 +1,7 @@
 .admin-container {
 	width: 100%;
-	height: 100%;
+	height: auto;
+	z-index: -1;
 	display: grid;
 	grid-template-columns: 72px repeat(36, 1fr) 72px;
 	grid-template-rows: 90px repeat(18, 1fr) 66px;
@@ -10,17 +11,28 @@
 	@include responsive(500) {
 		grid-template-columns: 18px repeat(36, 1fr) 18px;
 	}
-	&h1 {
-		font-size: 18px;
-		grid-column: 2/37;
-		grid-row: 2/3;
-	}
 	&table {
 		width: 100%;
 		height: 100%;
 	}
 }
 
+.admin-select {
+	font-size: 18px;
+	grid-column: 2/37;
+	grid-row: 2/3;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	z-index: -1;
+	& a, span {
+		margin: 24px 12px 42px 12px;
+		&:hover {
+			border-bottom: 2px black solid;
+		}
+	}
+}
 .admin-filter {
 	position: relative;
 	width: 100%;
@@ -30,7 +42,7 @@
 	align-items: center;
 	grid-column: 2/37;
 	grid-row: 3/4;
-
+	z-index: -1;
 	& li {
 		width: 120px;
 		height: 40px;
@@ -81,4 +93,18 @@
 			font-size: 12px;
 		}
 	}
+}
+
+.table-questions {
+	width: 100%;
+	grid-column: 2/37;
+	grid-row: 4/19;
+
+& th {
+	width: 15vw;
+	padding: 12px 24px;
+	font-size: 14px;
+	font-weight: 300;
+	border: 1px hsla(300, 4%, 89%, 0.08) solid;
+}
 }

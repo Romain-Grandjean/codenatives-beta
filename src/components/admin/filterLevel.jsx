@@ -7,6 +7,7 @@ class FilterLevel extends Component {
 			<>
 				<ul className="admin-filter">
 					<button>New</button>
+					<li>all</li>
 					<li>A1</li>
 					<li>A2</li>
 					<li>B1</li>
