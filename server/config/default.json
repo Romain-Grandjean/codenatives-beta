@@ -1,6 +1,5 @@
 {
     "name": "Codenatives Server - Development",
     "db": "mongodb://localhost/codenatives",
-    "port": "4900",
-    "requiresAuth": true
+    "port": "4900"
 }
