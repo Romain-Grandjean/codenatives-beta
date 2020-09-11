@@ -1,15 +1,27 @@
 const mongoose = require('mongoose');
 
-const User = mongoose.model(
-	'users',
-	new mongoose.Schema({
+const userSchema = new mongoose.Schema({
+	name: {
+		type: String,
+		required: true,
+		minlength: 2,
+		maxlength: 50,
+	},
+	email: {
+		type: String,
+		required: true,
+		minlength: 5,
+		maxlength: 255,
+		unique: true,
+	},
+	password: {
+		type: String,
+		required: true,
+		minlength: 5,
+		maxlength: 1024,
+	},
+	isAdmin: { type: Boolean },
+});
 
-		id: { type: Number },
-		level: { type: Number },
-		question: { type: String },
-		solutions: { type: [String] },
-		explanations: { type: String },
-	})
-);
-
+const User = mongoose.model('users', userSchema);
 exports.User = User;

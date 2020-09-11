@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 require('./server/routes')(app);
 
-// Json
+// Json parsing
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
