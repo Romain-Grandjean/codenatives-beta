@@ -1,13 +1,38 @@
-const morgan = require("morgan");
+const morgan = require('morgan');
 const express = require('express');
 const config = require('config');
 const app = express();
-app.use(morgan("dev"));
+app.use(morgan('dev'));
+const mongoose = require('mongoose');
 
 require('./server/routes')(app);
-require('./server/db');
 
-const port = process.env.PORT || config.get('port');;
-const server = app.listen(port, () => console.log(`Server listening on port ${port}...`));
+// Json
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.raw());
+
+// MongoDB
+
+const db = config.get('db');
+mongoose
+	.connect(db, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true,
+	})
+	.then(() => console.log(`Connected to ${db}...`))
+	.catch((error) => {
+		console.log(`There was a problem with mongodb:${error.message}`);
+	});
+
+// Server
+
+const port = process.env.PORT || config.get('port');
+const server = app.listen(port, () =>
+	console.log(`Server listening on port ${port}...`)
+);
 
 module.exports = server;
