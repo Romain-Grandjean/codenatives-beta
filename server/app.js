@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
-require('./roots/routes')(app);
-require('./roots/db');
+require('./appRoots/routes')(app);
+require('./appRoots/db');
 
 module.exports = app;
