@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
-const moment = require('moment');
+// const moment = require('moment');
 
 const questionSchema = new mongoose.Schema({
 	level: {
-		type: Number,
+		type: String,
 		required: true,
-		min: 1,
-		max: 8,
 	},
 	type: {
 		type: String,
@@ -19,7 +17,7 @@ const questionSchema = new mongoose.Schema({
 		maxlength: 200,
 	},
 	solution: {
-		type: Array,
+		type: Number,
 	},
 	explanations: {
 		type: String,
@@ -29,10 +27,10 @@ const questionSchema = new mongoose.Schema({
 	dateCreation: {
 		type: Date,
 		required: true,
-		default: moment.utc(),
+		default: Date.now,
 	},
 	dateUpdate: {
-		type: Date,
+		type: Date.now,
 	},
 });
 

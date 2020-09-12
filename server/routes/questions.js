@@ -1,6 +1,6 @@
 const { Question } = require('../models/question');
 const mongoose = require('mongoose');
-const moment = require('moment');
+// const moment = require('moment');
 const express = require('express');
 const router = express.Router();
 
@@ -37,7 +37,7 @@ router.get('/:id'),
 router.post('/'),
 	(req, res) => {
 		const { error } = validate(req.body);
-		if (error) return res.status(400).send(error.details[0].message);
+		if (error) return res.status(400).send("issue with the inputs");
 
 		const question = new Question({
 			level: req.body.level,
@@ -45,7 +45,7 @@ router.post('/'),
 			question: req.body.question,
 			solution: req.body.solution,
 			explanations: req.body.explanations,
-			dateCreation: moment.utc().toJSON(),
+			dateCreation: Date.now,
 		});
 		res.send(question);
 	};
@@ -64,7 +64,7 @@ router.put('/:id', async (req, res) => {
 			question: req.body.question,
 			solution: req.body.solution,
 			explanations: req.body.explanations,
-			dateUpdate: moment.utc().toJSON(),
+			dateUpdate: moment("DD MM YYYY hh:mm:ss", "_isUTC: true").toJSON(),
 		},
 		{ new: true }
 	);
@@ -75,7 +75,7 @@ router.put('/:id', async (req, res) => {
 
 // Delete one question
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
 	const question = await Question.findByIdAndRemove(req.params.id);
 
 	if (!question) res.status(404).send("the question ID wasn't found");
