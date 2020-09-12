@@ -16,71 +16,63 @@ router.get('/', async (req, res) => {
 	}
 });
 
-// Get questions by level
-// Get questions by type
-
 // Get one specific question
-router.get('/:id',
-	async (req, res) => {
-		try {
-			const question = Question.findById(req.params.id);
-			res.send(question);
-		} catch (error) {
-			return res
-				.status(404)
-				.send('The customer with the given ID was not found.');
-		}
-	});
+router.get('/:id', async (req, res) => {
+	try {
+		const question = await Question.findById(req.params.id);
+		res.send(question);
+	} catch (error) {
+		res.status(404).send(`Question: ${error.value} can't be found`);
+	}
+});
 
 // Post one question
-
-router.post('/',
-	async (req, res) => {
+router.post('/', async (req, res) => {
 	try {
 		const question = new Question({
 			level: req.body.level,
 			type: req.body.type,
 			question: req.body.question,
-			solution: req.body.solution,
-			explanations: req.body.explanations
+			solutions: req.body.solutions,
+			answer: req.body.answer,
+			explanations: req.body.explanations,
 		});
 		await question.save();
 		res.status(201).send(question);
 	} catch (error) {
 		res.send(error);
 	}
-	});
+});
 
 // Put one question
-
 router.put('/:id', async (req, res) => {
 	try {
-	const question = await Question.findByIdAndUpdate(
-		req.params.id,
-		{
-			level: req.body.level,
-			type: req.body.type,
-			question: req.body.question,
-			solution: req.body.solution,
-			explanations: req.body.explanations,
-		},
-		{ new: true }
-	);
+		const question = await Question.findByIdAndUpdate(
+			req.params.id,
+			{
+				level: req.body.level,
+				type: req.body.type,
+				question: req.body.question,
+				solutions: req.body.solutions,
+				answer: req.body.answer,
+				explanations: req.body.explanations,
+			},
+			{ new: true }
+		);
+		res.status(201).send(question);
 	} catch (error) {
-		res.status(404).send("the question ID wasn't found");
-
+		res.status(404).send(`Question: ${error.value} can't be found`);
 	}
-	
-
 });
 
 // Delete one question
-
 router.delete('/:id', async (req, res) => {
-	const question = await Question.findByIdAndRemove(req.params.id);
-
-	if (!question) res.status(404).send("the question ID wasn't found");
-	res.send.question;
+	try {
+		const question = await Question.findByIdAndRemove(req.params.id);
+		res.send('question deleted');
+	} catch (error) {
+		res.status(404).send(`Question: ${error.value} can't be found`);
+	}
 });
 
 module.exports = router;

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // const moment = require('moment');
 
 const questionSchema = new mongoose.Schema({
-	_id: {type: String},
+
 	level: {
 		type: String,
 		required: true,
@@ -18,8 +18,12 @@ const questionSchema = new mongoose.Schema({
 		minlength: 15,
 		maxlength: 400,
 	},
-	solution: {
+	solutions: {
+		type: Array,
+	},
+	answer:{ 
 		type: Number,
+		required: true,
 	},
 	explanations: {
 		type: String,
