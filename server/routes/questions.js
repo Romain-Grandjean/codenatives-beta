@@ -22,11 +22,13 @@ router.get('/:id', async (req, res) => {
 		const question = await Question.findById(req.params.id);
 		res.send(question);
 	} catch (error) {
-		res.status(404).send(`Question: ${error.value} can't be found`);
+		return res
+				.status(404)
+				.send('The customer with the given ID was not found.');
 	}
 });
 
-// Post one question
+// Post question
 router.post('/', async (req, res) => {
 	try {
 		const question = new Question({
@@ -44,7 +46,7 @@ router.post('/', async (req, res) => {
 	}
 });
 
-// Put one question
+// Put question
 router.put('/:id', async (req, res) => {
 	try {
 		const question = await Question.findByIdAndUpdate(
@@ -65,7 +67,7 @@ router.put('/:id', async (req, res) => {
 	}
 });
 
-// Delete one question
+// Delete question
 router.delete('/:id', async (req, res) => {
 	try {
 		const question = await Question.findByIdAndRemove(req.params.id);
