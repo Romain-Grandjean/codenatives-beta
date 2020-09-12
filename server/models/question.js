@@ -1,7 +1,9 @@
+const Joi = require('joi');
 const mongoose = require('mongoose');
 // const moment = require('moment');
 
 const questionSchema = new mongoose.Schema({
+	_id: {type: String},
 	level: {
 		type: String,
 		required: true,
@@ -14,7 +16,7 @@ const questionSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 		minlength: 15,
-		maxlength: 200,
+		maxlength: 400,
 	},
 	solution: {
 		type: Number,
@@ -22,16 +24,8 @@ const questionSchema = new mongoose.Schema({
 	explanations: {
 		type: String,
 		minlength: 15,
-		maxlength: 200,
-	},
-	dateCreation: {
-		type: Date,
-		required: true,
-		default: Date.now,
-	},
-	dateUpdate: {
-		type: Date.now,
-	},
+		maxlength: 400,
+	}
 });
 
 const Question = mongoose.model('questions', questionSchema);

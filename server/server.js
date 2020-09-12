@@ -5,12 +5,14 @@ const app = express();
 app.use(morgan('dev'));
 const mongoose = require('mongoose');
 
+// Server Main routes
+
 require('./server/routes')(app);
 
 // Json parsing
 
 const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
@@ -27,7 +29,7 @@ mongoose
 	.catch((error) => {
 		console.log(`There was a problem with mongodb:${error.message}`);
 	});
-
+mongoose.set('useFindAndModify', false);
 // Server
 
 const port = process.env.PORT || config.get('port');

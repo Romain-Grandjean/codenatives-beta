@@ -1,6 +1,6 @@
 const { Question } = require('../models/question');
 const mongoose = require('mongoose');
-// const moment = require('moment');
+const moment = require('moment');
 const express = require('express');
 const router = express.Router();
 
@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 // Get questions by type
 
 // Get one specific question
-router.get('/:id'),
+router.get('/:id',
 	async (req, res) => {
 		try {
 			const question = Question.findById(req.params.id);
@@ -30,32 +30,31 @@ router.get('/:id'),
 				.status(404)
 				.send('The customer with the given ID was not found.');
 		}
-	};
+	});
 
 // Post one question
 
-router.post('/'),
-	(req, res) => {
-		const { error } = validate(req.body);
-		if (error) return res.status(400).send("issue with the inputs");
-
+router.post('/',
+	async (req, res) => {
+	try {
 		const question = new Question({
 			level: req.body.level,
 			type: req.body.type,
 			question: req.body.question,
 			solution: req.body.solution,
-			explanations: req.body.explanations,
-			dateCreation: Date.now,
+			explanations: req.body.explanations
 		});
-		res.send(question);
-	};
+		await question.save();
+		res.status(201).send(question);
+	} catch (error) {
+		res.send(error);
+	}
+	});
 
 // Put one question
 
 router.put('/:id', async (req, res) => {
-	const { error } = validate(req.body);
-	if (error) return res.status(400).send(error.details[0].message);
-
+	try {
 	const question = await Question.findByIdAndUpdate(
 		req.params.id,
 		{
@@ -64,13 +63,15 @@ router.put('/:id', async (req, res) => {
 			question: req.body.question,
 			solution: req.body.solution,
 			explanations: req.body.explanations,
-			dateUpdate: moment("DD MM YYYY hh:mm:ss", "_isUTC: true").toJSON(),
 		},
 		{ new: true }
 	);
+	} catch (error) {
+		res.status(404).send("the question ID wasn't found");
 
-	if (!question) res.status(404).send("the question ID wasn't found");
-	res.send.question;
+	}
+	
+
 });
 
 // Delete one question
@@ -80,7 +81,6 @@ router.delete('/:id', async (req, res) => {
 
 	if (!question) res.status(404).send("the question ID wasn't found");
 	res.send.question;
-})
-
+});
 
 module.exports = router;
