@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const moment = require('moment');
 
 const questionSchema = new mongoose.Schema({
 	level: {
@@ -17,13 +18,21 @@ const questionSchema = new mongoose.Schema({
 		minlength: 15,
 		maxlength: 200,
 	},
-	solutions: {
+	solution: {
 		type: Array,
 	},
 	explanations: {
 		type: String,
 		minlength: 15,
 		maxlength: 200,
+	},
+	dateCreation: {
+		type: Date,
+		required: true,
+		default: moment.utc(),
+	},
+	dateUpdate: {
+		type: Date,
 	},
 });
 
