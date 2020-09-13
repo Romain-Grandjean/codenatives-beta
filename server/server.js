@@ -6,8 +6,9 @@ app.use(morgan('dev'));
 const mongoose = require('mongoose');
 
 // Server Main routes
-
+require('./server/cors')(app);
 require('./server/routes')(app);
+
 
 // Json parsing
 

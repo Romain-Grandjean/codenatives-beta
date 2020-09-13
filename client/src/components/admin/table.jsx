@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import DataPractice from '../../dataPractice.json';
+import { Link } from 'react-router-dom';
+import { getQuestions } from '../../services/questionsService';
 
 class Table extends Component {
-	state = {};
+	state = {
+		questions: [],
+	};
+
+	async componentDidMount() {
+
+		const questions = await getQuestions();
+		this.setState({ questions: questions });
+		console.log(this.state.questions)
+	}
+
 	render() {
 		return (
 			<>
@@ -11,25 +23,27 @@ class Table extends Component {
 						<th>ID</th>
 						<th>Level</th>
 						<th>Type</th>
-						<th>Practice / Test</th>
-						<th>Date of creation</th>
-						<th>Last update</th>
+						<th>question</th>
 						<th>Edit</th>
 						<th>Delete</th>
 					</thead>
-
-					{DataPractice.map((e) => (
+{/* 
+					{this.state.questions.map((e) => (
 						<tr>
-							<td>{e.id}</td>
-							<td>A1</td>
-                            <td>QCM</td>
-                            <td>practice</td>
-                            <td>18.05.20</td>
-                            <td>18.05.20</td>
-                            <td> <button>Edit</button></td>
-                            <td> <button>Delete</button></td>
+							<td>{e._id}</td>
+							<td>{e.level}</td>
+							<td>{e.type}</td>
+							<td>{e.question}</td>
+							<td>
+								{' '}
+								<button>Edit</button>
+							</td>
+							<td>
+								{' '}
+								<button>Delete</button>
+							</td>
 						</tr>
-					))}
+					))} */}
 				</div>
 			</>
 		);
