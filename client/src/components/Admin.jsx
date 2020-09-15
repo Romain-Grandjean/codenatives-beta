@@ -29,11 +29,9 @@ class Admin extends Component {
 							<a>QUESTIONS DB</a>
 						</li>
 						<li>
-							{' '}
 							<span>-</span>
 						</li>
 						<li>
-							{' '}
 							<a>USERS DB</a>
 						</li>
 					</ul>
