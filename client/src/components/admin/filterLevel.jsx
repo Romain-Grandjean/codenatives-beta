@@ -6,14 +6,14 @@ class FilterLevel extends Component {
 		return (
 			<>
 				<ul className="admin-filter">
-					<button className="btn-big">New</button>
-					<li>all</li>
-					<li>A1</li>
-					<li>A2</li>
-					<li>B1</li>
-					<li>B2</li>
-					<li>C1</li>
-					<li>C2</li>
+					<button className="btn-big btn-yellow">New</button>
+					<li className="btn-big btn-nocolor ">all</li>
+					<li className="btn-big btn-nocolor ">A1</li>
+					<li className="btn-big btn-nocolor ">A2</li>
+					<li className="btn-big btn-nocolor ">B1</li>
+					<li className="btn-big btn-nocolor ">B2</li>
+					<li className="btn-big btn-nocolor ">C1</li>
+					<li className="btn-big btn-nocolor ">C2</li>
 				</ul>
 			</>
 		);
