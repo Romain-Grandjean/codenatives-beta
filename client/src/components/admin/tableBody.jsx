@@ -9,10 +9,10 @@ const TableBody = (props) => {
 					<td>{item.level}</td>
 					<td>{item.type}</td>
 					<td>{item.question}</td>
-					<td>
+					<td >
 						<button className="btn-small btn-nocolor">Edit</button>
 					</td>
-					<td>
+					<td >
 						<button className="btn-small btn-red">Delete</button>
 					</td>
 				</tr>
