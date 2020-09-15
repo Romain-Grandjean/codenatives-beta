@@ -5,9 +5,9 @@
 	display: grid;
 	// grid
 	justify-items: center;
-	align-items: start;
+	align-items: center;
 	grid-template-columns: 72px repeat(36, 1fr) 72px;
-	grid-template-rows: 90px repeat(18, 1fr) 66px;
+	grid-template-rows: 90px 72px 120px auto 66px;
 	@include responsive(600) {
 		grid-template-columns: 36px repeat(36, 1fr) 36px;
 	}
@@ -48,21 +48,26 @@
 	width: 100%;
 	height: auto;
 	grid-column: 2/37;
-	grid-row: 4/19;
+	grid-row: 4/5;
 	border-spacing: 0px;
+
 	& thead,
 	tbody {
 		width: 100%;
 	}
 
-	& th,
-	tr,
+	& th {
+		line-height: 48px;
+		font-size: 14px;
+		font-weight: 400;
+		border: 1px hsla(300, 4%, 89%, 0.2) solid;
+	}
+	& tr,
 	td {
-		padding: 12px 24px;
+		line-height: 72px;
 		font-size: 14px;
 		font-weight: 300;
-		border: 1px hsla(300, 4%, 89%, 0.18) solid;
+		border: 1px hsla(300, 4%, 89%, 0.2) solid;
 		text-align: center;
-		align-items: center;
 	}
 }
