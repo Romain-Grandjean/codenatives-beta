@@ -22,32 +22,32 @@
 	grid-row: 2/3;
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: center;
-	align-items: center;
-	z-index: -1;
-	& a,
-	span {
-		margin: 24px 12px 42px 12px;
+	justify-self: center;
+	align-self: start;
+	z-index: 10;
+	& a {
+		margin: 24px 12px 24px 12px;
 		&:hover {
 			border-bottom: 2px black solid;
 		}
 	}
 }
 .admin-filter {
-	height: 24px;
+	grid-column: 2/37;
+	grid-row: 3/4;
 	position: relative;
 	width: 100%;
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: center;
+	justify-self: center;
+	align-self: start;
 	align-items: center;
-	grid-column: 2/37;
-	grid-row: 3/4;
+
 	// z-index: -1;
 	& li {
 		width: 120px;
-		height: 40px;
-		margin: 24px 12px 42px 12px;
+		height: 30px;
+		margin: 24px 12px 24px 12px;
 
 		// border: 1px black solid;
 		border-radius: 2px;
@@ -101,11 +101,13 @@
 	grid-column: 2/37;
 	grid-row: 4/19;
 	border-spacing: 0px;
-	& thead, tbody {
-	width: 100%;
+	& thead,
+	tbody {
+		width: 100%;
 	}
 
-	& th, tr,
+	& th,
+	tr,
 	td {
 		height: 6px;
 		padding: 6px 6px;

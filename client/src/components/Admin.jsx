@@ -25,9 +25,17 @@ class Admin extends Component {
 			<>
 				<div className="admin-container">
 					<ul className="admin-select">
-						<a>Questions Admin</a>
-						<span>-</span>
-						<a>User Admin</a>
+						<li>
+							<a>QUESTIONS DB</a>
+						</li>
+						<li>
+							{' '}
+							<span>-</span>
+						</li>
+						<li>
+							{' '}
+							<a>USERS DB</a>
+						</li>
 					</ul>
 					<FilterLevel />
 					<Table data={this.state.questions} />
