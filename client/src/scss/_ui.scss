@@ -1,0 +1,39 @@
+.btn-small {
+    width: 84px;
+    height: 28px;
+    margin-top: 24px;
+    margin-bottom: 42px;
+    background-color: none;
+    border: 2px hsla(0, 0%, 0%, 0.8)  solid;
+    color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: inherit;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    &:hover {
+        background-color:#ffef29;
+        color: white;
+        border: 2px rgb(255, 255, 255) solid;
+    }
+    @include responsive(500) {
+        font-size: 14px;
+    }
+    @include responsive(370) {
+        font-size: 12px;
+    }
+}
+
+.btn-red {
+    background-color: none;
+    border-color: black;
+    &:hover {
+        background-color: #ff2929;
+        color: white;
+        border: 2px rgb(255, 255, 255) solid;
+    }
+}

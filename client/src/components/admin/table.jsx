@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import TableBody from './tableBody';
 import TableHeader from './tableHeader';
+import TableBody from './tableBody';
 
-const Table = ({data, value})=> {
 
-		return (
-			<table className="table">
-				<TableHeader />
-				<TableBody data={data} />
-			</table>
-        );
-}
-
+const Table = (props) => {
+	return (
+		<table className="table-questions">
+			<TableHeader />
+			<TableBody data={props.data} />
+		</table>
+	);
+};
 
 export default Table;

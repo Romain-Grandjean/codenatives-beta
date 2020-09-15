@@ -3,19 +3,23 @@ import FilterLevel from './admin/filterLevel';
 import Table from './admin/table';
 import Footer from './structure/Footer';
 import { getQuestions } from '../services/questionsService';
-
+import TableBody from './admin/tableBody';
 
 class Admin extends Component {
-	state = {
-		questions: [],
-	};
+	constructor(props) {
+		super(props);
+		this.state = {
+			questions: [],
+			dataTest: ['hello', 'hello2', 'hello3'],
+		};
+	}
 
 	async componentDidMount() {
-		const questions = await getQuestions();
-		this.setState({ questions: questions });
+		const { data: questions } = await getQuestions();
+		this.setState({ questions });
 		console.log('this is state questions', this.state.questions);
 	}
-	
+
 	render() {
 		return (
 			<>
@@ -26,7 +30,7 @@ class Admin extends Component {
 						<a>User Admin</a>
 					</ul>
 					<FilterLevel />
-					<Table data={this.state.questions}/>
+					<Table data={this.state.questions} />
 				</div>
 				<Footer />
 			</>
