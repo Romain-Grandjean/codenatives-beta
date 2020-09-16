@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 const TableBody = (props) => {
 	const createKey = (item, type) => {
 		let indexEle = props.data.indexOf(item);
-
 		return indexEle + type;
 	};
 
@@ -27,6 +26,7 @@ const TableBody = (props) => {
 						<button
 							key={createKey(item, 'btn-edit')}
 							className="btn-small btn-nocolor"
+							onClick={() => props.onDelete(item)}
 						>
 							Edit
 						</button>

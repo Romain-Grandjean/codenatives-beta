@@ -2,23 +2,37 @@ import React, { Component } from 'react';
 import FilterLevel from './admin/filterLevel';
 import Table from './admin/table';
 import Footer from './structure/Footer';
-import { getQuestions } from '../services/questionsService';
-import TableBody from './admin/tableBody';
+import { getElements, deleteElement } from '../services/elementsService';
+import { toast } from 'react-toastify';
 
 class Admin extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			questions: [],
-			dataTest: ['hello', 'hello2', 'hello3'],
 		};
 	}
 
 	async componentDidMount() {
-		const { data: questions } = await getQuestions();
+		const { data: questions } = await getElements();
 		this.setState({ questions });
 		console.log('this is state questions', this.state.questions);
 	}
+
+	handleDelete = async (element) => {
+		const actualElements = this.state.elements;
+		const elements = actualElements.filter(
+			(ele) => ele._id !== element._id
+		);
+		this.setState({ elements });
+
+		try {
+			await deleteElement(element._id);
+		} catch (error) {
+			if (error.response && error.response.status === 404)
+				toast.error('This element has already been deleted');
+		}
+	};
 
 	render() {
 		return (
@@ -36,7 +50,10 @@ class Admin extends Component {
 						</li>
 					</ul>
 					<FilterLevel />
-					<Table data={this.state.questions} />
+					<Table
+						data={this.state.questions}
+						onDelete={this.handleDelete}
+					/>
 				</div>
 				<Footer />
 			</>

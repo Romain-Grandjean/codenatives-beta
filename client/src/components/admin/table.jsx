@@ -7,7 +7,7 @@ const Table = (props) => {
 	return (
 		<table className="table-questions">
 			<TableHeader />
-			<TableBody data={props.data} />
+			<TableBody data={props.data} onDelete={props.onDelete}/>
 		</table>
 	);
 };
