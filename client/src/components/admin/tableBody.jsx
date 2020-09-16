@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
 
 const TableBody = (props) => {
-	const createKey = (item) => {
+	const createKey = (item, type) => {
 		let indexEle = props.data.indexOf(item);
 
-		return indexEle;
+		return indexEle + type;
 	};
 
 	return (
 		<tbody>
 			{props.data.map((item) => (
-				<tr id="tr" key={createKey(item)} className="row">
-					<td key={createKey(item)} className="td1">
+				<tr key={createKey(item)} className="row">
+					<td key={createKey(item, item._id)} className="td1">
 						{item._id}
 					</td>
-					<td key={createKey(item)} className="td2">
+					<td key={createKey(item, item.level)} className="td2">
 						{item.level}
 					</td>
-					<td key={createKey(item)} className="td3">
+					<td key={createKey(item, item.type)} className="td3">
 						{item.type}
 					</td>
-					<td key={createKey(item)} className="td4">
+					<td key={createKey(item, item.question)} className="td4">
 						{item.question}
 					</td>
 					<td>
 						<button
-							key={createKey(item)}
+							key={createKey(item, 'btn-edit')}
 							className="btn-small btn-nocolor"
 						>
 							Edit
@@ -33,7 +33,7 @@ const TableBody = (props) => {
 					</td>
 					<td>
 						<button
-							key={createKey(item)}
+							key={createKey(item, 'btn-delete')}
 							className="btn-small btn-red"
 						>
 							Delete
