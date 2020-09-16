@@ -26,7 +26,7 @@ const TableBody = (props) => {
 						<button
 							key={createKey(item, 'btn-edit')}
 							className="btn-small btn-nocolor"
-							onClick={() => props.onDelete(item)}
+							onClick={() => props.onDelete(item._id)}
 						>
 							Edit
 						</button>

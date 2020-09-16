@@ -1,6 +1,8 @@
 // modules
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // components
 
@@ -11,7 +13,7 @@ import Admin from './components/Admin';
 import NotFound from './components/structure/NotFound';
 import Header from './components/structure/Header';
 
-
+toast.configure()
 class App extends React.Component {
 	render() {
 		return (

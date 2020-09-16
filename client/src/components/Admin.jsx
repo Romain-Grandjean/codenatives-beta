@@ -5,6 +5,7 @@ import Footer from './structure/Footer';
 import { getElements, deleteElement } from '../services/elementsService';
 import { toast } from 'react-toastify';
 
+toast.configure()
 class Admin extends Component {
 	constructor(props) {
 		super(props);
@@ -17,14 +18,17 @@ class Admin extends Component {
 		const { data: questions } = await getElements();
 		this.setState({ questions });
 		console.log('this is state questions', this.state.questions);
+		toast("db working !!");
 	}
 
 	handleDelete = async (element) => {
-		const actualElements = this.state.elements;
-		const elements = actualElements.filter(
+
+		toast("delete btn fired !!")
+		const actualElements = this.state.questions;
+		const questions = actualElements.filter(
 			(ele) => ele._id !== element._id
 		);
-		this.setState({ elements });
+		this.setState({ questions });
 
 		try {
 			await deleteElement(element._id);
@@ -35,6 +39,7 @@ class Admin extends Component {
 	};
 
 	render() {
+
 		return (
 			<>
 				<div className="admin-container">
@@ -53,6 +58,7 @@ class Admin extends Component {
 					<Table
 						data={this.state.questions}
 						onDelete={this.handleDelete}
+
 					/>
 				</div>
 				<Footer />
