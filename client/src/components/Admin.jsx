@@ -5,6 +5,7 @@ import Footer from './structure/Footer';
 import { getElements, deleteElement } from '../services/elementsService';
 import { toast } from 'react-toastify';
 
+
 toast.configure()
 class Admin extends Component {
 	constructor(props) {
