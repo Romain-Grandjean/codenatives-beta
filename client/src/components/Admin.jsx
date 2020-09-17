@@ -28,12 +28,12 @@ class Admin extends Component {
 		console.log('delete fired');
 		const actualElements = this.state.questions;
 		const questions = actualElements.filter(
-			(ele) => ele._id !== element._id
+			(ele) => ele._id !== element
 		);
 		this.setState({ questions });
 
 		try {
-			await deleteElement(element._id);
+			await deleteElement(element);
 		} catch (error) {
 			if (error.response && error.response.status === 404)
 				toast.error('This element has already been deleted');
