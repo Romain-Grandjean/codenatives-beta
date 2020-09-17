@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TableBody = (props) => {
 	const createKey = (item, type) => {
 		let indexEle = props.data.indexOf(item);
 		return indexEle + type;
 	};
-	console.log("these are the props:",props);
+	console.log('these are the props:', props);
 	return (
 		<tbody>
 			{props.data.map((item) => (
@@ -23,12 +24,14 @@ const TableBody = (props) => {
 						{item.question}
 					</td>
 					<td>
-						<button
+						<Link
 							key={createKey(item, 'btn-edit')}
 							className="btn-small btn-nocolor"
+							id={item._id}
+							to={`/admin/questions/${item._id}`}
 						>
 							Edit
-						</button>
+						</Link>
 					</td>
 					<td>
 						<button
