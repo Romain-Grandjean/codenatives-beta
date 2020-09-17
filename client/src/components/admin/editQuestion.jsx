@@ -1,21 +1,38 @@
 import React, { Component } from 'react';
 import Footer from '../structure/Footer';
+import { getOneElement } from '../../services/elementsService';
 
 class EditQuestion extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            id: "",
-
-        };
+			question: {},
+		};
 	}
+
+	async componentDidMount() {
+		const { data: question } = await getOneElement(this.props.match.params.id);
+		this.setState({ question });
+		console.log('this is state questions', this.state.question);
+	}
+
+
+
 	render() {
-        console.log("Edit question props are", this.props);
-        console.log("Edit question ID props is", this.props.id);
 		return (
 			<>
 				<div className="admin-container">
-				<h1>{this.id}</h1>
+					<table className="table-questions">
+						<tr key={this.props.match.params.id} className="row">
+							<td
+								key={this.props.match.params.id}
+								className="td1"
+							>
+								ID:
+							</td>
+							<td> {this.props.match.params.id}</td>
+						</tr>
+					</table>
 				</div>
 				<Footer />
 			</>

@@ -6,10 +6,13 @@ const TableBody = (props) => {
 		let indexEle = props.data.indexOf(item);
 		return indexEle + type;
 	};
-	console.log('these are the props:', props);
+	console.log('these are tableBody props:', props);
+
 	return (
+
 		<tbody>
 			{props.data.map((item) => (
+
 				<tr key={createKey(item, item._id)} className="row">
 					<td key={createKey(item, item._id)} className="td1">
 						{item._id}
@@ -27,7 +30,7 @@ const TableBody = (props) => {
 						<Link
 							key={createKey(item, 'btn-edit')}
 							className="btn-small btn-nocolor"
-							id={item._id}
+	
 							to={`/admin/questions/${item._id}`}
 						>
 							Edit

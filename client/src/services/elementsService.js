@@ -11,6 +11,12 @@ export function getElements() {
 	return http.get(apiEndPoint);
 }
 
+export function getOneElement(elementId) {
+	return http.get(elementUrl(elementId));
+}
+
+
 export function deleteElement(elementId) {
 	return http.delete(elementUrl(elementId));
 }
+
