@@ -11,28 +11,23 @@ class EditQuestion extends Component {
 	}
 
 	async componentDidMount() {
-		const { data: question } = await getOneElement(this.props.match.params.id);
+		const { data: question } = await getOneElement(
+			this.props.match.params.id
+		);
 		this.setState({ question });
 		console.log('this is state questions', this.state.question);
 	}
-
-
 
 	render() {
 		return (
 			<>
 				<div className="admin-container">
-					<table className="table-questions">
-						<tr key={this.props.match.params.id} className="row">
-							<td
-								key={this.props.match.params.id}
-								className="td1"
-							>
-								ID:
-							</td>
-							<td> {this.props.match.params.id}</td>
-						</tr>
-					</table>
+					<form className="table-questions">
+						<label>Question</label>
+						<input label="Question" type="text">
+							<textarea>{this.state.question.question}</textarea>
+						</input>
+					</form>
 				</div>
 				<Footer />
 			</>
