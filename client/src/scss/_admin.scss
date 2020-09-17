@@ -6,8 +6,8 @@
 	// grid
 	justify-items: center;
 	align-items: center;
-	grid-template-columns: 72px repeat(36, 1fr) 72px;
-	grid-template-rows: 90px 72px 120px auto 66px;
+	grid-template-columns: 72px repeat(2, 1fr) 72px;
+	grid-template-rows: 90px 72px 60px auto 66px;
 	@include responsive(600) {
 		grid-template-columns: 36px repeat(36, 1fr) 36px;
 	}
@@ -19,7 +19,7 @@
 .admin-select {
 	width: 100%;
 	font-size: 18px;
-	grid-column: 2/37;
+	grid-column: 2/4;
 	grid-row: 2/3;
 	display: flex;
 	flex-flow: row nowrap;
@@ -37,7 +37,7 @@
 	}
 }
 .admin-filter {
-	grid-column: 2/37;
+	grid-column: 2/4;
 	grid-row: 3/4;
 	position: relative;
 	width: 100%;
@@ -50,7 +50,7 @@
 .table-questions {
 	width: 100%;
 	height: auto;
-	grid-column: 2/37;
+	grid-column: 2/4;
 	grid-row: 4/5;
 	border-spacing: 0px;
 

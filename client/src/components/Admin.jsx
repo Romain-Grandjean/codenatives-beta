@@ -19,13 +19,9 @@ class Admin extends Component {
 		const { data: questions } = await getElements();
 		this.setState({ questions });
 		console.log('this is state questions', this.state.questions);
-		toast('db working !!');
 	}
 
 	handleDelete = async (element) => {
-		console.log(element);
-		toast('delete btn fired !!');
-		console.log('delete fired');
 		const actualElements = this.state.questions;
 		const questions = actualElements.filter(
 			(ele) => ele._id !== element
