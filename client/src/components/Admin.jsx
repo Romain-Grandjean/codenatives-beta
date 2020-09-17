@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import FilterLevel from './admin/filterLevel';
 import Table from './admin/table';
 import Footer from './structure/Footer';
 import { getElements, deleteElement } from '../services/elementsService';
 import { toast } from 'react-toastify';
 
-
-toast.configure()
+toast.configure();
 class Admin extends Component {
 	constructor(props) {
 		super(props);
@@ -19,12 +19,13 @@ class Admin extends Component {
 		const { data: questions } = await getElements();
 		this.setState({ questions });
 		console.log('this is state questions', this.state.questions);
-		toast("db working !!");
+		toast('db working !!');
 	}
 
 	handleDelete = async (element) => {
-
-		toast("delete btn fired !!")
+		console.log(element);
+		toast('delete btn fired !!');
+		console.log('delete fired');
 		const actualElements = this.state.questions;
 		const questions = actualElements.filter(
 			(ele) => ele._id !== element._id
@@ -40,26 +41,24 @@ class Admin extends Component {
 	};
 
 	render() {
-
 		return (
 			<>
 				<div className="admin-container">
 					<ul className="admin-select">
 						<li>
-							<a>QUESTIONS DB</a>
+							<NavLink to="">QUESTIONS DB</NavLink>
 						</li>
 						<li>
 							<span>-</span>
 						</li>
 						<li>
-							<a>USERS DB</a>
+							<NavLink to="">USERS DB</NavLink>
 						</li>
 					</ul>
 					<FilterLevel />
 					<Table
 						data={this.state.questions}
 						onDelete={this.handleDelete}
-
 					/>
 				</div>
 				<Footer />

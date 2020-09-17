@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TableHeader from './tableHeader';
 import TableBody from './tableBody';
 
 
 const Table = (props) => {
+	console.log("these are the props within table:",props);
 	return (
 		<table className="table-questions">
 			<TableHeader />

@@ -15,7 +15,6 @@ class Home extends React.Component {
 
 	componentDidMount() {
 		setInterval(() => {
-			let valueNext;
 			switch (this.state.value) {
 				case 1:
 					this.setState({
@@ -38,6 +37,12 @@ class Home extends React.Component {
 						activeScreen: <Homeslide1 />,
 					});
 					break;
+				default:
+					this.setState({
+						...this.state,
+						value: 2,
+						activeScreen: <Homeslide2 />,
+					});
 			}
 		}, 10000);
 	}
@@ -119,6 +124,12 @@ class Home extends React.Component {
 					value: 3,
 				});
 				break;
+			default:
+				this.setState({
+					...this.state,
+					activeScreen: <Homeslide1 />,
+					value: 1,
+				});
 		}
 	};
 

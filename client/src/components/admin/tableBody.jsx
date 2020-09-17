@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const TableBody = (props) => {
 	const createKey = (item, type) => {
 		let indexEle = props.data.indexOf(item);
 		return indexEle + type;
 	};
-
+	console.log("these are the props:",props);
 	return (
 		<tbody>
 			{props.data.map((item) => (
-				<tr key={createKey(item)} className="row">
+				<tr key={createKey(item, item._id)} className="row">
 					<td key={createKey(item, item._id)} className="td1">
 						{item._id}
 					</td>
@@ -26,7 +26,6 @@ const TableBody = (props) => {
 						<button
 							key={createKey(item, 'btn-edit')}
 							className="btn-small btn-nocolor"
-							onClick={() => props.onDelete(item._id)}
 						>
 							Edit
 						</button>
@@ -35,6 +34,7 @@ const TableBody = (props) => {
 						<button
 							key={createKey(item, 'btn-delete')}
 							className="btn-small btn-red"
+							onClick={() => props.onDelete(item._id)}
 						>
 							Delete
 						</button>

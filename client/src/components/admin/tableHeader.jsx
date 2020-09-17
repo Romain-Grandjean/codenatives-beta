@@ -7,7 +7,7 @@ export default function TableHeader() {
 				<th>ID</th>
 				<th>Level</th>
 				<th>Type</th>
-				<th>question</th>
+				<th>Question</th>
 				<th>Edit</th>
 				<th>Delete</th>
 			</tr>

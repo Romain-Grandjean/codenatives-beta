@@ -26,7 +26,10 @@
 	// flex
 	justify-content: center;
 	z-index: 5;
+
 	& a {
+		text-decoration: none;
+		color: black;
 		margin: 24px 12px 24px 12px;
 		&:hover {
 			border-bottom: 2px black solid;
