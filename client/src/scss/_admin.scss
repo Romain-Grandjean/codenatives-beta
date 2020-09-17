@@ -79,8 +79,27 @@
 }
 
 .admin-edit {
-
+	width: 100%;
 	grid-column: 2/4;
-	grid-row: 2/3;
+	grid-row: 3/5;
 
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	& label {
+
+		line-height: 72px;
+		font-size: 18px;
+		font-weight: 500;
+		// border: 1px hsla(300, 4%, 89%, 0.2) solid;
+	}
+	& input {
+		line-height: 72px;
+		font-size: 16px;
+		font-weight: 400;
+		border: none;
+		outline: none;
+		// border: 1px hsla(300, 4%, 89%, 0.2) solid;
+
+	}
 }
