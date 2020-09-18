@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Footer from '../structure/Footer';
 import { getOneElement } from '../../services/elementsService';
+import InputEdit from './inputEdit';
 
 class EditQuestion extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			question: {},
+			inputs: ['question', 'answer', 'level'],
 		};
 	}
 
@@ -36,30 +38,11 @@ class EditQuestion extends Component {
 							readOnly
 							value={this.props.match.params.id}
 						></input>
-						<label for="question">Question: </label>
-						<input
-							type="text"
-							name="question"
-							id="question"
-							required
-							value={this.state.question.question}
-						></input>
-						<label for="answer">Solutions: </label>
-						<input
-							type="text"
-							name="answer"
-							id="answer"
-							required
-							value={this.displaySolutions}
-						></input>
-						<label for="answer">Answer: </label>
-						<input
-							type="text"
-							name="answer"
-							id="answer"
-							required
-							value={this.state.question.answer}
-						></input>
+
+						<InputEdit
+							inputs={this.state.inputs}
+							question={this.state.question}
+						/>
 					</form>
 				</div>
 				<Footer />
