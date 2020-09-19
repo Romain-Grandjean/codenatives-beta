@@ -23,9 +23,7 @@ class Admin extends Component {
 
 	handleDelete = async (element) => {
 		const actualElements = this.state.questions;
-		const questions = actualElements.filter(
-			(ele) => ele._id !== element
-		);
+		const questions = actualElements.filter((ele) => ele._id !== element);
 		this.setState({ questions });
 
 		try {
