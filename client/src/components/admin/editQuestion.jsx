@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Footer from '../structure/Footer';
 import { getOneElement } from '../../services/elementsService';
-import InputEdit from './inputEdit';
 
 class EditQuestion extends Component {
 	constructor(props) {
@@ -18,10 +17,6 @@ class EditQuestion extends Component {
 		this.setState({ question });
 		console.log('this is state question', this.state.question);
 	}
-	displaySolutions = () => {
-		const solutions = this.state.solutions;
-		return solutions.map((e) => e);
-	};
 
 	render() {
 		return (
