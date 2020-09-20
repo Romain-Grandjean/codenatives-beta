@@ -6,6 +6,7 @@ class EditQuestion extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			id: {},
 			question: {},
 		};
 	}
@@ -14,6 +15,9 @@ class EditQuestion extends Component {
 		const { data: question } = await getOneElement(
 			this.props.match.params.id
 		);
+
+		delete question.__v;
+		delete question._id;
 		this.setState({ question });
 		console.log('this is state question', this.state.question);
 	}
@@ -23,7 +27,10 @@ class EditQuestion extends Component {
 			<>
 				<div className="admin-container">
 					<form className="admin-edit">
-						{Object.keys(this.state.question).map((key) => (
+						<h1>Question ID: {this.props.match.params.id}</h1>
+						{
+						Object.keys(this.state.question).map((key) => (
+							
 							<div>
 								<label for={key}>{key}</label>
 								<input
@@ -34,6 +41,7 @@ class EditQuestion extends Component {
 									value={this.state.question[key]}
 								></input>
 							</div>
+						
 						))}
 					</form>
 				</div>
