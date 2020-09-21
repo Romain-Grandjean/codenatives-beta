@@ -26,6 +26,7 @@ class App extends React.Component {
 						<Route path="/practice" exact component={Practice} />
 						<Route path="/test" exact component={Test} />
 						<Route path="/admin" exact component={Admin} />
+						<Route path="/admin/questions/new" exact component={NewQuestion} />
 						<Route path="/admin/questions/:id" exact component={EditQuestion} />
 						<Route path="/admin/questions/new" exact component={NewQuestion} />
 						<Route path="/" component={Home} />

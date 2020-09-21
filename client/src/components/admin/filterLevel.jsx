@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class FilterLevel extends Component {
 	state = {};
@@ -6,7 +7,7 @@ class FilterLevel extends Component {
 		return (
 			<>
 				<ul className="admin-filter">
-					<button className="btn-big btn-yellow">New</button>
+					<Link to="admin/questions/new" className="btn-big btn-yellow">New</Link>
 					<li className="btn-big btn-nocolor ">all</li>
 					<li className="btn-big btn-nocolor ">A1</li>
 					<li className="btn-big btn-nocolor ">A2</li>

@@ -20,6 +20,11 @@ export function putOneElement(id, element) {
 	return http.put(elementUrl(id), body);
 }
 
+export function postOneElement(element) {
+	const body = {...element}
+	return http.put(elementUrl(body));
+}
+
 export function deleteElement(id) {
 	return http.delete(elementUrl(id));
 }
