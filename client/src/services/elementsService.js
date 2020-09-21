@@ -22,7 +22,7 @@ export function putOneElement(id, element) {
 
 export function postOneElement(element) {
 	const body = {...element}
-	return http.put(elementUrl(body));
+	return http.post(apiEndPoint, body);
 }
 
 export function deleteElement(id) {

@@ -17,9 +17,6 @@ const questionSchema = new mongoose.Schema({
 		minlength: 15,
 		maxlength: 400,
 	},
-	solutions: {
-		type: Array,
-	},
 	solution1: {
 		type: String,
 		minlength: 15,
@@ -42,11 +39,6 @@ const questionSchema = new mongoose.Schema({
 	},
 	answer:{ 
 		type: Number,
-	},
-	explanations: {
-		type: String,
-		minlength: 15,
-		maxlength: 400,
 	}
 });
 
