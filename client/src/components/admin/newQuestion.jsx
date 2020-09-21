@@ -37,7 +37,70 @@ class NewQuestion extends Component {
 							name="question"
 							id="question"
 							required
-							value={this.state.question}
+							value={'hello'}
+							onChange={this.handleChange}
+						></input>
+						<label for="solution1">Solution 1</label>
+						<input
+							type="text"
+							name="solution1"
+							id="solution1"
+							required
+							value={'hello'}
+							onChange={this.handleChange}
+						></input>
+						<label for="solution2">Solution 2</label>
+						<input
+							type="text"
+							name="solution2"
+							id="solution2"
+							required
+							value={'hello'}
+							onChange={this.handleChange}
+						></input>
+						<label for="solution3">Solution 3</label>
+						<input
+							type="text"
+							name="solution3"
+							id="solution3"
+							required
+							value={'hello'}
+							onChange={this.handleChange}
+						></input>
+						<label for="solution4">Solution 4</label>
+						<input
+							type="text"
+							name="solution4"
+							id="solution4"
+							required
+							value={'hello'}
+							onChange={this.handleChange}
+						></input>
+						<label for="Answer">Answer</label>
+						<input
+							type="number"
+							name="Answer"
+							id="Answer"
+							required
+							value={'0'}
+							onChange={this.handleChange}
+						></input>
+						<label for="type">Type</label>
+						<input
+							type="text"
+							name="type"
+							id="type"
+							required
+							value={'QCM'}
+							onChange={this.handleChange}
+						></input>
+						<label for="level">Level</label>
+						<input
+							type="text"
+							name="level"
+							id="level"
+							required
+							value={'A0'}
 							onChange={this.handleChange}
 						></input>
 						<div className="btn-zone">
