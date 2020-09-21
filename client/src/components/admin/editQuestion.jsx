@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Footer from '../structure/Footer';
-import { getOneElement, deleteElement } from '../../services/elementsService';
+import { getOneElement, deleteElement, putOneElement } from '../../services/elementsService';
 import { toast } from 'react-toastify';
 
 class EditQuestion extends Component {
@@ -35,6 +35,17 @@ class EditQuestion extends Component {
 		question[e.currentTarget.name] = e.currentTarget.value;
 		this.setState({ question });
 	};
+
+	handleSubmit = async (element) => {
+
+		try {
+			await putOneElement(element);
+		} catch (error) {
+			if (error.response && error.response.status === 404)
+				toast.error('This element has already been deleted');
+		}
+
+	}
 
 	handleDelete = async (element) => {
 		try {
@@ -73,7 +84,7 @@ class EditQuestion extends Component {
 							>
 								Delete
 							</button>
-							<button className="btn-small btn-yellow btn-padding">
+							<button className="btn-small btn-yellow btn-padding" onSubmit={this.handleSubmit(this.props.match.params.id)}>
 								Save
 							</button>
 						</div>
