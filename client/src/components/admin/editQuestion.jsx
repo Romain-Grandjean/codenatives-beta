@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import Footer from '../structure/Footer';
 import {
 	getOneElement,
@@ -46,8 +47,7 @@ class EditQuestion extends Component {
 	handleDelete = async (id) => {
 		try {
 			await deleteElement(id);
-			this.props.history.push('/');
-
+			this.props.history.replace('/admin');
 		} catch (error) {
 			if (error.response && error.response.status === 404)
 				toast.error('This element was not deleted');
@@ -59,6 +59,7 @@ class EditQuestion extends Component {
 			<>
 				<div className="admin-container">
 					<form className="admin-edit" onSubmit={this.handleSubmit}>
+						<Link to="/admin"> back</Link>
 						<h1>Question ID: {this.props.match.params.id}</h1>
 						{Object.keys(this.state.question).map((key) => (
 							<div>
@@ -77,7 +78,9 @@ class EditQuestion extends Component {
 							<button
 								className="btn-small btn-red btn-padding"
 								onClick={() =>
-									this.handleDelete(this.props.match.params.id)
+									this.handleDelete(
+										this.props.match.params.id
+									)
 								}
 							>
 								Delete
