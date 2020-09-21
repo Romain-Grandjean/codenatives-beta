@@ -14,7 +14,6 @@ const questionSchema = new mongoose.Schema({
 	},
 	question: {
 		type: String,
-		required: true,
 		minlength: 15,
 		maxlength: 400,
 	},
@@ -23,31 +22,26 @@ const questionSchema = new mongoose.Schema({
 	},
 	solution1: {
 		type: String,
-		required: true,
 		minlength: 15,
 		maxlength: 400,
 	},
 	solution2: {
 		type: String,
-		required: true,
 		minlength: 15,
 		maxlength: 400,
 	},
 	solution3: {
 		type: String,
-		required: true,
 		minlength: 15,
 		maxlength: 400,
 	},
 	solution4: {
 		type: String,
-		required: true,
 		minlength: 15,
 		maxlength: 400,
 	},
 	answer:{ 
 		type: Number,
-		required: true,
 	},
 	explanations: {
 		type: String,

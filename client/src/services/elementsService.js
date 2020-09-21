@@ -20,7 +20,7 @@ export function putOneElement(id, element) {
 	return http.put(elementUrl(id), body);
 }
 
-export function deleteElement(elementId) {
-	return http.delete(elementUrl(elementId));
+export function deleteElement(id) {
+	return http.delete(elementUrl(id));
 }
 

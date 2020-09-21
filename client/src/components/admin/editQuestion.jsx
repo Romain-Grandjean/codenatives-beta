@@ -21,16 +21,12 @@ class EditQuestion extends Component {
 		);
 
 		delete question.__v;
-		delete question._id;
-		delete question.type;
+		// delete question._id;
+		// delete question.type;
 		delete question.explanations;
 		this.setState({ question });
 		console.log('this is state question', this.state.question);
 	}
-
-	handleSubmit = (e) => {
-		e.preventDefault();
-	};
 
 	handleChange = (e) => {
 		const question = { ...this.state.question };
@@ -43,17 +39,17 @@ class EditQuestion extends Component {
 		try {
 			await putOneElement(id, element);
 		} catch (error) {
-			if (error.response && error.response.status === 404)
-				toast.error('This element has already been deleted');
+			if (error.response && error.response.status === 404);
 		}
 	};
 
 	handleDelete = async (element) => {
 		try {
 			await deleteElement(element);
+
 		} catch (error) {
 			if (error.response && error.response.status === 404)
-				toast.error('This element has already been deleted');
+				toast.error('This element was not deleted');
 		}
 	};
 
@@ -80,7 +76,7 @@ class EditQuestion extends Component {
 							<button
 								className="btn-small btn-red btn-padding"
 								onClick={() =>
-									this.onDelete(this.props.match.params.id)
+									this.onDelete(this.state.question._id)
 								}
 							>
 								Delete
