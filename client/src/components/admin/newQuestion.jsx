@@ -29,55 +29,75 @@ class NewQuestion extends Component {
 		return (
 			<>
 				<div className="admin-container">
-					<form className="admin-edit" onSubmit={this.handleSubmit}>
-						<Link to="/admin"> back</Link>
-						<label for="question">Question</label>
+				<Link to="/admin"> back</Link>
+						<h1>New question</h1>
+					<form className="admin-new" onSubmit={this.handleSubmit}>
+	
+						<label className="new-question" for="question">
+							Question
+						</label>
 						<input
+							className="new-question-input"
 							type="text"
 							name="question"
 							id="question"
 							required
-							value={'hello'}
+							value={''}
 							onChange={this.handleChange}
 						></input>
-						<label for="solution1">Solution 1</label>
+						<label className="new-solution1" for="solution1">
+							Solution 1
+						</label>
 						<input
+							className="new-solution1-input"
 							type="text"
 							name="solution1"
 							id="solution1"
 							required
-							value={'hello'}
+							value={''}
 							onChange={this.handleChange}
 						></input>
-						<label for="solution2">Solution 2</label>
+						<label className="new-solution2" for="solution2">
+							Solution 2
+						</label>
 						<input
+							className="new-solution2-input"
 							type="text"
 							name="solution2"
 							id="solution2"
 							required
-							value={'hello'}
+							value={''}
 							onChange={this.handleChange}
 						></input>
-						<label for="solution3">Solution 3</label>
+						<label className="new-solution3" for="solution3">
+							Solution 3
+						</label>
 						<input
+							className="new-solution3-input"
 							type="text"
 							name="solution3"
 							id="solution3"
 							required
-							value={'hello'}
+							value={''}
 							onChange={this.handleChange}
 						></input>
-						<label for="solution4">Solution 4</label>
+						<label className="new-solution4" for="solution4">
+							Solution 4
+						</label>
 						<input
+							className="new-solution4-input"
 							type="text"
 							name="solution4"
 							id="solution4"
 							required
-							value={'hello'}
+							value={''}
 							onChange={this.handleChange}
 						></input>
-						<label for="Answer">Answer</label>
+						<label className="new-answer" for="Answer">
+							Answer
+						</label>
 						<input
+							className="new-answer-input"
 							type="number"
 							name="Answer"
 							id="Answer"
@@ -85,8 +105,11 @@ class NewQuestion extends Component {
 							value={'0'}
 							onChange={this.handleChange}
 						></input>
-						<label for="type">Type</label>
+						<label className="new-type" for="type">
+							Type
+						</label>
 						<input
+							className="new-type-input"
 							type="text"
 							name="type"
 							id="type"
@@ -94,8 +117,11 @@ class NewQuestion extends Component {
 							value={'QCM'}
 							onChange={this.handleChange}
 						></input>
-						<label for="level">Level</label>
+						<label className="new-level" for="level">
+							Level
+						</label>
 						<input
+							className="new-level-input"
 							type="text"
 							name="level"
 							id="level"
@@ -103,9 +129,9 @@ class NewQuestion extends Component {
 							value={'A0'}
 							onChange={this.handleChange}
 						></input>
-						<div className="btn-zone">
+						<div className="btn-zone btn-new">
 							<button
-								className="btn-small btn-yellow btn-padding"
+								 className="btn-small btn-yellow btn-padding"
 								onSubmit={this.handleSubmit(
 									this.props.match.params.id,
 									this.state.question
