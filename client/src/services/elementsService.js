@@ -16,7 +16,8 @@ export function getOneElement(elementId) {
 }
 
 export function putOneElement(elementId) {
-	return http.put(elementUrl(elementId));
+	const body = {...elementId}
+	return http.put(elementUrl(elementId), body);
 }
 
 export function deleteElement(elementId) {
