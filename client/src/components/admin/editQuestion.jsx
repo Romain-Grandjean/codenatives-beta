@@ -20,9 +20,21 @@ class EditQuestion extends Component {
 		delete question.__v;
 		delete question._id;
 		delete question.type;
+		delete question.explanations;
 		this.setState({ question });
 		console.log('this is state question', this.state.question);
 	}
+
+	handleSubmit = (e) => {
+		e.preventDefault();
+	};
+
+	handleChange = (e) => {
+		const question = { ...this.state.question };
+
+		question[e.currentTarget.name] = e.currentTarget.value;
+		this.setState({ question });
+	};
 
 	handleDelete = async (element) => {
 		try {
@@ -37,7 +49,7 @@ class EditQuestion extends Component {
 		return (
 			<>
 				<div className="admin-container">
-					<form className="admin-edit">
+					<form className="admin-edit" onSubmit={this.handleSubmit}>
 						<h1>Question ID: {this.props.match.params.id}</h1>
 						{Object.keys(this.state.question).map((key) => (
 							<div>
@@ -48,6 +60,7 @@ class EditQuestion extends Component {
 									id={key}
 									required
 									value={this.state.question[key]}
+									onChange={this.handleChange}
 								></input>
 							</div>
 						))}
@@ -60,8 +73,8 @@ class EditQuestion extends Component {
 							>
 								Delete
 							</button>
-							<button className="btn-small btn-red btn-padding">
-								Edit
+							<button className="btn-small btn-yellow btn-padding">
+								Save
 							</button>
 						</div>
 					</form>
