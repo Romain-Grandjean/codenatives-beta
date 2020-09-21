@@ -11,7 +11,6 @@ class EditQuestion extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			id: {},
 			question: {},
 		};
 	}
@@ -40,9 +39,9 @@ class EditQuestion extends Component {
 		this.setState({ question });
 	};
 
-	handleSubmit = async (element) => {
+	handleSubmit = async (id, element) => {
 		try {
-			await putOneElement(element);
+			await putOneElement(id, element);
 		} catch (error) {
 			if (error.response && error.response.status === 404)
 				toast.error('This element has already been deleted');
@@ -89,6 +88,7 @@ class EditQuestion extends Component {
 							<button
 								className="btn-small btn-yellow btn-padding"
 								onSubmit={this.handleSubmit(
+									this.state.question._id,
 									this.state.question
 								)}
 							>

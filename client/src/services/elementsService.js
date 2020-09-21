@@ -15,9 +15,9 @@ export function getOneElement(elementId) {
 	return http.get(elementUrl(elementId));
 }
 
-export function putOneElement(elementId) {
-	const body = {...elementId}
-	return http.put(elementUrl(elementId), body);
+export function putOneElement(id, element) {
+	const body = {...element}
+	return http.put(elementUrl(id), body);
 }
 
 export function deleteElement(elementId) {
