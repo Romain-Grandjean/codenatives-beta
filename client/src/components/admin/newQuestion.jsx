@@ -29,10 +29,12 @@ class NewQuestion extends Component {
 		return (
 			<>
 				<div className="admin-container">
-				<Link to="/admin"> back</Link>
-						<h1>New question</h1>
 					<form className="admin-new" onSubmit={this.handleSubmit}>
-	
+						<Link id="new-back" to="/admin">
+							back
+						</Link>
+						<h1 id="new-title">New question</h1>
+
 						<label className="new-question" for="question">
 							Question
 						</label>
@@ -131,7 +133,7 @@ class NewQuestion extends Component {
 						></input>
 						<div className="btn-zone btn-new">
 							<button
-								 className="btn-small btn-yellow btn-padding"
+								className="btn-small btn-yellow btn-padding"
 								onSubmit={this.handleSubmit(
 									this.props.match.params.id,
 									this.state.question
