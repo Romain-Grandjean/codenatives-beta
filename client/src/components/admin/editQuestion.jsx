@@ -21,8 +21,8 @@ class EditQuestion extends Component {
 		);
 
 		delete question.__v;
-		// delete question._id;
-		// delete question.type;
+		delete question._id;
+		delete question.type;
 		delete question.explanations;
 		this.setState({ question });
 		console.log('this is state question', this.state.question);
@@ -43,9 +43,10 @@ class EditQuestion extends Component {
 		}
 	};
 
-	handleDelete = async (element) => {
+	handleDelete = async (id) => {
 		try {
-			await deleteElement(element);
+			await deleteElement(id);
+			this.props.history.push('/');
 
 		} catch (error) {
 			if (error.response && error.response.status === 404)
@@ -76,7 +77,7 @@ class EditQuestion extends Component {
 							<button
 								className="btn-small btn-red btn-padding"
 								onClick={() =>
-									this.onDelete(this.state.question._id)
+									this.handleDelete(this.props.match.params.id)
 								}
 							>
 								Delete
@@ -84,7 +85,7 @@ class EditQuestion extends Component {
 							<button
 								className="btn-small btn-yellow btn-padding"
 								onSubmit={this.handleSubmit(
-									this.state.question._id,
+									this.props.match.params.id,
 									this.state.question
 								)}
 							>
