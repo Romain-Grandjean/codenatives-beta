@@ -38,7 +38,7 @@ const questionSchema = new mongoose.Schema({
 		maxlength: 400,
 	},
 	answer:{ 
-		type: Number,
+		type: String,
 	}
 });
 

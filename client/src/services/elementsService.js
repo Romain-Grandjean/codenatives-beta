@@ -21,8 +21,9 @@ export function putOneElement(id, element) {
 }
 
 export function postOneElement(element) {
-	const body = {...element}
-	return http.post(apiEndPoint, body);
+	console.log("this is the element", element);
+	return http.post(apiEndPoint, element);
+
 }
 
 export function deleteElement(id) {

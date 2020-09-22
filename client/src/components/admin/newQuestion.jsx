@@ -13,7 +13,7 @@ class NewQuestion extends Component {
 				solution2: '',
 				solution3: '',
 				solution4: '',
-				answer: 1,
+				answer: "1",
 				type: 'QCM',
 				level: 'A1',
 			},
@@ -31,9 +31,11 @@ class NewQuestion extends Component {
 	handleSubmit = async () => {
 		try {
 			await postOneElement(this.state.question);
+
 		} catch (error) {
 			if (error.response && error.response.status === 404);
 		}
+		this.props.history.push('/');
 	};
 
 	render() {
@@ -88,7 +90,7 @@ class NewQuestion extends Component {
 							name="answer"
 							id="answer"
 							required
-							value={this.state.question['answer']}
+							value={parseInt(this.state.question['answer'])}
 							onChange={this.handleChange}
 						>
 							{' '}

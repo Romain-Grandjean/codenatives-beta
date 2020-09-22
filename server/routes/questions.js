@@ -57,14 +57,12 @@ router.put('/:id', async (req, res) => {
 				level: req.body.level,
 				type: req.body.type,
 				question: req.body.question,
-				solutions: req.body.solutions,
-				solutions: req.body.solutions,
 				solution1: req.body.solution1,
 				solution2: req.body.solution2,
 				solution3: req.body.solution3,
 				solution4: req.body.solution4,
 				answer: req.body.answer,
-				explanations: req.body.explanations,
+
 			},
 			{ new: true }
 		);

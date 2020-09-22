@@ -149,7 +149,7 @@
 }
 
 .new-type-input {
-	width: 40px;
+	width: 80px;
 	grid-column: auto;
 	grid-row: 4/5;
 }
@@ -160,6 +160,8 @@ select {
 	appearance: none;
 	line-height: 42px;
 	border: 1px hsla(300, 4%, 89%, 0.2) solid;
+	font-size: 16px;
+	font-weight: 300;
 }
 
 select::-ms-expand {
@@ -172,7 +174,7 @@ select::-ms-expand {
 	grid-row: 3/4;
 }
 .new-level-input {
-	width: 40px;
+	width: 80px;
 	grid-column: auto;
 	grid-row: 4/5;
 
@@ -185,7 +187,7 @@ select::-ms-expand {
 }
 
 .new-answer-input {
-	width: 40px;
+	width: 80px;
 	grid-column: auto;
 	grid-row: 4/5;
 }

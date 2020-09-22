@@ -39,13 +39,3 @@ input {
 	opacity: 1;
 }
 
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-	appearance: none;
-	border: none;
-}
-
-select::-ms-expand {
-    display: none;
-}
