@@ -35,7 +35,7 @@ class NewQuestion extends Component {
 		} catch (error) {
 			if (error.response && error.response.status === 404);
 		}
-		this.props.history.push('/');
+		// this.props.history.push('/');
 	};
 
 	render() {

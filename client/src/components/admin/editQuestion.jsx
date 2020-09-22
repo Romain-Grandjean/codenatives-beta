@@ -21,10 +21,10 @@ class EditQuestion extends Component {
 			this.props.match.params.id
 		);
 
-		delete question.__v;
-		delete question._id;
-		delete question.type;
-		delete question.explanations;
+		// delete question.__v;
+		// delete question._id;
+		// delete question.type;
+		// delete question.explanations;
 		this.setState({ question });
 		console.log('this is state question', this.state.question);
 	}
