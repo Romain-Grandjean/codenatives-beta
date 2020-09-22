@@ -109,20 +109,20 @@
 	grid-column: 2/4;
 	grid-row: 2/5;
 	display: grid;
-	grid-template-columns: 6fr;
+	grid-template-columns: repeat(12, auto);
 	grid-template-rows: 26fr;
 
 	& h1 {
 		padding: 12px 0 12px 0;
 	}
 	& label {
-		width: 100%;
+
 		line-height: 42px;
 		font-size: 16px;
 		font-weight: 500;
 	}
 	& input {
-		width: 100%;
+		width: auto;
 		line-height: 24px;
 		font-size: 16px;
 		font-weight: 300;
@@ -143,12 +143,14 @@
 }
 
 .new-type {
-	grid-column: 33%;
+	width: 80px;
+	grid-column: auto;
 	grid-row: 3/4;
 }
 
 .new-type-input {
-	grid-column: 33%;
+	width: 40px;
+	grid-column: auto;
 	grid-row: 4/5;
 }
 
@@ -165,21 +167,26 @@ select::-ms-expand {
 }
 
 .new-level {
-	grid-column: 33%;
+	width: 80px;
+	grid-column: auto;
 	grid-row: 3/4;
 }
 .new-level-input {
-	grid-column: 33%;
+	width: 40px;
+	grid-column: auto;
 	grid-row: 4/5;
+
 }
 
 .new-answer {
-	grid-column: 33%;
+	width: 40px;
+	grid-column: auto;
 	grid-row: 3/4;
 }
 
 .new-answer-input {
-	grid-column: 33%;
+	width: 40px;
+	grid-column: auto;
 	grid-row: 4/5;
 }
 

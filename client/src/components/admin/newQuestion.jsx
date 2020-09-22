@@ -57,7 +57,7 @@ class NewQuestion extends Component {
 							onChange={this.handleChange}
 						>
 							<option>QCM</option>
-							<option>Code</option>
+							<option>CODE</option>
 						</select>
 
 						<label className="new-level" htmlFor="level">
