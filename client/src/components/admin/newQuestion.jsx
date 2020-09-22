@@ -20,7 +20,6 @@ class NewQuestion extends Component {
 		};
 	}
 
-
 	handleChange = (e) => {
 		const question = { ...this.state.question };
 
@@ -42,11 +41,12 @@ class NewQuestion extends Component {
 			<>
 				<div className="admin-container">
 					<form className="admin-new" onSubmit={this.handleSubmit}>
-						<Link id="new-back" to="/admin">
-							back
-						</Link>
-						<h1 id="new-title">New question</h1>
-
+						<div className="new-title-zone">
+							<h1 id="new-title">New question</h1>
+							<Link id="new-back" to="/admin">
+								back
+							</Link>
+						</div>
 						<label className="new-question" htmlFor="question">
 							Question
 						</label>
