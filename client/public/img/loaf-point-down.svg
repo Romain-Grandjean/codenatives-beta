@@ -1,0 +1,13 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px;"><style>
+     .line-point-down1 {animation:line-point-down1-move 1.6s infinite;}
+     @keyframes line-point-down1-move {
+         0%{transform: translate3d(0, -2px, 0);}
+         50%{transform: translate3d(0, 2px, 0);}
+         100%{transform: translate3d(0, -2px, 0);}
+     }
+     @media (prefers-reduced-motion: reduce) {
+         .line-point-down1 {
+             animation: none;
+         }
+     }
+    </style><path class="line-point-down1 stroke1" d="M83 34L50.5 66.5L18 34" stroke="#000" stroke-width="4.0px" style="animation-duration: 1.6s;"></path></svg>

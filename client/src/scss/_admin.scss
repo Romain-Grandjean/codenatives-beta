@@ -152,6 +152,18 @@
 	grid-row: 4/5;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+	appearance: none;
+	line-height: 42px;
+	border: 1px hsla(300, 4%, 89%, 0.2) solid;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
 .new-level {
 	grid-column: 33%;
 	grid-row: 3/4;

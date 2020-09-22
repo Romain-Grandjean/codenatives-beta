@@ -13,9 +13,9 @@ class NewQuestion extends Component {
 				solution2: '',
 				solution3: '',
 				solution4: '',
-				answer: undefined,
-				type: '',
-				level: '',
+				answer: 1,
+				type: 'QCM',
+				level: 'A1',
 			},
 		};
 	}
@@ -43,45 +43,61 @@ class NewQuestion extends Component {
 					<form className="admin-new" onSubmit={this.handleSubmit}>
 						<div className="new-title-zone">
 							<h1 id="new-title">New question</h1>
-
 						</div>
 
-						<label className="new-type" for="type">
+						<label className="new-type" htmlFor="type">
 							Type
 						</label>
-						<input
+						<select
 							className="new-type-input"
-							type="text"
 							name="type"
 							id="type"
 							required
 							value={this.state.question['type']}
 							onChange={this.handleChange}
-						></input>
-						<label className="new-level" for="level">
+						>
+							<option>QCM</option>
+							<option>Code</option>
+						</select>
+
+						<label className="new-level" htmlFor="level">
 							Level
 						</label>
-						<input
+						<select
 							className="new-level-input"
-							type="text"
+							list="list-level"
 							name="level"
 							id="level"
 							required
 							value={this.state.question['level']}
 							onChange={this.handleChange}
-						></input>
-						<label className="new-answer" for="Answer">
+						>
+							{' '}
+							<option>A1</option>
+							<option>A2</option>
+							<option>B1</option>
+							<option>C1</option>
+							<option>C2</option>
+						</select>
+
+						<label className="new-answer" htmlFor="Answer">
 							Answer
 						</label>
-						<input
+						<select
 							className="new-answer-input"
-							type="number"
 							name="answer"
 							id="answer"
 							required
 							value={this.state.question['answer']}
 							onChange={this.handleChange}
-						></input>
+						>
+							{' '}
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+
 						<label className="new-question" htmlFor="question">
 							Question
 						</label>
