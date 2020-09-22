@@ -43,10 +43,45 @@ class NewQuestion extends Component {
 					<form className="admin-new" onSubmit={this.handleSubmit}>
 						<div className="new-title-zone">
 							<h1 id="new-title">New question</h1>
-							<Link id="new-back" to="/admin">
-								back
-							</Link>
+
 						</div>
+
+						<label className="new-type" for="type">
+							Type
+						</label>
+						<input
+							className="new-type-input"
+							type="text"
+							name="type"
+							id="type"
+							required
+							value={this.state.question['type']}
+							onChange={this.handleChange}
+						></input>
+						<label className="new-level" for="level">
+							Level
+						</label>
+						<input
+							className="new-level-input"
+							type="text"
+							name="level"
+							id="level"
+							required
+							value={this.state.question['level']}
+							onChange={this.handleChange}
+						></input>
+						<label className="new-answer" for="Answer">
+							Answer
+						</label>
+						<input
+							className="new-answer-input"
+							type="number"
+							name="answer"
+							id="answer"
+							required
+							value={this.state.question['answer']}
+							onChange={this.handleChange}
+						></input>
 						<label className="new-question" htmlFor="question">
 							Question
 						</label>
@@ -107,42 +142,7 @@ class NewQuestion extends Component {
 							value={this.state.question['solution4']}
 							onChange={this.handleChange}
 						></input>
-						<label className="new-answer" for="Answer">
-							Answer
-						</label>
-						<input
-							className="new-answer-input"
-							type="number"
-							name="answer"
-							id="answer"
-							required
-							value={this.state.question['answer']}
-							onChange={this.handleChange}
-						></input>
-						<label className="new-type" for="type">
-							Type
-						</label>
-						<input
-							className="new-type-input"
-							type="text"
-							name="type"
-							id="type"
-							required
-							value={this.state.question['type']}
-							onChange={this.handleChange}
-						></input>
-						<label className="new-level" for="level">
-							Level
-						</label>
-						<input
-							className="new-level-input"
-							type="text"
-							name="level"
-							id="level"
-							required
-							value={this.state.question['level']}
-							onChange={this.handleChange}
-						></input>
+
 						<div className="btn-zone btn-new">
 							<button
 								className="btn-small btn-yellow btn-padding"
@@ -150,6 +150,9 @@ class NewQuestion extends Component {
 							>
 								Save
 							</button>
+							<Link id="new-back" to="/admin">
+								back
+							</Link>
 						</div>
 					</form>
 				</div>
