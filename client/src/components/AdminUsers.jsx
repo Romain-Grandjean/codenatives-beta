@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './structure/Footer';
 import TableUsers from './admin/tableUsers';
-import { getElements, deleteElement } from '../services/elementsService';
+import { getElements, deleteElement } from '../services/usersService';
 import { toast } from 'react-toastify';
 
 toast.configure();

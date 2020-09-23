@@ -5,7 +5,7 @@ import {
 	getOneElement,
 	deleteElement,
 	putOneElement,
-} from '../../services/elementsService';
+} from '../../services/questionsService';
 import { toast } from 'react-toastify';
 
 class EditQuestion extends Component {

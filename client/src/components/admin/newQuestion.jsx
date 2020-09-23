@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../structure/Footer';
-import { postOneElement } from '../../services/elementsService';
+import { postOneElement } from '../../services/questionsService';
 
 class NewQuestion extends Component {
 	constructor(props) {

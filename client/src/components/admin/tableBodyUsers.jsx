@@ -31,7 +31,10 @@ const TableBodyUsers = (props) => {
 						{item.lastUpdate}
 					</td>
 					<td key={createKey(item, item.question)} className="td7">
-						{item.status}
+						{item.isAdmin}
+					</td>
+					<td key={createKey(item, item.question)} className="td7">
+						{item.password}
 					</td>
 					<td>
 						<Link

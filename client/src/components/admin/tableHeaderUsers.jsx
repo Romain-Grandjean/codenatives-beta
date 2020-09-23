@@ -9,7 +9,8 @@ export default function tableHeaderUsers() {
 			<th>Email</th>
 			<th>Creation Date</th>
 			<th>Last update</th>
-			<th>Status</th>
+			<th>IsAdmin</th>
+			<th>Password</th>
 			<th>Edit</th>
 			<th>Delete</th>
 		</thead>

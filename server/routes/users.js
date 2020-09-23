@@ -47,7 +47,8 @@ router.post('/', async (req, res) => {
 router.post('/admin', async (req, res) => {
 	try {
 		const user = new User({
-			name: req.body.name,
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
 			email: req.body.email,
 			password: req.body.password,
 			isAdmin: true,

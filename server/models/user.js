@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-	name: {
+	firstName: {
 		type: String,
-		required: true,
+		minlength: 2,
+		maxlength: 50,
+	},
+	lastName: {
+		type: String,
 		minlength: 2,
 		maxlength: 50,
 	},
@@ -12,15 +16,20 @@ const userSchema = new mongoose.Schema({
 		required: true,
 		minlength: 5,
 		maxlength: 255,
-		unique: true,
 	},
+	creationDate: {
+		type: Date,
+	},
+	lastUpdate: {
+		type: Date,
+	},
+	isAdmin: { type: Boolean },
 	password: {
 		type: String,
 		required: true,
 		minlength: 5,
 		maxlength: 1024,
 	},
-	isAdmin: { type: Boolean },
 });
 
 const User = mongoose.model('users', userSchema);

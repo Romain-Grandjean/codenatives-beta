@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FilterLevel from './admin/filterLevel';
 import TableQuestions from './admin/tableQuestions';
 import Footer from './structure/Footer';
-import { getElements, deleteElement } from '../services/elementsService';
+import { getElements, deleteElement } from '../services/questionsService';
 import { toast } from 'react-toastify';
 
 toast.configure();
