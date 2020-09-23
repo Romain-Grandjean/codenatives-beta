@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './structure/Footer';
+import TableUsers from './admin/tableUsers';
 import { getElements, deleteElement } from '../services/elementsService';
 import { toast } from 'react-toastify';
 
@@ -9,39 +10,23 @@ class AdminUsers extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			questions: [],
-			filter: 'all',
+			users: [],
 		};
 	}
 
 	async componentDidMount() {
-		const { data: questions } = await getElements();
-		this.setState({ questions });
+		const { data: users } = await getElements();
+		this.setState({ users });
 		console.log(
 			'this is state questions before filter clicked',
-			this.state.questions
+			this.state.users
 		);
 	}
 
-	filterClick = () => {
-		this.setState({ filter: 'C1' });
-		console.log('this is state filter', this.state.filter);
-
-		const questions = this.state.questions.filter(
-			(ele) => ele.level === this.state.filter
-		);
-		this.setState({ questions });
-
-		console.log(
-			'this is state questions after clicked',
-			this.state.questions
-		);
-	};
-
 	handleDelete = async (element) => {
-		const actualElements = this.state.questions;
-		const questions = actualElements.filter((ele) => ele._id !== element);
-		this.setState({ questions });
+		const actualElements = this.state.users;
+		const users = actualElements.filter((ele) => ele._id !== element);
+		this.setState({ users });
 
 		try {
 			await deleteElement(element);
@@ -58,7 +43,10 @@ class AdminUsers extends Component {
 				<Link to="admin/users/new" className="btn-big btn-yellow">
 					New
 				</Link>
-				
+				<TableUsers 
+				data={this.state.users}
+				onDelete={this.handleDelete}
+				/>
 					
 				</div>
 				<Footer />

@@ -6,7 +6,7 @@ export default function tableHeaderUsers() {
 			<th>ID</th>
 			<th>First Name</th>
 			<th>Last Name</th>
-			<th>email</th>
+			<th>Email</th>
 			<th>Creation Date</th>
 			<th>Last update</th>
 			<th>Status</th>

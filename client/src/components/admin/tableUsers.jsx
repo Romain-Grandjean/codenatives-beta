@@ -2,7 +2,7 @@ import React from 'react';
 import TableHeaderUsers from './tableHeaderUsers';
 import TableBodyUsers from './tableBodyUsers';
 
-const Table = (props) => {
+const TableUsers = (props) => {
 	console.log('these are the props within table:', props);
 	return (
 		<table className="table-questions">
@@ -12,4 +12,4 @@ const Table = (props) => {
 	);
 };
 
-export default Table;
+export default TableUsers;

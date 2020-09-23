@@ -16,13 +16,22 @@ const TableBodyUsers = (props) => {
 						{item._id}
 					</td>
 					<td key={createKey(item, item.level)} className="td2">
-						{item.level}
+						{item.firstName}
 					</td>
 					<td key={createKey(item, item.type)} className="td3">
-						{item.type}
+						{item.lastName}
 					</td>
 					<td key={createKey(item, item.question)} className="td4">
-						{item.question}
+						{item.email}
+					</td>
+					<td key={createKey(item, item.question)} className="td5">
+						{item.creationDate}
+					</td>
+					<td key={createKey(item, item.question)} className="td6">
+						{item.lastUpdate}
+					</td>
+					<td key={createKey(item, item.question)} className="td7">
+						{item.status}
 					</td>
 					<td>
 						<Link
