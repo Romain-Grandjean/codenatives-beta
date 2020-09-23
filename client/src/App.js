@@ -12,7 +12,9 @@ import Test from './components/Test';
 import AdminQuestions from './components/AdminQuestions';
 import AdminUsers from './components/AdminUsers';
 import NewQuestion from './components/admin/newQuestion';
+import NewUser from './components/admin/newUser';
 import EditQuestion from './components/admin/editQuestion';
+import EditUser from './components/admin/editUser';
 import NotFound from './components/structure/NotFound';
 import Header from './components/structure/Header';
 
@@ -42,10 +44,21 @@ class App extends React.Component {
 							component={NewQuestion}
 						/>
 						<Route
+							path="/admin/users/new"
+							exact
+							component={NewUser}
+						/>
+						<Route
 							path="/admin/questions/:id"
 							exact
 							component={EditQuestion}
 						/>
+						<Route
+							path="/admin/users/:id"
+							exact
+							component={EditUser}
+						/>
+
 						<Route
 							path="/admin/questions/new"
 							exact

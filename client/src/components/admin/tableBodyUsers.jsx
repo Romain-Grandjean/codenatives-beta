@@ -40,7 +40,7 @@ const TableBodyUsers = (props) => {
 						<Link
 							key={createKey(item, 'btn-edit')}
 							className="btn-small btn-nocolor"
-							to={`/admin/questions/${item._id}`}
+							to={`/admin/users/${item._id}`}
 						>
 							Edit
 						</Link>
