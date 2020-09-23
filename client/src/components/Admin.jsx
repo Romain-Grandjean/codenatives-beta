@@ -18,21 +18,21 @@ class Admin extends Component {
 
 	async componentDidMount() {
 		const { data: questions } = await getElements();
-	
-		this.setState({ questions });	
+
+		this.setState({ questions });
 
 		console.log('this is state questions', this.state.questions);
 	}
 
 	filterClick = (ele) => {
+		this.setState({ filter: ele });
+		console.log('this is state filter', this.state.filter);
 
-		this.setState({filter: ele });
-		console.log("this is state filter",this.state.filter);	
-
-		const filteredQuestions = this.state.questions.filter((ele) => ele.level == this.state.filter);
-		this.setState({filteredQuestions})
-
-	}
+		const filteredQuestions = this.state.questions.filter(
+			(ele) => ele.level == this.state.filter
+		);
+		this.setState({ filteredQuestions });
+	};
 
 	handleDelete = async (element) => {
 		const actualElements = this.state.questions;
@@ -62,11 +62,7 @@ class Admin extends Component {
 							<NavLink to="">USERS DB</NavLink>
 						</li>
 					</ul>
-					<FilterLevel 
-					a1Filtered={this.filterClick}
-
-				
-					/>
+					<FilterLevel a1Filtered={this.filterClick} />
 					<Table
 						data={this.state.questions}
 						onDelete={this.handleDelete}

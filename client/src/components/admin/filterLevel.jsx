@@ -12,42 +12,36 @@ const FilterLevel = (props) => {
 				<li
 					className="btn-big btn-nocolor "
 					onClick={props.filterClick}
-					
 				>
 					A1
 				</li>
 				<li
 					className="btn-big btn-nocolor "
 					onClick={props.filterClick}
-					
 				>
 					A2
 				</li>
 				<li
 					className="btn-big btn-nocolor "
 					onClick={props.filterClick}
-					
 				>
 					A1
 				</li>
 				<li
 					className="btn-big btn-nocolor "
 					onClick={props.filterClick}
-					
 				>
 					B2
 				</li>
 				<li
 					className="btn-big btn-nocolor "
 					onClick={props.filterClick}
-					
 				>
 					C1
 				</li>
 				<li
 					className="btn-big btn-nocolor "
 					onClick={props.filterClick}
-					
 				>
 					C2
 				</li>
