@@ -18,22 +18,20 @@ class Admin extends Component {
 
 	async componentDidMount() {
 		const { data: questions } = await getElements();
-		this.setState({ questions });		
-
-		if (this.state.filter !== 'all') {
-			const filteredQuestions = this.state.questions.filter((ele) => ele.level == this.state.filter);
-
-			this.setState({filteredQuestions})
-
-		}
+	
+		this.setState({ questions });	
 
 		console.log('this is state questions', this.state.questions);
 	}
 
-	a1Filtered = () => {
+	filterClick = (ele) => {
 
-		this.setState({filter: "A1" });
-		console.log("this is state filter",this.state.filter)	
+		this.setState({filter: ele });
+		console.log("this is state filter",this.state.filter);	
+
+		const filteredQuestions = this.state.questions.filter((ele) => ele.level == this.state.filter);
+		this.setState({filteredQuestions})
+
 	}
 
 	handleDelete = async (element) => {
@@ -65,7 +63,9 @@ class Admin extends Component {
 						</li>
 					</ul>
 					<FilterLevel 
-					a1Filtered={this.a1Filtered}
+					a1Filtered={this.filterClick}
+
+				
 					/>
 					<Table
 						data={this.state.questions}
