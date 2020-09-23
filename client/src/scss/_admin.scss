@@ -38,7 +38,7 @@
 }
 .admin-filter {
 	grid-column: 2/4;
-	grid-row: 3/4;
+	grid-row: 2/3;
 	position: relative;
 	width: 100%;
 	display: flex;
@@ -51,7 +51,7 @@
 	width: 100%;
 	height: auto;
 	grid-column: 2/4;
-	grid-row: 4/5;
+	grid-row: 3/5;
 	border-spacing: 0px;
 
 	& thead,

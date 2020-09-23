@@ -7,7 +7,7 @@ import { getElements, deleteElement } from '../services/elementsService';
 import { toast } from 'react-toastify';
 
 toast.configure();
-class Admin extends Component {
+class AdminQuestions extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -18,20 +18,26 @@ class Admin extends Component {
 
 	async componentDidMount() {
 		const { data: questions } = await getElements();
-
 		this.setState({ questions });
-
-		console.log('this is state questions', this.state.questions);
+		console.log(
+			'this is state questions before filter clicked',
+			this.state.questions
+		);
 	}
 
-	filterClick = (ele) => {
-		this.setState({ filter: ele });
+	filterClick = () => {
+		this.setState({ filter: 'C1' });
 		console.log('this is state filter', this.state.filter);
 
-		const filteredQuestions = this.state.questions.filter(
-			(ele) => ele.level == this.state.filter
+		const questions = this.state.questions.filter(
+			(ele) => ele.level === this.state.filter
 		);
-		this.setState({ filteredQuestions });
+		this.setState({ questions });
+
+		console.log(
+			'this is state questions after clicked',
+			this.state.questions
+		);
 	};
 
 	handleDelete = async (element) => {
@@ -51,7 +57,7 @@ class Admin extends Component {
 		return (
 			<>
 				<div className="admin-container">
-					<ul className="admin-select">
+					{/* <ul className="admin-select">
 						<li>
 							<NavLink to="">QUESTIONS DB</NavLink>
 						</li>
@@ -61,8 +67,8 @@ class Admin extends Component {
 						<li>
 							<NavLink to="">USERS DB</NavLink>
 						</li>
-					</ul>
-					<FilterLevel a1Filtered={this.filterClick} />
+					</ul> */}
+					<FilterLevel filterClick={this.filterClick} />
 					<Table
 						data={this.state.questions}
 						onDelete={this.handleDelete}
@@ -74,4 +80,4 @@ class Admin extends Component {
 	}
 }
 
-export default Admin;
+export default AdminQuestions;
