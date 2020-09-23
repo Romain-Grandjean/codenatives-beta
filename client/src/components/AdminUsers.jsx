@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import FilterLevel from './admin/filterLevel';
-import Table from './admin/table';
+import { Link } from 'react-router-dom';
 import Footer from './structure/Footer';
 import { getElements, deleteElement } from '../services/elementsService';
 import { toast } from 'react-toastify';
@@ -57,22 +55,11 @@ class AdminUsers extends Component {
 		return (
 			<>
 				<div className="admin-container">
-					{/* <ul className="admin-select">
-						<li>
-							<NavLink to="">QUESTIONS DB</NavLink>
-						</li>
-						<li>
-							<span>-</span>
-						</li>
-						<li>
-							<NavLink to="">USERS DB</NavLink>
-						</li>
-					</ul> */}
-					<FilterLevel filterClick={this.filterClick} />
-					<Table
-						data={this.state.questions}
-						onDelete={this.handleDelete}
-					/>
+				<Link to="admin/users/new" className="btn-big btn-yellow">
+					New
+				</Link>
+				
+					
 				</div>
 				<Footer />
 			</>

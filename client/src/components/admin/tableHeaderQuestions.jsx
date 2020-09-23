@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function TableHeader() {
+export default function TableHeaderQuestions() {
 	return (
 		<thead>
 			<tr>

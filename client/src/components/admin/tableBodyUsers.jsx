@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const TableBody = (props) => {
+const TableBodyUsers = (props) => {
 	const createKey = (item, type) => {
 		let indexEle = props.data.indexOf(item);
 		return indexEle + type;
@@ -9,10 +9,8 @@ const TableBody = (props) => {
 	console.log('these are tableBody props:', props);
 
 	return (
-
 		<tbody>
 			{props.data.map((item) => (
-
 				<tr key={createKey(item, item._id)} className="row">
 					<td key={createKey(item, item._id)} className="td1">
 						{item._id}
@@ -30,7 +28,6 @@ const TableBody = (props) => {
 						<Link
 							key={createKey(item, 'btn-edit')}
 							className="btn-small btn-nocolor"
-	
 							to={`/admin/questions/${item._id}`}
 						>
 							Edit
@@ -51,4 +48,4 @@ const TableBody = (props) => {
 	);
 };
 
-export default TableBody;
+export default TableBodyUsers;

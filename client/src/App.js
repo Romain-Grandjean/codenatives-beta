@@ -10,7 +10,7 @@ import Home from './components/Home';
 import Practice from './components/Practice';
 import Test from './components/Test';
 import AdminQuestions from './components/AdminQuestions';
-import AdminUsers from './components/AdminQuestions';
+import AdminUsers from './components/AdminUsers';
 import NewQuestion from './components/admin/newQuestion';
 import EditQuestion from './components/admin/editQuestion';
 import NotFound from './components/structure/NotFound';
