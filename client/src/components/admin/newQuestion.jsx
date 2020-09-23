@@ -167,7 +167,7 @@ class NewQuestion extends Component {
 							>
 								Save
 							</button>
-							<Link id="new-back" to="/admin">
+							<Link id="new-back" to="/admin/questions">
 								back
 							</Link>
 						</div>

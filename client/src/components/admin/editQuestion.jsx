@@ -191,7 +191,7 @@ class EditQuestion extends Component {
 								Delete
 							</button>
 
-							<Link id="new-back" to="/admin">
+							<Link id="new-back" to="/admin/questions">
 								back
 							</Link>
 						</div>

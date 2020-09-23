@@ -59,11 +59,6 @@ class App extends React.Component {
 							component={EditUser}
 						/>
 
-						<Route
-							path="/admin/questions/new"
-							exact
-							component={NewQuestion}
-						/>
 						<Route path="/" component={Home} />
 						<Route path="/notFound" component={NotFound}></Route>
 						<Redirect to="/" />

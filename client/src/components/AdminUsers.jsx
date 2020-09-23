@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './structure/Footer';
 import TableUsers from './admin/tableUsers';
+import FilterLevelUsers from './admin/filterLevelUsers';
 import { getElements, deleteElement } from '../services/usersService';
 import { toast } from 'react-toastify';
 
@@ -40,14 +41,11 @@ class AdminUsers extends Component {
 		return (
 			<>
 				<div className="admin-container">
-				<Link to="admin/users/new" className="btn-big btn-yellow">
-					New
-				</Link>
-				<TableUsers 
-				data={this.state.users}
-				onDelete={this.handleDelete}
-				/>
-					
+					<FilterLevelUsers filterClick={this.filterClick} />
+					<TableUsers
+						data={this.state.users}
+						onDelete={this.handleDelete}
+					/>
 				</div>
 				<Footer />
 			</>

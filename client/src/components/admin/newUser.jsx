@@ -51,7 +51,7 @@ class NewUser extends Component {
 							name="type"
 							id="type"
 							required
-							value={this.state.user['isAdmin']}
+							value={this.state.user['IsAdmin']}
 							onChange={this.handleChange}
 						>
 							<option>True</option>
@@ -64,7 +64,7 @@ class NewUser extends Component {
 						<input
 							className="new-question-input"
 							type="text"
-							name="question"
+							name="firstName"
 							id="question"
 							required
 							value={this.state.user['firstName']}
@@ -76,7 +76,7 @@ class NewUser extends Component {
 						<input
 							className="new-solution1-input"
 							type="text"
-							name="solution1"
+							name="lastName"
 							id="solution1"
 							required
 							value={this.state.user['lastName']}
@@ -88,7 +88,7 @@ class NewUser extends Component {
 						<input
 							className="new-solution2-input"
 							type="text"
-							name="solution2"
+							name="email"
 							id="solution2"
 							required
 							value={this.state.user['email']}
@@ -100,7 +100,7 @@ class NewUser extends Component {
 						<input
 							className="new-solution3-input"
 							type="text"
-							name="solution3"
+							name="password"
 							id="solution3"
 							required
 							value={this.state.user['password']}

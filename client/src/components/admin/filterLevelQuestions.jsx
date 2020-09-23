@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-const FilterLevel = (props) => {
+const FilterLevelQuestions = (props) => {
 	return (
 		<>
 			<ul className="admin-filter">
@@ -50,4 +50,4 @@ const FilterLevel = (props) => {
 	);
 };
 
-export default FilterLevel;
+export default FilterLevelQuestions;

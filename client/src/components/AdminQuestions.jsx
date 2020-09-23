@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FilterLevel from './admin/filterLevel';
+import FilterLevelQuestions from './admin/filterLevelQuestions';
 import TableQuestions from './admin/tableQuestions';
 import Footer from './structure/Footer';
 import { getElements, deleteElement } from '../services/questionsService';
@@ -56,7 +56,7 @@ class AdminQuestions extends Component {
 		return (
 			<>
 				<div className="admin-container">
-					<FilterLevel filterClick={this.filterClick} />
+					<FilterLevelQuestions filterClick={this.filterClick} />
 					<TableQuestions
 						data={this.state.questions}
 						onDelete={this.handleDelete}
