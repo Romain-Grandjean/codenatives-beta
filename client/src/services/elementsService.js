@@ -21,17 +21,21 @@ export function putOneElement(id, element) {
 }
 
 export function postOneElement(element) {
-	console.log('this is the element', element);
-	return fetch(apiEndPoint, {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify(element),
-	})
-		.then((response) => response.json())
-		.then((data) => {
-			console.log(data);
-		});
+	return http.post(apiEndPoint, element);
 }
+
+// export function postOneElement(element) {
+// 	console.log('this is the element', element);
+// 	return fetch(apiEndPoint, {
+// 		method: 'POST',
+// 		headers: { 'Content-Type': 'application/json' },
+// 		body: JSON.stringify(element),
+// 	})
+// 		.then((response) => response.json())
+// 		.then((data) => {
+// 			console.log(data);
+// 		});
+// }
 
 export function deleteElement(id) {
 	return http.delete(elementUrl(id));
