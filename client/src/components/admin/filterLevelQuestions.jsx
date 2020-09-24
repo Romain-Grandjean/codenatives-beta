@@ -5,7 +5,7 @@ const FilterLevelQuestions = (props) => {
 	return (
 		<>
 			<ul className="admin-filter">
-				<Link to="admin/questions/new" className="btn-big btn-yellow">
+				<Link to="/admin/questions/new" className="btn-big btn-yellow">
 					New
 				</Link>
 				<li className="btn-big btn-nocolor ">all</li>

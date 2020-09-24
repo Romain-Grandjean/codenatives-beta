@@ -5,10 +5,9 @@ const FilterLevelQuestions = (props) => {
 	return (
 		<>
 			<ul className="admin-filter">
-				<Link to="admin/users/new" className="btn-big btn-yellow">
+				<Link to="/admin/users/new" className="btn-big btn-yellow">
 					New
 				</Link>
-				
 			</ul>
 		</>
 	);
