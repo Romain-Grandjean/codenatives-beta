@@ -31,10 +31,11 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
 	try {
 		const user = new User({
-			name: req.body.name,
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
 			email: req.body.email,
 			password: req.body.password,
-			isAdmin: false,
+			isAdmin: req.body.isAdmin,
 		});
 		await user.save();
 		res.status(201).send(user);

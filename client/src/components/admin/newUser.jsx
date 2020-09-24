@@ -48,10 +48,10 @@ class NewUser extends Component {
 						</label>
 						<select
 							className="new-type-input"
-							name="type"
+							name="isAdmin"
 							id="type"
 							required
-							value={this.state.user['IsAdmin']}
+							value={this.state.user['isAdmin']}
 							onChange={this.handleChange}
 						>
 							<option>True</option>

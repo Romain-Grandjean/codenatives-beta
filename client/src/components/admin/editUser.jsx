@@ -12,7 +12,13 @@ class EditQuestion extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			user: {},
+			user: {
+				firstName: '',
+				lastName: '',
+				email: '',
+				password: '',
+				isAdmin: false,
+			},
 		};
 	}
 
@@ -61,14 +67,14 @@ class EditQuestion extends Component {
 						</label>
 						<select
 							className="new-type-input"
-							name="type"
+							name="isAdmin"
 							id="type"
 							required
 							value={this.state.user['isAdmin']}
 							onChange={this.handleChange}
 						>
-							<option>True</option>
-							<option>False</option>
+							<option value="true">True</option>
+							<option value="false">False</option>
 						</select>
 
 						<label className="new-question" htmlFor="question">
@@ -77,7 +83,7 @@ class EditQuestion extends Component {
 						<input
 							className="new-question-input"
 							type="text"
-							name="question"
+							name="firstName"
 							id="question"
 							required
 							value={this.state.user['firstName']}
@@ -89,7 +95,7 @@ class EditQuestion extends Component {
 						<input
 							className="new-solution1-input"
 							type="text"
-							name="solution1"
+							name="lastName"
 							id="solution1"
 							required
 							value={this.state.user['lastName']}
@@ -101,7 +107,7 @@ class EditQuestion extends Component {
 						<input
 							className="new-solution2-input"
 							type="text"
-							name="solution2"
+							name="email"
 							id="solution2"
 							required
 							value={this.state.user['email']}
@@ -113,7 +119,7 @@ class EditQuestion extends Component {
 						<input
 							className="new-solution3-input"
 							type="text"
-							name="solution3"
+							name="password"
 							id="solution3"
 							required
 							value={this.state.user['password']}
@@ -128,7 +134,7 @@ class EditQuestion extends Component {
 								Save
 							</button>
 
-							<Link id="new-back" to="/admin">
+							<Link id="new-back" to="/admin/users">
 								back
 							</Link>
 						</div>
