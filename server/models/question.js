@@ -27,6 +27,12 @@ const questionSchema = new mongoose.Schema({
 	answer: {
 		type: String,
 	},
+	creationDate: {
+		type: Date,
+	},
+	lastUpdate: {
+		type: Date,
+	},
 });
 
 const Question = mongoose.model('questions', questionSchema);

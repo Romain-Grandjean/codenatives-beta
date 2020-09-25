@@ -24,6 +24,15 @@ const TableBodyQuestions = (props) => {
 					<td key={createKey(item, item.question)} className="td4">
 						{item.question}
 					</td>
+					<td
+						key={createKey(item, item.creationDate)}
+						className="td5"
+					>
+						{item.creationDate}
+					</td>
+					<td key={createKey(item, item.lastUpdate)} className="td6">
+						{item.lastUpdate}
+					</td>
 					<td>
 						<Link
 							key={createKey(item, 'btn-edit')}

@@ -23,14 +23,14 @@ router.get('/:id', async (req, res) => {
 		res.send(question);
 	} catch (error) {
 		return res
-				.status(404)
-				.send('The customer with the given ID was not found.');
+			.status(404)
+			.send('The customer with the given ID was not found.');
 	}
 });
 
 // Post question
 router.post('/', async (req, res) => {
-	console.log("hi this post exe")
+	console.log('hi this post exe');
 	try {
 		const question = new Question({
 			level: req.body.level,
@@ -41,6 +41,7 @@ router.post('/', async (req, res) => {
 			solution3: req.body.solution3,
 			solution4: req.body.solution4,
 			answer: req.body.answer,
+			creationDate: Date.now(),
 		});
 		await question.save();
 		res.status(201).send(question);
@@ -63,7 +64,7 @@ router.put('/:id', async (req, res) => {
 				solution3: req.body.solution3,
 				solution4: req.body.solution4,
 				answer: req.body.answer,
-
+				lastUpdate: Date.now(),
 			},
 			{ new: true }
 		);

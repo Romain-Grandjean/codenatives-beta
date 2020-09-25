@@ -8,6 +8,8 @@ export default function TableHeaderQuestions() {
 				<th>Level</th>
 				<th>Type</th>
 				<th>Question</th>
+				<th>Creation Date</th>
+				<th>Last update</th>
 				<th>Edit</th>
 				<th>Delete</th>
 			</tr>
