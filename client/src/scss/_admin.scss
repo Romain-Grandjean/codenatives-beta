@@ -68,7 +68,7 @@
 	& tr,
 	td {
 		line-height: 72px;
-		font-size: 14px;
+		font-size: 13px;
 		font-weight: 300;
 		border: 1px hsla(300, 4%, 89%, 0.2) solid;
 		text-align: center;
@@ -116,7 +116,6 @@
 		padding: 12px 0 12px 0;
 	}
 	& label {
-
 		line-height: 42px;
 		font-size: 16px;
 		font-weight: 500;
@@ -155,8 +154,8 @@
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 	line-height: 42px;
 	border: 1px hsla(300, 4%, 89%, 0.2) solid;
@@ -165,7 +164,7 @@ select {
 }
 
 select::-ms-expand {
-    display: none;
+	display: none;
 }
 
 .new-level {
@@ -177,7 +176,6 @@ select::-ms-expand {
 	width: 80px;
 	grid-column: auto;
 	grid-row: 4/5;
-
 }
 
 .new-answer {
