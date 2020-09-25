@@ -6,7 +6,7 @@ const TableBodyUsers = (props) => {
 		let indexEle = props.data.indexOf(item);
 		return indexEle + type;
 	};
-	console.log('these are tableBody props:', props);
+	console.log('these are users tableBody props:', props);
 
 	return (
 		<tbody>
@@ -15,25 +15,25 @@ const TableBodyUsers = (props) => {
 					<td key={createKey(item, item._id)} className="td1">
 						{item._id}
 					</td>
-					<td key={createKey(item, item.level)} className="td2">
+					<td key={createKey(item, item.firstName)} className="td2">
 						{item.firstName}
 					</td>
-					<td key={createKey(item, item.type)} className="td3">
+					<td key={createKey(item, item.lastName)} className="td3">
 						{item.lastName}
 					</td>
-					<td key={createKey(item, item.question)} className="td4">
+					<td key={createKey(item, item.email)} className="td4">
 						{item.email}
 					</td>
-					<td key={createKey(item, item.question)} className="td5">
+					<td key={createKey(item, item.creationDate)} className="td5">
 						{item.creationDate}
 					</td>
-					<td key={createKey(item, item.question)} className="td6">
+					<td key={createKey(item, item.lastUpdate)} className="td6">
 						{item.lastUpdate}
 					</td>
-					<td key={createKey(item, item.question)} className="td7">
-						{item.isAdmin}
+					<td key={createKey(item, item.isAdmin)} className="td7">
+						{item.isAdmin.toString()}
 					</td>
-					<td key={createKey(item, item.question)} className="td7">
+					<td key={createKey(item, item.password)} className="td8">
 						{item.password}
 					</td>
 					<td>
