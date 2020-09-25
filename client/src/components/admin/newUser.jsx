@@ -12,7 +12,7 @@ class NewUser extends Component {
 				lastName: '',
 				email: '',
 				password: '',
-				isAdmin: undefined,
+				isAdmin: false,
 			},
 		};
 	}

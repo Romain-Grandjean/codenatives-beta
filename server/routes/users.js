@@ -36,6 +36,7 @@ router.post('/', async (req, res) => {
 			email: req.body.email,
 			password: req.body.password,
 			isAdmin: req.body.isAdmin,
+			creationDate: Date.now(),
 		});
 		await user.save();
 		res.status(201).send(user);
@@ -55,6 +56,7 @@ router.put('/:id', async (req, res) => {
 				email: req.body.email,
 				password: req.body.password,
 				isAdmin: req.body.isAdmin,
+				lastUpdate: Date.now(),
 			},
 			{ new: true }
 		);
