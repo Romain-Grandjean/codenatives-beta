@@ -24,19 +24,26 @@ class AdminQuestions extends Component {
 		);
 	}
 
-	filterClick = () => {
-		this.setState({ filter: 'C1' });
+	filterClick = async (e) => {
+		const levelSelected = e.currentTarget.innerHTML;
+		console.log('this e.currentTarget.name', levelSelected)
+		await this.setState({ filter: levelSelected });
 		console.log('this is state filter', this.state.filter);
 
-		const questions = this.state.questions.filter(
-			(ele) => ele.level === this.state.filter
-		);
-		this.setState({ questions });
+		if (levelSelected === 'all') {
+			const { data: questions } = await getElements();
+			this.setState({ questions });
+		} else {
+			const questions = this.state.questions.filter(
+				(ele) => ele.level === this.state.filter
+			);
+			this.setState({ questions });
 
-		console.log(
-			'this is state questions after clicked',
-			this.state.questions
-		);
+			console.log(
+				'this is state questions after clicked',
+				this.state.questions
+			);
+		}
 	};
 
 	handleDelete = async (element) => {
@@ -56,7 +63,7 @@ class AdminQuestions extends Component {
 		return (
 			<>
 				<div className="admin-container">
-					<FilterLevelQuestions filterClick={this.filterClick} />
+					<FilterLevelQuestions filterClick={this.filterClick}/>
 					<TableQuestions
 						data={this.state.questions}
 						onDelete={this.handleDelete}
