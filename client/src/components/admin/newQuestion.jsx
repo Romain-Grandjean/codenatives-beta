@@ -28,13 +28,14 @@ class NewQuestion extends Component {
 		console.log({ question });
 	};
 
-	handleSubmit = async () => {
+	handleSubmit = async (e) => {
+		e.preventDefault();
 		try {
 			await postOneElement(this.state.question);
 		} catch (error) {
 			if (error.response && error.response.status === 404);
 		}
-		// this.props.history.push('/');
+		this.props.history.push('/admin/questions');
 	};
 
 	render() {
@@ -162,6 +163,7 @@ class NewQuestion extends Component {
 
 						<div className="btn-zone btn-new">
 							<button
+								type="submit"
 								className="btn-small btn-yellow btn-padding"
 								onSubmit={this.handleSubmit}
 							>

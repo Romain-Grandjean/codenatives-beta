@@ -10,6 +10,8 @@ axios.interceptors.response.use(null, (error) => {
 
 	if (!expectedError) {
 		logger.log(error);
+		console.log(error.response.status);
+		console.log(error.response);
 		toast.error('An error has occured.');
 	}
 

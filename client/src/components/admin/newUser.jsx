@@ -25,13 +25,14 @@ class NewUser extends Component {
 		console.log({ user });
 	};
 
-	handleSubmit = async () => {
+	handleSubmit = async (e) => {
+		e.preventDefault();
 		try {
 			await postOneElement(this.state.user);
 		} catch (error) {
 			if (error.response && error.response.status === 404);
 		}
-		// this.props.history.push('/');
+		this.props.history.push('/admin/users');
 	};
 
 	render() {
@@ -109,6 +110,7 @@ class NewUser extends Component {
 
 						<div className="btn-zone btn-new">
 							<button
+								type="submit"
 								className="btn-small btn-yellow btn-padding"
 								onSubmit={this.handleSubmit}
 							>

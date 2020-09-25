@@ -30,6 +30,7 @@ router.get('/:id', async (req, res) => {
 
 // Post question
 router.post('/', async (req, res) => {
+	console.log("hi this post exe")
 	try {
 		const question = new Question({
 			level: req.body.level,
