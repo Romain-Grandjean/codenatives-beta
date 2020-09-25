@@ -1,11 +1,11 @@
 .admin-container {
 	width: 100%;
-	height: auto;
+	min-height: 800px;
 	z-index: 1;
 	display: grid;
 	// grid
 	justify-items: center;
-	align-items: center;
+	align-items: start;
 	grid-template-columns: 72px repeat(2, 1fr) 72px;
 	grid-template-rows: 90px 72px 60px auto 66px;
 	@include responsive(600) {
