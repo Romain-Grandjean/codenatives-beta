@@ -12,13 +12,7 @@ class EditQuestion extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			user: {
-				firstName: '',
-				lastName: '',
-				email: '',
-				password: '',
-				isAdmin: false,
-			},
+			user: {},
 		};
 	}
 
@@ -62,13 +56,13 @@ class EditQuestion extends Component {
 							<h1>User ID: {this.props.match.params.id}</h1>
 						</div>
 
-						<label className="new-type" htmlFor="type">
+						<label className="new-type" htmlFor="isAdmin">
 							IsAdmin
 						</label>
 						<select
 							className="new-type-input"
 							name="isAdmin"
-							id="type"
+							id="isAdmin"
 							required
 							value={this.state.user['isAdmin']}
 							onChange={this.handleChange}
@@ -77,50 +71,50 @@ class EditQuestion extends Component {
 							<option value="false">False</option>
 						</select>
 
-						<label className="new-question" htmlFor="question">
+						<label className="new-question" htmlFor="firstName">
 							First Name
 						</label>
 						<input
 							className="new-question-input"
 							type="text"
 							name="firstName"
-							id="question"
+							id="firstName"
 							required
 							value={this.state.user['firstName']}
 							onChange={this.handleChange}
 						></input>
-						<label className="new-solution1" htmlFor="solution1">
+						<label className="new-solution1" htmlFor="lastName">
 							Last Name
 						</label>
 						<input
 							className="new-solution1-input"
 							type="text"
 							name="lastName"
-							id="solution1"
+							id="lastName"
 							required
 							value={this.state.user['lastName']}
 							onChange={this.handleChange}
 						></input>
-						<label className="new-solution2" htmlFor="solution2">
+						<label className="new-solution2" htmlFor="email">
 							Email
 						</label>
 						<input
 							className="new-solution2-input"
 							type="text"
 							name="email"
-							id="solution2"
+							id="email"
 							required
 							value={this.state.user['email']}
 							onChange={this.handleChange}
 						></input>
-						<label className="new-solution3" htmlFor="solution3">
+						<label className="new-solution3" htmlFor="password">
 							Password
 						</label>
 						<input
 							className="new-solution3-input"
 							type="text"
 							name="password"
-							id="solution3"
+							id="password"
 							required
 							value={this.state.user['password']}
 							onChange={this.handleChange}
@@ -128,8 +122,12 @@ class EditQuestion extends Component {
 
 						<div className="btn-zone btn-new">
 							<button
+								type="submit"
 								className="btn-small btn-yellow btn-padding"
-								onSubmit={this.handleSubmit}
+								onSubmit={this.handleSubmit(
+									this.state.user._id,
+									this.state.user
+								)}
 							>
 								Save
 							</button>

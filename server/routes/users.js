@@ -44,32 +44,17 @@ router.post('/', async (req, res) => {
 	}
 });
 
-// Post Admin
-router.post('/admin', async (req, res) => {
-	try {
-		const user = new User({
-			firstName: req.body.firstName,
-			lastName: req.body.lastName,
-			email: req.body.email,
-			password: req.body.password,
-			isAdmin: true,
-		});
-		await user.save();
-		res.status(201).send(user);
-	} catch (error) {
-		res.send(error);
-	}
-});
-
 // Put user/admin
 router.put('/:id', async (req, res) => {
 	try {
 		const user = await User.findByIdAndUpdate(
 			req.params.id,
 			{
-				name: req.body.name,
+				firstName: req.body.firstName,
+				lastName: req.body.lastName,
 				email: req.body.email,
 				password: req.body.password,
+				isAdmin: req.body.isAdmin,
 			},
 			{ new: true }
 		);

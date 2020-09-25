@@ -174,6 +174,7 @@ class EditQuestion extends Component {
 
 						<div className="btn-zone btn-new">
 							<button
+								type="submit"
 								className="btn-small btn-yellow btn-padding"
 								onSubmit={this.handleSubmit(
 									this.state.question._id,
