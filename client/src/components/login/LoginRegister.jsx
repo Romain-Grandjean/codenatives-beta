@@ -6,16 +6,16 @@ class LoginRegister extends Component {
 	state = {};
 	render() {
 		return (
-			<div className="login-window"
+			<div className="login-interface"
 			style={{
 				display: this.props.display === 'active' ? 'flex' : 'none',
 			}}>
 				<Login>
 					<h1>Login</h1>
 				</Login>
-				<Register>
+				{/* <Register>
 					<h1>Register</h1>
-				</Register>
+				</Register> */}
 			</div>
 		);
 	}

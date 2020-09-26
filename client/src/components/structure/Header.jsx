@@ -6,15 +6,18 @@ class Header extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			display: 'active',
+			display: 'nactive',
 		};
 	}
 	login = () => {
 		console.log('login fired');
+		this.setState({ display : 'active' });
+		
 
 	} 
 	register = () => {
 		console.log('register fired');
+		this.setState({ display : 'active' });
 	}
 
 

@@ -1,5 +1,12 @@
-.login-window {
+.login-interface {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.30);
 
+	z-index: 12;
+}
+
+.login-window {
 	position: absolute;
 	left: 0;
 	top: 45%;
@@ -8,14 +15,14 @@
 	transform: translate(-50%, -50%);
 	width: 388px;
 	height: auto;
-	background-color: white;
-	border: 1px hsla(300, 4%, 89%, 0.08) solid;
+	background-color: rgb(255, 255, 255);
+	border: 1px hsla(0, 0%, 27%, 0.08) solid;
 	border-radius: 8px;
 	display: flex;
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
-	z-index: 99;
+	z-index: 11;
 	@include responsive(700) {
 		width: 342px;
 	}
@@ -25,7 +32,7 @@
 	@include responsive(370) {
 		width: 272px;
 	}
-	& h1 {
+	& h1, label {
 		margin-top: 42px;
 		margin-bottom: 36px;
 		color: black;
@@ -41,7 +48,7 @@
 			font-size: 18px;
 		}
 	}
-	& span {
+	& span, input{
 		font-size: 18px;
 		margin-bottom: 18px;
 		font-weight: 300;

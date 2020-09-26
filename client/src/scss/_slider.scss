@@ -20,6 +20,10 @@
 		0 6.4px 5.3px rgba(0, 0, 0, 0.024), 0 12px 10px rgba(0, 0, 0, 0.03),
 		0 21.4px 17.9px rgba(0, 0, 0, 0.036),
 		0 40.1px 33.4px rgba(0, 0, 0, 0.043), 0 96px 80px rgba(0, 0, 0, 0.06);
+	z-index: 2;
+	& img {
+		z-index: 2;
+	}
 	@include responsive(1300) {
 		width: 460px;
 	}
@@ -63,12 +67,17 @@
 		margin-top: 0px;
 		margin-bottom: 24px;
 	}
+
 }
 
 #central-window2 {
 	width: 520px;
 	height: auto;
 	margin-right: 48px;
+	z-index: 2;
+	& img {
+		z-index: 2;
+	}
 	@include responsive(1300) {
 		width: 460px;
 	}
