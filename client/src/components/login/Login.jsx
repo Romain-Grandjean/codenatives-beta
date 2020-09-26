@@ -3,7 +3,7 @@ import React from 'react';
 export default function Login() {
     return (
         <div>
-            <form>
+            <form className="login-window">
                 <label>Email Address</label>
                 <input></input>
                 <label>Password</label>
