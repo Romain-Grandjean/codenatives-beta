@@ -1,9 +1,27 @@
 import React from 'react';
+import LoginRegister from '../login/LoginRegister';
 import { Link, NavLink } from 'react-router-dom';
 
 class Header extends React.Component {
+
+
+	login = () => {
+		console.log('login fired');
+	
+
+	} 
+
+	register = () => {
+		console.log('register fired');
+	
+
+
+	}
+
+
 	render() {
 		return (
+			<>
 			<div className="header">
 				<Link to="" id="logo-header">
 					<img
@@ -27,12 +45,14 @@ class Header extends React.Component {
 						<div className="line-nav"></div>
 					</div>
 					<div className="nav2">
-						<button  className="nav2-elements">Login</button>
-						<button className="button-signup">Sign Up</button>
+						<button className="nav2-elements" onClick={this.login}>Login</button>
+						<button className="button-signup" onClick={this.register}>Sign Up</button>
 					</div>
 				</nav>
 				<div className="line-header"></div>
 			</div>
+			<LoginRegister/>
+			</>
 		);
 	}
 }
