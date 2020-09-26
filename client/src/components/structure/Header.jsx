@@ -27,7 +27,7 @@ class Header extends React.Component {
 						<div className="line-nav"></div>
 					</div>
 					<div className="nav2">
-						<NavLink to="" className="nav2-elements">Login</NavLink>
+						<button  className="nav2-elements">Login</button>
 						<button className="button-signup">Sign Up</button>
 					</div>
 				</nav>
