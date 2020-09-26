@@ -1,9 +1,8 @@
 .login-interface {
 	width: 100vw;
 	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.30);
-
-	z-index: 12;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 99;
 }
 
 .login-window {
@@ -32,7 +31,7 @@
 	@include responsive(370) {
 		width: 272px;
 	}
-	& h1, label {
+	& h1 {
 		margin-top: 42px;
 		margin-bottom: 36px;
 		color: black;
@@ -47,8 +46,15 @@
 		@include responsive(370) {
 			font-size: 18px;
 		}
+	
 	}
-	& span, input{
+	& label {
+		font-size: 18px;
+		margin-top: 42px;
+		margin-bottom: 36px;
+	}
+	& span,
+	input {
 		font-size: 18px;
 		margin-bottom: 18px;
 		font-weight: 300;
