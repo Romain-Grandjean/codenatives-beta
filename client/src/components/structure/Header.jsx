@@ -3,19 +3,18 @@ import LoginRegister from '../login/LoginRegister';
 import { Link, NavLink } from 'react-router-dom';
 
 class Header extends React.Component {
-
-
+	constructor(props) {
+		super(props);
+		this.state = {
+			display: 'active',
+		};
+	}
 	login = () => {
 		console.log('login fired');
-	
 
 	} 
-
 	register = () => {
 		console.log('register fired');
-	
-
-
 	}
 
 
@@ -51,7 +50,7 @@ class Header extends React.Component {
 				</nav>
 				<div className="line-header"></div>
 			</div>
-			<LoginRegister/>
+			<LoginRegister display={this.state.display}/>
 			</>
 		);
 	}

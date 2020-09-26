@@ -6,7 +6,10 @@ class LoginRegister extends Component {
 	state = {};
 	render() {
 		return (
-			<div className="login-window">
+			<div className="login-window"
+			style={{
+				display: this.props.display === 'active' ? 'flex' : 'none',
+			}}>
 				<Login>
 					<h1>Login</h1>
 				</Login>
