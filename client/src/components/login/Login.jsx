@@ -8,21 +8,21 @@ export default function Login() {
 				<div className="login-email">
 					<label>Email :</label>
 					<div className="login-field">
-						<input autofocus="true"></input>
+						<input autofocus="true"  type="email"></input>
 						<div className="input-underline"></div>
 					</div>
 				</div>
 				<div className="login-password">
 					<label>Password :</label>
 					<div className="login-field">
-						<input></input>
+						<input type="password"></input>
 						<div className="input-underline"></div>
 
 					</div>
 				</div>
 				<button id="login-button" className="btn-big, btn-yellow">Login</button>
 
-				<button id="login-account">You already have an <italic>account</italic></button>
+				<button id="login-account">You don't have an account, create one <strong>HERE</strong></button>
 
 				<button id="login-forgotten">Forgotten password</button>
 			</form>
