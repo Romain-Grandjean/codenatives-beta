@@ -14,15 +14,36 @@ class Header extends React.Component {
 		};
 	}
 	login = () => {
-		this.setState({ display: 'active', window: <Login /> });
+		this.setState({
+			display: 'active',
+			window: (
+				<Login
+					closeWindow={this.closeWindow}
+					register={this.register}
+					resetPassword={this.resetPassword}
+				/>
+			),
+		});
 	};
 
 	register = () => {
-		this.setState({ display: 'active', window: <Register /> });
+		this.setState({
+			display: 'active',
+			window: (
+				<Register closeWindow={this.closeWindow} login={this.login} />
+			),
+		});
 	};
 
 	resetPassword = () => {
-		this.setState({ display: 'active', window: <ResetPassword /> });
+		this.setState({
+			display: 'active',
+			window: <ResetPassword closeWindow={this.closeWindow} />,
+		});
+	};
+
+	closeWindow = () => {
+		this.setState({ display: '' });
 	};
 
 	render() {
@@ -74,7 +95,7 @@ class Header extends React.Component {
 					<div className="line-header"></div>
 				</div>
 				<div
-					className="login-interface"
+					className="connection-interface"
 					style={{
 						display:
 							this.state.display === 'active' ? 'flex' : 'none',

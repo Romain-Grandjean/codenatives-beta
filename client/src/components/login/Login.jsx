@@ -1,9 +1,15 @@
 import React from 'react';
 
-export default function Login() {
+export default function Login(props) {
 	return (
 		<div>
 			<form className="login-window">
+				<img
+					id="login-icon-stop"
+					src={process.env.PUBLIC_URL + '/img/icon-stop.svg'}
+					alt="arrow"
+					onClick={props.closeWindow}
+				/>
 				<h1 id="login-title">Login</h1>
 				<div className="login-email">
 					<label>Email :</label>
@@ -23,12 +29,14 @@ export default function Login() {
 					Login
 				</button>
 
-				<button id="login-account">
+				<button id="login-account" onClick={props.register}>
 					You don't have an account, create one{' '}
 					<underline>HERE</underline>
 				</button>
 
-				<button id="login-forgotten">Forgotten password</button>
+				<button id="login-forgotten" onClick={props.resetPassword}>
+					Forgotten password
+				</button>
 			</form>
 		</div>
 	);
