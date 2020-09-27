@@ -19,7 +19,7 @@
 	border-radius: 8px;
 	display: grid;
 	grid-template-columns: 36px 1fr 12px 1fr 36px;
-	grid-template-rows: 96px 72px 72px 72px 36px 36px ;
+	grid-template-rows: 72px 72px 72px 72px 36px 36px;
 
 	z-index: 99;
 	@include responsive(700) {
@@ -32,33 +32,20 @@
 		width: 272px;
 	}
 	& h1 {
-		margin-top: 36px;
-		margin-bottom: 24px;
-		color: black;
-		font-size: 22px;
-		font-weight: 500;
-		@include responsive(700) {
-			font-size: 24px;
-		}
-		@include responsive(500) {
-			font-size: 22px;
-		}
-		@include responsive(370) {
-			font-size: 18px;
-		}
 	}
 	& label {
 		font-size: 16px;
-		margin: 36px 12px 12px 0;
+
 		font-weight: 400;
+		align-self: flex-end;
 	}
-	& span,
-	input {
+	& input {
 		width: 240px;
-		font-size: 16px;
+		font-size: 18px;
 		font-weight: 300;
 		outline: none;
 		border: none;
+
 		@include responsive(500) {
 			font-size: 13px;
 		}
@@ -74,11 +61,10 @@
 }
 
 .login-field {
-@include flexRowWrap;
+	@include flexRowWrap;
 	width: auto;
 	height: 36px;
 }
-
 
 .input-underline {
 	width: 100%;
@@ -90,6 +76,20 @@
 	grid-column: 3/4;
 	grid-row: 1/2;
 	justify-self: center;
+	align-self: end;
+	color: black;
+	font-size: 22px;
+	font-weight: 500;
+	margin: 0;
+	@include responsive(700) {
+		font-size: 24px;
+	}
+	@include responsive(500) {
+		font-size: 22px;
+	}
+	@include responsive(370) {
+		font-size: 18px;
+	}
 }
 
 .login-email {
@@ -97,8 +97,7 @@
 	grid-row: 2/3;
 	display: flex;
 	flex-flow: row nowrap;
-	align-items: center;
-	align-self: center;
+	align-self: end;
 }
 
 .login-password {
@@ -106,16 +105,14 @@
 	grid-row: 3/4;
 	display: flex;
 	flex-flow: row nowrap;
-	align-items: center;
-	align-self: center;
+	align-self: end;
 }
 
 #login-button {
-
 	grid-column: 2/5;
 	grid-row: 4/5;
 	justify-self: end;
-	align-self: center;
+	align-self: end;
 	width: 120px;
 	height: 40px;
 	color: black;
@@ -136,12 +133,11 @@
 	}
 }
 
-
 #login-account {
 	grid-column: 2/4;
 	grid-row: 5/6;
 	justify-self: start;
-
+	align-self: end;
 	font-size: 12px;
 }
 
@@ -149,6 +145,7 @@
 	grid-column: 3/5;
 	grid-row: 5/6;
 	justify-self: end;
+	align-self: end;
 	text-decoration: underline;
 	font-size: 12px;
 }
