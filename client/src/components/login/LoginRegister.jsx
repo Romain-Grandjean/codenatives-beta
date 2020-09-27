@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from './Login';
 import Register from './Register';
+import ResetPassword from './ResetPassword';
 
 class LoginRegister extends Component {
 	state = {};
