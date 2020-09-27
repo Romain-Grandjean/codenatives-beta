@@ -19,7 +19,7 @@
 	border-radius: 8px;
 	display: grid;
 	grid-template-columns: 48px 1fr 12px 1fr 48px;
-	grid-template-rows: 84px 72px 72px 84px 36px 72px;
+	grid-template-rows: 96px 72px 72px 84px 36px 72px;
 
 	z-index: 99;
 	@include responsive(700) {
@@ -172,7 +172,7 @@
 	border-radius: 8px;
 	display: grid;
 	grid-template-columns: 48px 1fr 12px 1fr 48px;
-	grid-template-rows: 84px 72px 72px 72px 72px 84px 36px 72px;
+	grid-template-rows: 96px 72px 72px 72px 72px 84px 36px 72px;
 
 	z-index: 99;
 	@include responsive(700) {
@@ -304,4 +304,149 @@
 	font-size: 12px;
 	text-align: start;
 	transform: translateY(14px);
+}
+
+
+
+.reset-window {
+	position: absolute;
+	left: 0;
+	top: 45%;
+	left: 50%;
+	display: block;
+	transform: translate(-50%, -50%);
+	width: 34vw;
+	height: auto;
+	background-color: rgb(255, 255, 255);
+	border: 1px hsla(0, 0%, 27%, 0.08) solid;
+	border-radius: 8px;
+	display: grid;
+	grid-template-columns: 48px 1fr 12px 1fr 48px;
+	grid-template-rows: 96px 72px 72px 84px 36px 72px;
+
+	z-index: 99;
+	@include responsive(700) {
+		width: 342px;
+	}
+	@include responsive(500) {
+		width: 300px;
+	}
+	@include responsive(370) {
+		width: 272px;
+	}
+	& h1 {
+	}
+	& label {
+		font-size: 16px;
+		width: 30%;
+		font-weight: 400;
+		align-self: flex-end;
+	}
+	& input {
+		width: 240px;
+		font-size: 16px;
+		font-weight: 100;
+		outline: none;
+		border: none;
+
+		@include responsive(500) {
+			font-size: 13px;
+		}
+	}
+	&:last-child {
+		font-weight: 500;
+	}
+	& button {
+		font-size: 14px;
+
+		font-weight: 300;
+	}
+}
+
+.reset-field {
+	@include flexRowWrap;
+	width: 100%;
+	height: 36px;
+	margin: 0 0 0 4px;
+	transform: translateY(14px)
+}
+
+.input-underline {
+	width: 100%;
+	height: 1px;
+	background-color: hsla(300, 4%, 89%, 0.3);
+}
+
+#reset-title {
+	grid-column: 1/6;
+	grid-row: 1/2;
+	justify-self: center;
+	align-self: end;
+	color: black;
+	font-size: 22px;
+	font-weight: 500;
+	margin: 0;
+	@include responsive(700) {
+		font-size: 24px;
+	}
+	@include responsive(500) {
+		font-size: 22px;
+	}
+	@include responsive(370) {
+		font-size: 18px;
+	}
+}
+
+.reset-email {
+	width: 100%;
+	grid-column: 2/5;
+	grid-row: 2/3;
+	display: flex;
+	flex-flow: row nowrap;
+	align-self: end;
+}
+
+#reset-button {
+	grid-column: 2/5;
+	grid-row: 4/5;
+	justify-self: end;
+	align-self: end;
+	width: 120px;
+	height: 40px;
+	color: black;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 400;
+	text-decoration: inherit;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	@include responsive(500) {
+		font-size: 14px;
+	}
+	@include responsive(370) {
+		font-size: 12px;
+	}
+}
+
+#reset-account {
+	grid-column: 2/4;
+	grid-row: 5/6;
+	justify-self: start;
+	align-self: end;
+	font-size: 12px;
+	text-align: start;
+	transform: translateY(14px);
+}
+
+#reset-forgotten {
+	grid-column: 3/5;
+	grid-row: 5/6;
+	justify-self: end;
+	align-self: end;
+	text-decoration: underline;
+	font-size: 12px;
+
 }

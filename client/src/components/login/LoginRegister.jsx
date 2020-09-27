@@ -14,9 +14,10 @@ class LoginRegister extends Component {
 				{/* <Login>
 					<h1>Login</h1>
 				</Login> */}
-				<Register>
+				{/* <Register>
 					<h1>Register</h1>
-				</Register>
+				</Register> */}
+				<ResetPassword/>
 			</div>
 		);
 	}
