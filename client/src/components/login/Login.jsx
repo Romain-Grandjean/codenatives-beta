@@ -8,7 +8,7 @@ export default function Login() {
 				<div className="login-email">
 					<label>Email :</label>
 					<div className="login-field">
-						<input autofocus="true"  type="email"></input>
+						<input autofocus="true" type="email"></input>
 						<div className="input-underline"></div>
 					</div>
 				</div>
@@ -17,12 +17,16 @@ export default function Login() {
 					<div className="login-field">
 						<input type="password"></input>
 						<div className="input-underline"></div>
-
 					</div>
 				</div>
-				<button id="login-button" className="btn-big, btn-yellow">Login</button>
+				<button id="login-button" className="btn-big, btn-yellow">
+					Login
+				</button>
 
-				<button id="login-account">You don't have an account, create one <strong>HERE</strong></button>
+				<button id="login-account">
+					You don't have an account, create one{' '}
+					<underline>HERE</underline>
+				</button>
 
 				<button id="login-forgotten">Forgotten password</button>
 			</form>

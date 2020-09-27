@@ -11,12 +11,12 @@ class LoginRegister extends Component {
 			style={{
 				display: this.props.display === 'active' ? 'flex' : 'none',
 			}}>
-				<Login>
+				{/* <Login>
 					<h1>Login</h1>
-				</Login>
-				{/* <Register>
+				</Login> */}
+				<Register>
 					<h1>Register</h1>
-				</Register> */}
+				</Register>
 			</div>
 		);
 	}
