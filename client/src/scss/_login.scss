@@ -12,14 +12,14 @@
 	left: 50%;
 	display: block;
 	transform: translate(-50%, -50%);
-	width: 385px;
+	width: 420px;
 	height: auto;
 	background-color: rgb(255, 255, 255);
 	border: 1px hsla(0, 0%, 27%, 0.08) solid;
 	border-radius: 8px;
 	display: grid;
 	grid-template-columns: 36px 1fr 12px 1fr 36px;
-	grid-template-rows: 96px 72px 72px 12px 12px 96px;
+	grid-template-rows: 96px 72px 72px 72px 36px 36px ;
 
 	z-index: 99;
 	@include responsive(700) {
@@ -54,8 +54,8 @@
 	}
 	& span,
 	input {
+		width: 240px;
 		font-size: 16px;
-		margin-bottom: 18px;
 		font-weight: 300;
 		outline: none;
 		border: none;
@@ -68,9 +68,22 @@
 	}
 	& button {
 		font-size: 14px;
-		margin-bottom: 18px;
+
 		font-weight: 300;
 	}
+}
+
+.login-field {
+@include flexRowWrap;
+	width: auto;
+	height: 36px;
+}
+
+
+.input-underline {
+	width: 100%;
+	height: 1px;
+	background-color: hsla(300, 4%, 89%, 0.3);
 }
 
 #login-title {
@@ -97,17 +110,44 @@
 	align-self: center;
 }
 
-#login-account {
+#login-button {
+
 	grid-column: 2/5;
-	grid-row: 5/6;
+	grid-row: 4/5;
 	justify-self: end;
+	align-self: center;
+	width: 120px;
+	height: 40px;
+	color: black;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 400;
+	text-decoration: inherit;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	@include responsive(500) {
+		font-size: 14px;
+	}
+	@include responsive(370) {
+		font-size: 12px;
+	}
+}
+
+
+#login-account {
+	grid-column: 2/4;
+	grid-row: 5/6;
+	justify-self: start;
 
 	font-size: 12px;
 }
 
 #login-forgotten {
-	grid-column: 2/5;
-	grid-row: 6/7;
+	grid-column: 3/5;
+	grid-row: 5/6;
 	justify-self: end;
 	text-decoration: underline;
 	font-size: 12px;

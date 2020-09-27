@@ -133,3 +133,8 @@
 	@include responsive(320) {
 	}
 }
+@mixin flexRowWrap {
+	display: flex;
+	flex-flow: row wrap;
+
+}
