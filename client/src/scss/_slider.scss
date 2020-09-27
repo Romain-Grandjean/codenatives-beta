@@ -4,6 +4,10 @@
 	flex-flow: row nowrap;
 	justify-content: center;
 	align-items: center;
+	z-index: -1;
+	& img {
+		z-index: -1;
+	}	
 
 	@include responsive(900) {
 		flex-flow: column;
@@ -374,69 +378,5 @@
 	@include responsive(320) {
 		font-size: 12px;
 		width: 240px;
-	}
-}
-
-.button-practice {
-	width: 120px;
-	height: 40px;
-	border: 2px black solid;
-	border-radius: 8px;
-	font-size: 16px;
-	font-weight: 400;
-
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-	align-items: center;
-	color: inherit;
-	text-decoration: inherit;
-	@include responsive(1100) {
-		font-size: 14px;
-	}
-	@include responsive(500) {
-		font-size: 13px;
-		transform: scale(0.9);
-	}
-	@include responsive(320) {
-		font-size: 13px;
-		transform: scale(0.8);
-	}
-	&:hover {
-		background-color: black;
-		color: white;
-		border: 2px rgb(255, 255, 255) solid;
-	}
-}
-
-.button-test {
-	width: 120px;
-	height: 40px;
-	background-color: #ffef29;
-	border: 2px #ffef29 solid;
-	color: black;
-	border-radius: 8px;
-	font-size: 16px;
-	font-weight: 400;
-	text-decoration: inherit;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-	align-items: center;
-	@include responsive(1100) {
-		font-size: 14px;
-	}
-	@include responsive(500) {
-		font-size: 13px;
-		transform: scale(0.9);
-	}
-	@include responsive(320) {
-		font-size: 13px;
-		transform: scale(0.8);
-	}
-	&:hover {
-		background-color: black;
-		color: white;
-		border: 2px rgb(255, 255, 255) solid;
 	}
 }

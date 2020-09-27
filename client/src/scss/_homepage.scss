@@ -9,7 +9,7 @@
 	grid-template-rows: 90px repeat(36, 1fr) 66px;
 	justify-self: center;
 	align-items: center;
-	z-index: 1;
+	z-index: -1;
 	@include responsive(700) {
 		grid-template-columns: 36px repeat(36, 1fr) 36px;
 	}
@@ -97,4 +97,5 @@
 	border: 1px black solid;
 	border-radius: 50%;
 	background-color: none;
+	z-index: -1;
 }
