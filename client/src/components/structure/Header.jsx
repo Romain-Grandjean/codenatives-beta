@@ -40,10 +40,8 @@ class Header extends React.Component {
 				<Register
 					closeWindow={this.closeWindow}
 					login={this.login}
-					valueFirstName={this.state.userData.firstName}
-					valueLastName={this.state.userData.lastName}
-					email={this.state.userData.email}
-					password={this.state.userData.password}
+					value={this.state.userData.firstName}
+					// valueLastName={this.state.userData.lastName}
 					onChange={this.handleChange}
 				/>
 			),
@@ -66,6 +64,8 @@ class Header extends React.Component {
 
 		userData[e.currentTarget.name] = e.currentTarget.value;
 		this.setState({ userData });
+		console.log("this userdata state",this.state.userData)
+
 	}
 
 	registerUser = async () => {
@@ -73,6 +73,7 @@ class Header extends React.Component {
 	};
 
 	render() {
+		
 		return (
 			<>
 				<div className="header">
