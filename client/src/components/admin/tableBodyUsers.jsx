@@ -31,7 +31,7 @@ const TableBodyUsers = (props) => {
 						{item.lastUpdate}
 					</td>
 					<td key={createKey(item, item.isAdmin)} className="utd7">
-						{item.isAdmin.toString()}
+						{item.isAdmin}
 					</td>
 					<td key={createKey(item, item.password)} className="utd8">
 						{item.password}

@@ -5,20 +5,23 @@ const app = express();
 app.use(morgan('dev'));
 const mongoose = require('mongoose');
 
+if (!config.get("jwtPrivateKey")) {
+	console.error("Error: jwtPrivateKey isn't defined");
+	process.exit(1);
+}
+
+
 // Server Main routes
 require('./server/cors')(app);
 require('./server/routes')(app);
 
-
 // Json parsing
-
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
 // MongoDB
-
 const db = config.get('db');
 mongoose
 	.connect(db, {
