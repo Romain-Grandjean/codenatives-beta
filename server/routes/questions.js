@@ -4,6 +4,7 @@ const moment = require('moment');
 const express = require('express');
 const router = express.Router();
 const auth = require('../middleware/auth');
+const admin = require('../middleware/admin');
 
 // Get all questions
 router.get('/', auth, async (req, res) => {
@@ -30,7 +31,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Post question
-router.post('/', async (req, res) => {
+router.post('/', [auth, admin], async (req, res) => {
 	try {
 		const question = new Question({
 			level: req.body.level,
@@ -51,7 +52,7 @@ router.post('/', async (req, res) => {
 });
 
 // Put question
-router.put('/:id', auth, async (req, res) => {
+router.put('/:id', [auth, admin], async (req, res) => {
 	try {
 		const question = await Question.findByIdAndUpdate(
 			req.params.id,
@@ -75,7 +76,7 @@ router.put('/:id', auth, async (req, res) => {
 });
 
 // Delete question
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/:id', [auth, admin], async (req, res) => {
 	try {
 		const question = await Question.findByIdAndRemove(req.params.id);
 		res.send('question deleted');

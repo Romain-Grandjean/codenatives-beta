@@ -27,7 +27,9 @@ class Register extends React.Component {
 	registerUser = async (e) => {
 		e.preventDefault();
 		try {
-			await register(this.state.userData);
+			const response = await register(this.state.userData);
+			localStorage.setItem('token', response.headers['x-auth-token'])
+			this.props.history.push('/admin/questions')
 		} catch (error) {
 			if (error.response && error.status === 400){
 				console.log("user issue")

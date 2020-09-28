@@ -40,7 +40,7 @@ router.get('/account', auth, async (req, res) => {
 });
 
 // Post user
-router.post('/', auth, async (req, res) => {
+router.post('/', async (req, res) => {
 	try {
 		const user = new User({
 			firstName: req.body.firstName,
@@ -56,7 +56,10 @@ router.post('/', auth, async (req, res) => {
 
 		const token = user.generateAuthToken();
 
-		res.header('x-auth-token', token).send(user);
+		res
+		.header('x-auth-token', token)
+		.header("access-control-expose-headers", "x-auth-token")
+		.send(user);
 	} catch (error) {
 		res.send(error);
 	}

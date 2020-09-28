@@ -1,5 +1,5 @@
 import React from 'react';
-import { register } from '../../services/usersService';
+import { login } from '../../services/authService';
 
 class Login extends React.Component {
 	constructor(props) {
@@ -9,7 +9,7 @@ class Login extends React.Component {
 				email: '',
 				password: '',
 			},
-			error: '',
+			errors: '',
 		};
 	}
 
@@ -24,17 +24,24 @@ class Login extends React.Component {
 	loginUser = async (e) => {
 		e.preventDefault();
 		try {
-			await register(this.state.userData);
+			const { data: jwt } = await login(
+				this.state.userData.email,
+				this.state.userData.password
+			);
+			localStorage.setItem('token', jwt);
+			this.props.history.push('/user');
 		} catch (error) {
-			if (error.response && error.status === 400){
-				console.log("user issue")
+			if (error.response && error.status === 400) {
+				const errors = { ...this.state.errors };
+				errors.email = error.response.data;
+				this.setState({ errors });
 			}
 		}
-	}
+	};
 	render() {
 		return (
 			<div>
-				<form className="login-window">
+				<form className="login-window" onSubmit={this.loginUser}>
 					<img
 						id="login-icon-stop"
 						src={process.env.PUBLIC_URL + '/img/icon-stop.svg'}
@@ -45,12 +52,13 @@ class Login extends React.Component {
 					<div className="login-email">
 						<label>Email :</label>
 						<div className="login-field">
-							<input 
-							autoFocus={true}
-							type="email"
-							name="email"
-							value={this.state.userData.email}
-							onChange={this.onChange}></input>
+							<input
+								autoFocus={true}
+								type="email"
+								name="email"
+								value={this.state.userData.email}
+								onChange={this.onChange}
+							></input>
 							<div className="input-underline"></div>
 						</div>
 					</div>
@@ -61,11 +69,16 @@ class Login extends React.Component {
 								type="password"
 								name="password"
 								value={this.state.userData.password}
-								onChange={this.onChange}></input>
+								onChange={this.onChange}
+							></input>
 							<div className="input-underline"></div>
 						</div>
 					</div>
-					<button id="login-button" className="btn-big, btn-yellow">
+					<button
+						id="login-button"
+						className="btn-big, btn-yellow"
+						onSubmit={this.loginUser}
+					>
 						Login
 					</button>
 
@@ -74,7 +87,10 @@ class Login extends React.Component {
 						<underline>HERE</underline>
 					</button>
 
-					<button id="login-forgotten" onClick={this.props.resetPassword}>
+					<button
+						id="login-forgotten"
+						onClick={this.props.resetPassword}
+					>
 						Forgotten password
 					</button>
 				</form>
