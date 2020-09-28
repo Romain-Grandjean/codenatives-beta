@@ -1,7 +1,6 @@
 import React from 'react';
 import { register } from '../../services/usersService';
 
-
 class Register extends React.Component {
 	constructor(props) {
 		super(props);
@@ -11,18 +10,18 @@ class Register extends React.Component {
 				lastName: '',
 				email: '',
 				password: '',
+				isAdmin: false,
 			},
 		};
 	}
 
-	onChange = (e) =>{
+	onChange = (e) => {
 		const userData = { ...this.state.userData };
 
 		userData[e.currentTarget.name] = e.currentTarget.value;
 		this.setState({ userData });
-		console.log("this userdata state",this.state.userData)
-
-	}
+		console.log('this userdata state', this.state.userData);
+	};
 
 	registerUser = async () => {
 		await register(this.state.userData);
@@ -54,14 +53,24 @@ class Register extends React.Component {
 					<div className="register-lastname">
 						<label>Last Name :</label>
 						<div className="register-field">
-							<input type="text"></input>
+							<input
+								type="text"
+								name="lastName"
+								value={this.state.userData.lastName}
+								onChange={this.onChange}
+							></input>
 							<div className="input-underline"></div>
 						</div>
 					</div>
 					<div className="register-email">
 						<label>Email :</label>
 						<div className="register-field">
-							<input type="email"></input>
+							<input
+								type="email"
+								name="email"
+								value={this.state.userData.email}
+								onChange={this.onChange}
+							></input>
 							<div className="input-underline"></div>
 						</div>
 					</div>
@@ -69,14 +78,20 @@ class Register extends React.Component {
 					<div className="register-password">
 						<label>Password :</label>
 						<div className="register-field">
-							<input type="password"></input>
+							<input
+								type="password"
+								name="password"
+								value={this.state.userData.password}
+								onChange={this.onChange}
+							></input>
 							<div className="input-underline"></div>
 						</div>
 					</div>
 					<button
 						id="register-button"
 						className="btn-big, btn-yellow"
-					>
+						onSubmit={this.registerUser(this.state.userData)}
+					>	
 						Register
 					</button>
 

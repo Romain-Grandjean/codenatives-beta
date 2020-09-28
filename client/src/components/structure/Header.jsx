@@ -2,7 +2,6 @@ import React from 'react';
 import Login from '../login/Login';
 import Register from '../login/Register';
 import ResetPassword from '../login/ResetPassword';
-import { register } from '../../services/usersService';
 
 import { Link, NavLink } from 'react-router-dom';
 
@@ -12,12 +11,6 @@ class Header extends React.Component {
 		this.state = {
 			display: '',
 			window: '',
-			userData: {
-				firstName: '',
-				lastName: '',
-				email: '',
-				password: '',
-			},
 		};
 	}
 	login = () => {
@@ -40,9 +33,6 @@ class Header extends React.Component {
 				<Register
 					closeWindow={this.closeWindow}
 					login={this.login}
-					value={this.state.userData.firstName}
-					// valueLastName={this.state.userData.lastName}
-					onChange={this.handleChange}
 				/>
 			),
 		});
@@ -59,18 +49,7 @@ class Header extends React.Component {
 		this.setState({ display: '' });
 	};
 
-	handleChange = (e) =>{
-		const userData = { ...this.state.userData };
 
-		userData[e.currentTarget.name] = e.currentTarget.value;
-		this.setState({ userData });
-		console.log("this userdata state",this.state.userData)
-
-	}
-
-	registerUser = async () => {
-		await register(this.state.userData);
-	};
 
 	render() {
 		
