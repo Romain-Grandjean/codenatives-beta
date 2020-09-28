@@ -24,6 +24,10 @@ export function postOneElement(element) {
 	return http.post(apiEndPoint, element);
 }
 
+export function register(user) {
+	return http.post(apiEndPoint, user);
+}
+
 export function deleteElement(id) {
 	return http.delete(elementUrl(id));
 }

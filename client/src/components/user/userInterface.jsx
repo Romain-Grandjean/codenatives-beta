@@ -6,7 +6,7 @@ class UserInterface extends Component {
     render() { 
         return ( <><div className="user-interface">
 
-            <h1 id="user-title">Hi Romain</h1>
+            <h1 id="user-title">Hi Romain :)</h1>
 
 
         </div>

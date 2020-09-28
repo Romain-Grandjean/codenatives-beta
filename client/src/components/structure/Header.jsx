@@ -2,6 +2,7 @@ import React from 'react';
 import Login from '../login/Login';
 import Register from '../login/Register';
 import ResetPassword from '../login/ResetPassword';
+import { register } from '../../services/usersService';
 
 import { Link, NavLink } from 'react-router-dom';
 
@@ -11,6 +12,12 @@ class Header extends React.Component {
 		this.state = {
 			display: '',
 			window: '',
+			userData: {
+				firstName: '',
+				lastName: '',
+				email: '',
+				password: '',
+			},
 		};
 	}
 	login = () => {
@@ -30,7 +37,15 @@ class Header extends React.Component {
 		this.setState({
 			display: 'active',
 			window: (
-				<Register closeWindow={this.closeWindow} login={this.login} />
+				<Register
+					closeWindow={this.closeWindow}
+					login={this.login}
+					valueFirstName={this.state.userData.firstName}
+					valueLastName={this.state.userData.lastName}
+					email={this.state.userData.email}
+					password={this.state.userData.password}
+					onChange={this.handleChange}
+				/>
 			),
 		});
 	};
@@ -44,6 +59,17 @@ class Header extends React.Component {
 
 	closeWindow = () => {
 		this.setState({ display: '' });
+	};
+
+	handleChange = (e) =>{
+		const userData = { ...this.state.userData };
+
+		userData[e.currentTarget.name] = e.currentTarget.value;
+		this.setState({ userData });
+	}
+
+	registerUser = async () => {
+		await register(this.state.userData);
 	};
 
 	render() {
