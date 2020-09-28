@@ -5,6 +5,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const config = require('config');
+const auth = require('../middleware/auth');
 
 // Get all users
 router.get('/', async (req, res) => {
@@ -31,7 +32,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Post user
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
 	try {
 		const user = new User({
 			firstName: req.body.firstName,
@@ -54,7 +55,7 @@ router.post('/', async (req, res) => {
 });
 
 // Put user/admin
-router.put('/:id', async (req, res) => {
+router.put('/:id', auth, async (req, res) => {
 	try {
 		const user = await User.findByIdAndUpdate(
 			req.params.id,
@@ -75,7 +76,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete user/admin
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
 	try {
 		const user = await User.findByIdAndRemove(req.params.id);
 		res.send('User deleted');

@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 const moment = require('moment');
 const express = require('express');
 const router = express.Router();
+const auth = require('../middleware/auth');
 
 // Get all questions
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
 	try {
 		const questions = await Question.find().sort('dateUpdate');
 		res.send(questions);
@@ -30,7 +31,6 @@ router.get('/:id', async (req, res) => {
 
 // Post question
 router.post('/', async (req, res) => {
-	console.log('hi this post exe');
 	try {
 		const question = new Question({
 			level: req.body.level,
@@ -51,7 +51,7 @@ router.post('/', async (req, res) => {
 });
 
 // Put question
-router.put('/:id', async (req, res) => {
+router.put('/:id', auth, async (req, res) => {
 	try {
 		const question = await Question.findByIdAndUpdate(
 			req.params.id,
@@ -75,7 +75,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete question
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
 	try {
 		const question = await Question.findByIdAndRemove(req.params.id);
 		res.send('question deleted');
