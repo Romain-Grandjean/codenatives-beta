@@ -5,11 +5,10 @@ const app = express();
 app.use(morgan('dev'));
 const mongoose = require('mongoose');
 
-if (!config.get("jwtPrivateKey")) {
+if (!config.get('jwtPrivateKey')) {
 	console.error("Error: jwtPrivateKey isn't defined");
 	process.exit(1);
 }
-
 
 // Server Main routes
 require('./server/cors')(app);
