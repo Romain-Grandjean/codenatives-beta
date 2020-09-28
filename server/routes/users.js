@@ -2,6 +2,7 @@ const { User } = require('../models/user');
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcrypt');
 
 // Get all users
 router.get('/', async (req, res) => {
@@ -38,6 +39,8 @@ router.post('/', async (req, res) => {
 			isAdmin: req.body.isAdmin,
 			creationDate: Date.now(),
 		});
+		const salt = await bcrypt.genSalt(10);
+		user.password = await bcrypt.hash(user.password, salt);
 		await user.save();
 		res.status(201).send(user);
 	} catch (error) {

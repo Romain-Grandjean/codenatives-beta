@@ -12,6 +12,7 @@ class Register extends React.Component {
 				password: '',
 				isAdmin: false,
 			},
+			error: '',
 		};
 	}
 
@@ -23,13 +24,21 @@ class Register extends React.Component {
 		console.log('this userdata state', this.state.userData);
 	};
 
-	registerUser = async () => {
-		await register(this.state.userData);
+	registerUser = async (e) => {
+		e.preventDefault();
+		try {
+			await register(this.state.userData);
+		} catch (error) {
+			if (error.response && error.status === 400){
+				console.log("user issue")
+			}
+		}
+
 	};
 	render() {
 		return (
 			<div>
-				<form className="register-window">
+				<form className="register-window" onSubmit={this.registerUser}>
 					<img
 						id="login-icon-stop"
 						src={process.env.PUBLIC_URL + '/img/icon-stop.svg'}
@@ -90,8 +99,8 @@ class Register extends React.Component {
 					<button
 						id="register-button"
 						className="btn-big, btn-yellow"
-						onSubmit={this.registerUser(this.state.userData)}
-					>	
+						onSubmit={this.registerUser}
+					>
 						Register
 					</button>
 

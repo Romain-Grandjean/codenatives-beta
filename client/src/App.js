@@ -27,6 +27,7 @@ class App extends React.Component {
 				<Header />
 				<main className="container">
 					<Switch>
+						<Route path="/user" exact component={UserInterface} />
 						<Route path="/practice" exact component={Practice} />
 						<Route path="/test" exact component={Test} />
 						<Route
@@ -34,7 +35,7 @@ class App extends React.Component {
 							exact
 							component={AdminQuestions}
 						/>
-						<Route path="/user" exact component={UserInterface} />
+
 						<Route
 							path="/admin/users"
 							exact

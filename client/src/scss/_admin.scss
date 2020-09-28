@@ -65,10 +65,9 @@
 		font-weight: 400;
 		border: 1px hsla(300, 4%, 89%, 0.2) solid;
 	}
-	& tr,
-	td {
-		line-height: 72px;
-		font-size: 12px;
+	& tr {
+		line-height: 36px;
+		font-size: 13px;
 		font-weight: 300;
 		border: 1px hsla(300, 4%, 89%, 0.2) solid;
 		text-align: center;
@@ -77,6 +76,22 @@
 		}
 	}
 }
+
+
+.td1,
+.utd1,
+.td5,
+.utd5,
+.td6,
+.utd6,
+.utd8 {
+	line-height: 72px;
+	font-size: 8px;
+	font-weight: 300;
+	border: 1px hsla(300, 4%, 89%, 0.2) solid;
+	text-align: center;
+}
+
 
 .admin-edit {
 	width: 100%;
@@ -251,3 +266,5 @@ select::-ms-expand {
 	font-weight: 300;
 	margin-top: 28px;
 }
+
+

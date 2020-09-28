@@ -12,28 +12,28 @@ const TableBodyUsers = (props) => {
 		<tbody>
 			{props.data.map((item) => (
 				<tr key={createKey(item, item._id)} className="row">
-					<td key={createKey(item, item._id)} className="td1">
+					<td key={createKey(item, item._id)} className="utd1">
 						{item._id}
 					</td>
-					<td key={createKey(item, item.firstName)} className="td2">
+					<td key={createKey(item, item.firstName)} className="utd2">
 						{item.firstName}
 					</td>
-					<td key={createKey(item, item.lastName)} className="td3">
+					<td key={createKey(item, item.lastName)} className="utd3">
 						{item.lastName}
 					</td>
-					<td key={createKey(item, item.email)} className="td4">
+					<td key={createKey(item, item.email)} className="utd4">
 						{item.email}
 					</td>
-					<td key={createKey(item, item.creationDate)} className="td5">
+					<td key={createKey(item, item.creationDate)} className="utd5">
 						{item.creationDate}
 					</td>
-					<td key={createKey(item, item.lastUpdate)} className="td6">
+					<td key={createKey(item, item.lastUpdate)} className="utd6">
 						{item.lastUpdate}
 					</td>
-					<td key={createKey(item, item.isAdmin)} className="td7">
+					<td key={createKey(item, item.isAdmin)} className="utd7">
 						{item.isAdmin.toString()}
 					</td>
-					<td key={createKey(item, item.password)} className="td8">
+					<td key={createKey(item, item.password)} className="utd8">
 						{item.password}
 					</td>
 					<td>
