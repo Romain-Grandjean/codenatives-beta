@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from './components/Home';
 import Practice from './components/Practice';
 import Test from './components/Test';
+import UserInterface from './components/user/userInterface';
 import AdminQuestions from './components/AdminQuestions';
 import AdminUsers from './components/AdminUsers';
 import NewQuestion from './components/admin/newQuestion';
@@ -33,6 +34,7 @@ class App extends React.Component {
 							exact
 							component={AdminQuestions}
 						/>
+						<Route path="/user" exact component={UserInterface} />
 						<Route
 							path="/admin/users"
 							exact

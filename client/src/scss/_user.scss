@@ -1,0 +1,16 @@
+.user-interface {
+    width:  100%;
+    height: auto;
+    position: absolute;
+    top: 90px;
+    display: grid;
+	justify-items: center;
+	align-items: start;
+	grid-template-columns: 72px repeat(6, 1fr) 72px;
+	grid-template-rows: repeat(12, 12px);
+}
+
+#user-title {
+    grid-column: 2/3;
+    grid-row: 3;
+}
