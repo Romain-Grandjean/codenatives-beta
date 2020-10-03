@@ -29,12 +29,13 @@ class App extends React.Component {
 			const jwt = localStorage.getItem('token');
 			const user = jwtDecode(jwt);
 			this.setState({ user });
-			console.log(user);
+			console.log("this user obj", user);
 		} catch (error) {}
 	}
 
 	render() {
 		const { user } = this.state;
+		
 		return (
 			<>
 				<Header user={user} />
@@ -53,34 +54,49 @@ class App extends React.Component {
 							path="/admin/questions"
 							exact
 							render={(props) => {
-								if (!user.isAdmin) return <Redirect to="/" />;
-								return <AdminQuestions {...props} />;
+								if (!user) return <Redirect to="/" />;
+								if (user && user.isAdmin) return <AdminQuestions {...props} />;
 							}}
 						/>
 						<Route
 							path="/admin/users"
 							exact
-							component={AdminUsers}
+							render={(props) => {
+								if (!user) return <Redirect to="/" />;
+								if (user && user.isAdmin) return <AdminUsers {...props} />;
+							}}
 						/>
 						<Route
 							path="/admin/questions/new"
 							exact
-							component={NewQuestion}
+							render={(props) => {
+								if (!user) return <Redirect to="/" />;
+								if (user && user.isAdmin) return <NewQuestion {...props} />;
+							}}
 						/>
 						<Route
 							path="/admin/users/new"
 							exact
-							component={NewUser}
+							render={(props) => {
+								if (!user) return <Redirect to="/" />;
+								if (user && user.isAdmin) return <NewUser {...props} />;
+							}}
 						/>
 						<Route
 							path="/admin/questions/:id"
 							exact
-							component={EditQuestion}
+							render={(props) => {
+								if (!user) return <Redirect to="/" />;
+								if (user && user.isAdmin) return <EditQuestion {...props} />;
+							}}
 						/>
 						<Route
 							path="/admin/users/:id"
 							exact
-							component={EditUser}
+							render={(props) => {
+								if (!user) return <Redirect to="/" />;
+								if (user && user.isAdmin) return <EditUser {...props} />;
+							}}
 						/>
 						<Route
 							path="/"
