@@ -106,7 +106,7 @@ class Header extends React.Component {
 							<div className="line-header"></div>
 						</>
 					)}
-					{this.props.user && !this.props.isAdmin && (
+					{this.props.user && !this.props.user.isAdmin && (
 						<>
 							<Link to="" id="logo-header">
 								<img
@@ -130,7 +130,8 @@ class Header extends React.Component {
 									</NavLink>
 
 									<button
-										className="button-logout"
+										id="btn-logoutUser"
+										className="btn-small btn-blackBack"
 										onClick={this.logout}
 									>
 										Logout
@@ -139,7 +140,7 @@ class Header extends React.Component {
 							</nav>
 						</>
 					)}
-					{this.props.user && this.props.isAdmin && (
+					{this.props.user && this.props.user.isAdmin && (
 						<>
 							<Link to="" id="logo-header">
 								<img
@@ -156,6 +157,12 @@ class Header extends React.Component {
 										Hi {this.props.user.firstName}
 									</span>
 									<NavLink
+										to="/account"
+										className="nav1-elements"
+									>
+										Dashboard
+									</NavLink>
+									<NavLink
 										to="/admin/users"
 										className="nav1-elements"
 									>
@@ -168,7 +175,8 @@ class Header extends React.Component {
 										Questions
 									</NavLink>
 									<button
-										className="button-logout"
+										id="btn-logoutAdmin"
+										className="btn-small btn-blackBack"
 										onClick={this.logout}
 									>
 										Logout

@@ -29,7 +29,7 @@ class Login extends React.Component {
 			this.state.userData.password
 			);
 			localStorage.setItem('token', jwt);
-			this.props.history.push('/user');
+			window.location = '/account';
 		} catch (error) {
 			if (error.response && error.status === 400) {
 				const errors = { ...this.state.errors };

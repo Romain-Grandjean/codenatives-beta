@@ -29,6 +29,7 @@ class App extends React.Component {
 			const jwt = localStorage.getItem('token');
 			const user = jwtDecode(jwt);
 			this.setState({ user });
+			console.log(user)
 		} catch (error) {}
 	}
 
@@ -41,10 +42,9 @@ class App extends React.Component {
 					<Switch>
 						<Route
 							path="/account"
-							exact
 							render={(props) => {
 								if (!user) return <Redirect to="/" />;
-								return <UserInterface />;
+								return <UserInterface {...props}/>;
 							}}
 						/>
 						<Route path="/practice" exact component={Practice} />
@@ -52,7 +52,10 @@ class App extends React.Component {
 						<Route
 							path="/admin/questions"
 							exact
-							component={AdminQuestions}
+							render={(props) => {
+								if (!user.isAdmin) return <Redirect to="/" />;
+								return <AdminQuestions {...props}/>;
+							}}
 						/>
 
 						<Route
@@ -81,9 +84,13 @@ class App extends React.Component {
 							component={EditUser}
 						/>
 
-						<Route path="/" component={Home} />
+						<Route path="/" render={(props) => {
+								if (user) return <Redirect to="/account" />;
+								return <Home {...props}/>;
+							}}
+						/> />
 						<Route path="/notFound" component={NotFound}></Route>
-						<Redirect to="/" />
+
 					</Switch>
 				</main>
 			</>
