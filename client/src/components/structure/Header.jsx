@@ -55,7 +55,7 @@ class Header extends React.Component {
 	render() {
 		return (
 			<>
-				<div className="header">
+				<div className={this.props.user ?  'header-connected' : "header" } >
 					{!this.props.user && (
 						<>
 							<Link to="" id="logo-header">
@@ -110,18 +110,18 @@ class Header extends React.Component {
 								<img
 									src={
 										process.env.PUBLIC_URL +
-										'/img/logo_header.png'
+										'/img/logo_footer_white.png'
 									}
 									alt="logo"
 								/>
 							</Link>
 							<nav className="navigation">
 								<div className="nav2">
-									<span className="nav-span">
+									<span className="connected-span">
 										Hi {this.props.user.firstName}
 									</span>
 									<button
-										className="nav2-elements"
+										className="button-logout"
 										onClick={this.logout}
 									>
 										Logout

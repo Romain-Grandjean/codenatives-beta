@@ -24,6 +24,32 @@
 	}
 }
 
+.header-connected {
+	width: 100vw;
+	height: 60px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: grid;
+	background-color: black;
+	grid-template-columns: 72px 29.236% 1fr 72px;
+	grid-template-rows: 1fr;
+	z-index:99;
+	@include responsive(900) {
+		height: 72px;
+		grid-template-columns: 72px repeat(36, 1fr) 72px;
+	}
+	@include responsive(600) {
+		grid-template-columns: 36px repeat(36, 1fr) 36px;
+	}
+	@include responsive(500) {
+		grid-template-columns: 18px repeat(36, 1fr) 18px;
+	}
+	@include responsive(320) {
+		height: 60px;
+	}
+}
+
 .line-header {
 	width: 100%;
 	height: 2px;
@@ -70,9 +96,12 @@
 	width: auto;
 	grid-column: 3/4;
 	grid-row: 1/2;
+	align-self: center;
 	justify-self: end;
 	display: flex;
 	flex-flow: row nowrap;
+	align-content: center;
+	justify-content: center;
 	@include responsive(1100) {
 		grid-row: 1/2;
 	}
@@ -160,7 +189,7 @@
 	width: auto;
 	height: auto;
 	position: relative;
-	top: 29px;
+	// top: 29px;
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
@@ -227,7 +256,8 @@
 	width: auto;
 	height: auto;
 	position: relative;
-	top: 29px;
+
+	// top: 29px;
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
@@ -310,48 +340,8 @@
 	}
 }
 
-.button-signup {
-	width: 120px;
-	height: 40px;
-	border: 2px black solid;
-	border-radius: 8px;
-	font-size: 16px;
+.connected-span {
+	color: white;
+	font-size: 14px;
 	font-weight: 400;
-	margin-left: 36px;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-	align-items: center;
-	@include responsive(1100) {
-		font-size: 14px;
-	}
-	@include responsive(900) {
-		font-size: 18px;
-		margin-bottom: 0;
-		margin-left: 0;
-		width: 100px;
-		height: auto;
-		white-space: normal;
-		border: none;
-	}
-	@include responsive(320) {
-		font-size: 14px;
-		width: 60px;
-	}
-	&:hover {
-		background-color: #000000;
-		color: white;
-		border: 2px rgb(255, 255, 255) solid;
-		@include responsive(900) {
-			background-color: white;
-			color: black;
-			padding-top: 2px;
-			width: 70px;
-			border-bottom: 2px black solid;
-			border-radius: 0;
-		}
-		@include responsive(320) {
-			width: 60px;
-		}
-	}
 }
