@@ -340,8 +340,51 @@
 	}
 }
 
+.nav2connected {
+	width: auto;
+	height: auto;
+	position: relative;
+
+	// top: 29px;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+
+	@include responsive(900) {
+		display: none;
+		justify-self: end;
+	}
+	& a, button {
+		text-decoration: none;
+		color: white;
+		font-size: 16px;
+		font-weight: 400;
+		margin-left: 36px;
+		&:hover {
+			padding-top: 2px;
+			border-bottom: 2px black solid;
+		}
+		@include responsive(1100) {
+			font-size: 14px;
+		}
+		@include responsive(900) {
+			font-size: 18px;
+			margin-bottom: 12px;
+			width: auto;
+			height: auto;
+			white-space: normal;
+			margin-top: 0;
+			margin-left: 0;
+		}
+		@include responsive(320) {
+			font-size: 14px;
+			margin-bottom: 8px;
+		}
+	}
+}
+
 .connected-span {
 	color: white;
-	font-size: 14px;
-	font-weight: 400;
+	font-size: 16px;
+	font-weight: 500;
 }

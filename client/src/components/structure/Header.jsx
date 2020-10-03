@@ -55,7 +55,9 @@ class Header extends React.Component {
 	render() {
 		return (
 			<>
-				<div className={this.props.user ?  'header-connected' : "header" } >
+				<div
+					className={this.props.user ? 'header-connected' : 'header'}
+				>
 					{!this.props.user && (
 						<>
 							<Link to="" id="logo-header">
@@ -104,7 +106,7 @@ class Header extends React.Component {
 							<div className="line-header"></div>
 						</>
 					)}
-					{this.props.user && (
+					{this.props.user && !this.props.isAdmin && (
 						<>
 							<Link to="" id="logo-header">
 								<img
@@ -116,10 +118,55 @@ class Header extends React.Component {
 								/>
 							</Link>
 							<nav className="navigation">
-								<div className="nav2">
+								<div className="nav2connected">
 									<span className="connected-span">
 										Hi {this.props.user.firstName}
 									</span>
+									<NavLink
+										to="/account"
+										className="nav1-elements"
+									>
+										Dashboard
+									</NavLink>
+
+									<button
+										className="button-logout"
+										onClick={this.logout}
+									>
+										Logout
+									</button>
+								</div>
+							</nav>
+						</>
+					)}
+					{this.props.user && this.props.isAdmin && (
+						<>
+							<Link to="" id="logo-header">
+								<img
+									src={
+										process.env.PUBLIC_URL +
+										'/img/logo_footer_white.png'
+									}
+									alt="logo"
+								/>
+							</Link>
+							<nav className="navigation">
+								<div className="nav2connected">
+									<span className="connected-span">
+										Hi {this.props.user.firstName}
+									</span>
+									<NavLink
+										to="/admin/users"
+										className="nav1-elements"
+									>
+										Users
+									</NavLink>
+									<NavLink
+										to="/admin/questions"
+										className="nav1-elements"
+									>
+										Questions
+									</NavLink>
 									<button
 										className="button-logout"
 										onClick={this.logout}
