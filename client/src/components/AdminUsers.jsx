@@ -30,6 +30,7 @@ class AdminUsers extends Component {
 		this.setState({ users });
 
 		try {
+			console.log('this is element handle delete', element);
 			await deleteElement(element);
 		} catch (error) {
 			if (error.response && error.response.status === 404)

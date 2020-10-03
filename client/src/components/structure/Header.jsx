@@ -1,6 +1,5 @@
 import React from 'react';
-import jwtDecode from 'jwt-decode';
-import { Link, NavLink, Redirect } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import Login from '../login/Login';
 import Register from '../login/Register';

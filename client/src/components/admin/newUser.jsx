@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../structure/Footer';
-import { postOneElement } from '../../services/usersService';
+import { postOneElementAdmin } from '../../services/usersService';
 
 class NewUser extends Component {
 	constructor(props) {
@@ -28,11 +28,11 @@ class NewUser extends Component {
 	handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			await postOneElement(this.state.user);
+			await postOneElementAdmin(this.state.user);
 		} catch (error) {
 			if (error.response && error.response.status === 404);
 		}
-		this.props.history.push('/admin/users');
+		window.location = '/admin/users';
 	};
 
 	render() {

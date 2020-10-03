@@ -2,6 +2,7 @@ import http from './httpService';
 import { apiUrl } from '../config.json';
 
 const apiEndPoint = apiUrl + '/api/users';
+const apiNewUser = apiEndPoint + '/newadmin';
 
 function elementUrl(id) {
 	return `${apiEndPoint}/${id}`;
@@ -23,6 +24,11 @@ export function putOneElement(id, element) {
 export function postOneElement(element) {
 	return http.post(apiEndPoint, element);
 }
+
+export function postOneElementAdmin(element) {
+	return http.post(apiNewUser, element);
+}
+
 
 export function register(user) {
 	return http.post(apiEndPoint, user);

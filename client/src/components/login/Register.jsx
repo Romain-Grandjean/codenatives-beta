@@ -28,14 +28,13 @@ class Register extends React.Component {
 		e.preventDefault();
 		try {
 			const response = await register(this.state.userData);
-			localStorage.setItem('token', response.headers['x-auth-token'])
+			localStorage.setItem('token', response.headers['x-auth-token']);
 			window.location = '/account';
 		} catch (error) {
-			if (error.response && error.status === 400){
-				console.log("user issue")
+			if (error.response && error.status === 400) {
+				console.log('user issue');
 			}
 		}
-
 	};
 	render() {
 		return (

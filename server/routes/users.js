@@ -35,12 +35,37 @@ router.get('/:id', async (req, res) => {
 // Get authenticated user
 
 router.get('/account', auth, async (req, res) => {
-	const user = await User.findById(req.user._id).select('-password')
+	const user = await User.findById(req.user._id).select('-password');
 	res.send(user);
 });
 
 // Post user
 router.post('/', async (req, res) => {
+	try {
+		const user = new User({
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
+			email: req.body.email,
+			password: req.body.password,
+			isAdmin: false,
+			creationDate: Date.now(),
+		});
+		const salt = await bcrypt.genSalt(10);
+		user.password = await bcrypt.hash(user.password, salt);
+		await user.save();
+
+		const token = user.generateAuthToken();
+
+		res.header('x-auth-token', token)
+			.header('access-control-expose-headers', 'x-auth-token')
+			.send(user);
+	} catch (error) {
+		res.send(error);
+	}
+});
+
+// Post user
+router.post('/newadmin', async (req, res) => {
 	try {
 		const user = new User({
 			firstName: req.body.firstName,
@@ -56,16 +81,15 @@ router.post('/', async (req, res) => {
 
 		const token = user.generateAuthToken();
 
-		res
-		.header('x-auth-token', token)
-		.header("access-control-expose-headers", "x-auth-token")
-		.send(user);
+		res.header('x-auth-token', token)
+			.header('access-control-expose-headers', 'x-auth-token')
+			.send(user);
 	} catch (error) {
 		res.send(error);
 	}
 });
 
-// Put user/admin
+// Put user/
 router.put('/:id', auth, async (req, res) => {
 	try {
 		const user = await User.findByIdAndUpdate(
@@ -86,7 +110,7 @@ router.put('/:id', auth, async (req, res) => {
 	}
 });
 
-// Delete user/admin
+// Delete user
 router.delete('/:id', [auth, admin], async (req, res) => {
 	try {
 		const user = await User.findByIdAndRemove(req.params.id);
