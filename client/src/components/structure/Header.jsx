@@ -1,9 +1,10 @@
 import React from 'react';
+import jwtDecode from 'jwt-decode';
+import { Link, NavLink, Redirect } from 'react-router-dom';
+
 import Login from '../login/Login';
 import Register from '../login/Register';
 import ResetPassword from '../login/ResetPassword';
-
-import { Link, NavLink } from 'react-router-dom';
 
 class Header extends React.Component {
 	constructor(props) {
@@ -30,10 +31,7 @@ class Header extends React.Component {
 		this.setState({
 			display: 'active',
 			window: (
-				<Register
-					closeWindow={this.closeWindow}
-					login={this.login}
-				/>
+				<Register closeWindow={this.closeWindow} login={this.login} />
 			),
 		});
 	};
@@ -49,56 +47,89 @@ class Header extends React.Component {
 		this.setState({ display: '' });
 	};
 
-
+	logout = () => {
+		localStorage.removeItem('token');
+		window.location = '/';
+	};
 
 	render() {
-		
 		return (
 			<>
 				<div className="header">
-					<Link to="" id="logo-header">
-						<img
-							src={
-								process.env.PUBLIC_URL + '/img/logo_header.png'
-							}
-							alt="logo"
-						/>
-					</Link>
+					{!this.props.user && (
+						<>
+							<Link to="" id="logo-header">
+								<img
+									src={
+										process.env.PUBLIC_URL +
+										'/img/logo_header.png'
+									}
+									alt="logo"
+								/>
+							</Link>
 
-					<nav className="navigation">
-						<input type="checkbox" />
+							<nav className="navigation">
+								<input type="checkbox" />
 
-						<div className="line1"></div>
-						<div className="line2"></div>
+								<div className="line1"></div>
+								<div className="line2"></div>
 
-						<div className="nav1">
-							<NavLink to="" className="nav1-elements">
-								Concept
-							</NavLink>
-							<NavLink to="" className="nav1-elements">
-								Contribute
-							</NavLink>
-							<NavLink to="" className="nav1-elements">
-								For Schools & Recruiters
-							</NavLink>
-							<div className="line-nav"></div>
-						</div>
-						<div className="nav2">
-							<button
-								className="nav2-elements"
-								onClick={this.login}
-							>
-								Login
-							</button>
-							<button
-								className="button-signup"
-								onClick={this.register}
-							>
-								Sign Up
-							</button>
-						</div>
-					</nav>
-					<div className="line-header"></div>
+								<div className="nav1">
+									<NavLink to="" className="nav1-elements">
+										Concept
+									</NavLink>
+									<NavLink to="" className="nav1-elements">
+										Contribute
+									</NavLink>
+									<NavLink to="" className="nav1-elements">
+										For Schools & Recruiters
+									</NavLink>
+									<div className="line-nav"></div>
+								</div>
+								<div className="nav2">
+									<button
+										className="nav2-elements"
+										onClick={this.login}
+									>
+										Login
+									</button>
+									<button
+										className="button-signup"
+										onClick={this.register}
+									>
+										Sign Up
+									</button>
+								</div>
+							</nav>
+							<div className="line-header"></div>
+						</>
+					)}
+					{this.props.user && (
+						<>
+							<Link to="" id="logo-header">
+								<img
+									src={
+										process.env.PUBLIC_URL +
+										'/img/logo_header.png'
+									}
+									alt="logo"
+								/>
+							</Link>
+							<nav className="navigation">
+								<div className="nav2">
+									<span className="nav-span">
+										Hi {this.props.user.firstName}
+									</span>
+									<button
+										className="nav2-elements"
+										onClick={this.logout}
+									>
+										Logout
+									</button>
+								</div>
+							</nav>
+						</>
+					)}
 				</div>
 				<div
 					className="connection-interface"

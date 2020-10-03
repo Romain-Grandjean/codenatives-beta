@@ -25,8 +25,8 @@ class Login extends React.Component {
 		e.preventDefault();
 		try {
 			const { data: jwt } = await login(
-				this.state.userData.email,
-				this.state.userData.password
+			this.state.userData.email,
+			this.state.userData.password
 			);
 			localStorage.setItem('token', jwt);
 			this.props.history.push('/user');

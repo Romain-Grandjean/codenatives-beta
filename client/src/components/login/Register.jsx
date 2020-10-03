@@ -29,7 +29,7 @@ class Register extends React.Component {
 		try {
 			const response = await register(this.state.userData);
 			localStorage.setItem('token', response.headers['x-auth-token'])
-			this.props.history.push('/admin/questions')
+			this.props.history.push('/admin/questions');
 		} catch (error) {
 			if (error.response && error.status === 400){
 				console.log("user issue")

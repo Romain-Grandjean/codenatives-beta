@@ -2,6 +2,7 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import jwtDecode from 'jwt-decode';
 import 'react-toastify/dist/ReactToastify.css';
 
 // components
@@ -21,13 +22,31 @@ import Header from './components/structure/Header';
 
 toast.configure();
 class App extends React.Component {
+	state = {};
+
+	componentDidMount() {
+		try {
+			const jwt = localStorage.getItem('token');
+			const user = jwtDecode(jwt);
+			this.setState({ user });
+		} catch (error) {}
+	}
+
 	render() {
+		const { user } = this.state;
 		return (
 			<>
-				<Header />
+				<Header user={user} />
 				<main className="container">
 					<Switch>
-						<Route path="/user" exact component={UserInterface} />
+						<Route
+							path="/account"
+							exact
+							render={(props) => {
+								if (!user) return <Redirect to="/" />;
+								return <UserInterface />;
+							}}
+						/>
 						<Route path="/practice" exact component={Practice} />
 						<Route path="/test" exact component={Test} />
 						<Route
