@@ -12,6 +12,15 @@ class Login extends React.Component {
 			errors: '',
 		};
 	}
+	validate = () => {
+		const errors = {};
+		const { userData } = this.state;
+		if (userData.email.trim() === '') errors.email = 'Email is required.';
+		if (userData.password.trim() === '')
+			errors.password = 'Password is required.';
+
+		return Object.keys(errors).length === 0 ? 0 : errors;
+	};
 
 	onChange = (e) => {
 		const userData = { ...this.state.userData };
@@ -23,6 +32,11 @@ class Login extends React.Component {
 
 	loginUser = async (e) => {
 		e.preventDefault();
+
+		const errors = this.validate();
+		this.setState({ errors });
+		if (errors) return;
+
 		try {
 			const { data: jwt } = await login(
 				this.state.userData.email,
@@ -33,7 +47,7 @@ class Login extends React.Component {
 		} catch (error) {
 			if (error.response && error.status === 400) {
 				const errors = { ...this.state.errors };
-				errors.email = error.response.data;
+				errors.server = error.response.data;
 				this.setState({ errors });
 			}
 		}
@@ -62,6 +76,9 @@ class Login extends React.Component {
 							<div className="input-underline"></div>
 						</div>
 					</div>
+					<div className="alert-login-email">
+						{this.state.errors.email}
+					</div>
 					<div className="login-password">
 						<label>Password :</label>
 						<div className="login-field">
@@ -73,6 +90,12 @@ class Login extends React.Component {
 							></input>
 							<div className="input-underline"></div>
 						</div>
+					</div>
+					<div className="alert-login-password">
+						{this.state.errors.password}
+					</div>
+					<div className="alert-login-server">
+						{this.state.errors.server}
 					</div>
 					<button
 						id="login-button"

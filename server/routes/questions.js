@@ -7,7 +7,7 @@ const auth = require('../middleware/auth');
 const admin = require('../middleware/admin');
 
 // Get all questions
-router.get('/', auth, async (req, res) => {
+router.get('/', async (req, res) => {
 	try {
 		const questions = await Question.find().sort('dateUpdate');
 		res.send(questions);
@@ -27,11 +27,11 @@ router.get('/:id', async (req, res) => {
 		return res
 			.status(404)
 			.send('The customer with the given ID was not found.');
-	}
+	}c
 });
 
 // Post question
-router.post('/', [auth, admin], async (req, res) => {
+router.post('/', [auth], async (req, res) => {
 	try {
 		const question = new Question({
 			level: req.body.level,
@@ -76,7 +76,7 @@ router.put('/:id', [auth, admin], async (req, res) => {
 });
 
 // Delete question
-router.delete('/:id', [auth, admin], async (req, res) => {
+router.delete('/:id', [auth], async (req, res) => {
 	try {
 		const question = await Question.findByIdAndRemove(req.params.id);
 		res.send('question deleted');

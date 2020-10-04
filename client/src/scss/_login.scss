@@ -19,10 +19,9 @@
 	border-radius: 8px;
 	display: grid;
 	grid-template-columns: 48px 1fr 12px 1fr 48px;
-	grid-template-rows: 96px 72px 72px 84px 36px 72px;
+	grid-template-rows: 96px 36px 36px 36px 36px 84px 36px 72px;
 	z-index: 98;
 	@include responsive(700) {
-
 	}
 	@include responsive(500) {
 		width: 390px;
@@ -31,7 +30,7 @@
 	@include responsive(370) {
 		width: 350px;
 		grid-template-columns: 18px 1fr 0px 1fr 18px;
-		grid-template-rows: 72px 72px 72px 72px 36px 72px;
+		grid-template-rows: 72px 36px 36px 36px 36px 72px 36px 72px;
 	}
 	& h1 {
 	}
@@ -67,7 +66,7 @@
 	width: 100%;
 	height: 36px;
 	margin: 0 0 0 4px;
-	transform: translateY(14px)
+	transform: translateY(14px);
 }
 
 .input-underline {
@@ -86,7 +85,7 @@
 	grid-column: 3/4;
 	grid-row: 1/2;
 	justify-self: center;
-	align-self: end;
+	align-self: center;
 	color: black;
 	font-size: 22px;
 	font-weight: 500;
@@ -110,19 +109,52 @@
 	flex-flow: row nowrap;
 	align-self: end;
 }
-
-.login-password {
+.alert-login-email {
 	width: 100%;
 	grid-column: 2/5;
 	grid-row: 3/4;
 	display: flex;
 	flex-flow: row nowrap;
+	align-self: center;
+	font-size: 12px;
+	font-weight: 200;
+}
+
+.login-password {
+	width: 100%;
+	grid-column: 2/5;
+	grid-row: 4/5;
+	display: flex;
+	flex-flow: row nowrap;
 	align-self: end;
+}
+
+.alert-login-password {
+	width: 100%;
+	grid-column: 2/5;
+	grid-row: 5/6;
+	display: flex;
+	flex-flow: row nowrap;
+	align-self: center;
+	font-size: 12px;
+	font-weight: 200;
+}
+
+.alert-login-server {
+	width: 100%;
+	grid-column: 2/5;
+	grid-row: 6/7;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-self: start;
+	align-self: center;
+	font-size: 12px;
+	font-weight: 200;
 }
 
 #login-button {
 	grid-column: 2/5;
-	grid-row: 4/5;
+	grid-row: 6/7;
 	justify-self: end;
 	align-self: end;
 	width: 120px;
@@ -147,7 +179,7 @@
 
 #login-account {
 	grid-column: 2/4;
-	grid-row: 5/6;
+	grid-row: 7/8;
 	justify-self: start;
 	align-self: end;
 	font-size: 12px;
@@ -157,14 +189,12 @@
 
 #login-forgotten {
 	grid-column: 3/5;
-	grid-row: 5/6;
+	grid-row: 7/8;
 	justify-self: end;
 	align-self: end;
 	text-decoration: underline;
 	font-size: 12px;
-
 }
-
 
 .register-window {
 	position: absolute;
@@ -183,7 +213,6 @@
 	grid-template-rows: 96px 72px 72px 72px 72px 84px 36px 72px;
 	z-index: 98;
 	@include responsive(700) {
-
 	}
 	@include responsive(500) {
 		width: 380px;
@@ -220,7 +249,6 @@
 		font-weight: 300;
 	}
 }
-
 
 #register-title {
 	grid-column: 1/6;
@@ -259,7 +287,6 @@
 	flex-flow: row nowrap;
 	align-self: end;
 }
-
 
 .register-email {
 	width: 100%;
@@ -314,8 +341,6 @@
 	transform: translateY(14px);
 }
 
-
-
 .reset-window {
 	position: absolute;
 	left: 0;
@@ -333,7 +358,6 @@
 	grid-template-rows: 96px 72px 96px 72px;
 	z-index: 98;
 	@include responsive(700) {
-
 	}
 	@include responsive(500) {
 		width: 380px;
@@ -375,7 +399,7 @@
 	width: 100%;
 	height: 36px;
 	margin: 0 0 0 4px;
-	transform: translateY(14px)
+	transform: translateY(14px);
 }
 
 .input-underline {
@@ -455,5 +479,4 @@
 	align-self: end;
 	text-decoration: underline;
 	font-size: 12px;
-
 }
