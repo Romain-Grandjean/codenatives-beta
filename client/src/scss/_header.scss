@@ -362,7 +362,7 @@
 		margin-left: 36px;
 		&:hover {
 			padding-top: 2px;
-			border-bottom: 2px black solid;
+			// border-bottom: 2px black solid;
 		}
 		@include responsive(1100) {
 			font-size: 14px;

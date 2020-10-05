@@ -12,9 +12,24 @@ class Register extends React.Component {
 				password: '',
 				isAdmin: false,
 			},
-			error: '',
+			errors: '',
 		};
 	}
+
+	validate = () => {
+		const errors = {};
+
+		const { userData } = this.state;
+		if (userData.firstName.trim() === '')
+			errors.firstName = 'First name is required.';
+		if (userData.lastName.trim() === '')
+			errors.lastName = 'Last name is required.';
+		if (userData.email.trim() === '') errors.email = 'Email is required.';
+		if (userData.password.trim() === '')
+			errors.password = 'Password is required.';
+
+		return Object.keys(errors).length === 0 ? 0 : errors;
+	};
 
 	onChange = (e) => {
 		const userData = { ...this.state.userData };
@@ -26,13 +41,20 @@ class Register extends React.Component {
 
 	registerUser = async (e) => {
 		e.preventDefault();
+
+		const errors = this.validate();
+		this.setState({ errors });
+		if (errors) return;
+
 		try {
 			const response = await register(this.state.userData);
 			localStorage.setItem('token', response.headers['x-auth-token']);
 			window.location = '/account';
 		} catch (error) {
-			if (error.response && error.status === 400) {
-				console.log('user issue');
+			if (error.response && error.response.status === 400) {
+				const errors = { ...this.state.errors };
+				errors.server = error.response.data;
+				this.setState({ errors });
 			}
 		}
 	};
@@ -60,6 +82,11 @@ class Register extends React.Component {
 							<div className="input-underline"></div>
 						</div>
 					</div>
+					{this.state.errors.firstName && (
+						<div className="alert-register-firstname">
+							{this.state.errors.firstName}
+						</div>
+					)}
 					<div className="register-lastname">
 						<label>Last Name :</label>
 						<div className="register-field">
@@ -72,6 +99,11 @@ class Register extends React.Component {
 							<div className="input-underline"></div>
 						</div>
 					</div>
+					{this.state.errors.lastName && (
+						<div className="alert-register-lastName">
+							{this.state.errors.lastName}
+						</div>
+					)}
 					<div className="register-email">
 						<label>Email :</label>
 						<div className="register-field">
@@ -84,7 +116,11 @@ class Register extends React.Component {
 							<div className="input-underline"></div>
 						</div>
 					</div>
-
+					{this.state.errors.email && (
+						<div className="alert-register-email">
+							{this.state.errors.email}
+						</div>
+					)}
 					<div className="register-password">
 						<label>Password :</label>
 						<div className="register-field">
@@ -97,6 +133,16 @@ class Register extends React.Component {
 							<div className="input-underline"></div>
 						</div>
 					</div>
+					{this.state.errors.password && (
+						<div className="alert-register-password">
+							{this.state.errors.password}
+						</div>
+					)}
+					{this.state.errors.server && (
+						<div className="alert-register-password">
+							{this.state.errors.password}
+						</div>
+					)}
 					<button
 						id="register-button"
 						className="btn-big, btn-yellow"

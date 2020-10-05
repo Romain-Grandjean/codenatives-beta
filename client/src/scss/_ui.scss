@@ -285,7 +285,7 @@
 	&:hover {
 		background-color: #ffffff;
 		color: black;
-		border: 2px rgb(255, 255, 255) solid;
+		// border: 2px rgb(255, 255, 255) solid;
 		@include responsive(900) {
 			padding-top: 2px;
 			width: 70px;

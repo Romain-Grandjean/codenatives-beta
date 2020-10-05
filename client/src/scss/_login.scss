@@ -210,7 +210,7 @@
 	border-radius: 8px;
 	display: grid;
 	grid-template-columns: 48px 1fr 12px 1fr 48px;
-	grid-template-rows: 96px 72px 72px 72px 72px 84px 36px 72px;
+	grid-template-rows: 96px 36px 36px 36px 36px 36px 36px 36px 36px 84px 36px 72px;
 	z-index: 98;
 	@include responsive(700) {
 	}
@@ -254,7 +254,7 @@
 	grid-column: 1/6;
 	grid-row: 1/2;
 	justify-self: center;
-	align-self: end;
+	align-self: center;
 	color: black;
 	font-size: 22px;
 	font-weight: 500;
@@ -276,19 +276,23 @@
 	grid-row: 2/3;
 	display: flex;
 	flex-flow: row nowrap;
-	align-self: end;
+	align-self: center;
+	font-size: 12px;
+	font-weight: 200;
 }
 
-.register-lastname {
+.alert-register-firstname {
 	width: 100%;
 	grid-column: 2/5;
 	grid-row: 3/4;
 	display: flex;
 	flex-flow: row nowrap;
-	align-self: end;
+	align-self: center;
+	font-size: 12px;
+	font-weight: 200;
 }
 
-.register-email {
+.register-lastname {
 	width: 100%;
 	grid-column: 2/5;
 	grid-row: 4/5;
@@ -297,18 +301,70 @@
 	align-self: end;
 }
 
-.register-password {
+.alert-register-lastName {
 	width: 100%;
 	grid-column: 2/5;
 	grid-row: 5/6;
 	display: flex;
 	flex-flow: row nowrap;
+	align-self: center;
+	font-size: 12px;
+	font-weight: 200;
+}
+
+.register-email {
+	width: 100%;
+	grid-column: 2/5;
+	grid-row: 6/7;
+	display: flex;
+	flex-flow: row nowrap;
 	align-self: end;
+}
+
+.alert-register-email {
+	width: 100%;
+	grid-column: 2/5;
+	grid-row: 7/8;
+	display: flex;
+	flex-flow: row nowrap;
+	align-self: center;
+	font-size: 12px;
+	font-weight: 200;
+}
+
+.register-password {
+	width: 100%;
+	grid-column: 2/5;
+	grid-row: 8/9;
+	display: flex;
+	flex-flow: row nowrap;
+	align-self: end;
+}
+
+.alert-register-password {
+	width: 100%;
+	grid-column: 2/5;
+	grid-row: 9/10;
+	display: flex;
+	flex-flow: row nowrap;
+	align-self: center;
+	font-size: 12px;
+	font-weight: 200;
+}
+.alert-login-server {
+	width: 100%;
+	grid-row: 10/11;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-self: start;
+	align-self: center;
+	font-size: 12px;
+	font-weight: 200;
 }
 
 #register-button {
 	grid-column: 2/5;
-	grid-row: 6/7;
+	grid-row: 10/11;
 	justify-self: end;
 	align-self: end;
 	width: 120px;
@@ -333,7 +389,7 @@
 
 #register-account {
 	grid-column: 2/5;
-	grid-row: 7/8;
+	grid-row: 11/12;
 	justify-self: end;
 	align-self: end;
 	font-size: 12px;

@@ -76,9 +76,11 @@ class Login extends React.Component {
 							<div className="input-underline"></div>
 						</div>
 					</div>
-					<div className="alert-login-email">
-						{this.state.errors.email}
-					</div>
+					{this.state.errors.email && (
+						<div className="alert-login-email">
+							{this.state.errors.email}
+						</div>
+					)}
 					<div className="login-password">
 						<label>Password :</label>
 						<div className="login-field">
@@ -91,12 +93,16 @@ class Login extends React.Component {
 							<div className="input-underline"></div>
 						</div>
 					</div>
-					<div className="alert-login-password">
-						{this.state.errors.password}
-					</div>
-					<div className="alert-login-server">
-						{this.state.errors.server}
-					</div>
+					{this.state.errors.password && (
+						<div className="alert-login-password">
+							{this.state.errors.password}
+						</div>
+					)}
+					{this.state.errors.server && (
+						<div className="alert-login-server">
+							{this.state.errors.server}
+						</div>
+					)}
 					<button
 						id="login-button"
 						className="btn-big, btn-yellow"
