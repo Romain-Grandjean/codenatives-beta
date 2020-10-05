@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Post question
-router.post('/', [auth], async (req, res) => {
+router.post('/', async (req, res) => {
 	try {
 		const question = new Question({
 			level: req.body.level,

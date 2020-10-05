@@ -41,6 +41,9 @@ router.get('/account', auth, async (req, res) => {
 
 // Post user
 router.post('/', async (req, res) => {
+	let user = await User.findOne({ email: req.body.email });
+	if (user) return res.status(400).send('Email already registered.');
+
 	try {
 		const user = new User({
 			firstName: req.body.firstName,
