@@ -93,7 +93,7 @@ router.post('/newadmin', async (req, res) => {
 });
 
 // Put user/
-router.put('/:id', auth, async (req, res) => {
+router.put('/:id', async (req, res) => {
 	try {
 		const user = await User.findByIdAndUpdate(
 			req.params.id,

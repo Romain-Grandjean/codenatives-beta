@@ -9,7 +9,11 @@ class Login extends React.Component {
 				email: '',
 				password: '',
 			},
-			errors: '',
+			errors: {
+				email: '',
+				password: '',
+			},
+			server: '',
 		};
 	}
 	validate = () => {
@@ -24,7 +28,6 @@ class Login extends React.Component {
 
 	onChange = (e) => {
 		const userData = { ...this.state.userData };
-
 		userData[e.currentTarget.name] = e.currentTarget.value;
 		this.setState({ userData });
 		console.log('this userdata state', this.state.userData);
@@ -33,11 +36,13 @@ class Login extends React.Component {
 	loginUser = async (e) => {
 		e.preventDefault();
 
+		const server = {};
 		const errors = this.validate();
 		this.setState({ errors });
 		if (errors) return;
 
 		try {
+			const { data } = this.state;
 			const { data: jwt } = await login(
 				this.state.userData.email,
 				this.state.userData.password
@@ -45,7 +50,7 @@ class Login extends React.Component {
 			localStorage.setItem('token', jwt);
 			window.location = '/account';
 		} catch (error) {
-			if (error.response && error.status === 400) {
+			if (error.response && error.response.status === 400) {
 				const errors = { ...this.state.errors };
 				errors.server = error.response.data;
 				this.setState({ errors });

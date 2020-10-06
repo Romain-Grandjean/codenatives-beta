@@ -12,7 +12,7 @@ class Register extends React.Component {
 				password: '',
 				isAdmin: false,
 			},
-			errors: '',
+			errors: {},
 		};
 	}
 
@@ -139,8 +139,8 @@ class Register extends React.Component {
 						</div>
 					)}
 					{this.state.errors.server && (
-						<div className="alert-register-password">
-							{this.state.errors.password}
+						<div className="alert-register-server">
+							{this.state.errors.server}
 						</div>
 					)}
 					<button

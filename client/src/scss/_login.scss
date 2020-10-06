@@ -74,6 +74,7 @@
 	height: 1px;
 	background-color: hsla(300, 4%, 89%, 0.3);
 }
+
 #login-icon-stop {
 	grid-column: 2/5;
 	grid-row: 1/2;
@@ -117,7 +118,7 @@
 	flex-flow: row nowrap;
 	align-self: center;
 	font-size: 12px;
-	font-weight: 200;
+	font-weight: 500;
 }
 
 .login-password {
@@ -137,26 +138,24 @@
 	flex-flow: row nowrap;
 	align-self: center;
 	font-size: 12px;
-	font-weight: 200;
+	font-weight: 500;
 }
 
 .alert-login-server {
-	width: 100%;
-	grid-column: 2/5;
+	grid-column: 1/5;
 	grid-row: 6/7;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-self: start;
 	align-self: center;
+	justify-self: center;
 	font-size: 12px;
-	font-weight: 200;
+	font-weight: 500;
+	color: black;
 }
 
 #login-button {
-	grid-column: 2/5;
+	grid-column: 4/5;
 	grid-row: 6/7;
 	justify-self: end;
-	align-self: end;
+	align-self: center;
 	width: 120px;
 	height: 40px;
 	color: black;
@@ -289,7 +288,7 @@
 	flex-flow: row nowrap;
 	align-self: center;
 	font-size: 12px;
-	font-weight: 200;
+	font-weight: 500;
 }
 
 .register-lastname {
@@ -309,7 +308,7 @@
 	flex-flow: row nowrap;
 	align-self: center;
 	font-size: 12px;
-	font-weight: 200;
+	font-weight: 500;
 }
 
 .register-email {
@@ -329,7 +328,7 @@
 	flex-flow: row nowrap;
 	align-self: center;
 	font-size: 12px;
-	font-weight: 200;
+	font-weight: 500;
 }
 
 .register-password {
@@ -349,24 +348,23 @@
 	flex-flow: row nowrap;
 	align-self: center;
 	font-size: 12px;
-	font-weight: 200;
+	font-weight: 500;
 }
-.alert-login-server {
-	width: 100%;
+.alert-register-server {
+	grid-column: 1/5;
 	grid-row: 10/11;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-self: start;
 	align-self: center;
+	justify-self: center;
 	font-size: 12px;
-	font-weight: 200;
+	font-weight: 500;
+	color: black;
 }
 
 #register-button {
 	grid-column: 2/5;
 	grid-row: 10/11;
+	align-self: center;
 	justify-self: end;
-	align-self: end;
 	width: 120px;
 	height: 40px;
 	color: black;
