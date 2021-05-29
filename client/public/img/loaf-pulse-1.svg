@@ -1,0 +1,13 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;"><style>
+     .line-pulse1 {animation:line-pulse1-pulse 2s infinite; stroke-dasharray: 210;}
+     @keyframes line-pulse1-pulse {
+         0%{stroke-dashoffset: 220;}
+         50%{stroke-dashoffset: 0;}
+         100%{stroke-dashoffset: -210;}
+     }
+     @media (prefers-reduced-motion: reduce) {
+         .line-pulse1 {
+             animation: none;
+         }
+     }
+    </style><path class="line-pulse1 stroke1" d="M7 50H23.7762C24.2081 50 24.5912 49.7227 24.7262 49.3125L36.0687 14.8313C36.3683 13.9203 37.6543 13.9127 37.9648 14.82L62.0352 85.18C62.3457 86.0874 63.6317 86.0797 63.9313 85.1687L75.2738 50.6875C75.4088 50.2773 75.7919 50 76.2238 50H92.5" stroke="#000" stroke-width="2px" style="animation-duration: 2s;"></path></svg>

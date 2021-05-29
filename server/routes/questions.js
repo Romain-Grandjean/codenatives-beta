@@ -7,7 +7,7 @@ const auth = require('../middleware/auth');
 const admin = require('../middleware/admin');
 
 // Get all questions
-router.get('/', async (req, res) => {
+router.get('/',[auth, admin], async (req, res) => {
 	try {
 		const questions = await Question.find().sort('dateUpdate');
 		res.send(questions);
@@ -52,7 +52,7 @@ router.post('/', async (req, res) => {
 });
 
 // Put question
-router.put('/:id', [auth, admin], async (req, res) => {
+router.put('/:id', async (req, res) => {
 	try {
 		const question = await Question.findByIdAndUpdate(
 			req.params.id,
@@ -76,7 +76,7 @@ router.put('/:id', [auth, admin], async (req, res) => {
 });
 
 // Delete question
-router.delete('/:id', [auth], async (req, res) => {
+router.delete('/:id', admin, async (req, res) => {
 	try {
 		const question = await Question.findByIdAndRemove(req.params.id);
 		res.send('question deleted');

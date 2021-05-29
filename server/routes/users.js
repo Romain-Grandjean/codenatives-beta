@@ -8,8 +8,11 @@ const config = require('config');
 const auth = require('../middleware/auth');
 const admin = require('../middleware/admin');
 
+
+
 // Get all users
 router.get('/', async (req, res) => {
+
 	try {
 		const users = await User.find().sort('name');
 		res.send(users);
@@ -33,8 +36,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Get authenticated user
-
-router.get('/account', auth, async (req, res) => {
+router.get('/account', async (req, res) => {
 	const user = await User.findById(req.user._id).select('-password');
 	res.send(user);
 });
@@ -82,11 +84,6 @@ router.post('/newadmin', async (req, res) => {
 		user.password = await bcrypt.hash(user.password, salt);
 		await user.save();
 
-		const token = user.generateAuthToken();
-
-		res.header('x-auth-token', token)
-			.header('access-control-expose-headers', 'x-auth-token')
-			.send(user);
 	} catch (error) {
 		res.send(error);
 	}
@@ -114,7 +111,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete user
-router.delete('/:id', [auth, admin], async (req, res) => {
+router.delete('/:id', async (req, res) => {
 	try {
 		const user = await User.findByIdAndRemove(req.params.id);
 		res.send('User deleted');

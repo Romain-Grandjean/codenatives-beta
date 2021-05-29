@@ -2,21 +2,21 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import logger from './logService';
 
-axios.interceptors.response.use(null, (error) => {
-	const expectedError =
-		error.response &&
-		error.response.status >= 400 &&
-		error.response.status < 500;
+// axios.interceptors.response.use(null, (error) => {
+// 	const expectedError =
+// 		error.response &&
+// 		error.response.status >= 400 &&
+// 		error.response.status < 500;
 
-	if (!expectedError) {
-		logger.log(error);
-		console.log(error.response.status);
-		console.log(error.response);
-		toast.error('An error has occured.');
-	}
+// 	if (!expectedError) {
+// 		logger.log(error);
+// 		console.log(error.response.status);
+// 		console.log(error.response);
+// 		toast.error('An error has occured.');
+// 	}
 
-	return Promise.reject(error);
-});
+// 	return Promise.reject(error);
+// });
 
 export default {
 	get: axios.get,
